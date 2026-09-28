@@ -1,0 +1,6 @@
+services:
+  labs:
+    build: .
+    working_dir: /course
+    volumes:
+      - .:/course

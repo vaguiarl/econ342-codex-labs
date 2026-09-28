@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use these teaching materials, please cite this repository."
+title: "ECON 342 Codex Data Labs"
+type: software
+authors:
+  - family-names: "Aguiar"
+    given-names: "Victor H."
+date-released: 2026-09-28
+repository-code: "https://github.com/vaguiarl/econ342-codex-labs"
+url: "https://github.com/vaguiarl/econ342-codex-labs"

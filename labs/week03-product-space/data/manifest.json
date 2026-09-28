@@ -1,0 +1,27 @@
+{
+  "title": "ECON 342 Week 3 fixed classroom export matrix",
+  "source": "Harvard Growth Lab Atlas of Economic Complexity GraphQL API",
+  "source_url": "https://atlas.hks.harvard.edu/api/graphql",
+  "underlying_goods_source": "UN Comtrade",
+  "retrieved_date": "2026-09-28",
+  "data_year": 2024,
+  "classification": "HS 1992, four-digit goods",
+  "unit": "current U.S. dollars",
+  "economies": 230,
+  "products": 1241,
+  "rows": 285430,
+  "transformations": [
+    "Retained economies with positive included-goods exports",
+    "Excluded services, trade discrepancy records, and HS 9999",
+    "Represented missing country-product API cells as zero",
+    "Preserved HS product codes as four-character strings"
+  ],
+  "files": {
+    "student_input_hs92_4digit_2024.csv.gz": {
+      "sha256": "6b24c9ef44e9215612550838f6305cfed9aff696042019f862514f865335d88b"
+    },
+    "hs92_products_4digit.csv": {
+      "sha256": "1e5b1b1c4cac1362cbcb82f51a654cbb4a73fa8c78aeb1075807f94f5d3a5350"
+    }
+  }
+}
