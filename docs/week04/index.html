@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interactive ECON 342 slides on the gravity model of trade, worldwide evidence, and Canada–U.S.–EU trade.">
+  <title>Week 4 · Gravity, distance, and the border · ECON 342</title>
+  <link rel="stylesheet" href="../assets/site.css">
+  <style>
+    /* This deck is tuned for a common 16:9 classroom projector. Figures can
+       still be opened full-screen with their Expand button. */
+    @media (min-width: 851px) {
+      .slide { padding-top: clamp(.8rem, 1.5vw, 1.35rem); padding-bottom: clamp(.8rem, 1.5vw, 1.35rem); }
+      .slide h2 { margin-bottom: clamp(.65rem, 1.3vw, 1.15rem); font-size: clamp(1.85rem, 3.35vw, 3.35rem); }
+      .slide p, .slide li, .slide label { font-size: clamp(.96rem, 1.35vw, 1.2rem); line-height: 1.42; }
+      .metric { min-height: 108px; }
+      .chart { min-height: clamp(220px, 34vh, 350px); }
+      .chart.compact { min-height: clamp(200px, 30vh, 310px); }
+    }
+  </style>
+  <script defer src="../assets/charts.js"></script>
+  <script defer src="../assets/week04.js"></script>
+  <script defer src="../assets/slides.js"></script>
+</head>
+<body class="deck-body">
+  <header class="deck-toolbar" aria-label="Presentation toolbar">
+    <a class="deck-brand" href="../">ECON 342</a>
+    <div class="deck-title" data-current-title>Gravity, distance, and the border</div>
+    <div class="toolbar-actions">
+      <button class="icon-button" type="button" data-action="overview" aria-label="Open slide overview" title="Overview (O)">▦</button>
+      <button class="icon-button" type="button" data-action="fullscreen" aria-label="Enter full screen" title="Full screen (F)">⛶</button>
+    </div>
+  </header>
+
+  <div class="deck-progress" role="progressbar" aria-label="Slide progress" aria-valuemin="1" aria-valuenow="1" aria-valuemax="22"><span data-progress></span></div>
+
+  <main class="deck" aria-label="Week 4 slide deck">
+    <section class="slide cover-slide is-active" data-slide-title="Why does Canada trade so much with the United States?" aria-hidden="false" tabindex="0">
+      <div>
+        <p class="eyebrow">ECON 342 · Week 4</p>
+        <h1>Why does Canada trade so much with the United States?</h1>
+        <p class="callout">Weeks 2–3 asked <strong>what</strong> Canada can export. Gravity asks <strong>where</strong> it exports—and how much.</p>
+      </div>
+      <div class="cover-meta">
+        <p><strong>Today:</strong> market size, distance, borders, and relationships</p>
+        <p><strong>Evidence:</strong> 39,402 worldwide country pairs</p>
+        <p><strong>Case:</strong> Canada–U.S. versus Canada–EU27</p>
+        <p class="subtle">Use ← →, swipe, or the controls below.</p>
+      </div>
+    </section>
+
+    <section class="slide" data-slide-title="Canada’s partner puzzle" aria-hidden="true" tabindex="-1">
+      <h2>Canada’s trade is highly—but not equally—U.S.-oriented</h2>
+      <div class="two-col wide-left">
+        <figure class="interactive-figure" data-expandable>
+          <div class="figure-header">
+            <figcaption class="figure-title">Canada’s merchandise trade by partner, 2025</figcaption>
+            <button class="expand-button" type="button" data-expand aria-label="Expand partner-share chart">Expand ↗</button>
+          </div>
+          <div class="expandable-content">
+            <div class="toggle-row" aria-label="Choose trade direction">
+              <button class="toggle-button" type="button" data-partner-mode="export" aria-pressed="true">Exports</button>
+              <button class="toggle-button" type="button" data-partner-mode="import" aria-pressed="false">Imports</button>
+            </div>
+            <div id="partner-chart" class="chart compact" role="img" aria-label="Interactive chart of Canadian merchandise trade shares by partner"></div>
+          </div>
+        </figure>
+        <div>
+          <div class="two-col" style="gap:.75rem">
+            <div class="metric"><strong>72.3%</strong><span>exports to U.S.</span></div>
+            <div class="metric"><strong>45.9%</strong><span>imports from U.S.</span></div>
+          </div>
+          <p class="callout" data-partner-summary>Nearly three of every four merchandise-export dollars went to the United States.</p>
+          <p class="prompt"><strong>Notice</strong> Why is the export relationship more concentrated?</p>
+        </div>
+      </div>
+      <p class="source">Source: Statistics Canada <a href="https://doi.org/10.25318/1210017101-eng" target="_blank" rel="noopener">Table 12-10-0171-01</a>, 2025. Customs basis; imports classified by origin.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Canada’s export links" aria-hidden="true" tabindex="-1">
+      <h2>Geography is visible before we run a regression</h2>
+      <figure class="interactive-figure" data-expandable>
+        <div class="figure-header">
+          <figcaption class="figure-title">Canada’s largest merchandise-export links, 2019</figcaption>
+          <button class="expand-button" type="button" data-expand aria-label="Expand Canada export map">Expand ↗</button>
+        </div>
+        <div class="expandable-content">
+          <img src="../assets/figures/canada-export-links-2019.png" alt="World map with trade links from Canada; the link to the United States is much thicker than links to other destinations" style="display:block;width:100%;max-height:44vh;object-fit:contain">
+        </div>
+      </figure>
+      <p class="prompt"><strong>Discuss</strong> Give one <span class="pull">market-size</span> reason and one <span class="resistance">trade-cost</span> reason for the dominant U.S. link.</p>
+      <p class="source">Source: Author’s visualization from <a href="https://www.cepii.fr/CEPII/en/bdd_modele/bdd_modele_item.asp?id=8" target="_blank" rel="noopener">CEPII Gravity V202211</a>, 2019.</p>
+    </section>
+
+    <section class="slide" data-slide-title="The world trade network" aria-hidden="true" tabindex="-1">
+      <h2>The same pattern appears worldwide</h2>
+      <figure class="interactive-figure" data-expandable>
+        <div class="figure-header">
+          <figcaption class="figure-title">Selected links in the world merchandise-trade network, 2019</figcaption>
+          <button class="expand-button" type="button" data-expand aria-label="Expand world trade network">Expand ↗</button>
+        </div>
+        <div class="expandable-content">
+          <img src="../assets/figures/world-trade-network-2019.png" alt="Network plot of world trade with large economic hubs and dense regional clusters" style="display:block;width:100%;max-height:44vh;object-fit:contain">
+        </div>
+      </figure>
+      <p class="prompt"><strong>Read it</strong> Large hubs suggest economic mass; regional clustering suggests distance and shared institutions.</p>
+      <p class="source">Source: Author’s visualization from <a href="https://www.cepii.fr/CEPII/en/bdd_modele/bdd_modele_item.asp?id=8" target="_blank" rel="noopener">CEPII Gravity V202211</a>, 2019. Network links are selected for legibility.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Gravity has a pull and a resistance" aria-hidden="true" tabindex="-1">
+      <h2>Gravity combines one pull and one resistance</h2>
+      <div class="two-col">
+        <div class="panel">
+          <p class="eyebrow">Economic mass pulls trade up</p>
+          <h3 class="pull">Larger GDP → more trade</h3>
+          <ul>
+            <li>A larger exporter can supply more.</li>
+            <li>A larger importer can buy more.</li>
+            <li>GDP is our simple measure of market size.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <p class="eyebrow">Trade costs push trade down</p>
+          <h3 class="resistance">Greater distance → less trade</h3>
+          <ul>
+            <li>Freight, time, inventories, and coordination rise.</li>
+            <li>Search, trust, language, borders, and policy matter.</li>
+            <li>Distance summarizes more than fuel cost.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="prompt"><strong>Think</strong> Name one cost of distance that still matters when the traded product is digital.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Try the gravity arithmetic" aria-hidden="true" tabindex="-1">
+      <h2>Can market size offset distance?</h2>
+      <div class="two-col wide-left">
+        <div class="panel">
+          <div class="equation"><var>X</var><sub>ij</sub> = <var>A</var> × <var>Y</var><sub>i</sub><sup>βₒ</sup> × <var>Y</var><sub>j</sub><sup>β<sub>d</sub></sup> ÷ <var>d</var><sub>ij</sub><sup>θ</sup></div>
+          <p><strong>i</strong> is the exporter; <strong>j</strong> is the importer. Hold the exporter fixed and compare partner B with partner A.</p>
+          <div class="control-grid">
+            <div class="slider-control">
+              <label for="partner-size">B’s market size <output id="partner-size-value">2×</output></label>
+              <input id="partner-size" type="range" min="0.5" max="5" step="0.1" value="2">
+            </div>
+            <div class="slider-control">
+              <label for="partner-distance">B’s distance <output id="partner-distance-value">2×</output></label>
+              <input id="partner-distance" type="range" min="0.5" max="5" step="0.1" value="2">
+            </div>
+          </div>
+        </div>
+        <div class="panel" aria-live="polite">
+          <p class="eyebrow">With β<sub>d</sub> = θ = 1</p>
+          <div class="big-result" id="toy-gravity-result">1.00×</div>
+          <p id="toy-gravity-interpretation">Predicted trade is the same: market size exactly offsets distance.</p>
+        </div>
+      </div>
+      <p class="prompt"><strong>Your turn</strong> Set B to four times as large and twice as far. Predict before moving the sliders.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Read a distance elasticity" aria-hidden="true" tabindex="-1">
+      <h2>A distance elasticity turns “farther” into a number</h2>
+      <div class="two-col">
+        <div class="panel">
+          <div class="equation">new trade ÷ old trade = distance multiple<sup>β<sub>distance</sub></sup></div>
+          <div class="slider-control">
+            <label for="distance-multiple">Distance becomes <output id="distance-multiple-value">2.0×</output></label>
+            <input id="distance-multiple" type="range" min="1" max="5" step="0.1" value="2">
+          </div>
+          <label for="distance-model"><strong>Estimate:</strong></label>
+          <select id="distance-model" class="toggle-button">
+            <option value="ppml">PPML, full sample: −0.666</option>
+            <option value="ols">Log-OLS, positive flows: −1.169</option>
+          </select>
+        </div>
+        <div class="panel" aria-live="polite">
+          <p class="eyebrow">Predicted trade ratio</p>
+          <div class="big-result" id="distance-result-ratio">0.63×</div>
+          <p id="distance-result-change"><strong>37% less trade</strong>, holding the included variables fixed.</p>
+          <p class="callout">For a large change, calculate the power. Do not multiply the coefficient by 100.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-slide-title="What is in the world sample?" aria-hidden="true" tabindex="-1">
+      <h2>One observation is one directed country pair</h2>
+      <div class="three-col">
+        <div class="metric"><strong>39,402</strong><span>eligible directed dyads</span></div>
+        <div class="metric"><strong>28,113</strong><span>positive trade flows</span></div>
+        <div class="metric"><strong>28.7%</strong><span>completed zero flows</span></div>
+      </div>
+      <div class="two-col">
+        <div class="definition-card">
+          <h3>Directed dyad</h3>
+          <p>CAN → USA and USA → CAN are two different observations.</p>
+        </div>
+        <div class="definition-card">
+          <h3>Completed zero</h3>
+          <p>A missing BACI flow becomes zero only when reporting coverage supports “no recorded trade.” Other missing flows stay missing.</p>
+        </div>
+      </div>
+      <p class="source">Source: <a href="https://www.cepii.fr/CEPII/en/bdd_modele/bdd_modele_item.asp?id=8" target="_blank" rel="noopener">CEPII Gravity V202211</a> and BACI, 2019. Merchandise trade, current US dollars.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Farther pairs trade less" aria-hidden="true" tabindex="-1">
+      <h2>The worldwide distance gradient is large and noisy</h2>
+      <div class="two-col wide-left">
+        <figure class="interactive-figure" data-expandable>
+          <div class="figure-header">
+            <figcaption class="figure-title">Geometric-mean trade by population-weighted distance bin, 2019</figcaption>
+            <button class="expand-button" type="button" data-expand aria-label="Expand distance chart">Expand ↗</button>
+          </div>
+          <div class="expandable-content">
+            <div id="distance-chart" class="chart" role="img" aria-label="Interactive scatterplot showing lower geometric-mean trade at longer distances"></div>
+          </div>
+        </figure>
+        <div>
+          <div class="metric"><strong>−1.17</strong><span>log-OLS distance elasticity</span></div>
+          <p>Hover or focus a point for the distance, geometric-mean trade, and number of dyads.</p>
+          <p class="callout">This binned picture is descriptive. The line is not a causal effect of kilometres.</p>
+        </div>
+      </div>
+      <p class="source">Source: Author’s calculation from CEPII Gravity V202211, 2019; positive merchandise-trade flows.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Anatomy of the regression" aria-hidden="true" tabindex="-1">
+      <h2>Read every term before reading the coefficients</h2>
+      <div class="equation">ln <var>X</var><sub>ij</sub> = α + βₒ ln GDP<sub>i</sub> + β<sub>d</sub> ln GDP<sub>j</sub> + β<sub>r</sub> ln distance<sub>ij</sub> + γ Border<sub>ij</sub> + λ Language<sub>ij</sub> + ρ RTA<sub>ij</sub> + <var>u</var><sub>ij</sub></div>
+      <div class="three-col">
+        <div class="definition-card"><h3>Outcome</h3><p><var>X</var><sub>ij</sub> is exports from origin <strong>i</strong> to destination <strong>j</strong>.</p></div>
+        <div class="definition-card"><h3>Predictors</h3><p>GDP and distance are continuous; border, language, and RTA equal 0 or 1.</p></div>
+        <div class="definition-card"><h3>Residual</h3><p><var>u</var><sub>ij</sub> collects what this short list does not explain.</p></div>
+      </div>
+      <p class="callout"><strong>Holding fixed</strong> means fixing these included variables—not every historical, institutional, or firm-level difference.</p>
+      <p class="prompt"><strong>Discuss</strong> Name one omitted bilateral factor that could be correlated with distance or an agreement.</p>
+    </section>
+
+    <section class="slide" data-slide-title="OLS and PPML estimates" aria-hidden="true" tabindex="-1">
+      <h2>The signs are stable; the magnitudes are not</h2>
+      <div class="two-col wide-left">
+        <figure class="interactive-figure" data-expandable>
+          <div class="figure-header">
+            <figcaption class="figure-title">Gravity coefficients with 95% robust intervals</figcaption>
+            <button class="expand-button" type="button" data-expand aria-label="Expand coefficient chart">Expand ↗</button>
+          </div>
+          <div class="expandable-content">
+            <div class="toggle-row" aria-label="Choose regression estimator">
+              <button class="toggle-button" type="button" data-coefficient-model="ols" aria-pressed="false">Log-OLS</button>
+              <button class="toggle-button" type="button" data-coefficient-model="ppml" aria-pressed="true">PPML</button>
+            </div>
+            <div id="coefficient-chart" class="chart" role="img" aria-label="Interactive coefficient plot comparing gravity regression estimates"></div>
+          </div>
+        </figure>
+        <div>
+          <p><strong>Point:</strong> coefficient estimate</p>
+          <p><strong>Whisker:</strong> approximate 95% interval</p>
+          <p><strong>Zero line:</strong> no conditional association</p>
+          <p class="callout" data-coefficient-summary>PPML retains eligible zero flows. The language interval crosses zero; the distance estimate is −0.666.</p>
+          <p class="prompt"><strong>Find it</strong> Which coefficient changes most? Which interval crosses zero?</p>
+        </div>
+      </div>
+      <p class="source">Source: Author’s estimates from CEPII Gravity V202211, 2019. OLS uses 28,113 positive flows; PPML uses all 39,402 eligible dyads. HC1 intervals; descriptive.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Translate coefficients correctly" aria-hidden="true" tabindex="-1">
+      <h2>Slopes and 0/1 indicators translate differently</h2>
+      <div class="table-scroll"><table class="number-table">
+        <thead><tr><th>Change, holding regressors fixed</th><th>PPML coefficient</th><th>Exact calculation</th><th>Predicted difference</th></tr></thead>
+        <tbody>
+          <tr><td>Distance doubles</td><td>−0.666</td><td>100 × (2<sup>−0.666</sup> − 1)</td><td><strong>37% less</strong></td></tr>
+          <tr><td>Shared border: 0 → 1</td><td>0.362</td><td>100 × (e<sup>0.362</sup> − 1)</td><td><strong>44% more</strong></td></tr>
+          <tr><td>Official language: 0 → 1</td><td>0.146</td><td>100 × (e<sup>0.146</sup> − 1)</td><td>16% more</td></tr>
+          <tr><td>Trade agreement: 0 → 1</td><td>0.290</td><td>100 × (e<sup>0.290</sup> − 1)</td><td><strong>34% more</strong></td></tr>
+        </tbody>
+      </table></div>
+      <p class="callout">For an indicator, <span class="formula-line">100(e<sup>b</sup> − 1)</span> is exact. <span class="formula-line">100b</span> is only an approximation.</p>
+      <p class="source">Author’s PPML estimates from CEPII Gravity V202211, 2019. The language interval includes zero; the displayed distance, border, and RTA intervals do not.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Why PPML keeps zeros" aria-hidden="true" tabindex="-1">
+      <h2>Zero trade is information—not a number we can log</h2>
+      <div class="two-col">
+        <div class="panel">
+          <p class="eyebrow">The log-OLS problem</p>
+          <div class="equation">ln(0) is undefined</div>
+          <p>Log-OLS drops 11,289 completed-zero dyads. Adding a constant would make the result depend on an arbitrary choice.</p>
+        </div>
+        <div class="panel">
+          <p class="eyebrow">The PPML idea</p>
+          <div class="equation">E[<var>X</var><sub>ij</sub> | <var>Z</var><sub>ij</sub>] = exp(<var>Z</var><sub>ij</sub>′β)</div>
+          <p>Estimate the conditional mean in levels. Observed trade can equal zero; fitted trade remains positive.</p>
+        </div>
+      </div>
+      <p class="callout">PPML does <strong>not</strong> require trade to be a count, nor its variance to equal its mean. Robust standard errors are still needed.</p>
+      <p class="prompt"><strong>Reason</strong> If distant pairs are more likely to trade zero, what could we miss by dropping every zero?</p>
+    </section>
+
+    <section class="slide" data-slide-title="Gravity is descriptive here" aria-hidden="true" tabindex="-1">
+      <h2>This cross-section is powerful—but not causal</h2>
+      <div class="two-col">
+        <div class="panel">
+          <h3>What it does</h3>
+          <ul><li>Summarizes a strong worldwide regularity.</li><li>Provides transparent elasticity calculations.</li><li>Builds a benchmark from observed bilateral features.</li></ul>
+        </div>
+        <div class="panel">
+          <h3>What remains unresolved</h3>
+          <ul><li>Policy can respond to expected trade.</li><li>History and supply chains are omitted.</li><li>Each country’s alternative markets matter.</li></ul>
+        </div>
+      </div>
+      <div class="callout"><strong>Multilateral resistance:</strong> Vancouver–Seattle trade depends on their bilateral cost <em>relative to</em> the cost of each side’s other trading options.</div>
+      <p class="prompt"><strong>Restaurant analogy</strong> Is a restaurant 10 km away “far” when every alternative is 100 km away?</p>
+    </section>
+
+    <section class="slide" data-slide-title="Ten-minute break" aria-hidden="true" tabindex="-1">
+      <div style="text-align:center">
+        <p class="eyebrow">10-minute break</p>
+        <h1>Back at 11:15</h1>
+        <p style="font-size:clamp(1.2rem,2.5vw,2rem)">Next: can gravity account for Canada’s U.S. orientation?</p>
+        <p class="callout"><strong>Rule for the EU:</strong> predict every member-country pair first, then aggregate in levels.</p>
+      </div>
+    </section>
+
+    <section class="slide" data-slide-title="Canada–U.S. versus Canada–EU27" aria-hidden="true" tabindex="-1">
+      <h2>Observed and fitted trade answer different questions</h2>
+      <div class="two-col wide-left">
+        <figure class="interactive-figure" data-expandable>
+          <div class="figure-header">
+            <figcaption class="figure-title">Canada–U.S. and Canada–EU27 merchandise trade, 2019</figcaption>
+            <button class="expand-button" type="button" data-expand aria-label="Expand Canada U.S. EU trade chart">Expand ↗</button>
+          </div>
+          <div class="expandable-content">
+            <div class="toggle-row" aria-label="Choose trade direction">
+              <button class="toggle-button" type="button" data-canada-direction="exports" aria-pressed="true">Canadian exports</button>
+              <button class="toggle-button" type="button" data-canada-direction="imports" aria-pressed="false">Canadian imports</button>
+            </div>
+            <div id="canada-trade-chart" class="chart" role="img" aria-label="Interactive comparison of actual and fitted Canadian trade with the United States and EU27"></div>
+          </div>
+        </figure>
+        <div>
+          <div class="metric"><strong id="canada-observed-ratio">14.2×</strong><span>observed U.S./EU27 ratio</span></div>
+          <div class="metric"><strong id="canada-fitted-ratio">4.1×</strong><span>gravity-fitted ratio</span></div>
+          <p class="callout" data-canada-summary>Observed U.S./EU27 ratio: <strong>14.2×</strong>. Fitted ratio: <strong>4.1×</strong>. Residual orientation: <strong>3.5×</strong>.</p>
+        </div>
+      </div>
+      <p class="source">Source: Author’s estimates from CEPII Gravity V202211 and BACI, 2019. EU27 excludes the United Kingdom.</p>
+    </section>
+
+    <section class="slide" data-slide-title="How to compare with an EU bloc" aria-hidden="true" tabindex="-1">
+      <h2>The EU27 is 27 dyads—not one fictional country</h2>
+      <div class="two-col">
+        <div class="panel">
+          <p class="eyebrow">Observed export ratio</p>
+          <div class="equation"><var>R</var> = <var>X</var><sub>CAN,US</sub> ÷ Σ<sub>j∈EU27</sub> <var>X</var><sub>CAN,j</sub></div>
+          <p>Fix Canada as exporter. Sum actual exports to the 27 EU members.</p>
+        </div>
+        <div class="panel">
+          <p class="eyebrow">Fitted export ratio</p>
+          <div class="equation"><var>R̂</var> = <var>X̂</var><sub>CAN,US</sub> ÷ Σ<sub>j∈EU27</sub> <var>X̂</var><sub>CAN,j</sub></div>
+          <p>Predict all 28 dyads in levels, then add the EU predictions.</p>
+        </div>
+      </div>
+      <div class="callout"><strong>Residual orientation:</strong> <span class="formula-line"><var>R</var> ÷ <var>R̂</var></span>. If it exceeds 1, Canada is more U.S.-oriented than this measured gravity benchmark predicts.</div>
+      <p class="prompt"><strong>Why?</strong> Averaging EU distances or logs generally cannot reproduce a sum of country-level trade predictions.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Decomposing U.S. orientation" aria-hidden="true" tabindex="-1">
+      <h2>Geography explains part of a larger orientation</h2>
+      <div class="two-col wide-left">
+        <figure class="interactive-figure" data-expandable>
+          <div class="figure-header">
+            <figcaption class="figure-title">Sequential accounting of the log U.S./EU27 ratio</figcaption>
+            <button class="expand-button" type="button" data-expand aria-label="Expand gravity decomposition">Expand ↗</button>
+          </div>
+          <div class="expandable-content">
+            <div class="toggle-row" aria-label="Choose trade direction">
+              <button class="toggle-button" type="button" data-waterfall-direction="exports" aria-pressed="true">Exports</button>
+              <button class="toggle-button" type="button" data-waterfall-direction="imports" aria-pressed="false">Imports</button>
+            </div>
+            <div id="waterfall-chart" class="chart" role="img" aria-label="Interactive waterfall decomposition of Canada U.S. versus EU27 trade"></div>
+          </div>
+        </figure>
+        <div>
+          <p>Move left to right. Each floating bar changes the running <strong>log ratio</strong>.</p>
+          <p data-waterfall-summary>Measured gravity reaches 4.12×; residual orientation multiplies it by 3.45 to reach 14.22×.</p>
+          <p class="callout">This is an order-dependent accounting exercise—not a causal decomposition.</p>
+          <p class="prompt"><strong>Trace it</strong> Which measured step adds the most after GDP?</p>
+        </div>
+      </div>
+      <p class="source">Source: Author’s PPML accounting from CEPII Gravity V202211 and BACI, 2019.</p>
+    </section>
+
+    <section class="slide" data-slide-title="CETA and the EU opportunity" aria-hidden="true" tabindex="-1">
+      <h2>CETA lowers one cost; it does not move Europe closer</h2>
+      <div class="two-col">
+        <div>
+          <div class="metric"><strong>98%</strong><span>of EU tariff lines duty-free for Canadian goods</span></div>
+          <p>CETA has applied provisionally since September 2017. It lowers tariffs and some customs and regulatory frictions.</p>
+          <p class="callout">Large EU demand pulls trade up. Distance, fixed export costs, product fit, and established networks still push it down.</p>
+        </div>
+        <figure class="interactive-figure" data-expandable>
+          <div class="figure-header">
+            <figcaption class="figure-title">Canadian exports to the EU27, 2019</figcaption>
+            <button class="expand-button" type="button" data-expand aria-label="Expand CETA benchmark chart">Expand ↗</button>
+          </div>
+          <div class="expandable-content">
+            <div id="ceta-chart" class="chart compact" role="img" aria-label="Actual and gravity-fitted Canadian exports to the EU27"></div>
+          </div>
+        </figure>
+      </div>
+      <p class="source">Sources: <a href="https://www.international.gc.ca/trade-commerce/trade-agreements-accords-commerciaux/agr-acc/ceta-aecg/ceta_explained-aecg_apercu.aspx?lang=eng" target="_blank" rel="noopener">Global Affairs Canada, CETA explained</a>; CEPII Gravity and BACI, 2019. The US$53.3B fit gap is a conditional benchmark—not guaranteed exports or a causal CETA estimate.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Quebec and B.C. face different gravity fields" aria-hidden="true" tabindex="-1">
+      <h2>Quebec trades far more with the EU27 than B.C.</h2>
+      <div class="two-col wide-left">
+        <figure class="interactive-figure" data-expandable>
+          <div class="figure-header">
+            <figcaption class="figure-title">Provincial EU27 merchandise trade, 2025</figcaption>
+            <button class="expand-button" type="button" data-expand aria-label="Expand provincial trade chart">Expand ↗</button>
+          </div>
+          <div class="expandable-content">
+            <div id="province-chart" class="chart" role="img" aria-label="Interactive stacked bars comparing Quebec and British Columbia trade with the EU27"></div>
+          </div>
+        </figure>
+        <div>
+          <div class="metric"><strong>6.41×</strong><span>observed Quebec/B.C. EU export ratio</span></div>
+          <div class="metric"><strong>1.71×</strong><span>simple GDP-and-distance benchmark</span></div>
+          <p class="callout"><strong>Remaining 3.74×:</strong> products, firms, logistics, history, and B.C.’s Pacific alternatives may matter.</p>
+        </div>
+      </div>
+      <p class="source">Sources: Statistics Canada <a href="https://doi.org/10.25318/1210017301-eng" target="_blank" rel="noopener">12-10-0173-01</a> and <a href="https://doi.org/10.25318/3610022201-eng" target="_blank" rel="noopener">36-10-0222-01</a>; CEPII. Montreal/Vancouver–Brussels distance proxies; imports use customs-clearance province.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Gravity persists while trade shares change" aria-hidden="true" tabindex="-1">
+      <h2>Canada diversified—but geography did not disappear</h2>
+      <div class="two-col wide-left">
+        <figure class="interactive-figure" data-expandable>
+          <div class="figure-header">
+            <figcaption class="figure-title">U.S. share of Canada’s merchandise trade, 1999–2025</figcaption>
+            <button class="expand-button" type="button" data-expand aria-label="Expand historical U.S. share chart">Expand ↗</button>
+          </div>
+          <div class="expandable-content">
+            <div id="us-share-chart" class="chart" role="img" aria-label="Interactive line chart of the U.S. share of Canadian exports and imports since 1999"></div>
+          </div>
+        </figure>
+        <div>
+          <p class="eyebrow">Do not confuse three objects</p>
+          <ul>
+            <li><strong>22×:</strong> McCallum’s conditional home-bias ratio.</li>
+            <li><strong>44%:</strong> Anderson–van Wincoop’s border-removal counterfactual.</li>
+            <li><strong>6.9%:</strong> Bemrose et al.’s provincial-border tariff equivalent.</li>
+          </ul>
+          <p class="callout">A ratio, a counterfactual change, and a tariff equivalent are not competing estimates of one quantity.</p>
+        </div>
+      </div>
+      <p class="source">Sources: Statistics Canada <a href="https://doi.org/10.25318/1210017101-eng" target="_blank" rel="noopener">12-10-0171-01</a>; <a href="https://econpapers.repec.org/article/aeaaecrev/v_3a85_3ay_3a1995_3ai_3a3_3ap_3a615-23.htm" target="_blank" rel="noopener">McCallum (1995)</a>; <a href="https://www.aeaweb.org/articles?id=10.1257/000282803321455214" target="_blank" rel="noopener">Anderson &amp; van Wincoop (2003)</a>; <a href="https://www150.statcan.gc.ca/n1/pub/11f0019m/11f0019m2017394-eng.htm" target="_blank" rel="noopener">Bemrose, Brown &amp; Tweedle (2017)</a>.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Week 4 handwritten quick check" aria-hidden="true" tabindex="-1">
+      <h2>Week 4 handwritten quick check</h2>
+      <ol class="quiz-list">
+        <li>In plain language, state gravity’s two forces. Use them to explain why Canada might trade more with the U.S. than with the EU27. No equation. <strong>[4]</strong></li>
+        <li>The PPML distance coefficient is −0.666. Calculate 2<sup>−0.666</sup>, then interpret both the ratio and the percent difference when distance doubles. <strong>[3]</strong></li>
+        <li>Canada’s observed export U.S./EU27 ratio was 14.2; gravity fitted 4.1. Calculate 14.2 ÷ 4.1, interpret it, and explain why it is not automatically “the CUSMA effect.” <strong>[3]</strong></li>
+      </ol>
+      <p class="callout"><strong>One-sentence discipline:</strong> use “is associated with” for this cross-section. Every numerical answer needs a unit or percent interpretation.</p>
+    </section>
+  </main>
+
+  <footer class="deck-controls" aria-label="Slide navigation">
+    <button class="nav-button" type="button" data-action="previous" aria-label="Previous slide">←</button>
+    <span class="slide-count" data-slide-count aria-live="polite">1 / 22</span>
+    <button class="nav-button" type="button" data-action="next" aria-label="Next slide">→</button>
+  </footer>
+
+  <dialog id="figure-dialog" aria-labelledby="figure-dialog-title">
+    <div class="dialog-header">
+      <strong id="figure-dialog-title" data-dialog-title>Expanded figure</strong>
+      <button class="dialog-close" type="button" data-action="close-dialog" aria-label="Close expanded figure">×</button>
+    </div>
+    <div class="dialog-content" data-dialog-content></div>
+  </dialog>
+
+  <dialog id="overview-dialog" aria-labelledby="overview-dialog-title">
+    <div class="dialog-header">
+      <strong id="overview-dialog-title">Slide overview</strong>
+      <button class="dialog-close" type="button" data-action="close-dialog" aria-label="Close slide overview">×</button>
+    </div>
+    <div class="dialog-content"><div class="overview-grid" data-overview-grid></div></div>
+  </dialog>
+
+  <noscript>
+    <p style="position:fixed;inset:1rem;z-index:100;padding:1rem;background:#fff4d6;border:2px solid #c99700">This live deck needs JavaScript for navigation and interactive charts. Enable JavaScript, or use the printable Week 4 PDF from the course repository.</p>
+  </noscript>
+</body>
+</html>

@@ -7,8 +7,20 @@ These labs use real trade data and AI-assisted coding. Codex can help inspect,
 write, run, and repair code. Students remain responsible for the economic
 definitions, validation checks, and interpretation.
 
-This is the public student repository. Course slides, solutions, assessments,
-grading materials, and student submissions are maintained separately.
+This is the public student repository. Selected student-facing classes are also
+published here as interactive web slides. Instructor notes, solutions,
+assessments, grading materials, and student submissions are maintained
+separately in a private repository.
+
+## Interactive classes
+
+Open the live course hub at
+<https://vaguiarl.github.io/econ342-codex-labs/>.
+
+The Week 4 deck on gravity includes keyboard and touch navigation, live
+calculators, accessible chart tooltips, and click-to-expand figures. The web
+version is the main classroom format; PDF remains useful for printing and
+offline access.
 
 ## Available labs
 
