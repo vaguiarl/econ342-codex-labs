@@ -22,6 +22,11 @@ calculators, accessible chart tooltips, and click-to-expand figures. The web
 version is the main classroom format; PDF remains useful for printing and
 offline access.
 
+Students can also use the shorter
+[Week 4 study deck](https://vaguiarl.github.io/econ342-codex-labs/week04/study/),
+which keeps only the essential intuition, calculations, evidence, and
+click-to-reveal review questions.
+
 ## Available labs
 
 | Week | Lab | Main question |
