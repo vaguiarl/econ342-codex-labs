@@ -48,8 +48,7 @@ button {
 button:focus-visible,
 a:focus-visible,
 input:focus-visible {
-  outline: 3px solid #8a6500;
-  outline: 3px solid color-mix(in srgb, var(--gold) 75%, white);
+  outline: 3px solid #765000;
   outline-offset: 3px;
 }
 
@@ -668,6 +667,15 @@ input[type="range"] {
   color: var(--sfu-red-dark);
 }
 
+.mobile-chart-hint {
+  display: none;
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.82rem !important;
+  font-weight: 750;
+  text-align: right;
+}
+
 .screen-reader-only {
   position: absolute;
   width: 1px;
@@ -987,6 +995,10 @@ dialog::backdrop {
 
   .chart svg {
     min-width: 720px;
+  }
+
+  .mobile-chart-hint {
+    display: block;
   }
 
   .source {

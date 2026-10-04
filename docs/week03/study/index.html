@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A simplified student study deck for ECON 342 Week 3: RCA, product proximity, density, and Canada's product space.">
+  <title>Week 3 study deck · Product space · ECON 342</title>
+  <link rel="stylesheet" href="../../assets/site.css?v=20261003-week03">
+  <style>
+    @media (min-width: 851px) {
+      .study-deck .slide { padding-top: clamp(1rem, 2vw, 1.8rem); padding-bottom: clamp(1rem, 2vw, 1.8rem); }
+      .study-deck .slide h2 { margin-bottom: clamp(.8rem, 1.5vw, 1.25rem); font-size: clamp(2rem, 3.5vw, 3.5rem); }
+      .study-deck .slide p, .study-deck .slide li, .study-deck .slide label { font-size: clamp(1rem, 1.45vw, 1.3rem); }
+      .study-deck .metric { min-height: 82px; padding: .6rem; }
+      .study-deck .metric strong { font-size: clamp(2rem, 3.4vw, 3.4rem); }
+      .study-deck .chart { min-height: clamp(220px, 34vh, 350px); }
+      .study-deck .chart.compact { min-height: clamp(190px, 27vh, 290px); }
+    }
+    .lab-link { display:inline-grid; place-items:center; padding:.72rem 1rem; border-radius:.7rem; background:var(--sfu-red); color:white; font-weight:800; text-decoration:none; }
+    .lab-link:hover { background:var(--sfu-red-dark); }
+    .check-cell { text-align:center !important; }
+    .case-metrics .metric strong { font-size: clamp(1.25rem, 1.8vw, 2rem); }
+    .study-deck .source { margin-top:.5rem; }
+    .study-candidate-figure { max-height:min(38vh,305px); }
+    .dialog-content .study-candidate-figure { width:100%; max-height:none; }
+    .figure-subtitle { display:block; margin-top:.12rem; color:var(--muted); font-size:.82em; font-weight:650; line-height:1.25; }
+    @media (max-width: 850px) {
+      .study-candidate-figure { max-height:none; }
+      .dialog-content .study-candidate-figure { width:1100px; max-width:none; }
+    }
+  </style>
+  <script defer src="../../assets/charts.js"></script>
+  <script defer src="../../assets/week03-study.js"></script>
+  <script defer src="../../assets/slides.js"></script>
+</head>
+<body class="deck-body study-deck">
+  <header class="deck-toolbar" aria-label="Study deck toolbar">
+    <a class="deck-brand" href="../../">ECON 342</a>
+    <div class="deck-title" data-current-title aria-live="polite">Week 3 study deck</div>
+    <div class="toolbar-actions">
+      <a class="toolbar-link" href="../" title="Open the full Week 3 lecture deck">Full deck</a>
+      <a class="toolbar-link" href="https://github.com/vaguiarl/econ342-codex-labs/tree/main/labs/week03-product-space" target="_blank" rel="noopener" title="Open the Week 3 public data lab on GitHub">Lab</a>
+      <button class="icon-button" type="button" data-action="overview" aria-label="Open slide overview" title="Overview (O)">▦</button>
+      <button class="icon-button" type="button" data-action="fullscreen" aria-label="Enter full screen" title="Full screen (F)">⛶</button>
+    </div>
+  </header>
+
+  <div class="deck-progress" role="progressbar" aria-label="Slide progress" aria-valuemin="1" aria-valuenow="1" aria-valuemax="10"><span data-progress></span></div>
+
+  <main class="deck" aria-label="Simplified Week 3 study deck">
+    <section class="slide cover-slide is-active" data-slide-title="Week 3 in three ideas" aria-hidden="false" tabindex="0">
+      <div>
+        <p class="eyebrow">ECON 342 · Week 3 · Study version</p>
+        <h1>Product space in three ideas</h1>
+        <p class="study-rule"><strong>RCA</strong> describes a country's export basket. <strong>Proximity</strong> connects products globally. <strong>Density</strong> asks how much of a candidate's neighbourhood Canada already occupies.</p>
+      </div>
+      <div class="cover-meta">
+        <ol class="study-steps">
+          <li>Compare export shares.</li>
+          <li>Build product-product links.</li>
+          <li>Screen candidates—then challenge them.</li>
+        </ol>
+        <p class="subtle">Ten short slides · about 15 minutes · print-friendly</p>
+      </div>
+    </section>
+
+    <section class="slide" data-slide-title="The RCA bridge" aria-hidden="true" tabindex="-1">
+      <h2 data-step="1">RCA is a share divided by a benchmark share</h2>
+      <div class="two-col wide-left">
+        <figure class="interactive-figure" data-expandable aria-labelledby="week03-study-specialization-caption">
+          <div class="figure-header">
+            <figcaption class="figure-title" id="week03-study-specialization-caption">Selected Week 2 export-basket comparisons, 2023</figcaption>
+            <button class="expand-button" type="button" data-expand aria-label="Expand relative-specialization chart">Expand ↗</button>
+          </div>
+          <div class="expandable-content"><div id="study-specialization-chart" class="chart" role="img" aria-label="Selected products' prominence in Canadian exports relative to U.S. exports"></div><p class="mobile-chart-hint">Swipe the chart left to see every bar and value →</p></div>
+        </figure>
+        <div>
+          <div class="equation"><var>RCA</var><sub>c,p</sub> = country product share ÷ world product share</div>
+          <p class="study-rule"><strong>RCA ≥ 1:</strong> product <var>p</var> is unusually prominent in country <var>c</var>'s export basket relative to the world benchmark.</p>
+          <p class="callout">RCA is revealed specialization—not a direct measure of technology or Ricardian opportunity cost.</p>
+        </div>
+      </div>
+      <p class="source">Week 2 chart source: UN Comtrade public API, HS 2022 two-digit merchandise exports, 2023.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Calculate and interpret RCA" aria-hidden="true" tabindex="-1">
+      <h2 data-step="2">RCA below one does not mean zero exports</h2>
+      <div class="two-col">
+        <div class="panel">
+          <div class="control-grid">
+            <div class="slider-control">
+              <label for="study-rca-country">Canadian share <output id="study-rca-country-value">0.306%</output></label>
+              <input id="study-rca-country" type="range" min="0.05" max="0.8" step="0.001" value="0.306">
+            </div>
+            <div class="slider-control">
+              <label for="study-rca-world">World share <output id="study-rca-world-value">0.419%</output></label>
+              <input id="study-rca-world" type="range" min="0.05" max="0.8" step="0.001" value="0.419">
+            </div>
+          </div>
+          <div class="equation"><span id="study-rca-formula">0.306 ÷ 0.419 = 0.73</span></div>
+        </div>
+        <div class="panel" aria-live="polite">
+          <p class="eyebrow">Filtering machinery, 2024</p>
+          <div class="big-result" id="study-rca-result">0.73</div>
+          <p id="study-rca-interpretation">Its share of Canadian exports is 73% of its share of world exports, so binary presence M = 0.</p>
+          <div class="metric"><strong>US$1.64B</strong><span>Canadian exports despite RCA &lt; 1</span></div>
+        </div>
+      </div>
+      <p class="source">Source: Course reconstruction from Harvard Growth Lab Atlas data, HS4 8421, 2024.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Product proximity" aria-hidden="true" tabindex="-1">
+      <h2 data-step="3">Proximity is a worldwide product-pair measure</h2>
+      <div class="two-col wide-left">
+        <div class="panel">
+          <div class="equation">φ<sub>p,q</sub> = min{both ÷ countries with <var>q</var>, both ÷ countries with <var>p</var>}</div>
+          <div class="control-grid">
+            <div class="slider-control"><label for="study-proximity-p">Countries specialized in pulp (M = 1) <output id="study-proximity-p-value">10</output></label><input id="study-proximity-p" type="range" min="1" max="20" step="1" value="10"></div>
+            <div class="slider-control"><label for="study-proximity-q">Countries specialized in paper (M = 1) <output id="study-proximity-q-value">8</output></label><input id="study-proximity-q" type="range" min="1" max="20" step="1" value="8"></div>
+          </div>
+          <div class="slider-control"><label for="study-proximity-both">Countries specialized in both <output id="study-proximity-both-value">6</output></label><input id="study-proximity-both" type="range" min="0" max="8" step="1" value="6"></div>
+        </div>
+        <div class="panel" aria-live="polite">
+          <p class="eyebrow">Pulp–paper proximity</p>
+          <div class="big-result" id="study-proximity-result">0.60</div>
+          <p id="study-proximity-detail">min{6/8, 6/10} = min{0.75, 0.60} = 0.60</p>
+          <p class="study-rule"><strong>Remember:</strong> proximity compares two products across countries. It is global—not Canada-specific and not an input-output link.</p>
+        </div>
+      </div>
+      <p class="source">Method: Hidalgo et al., <a href="https://doi.org/10.1126/science.1144581" target="_blank" rel="noopener"><em>Science</em> 317 (2007)</a>. Numbers are illustrative.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Canada-specific density" aria-hidden="true" tabindex="-1">
+      <h2 data-step="4">Density asks which neighbours Canada already occupies</h2>
+      <div class="two-col wide-left">
+        <div>
+          <div class="equation"><var>D</var><sub>CAN,p</sub> = weighted links to Canadian RCA products ÷ all links</div>
+          <div class="table-scroll"><table class="number-table">
+            <thead><tr><th>Coated-board neighbour</th><th>φ</th><th class="check-cell">Canadian RCA ≥ 1?</th></tr></thead>
+            <tbody>
+              <tr><td>Wood pulp</td><td>0.50</td><td class="check-cell"><input type="checkbox" data-study-density="0.50" checked aria-label="Canada has revealed specialization in wood pulp"></td></tr>
+              <tr><td>Paper</td><td>0.30</td><td class="check-cell"><input type="checkbox" data-study-density="0.30" checked aria-label="Canada has revealed specialization in paper"></td></tr>
+              <tr><td>Printing machinery</td><td>0.20</td><td class="check-cell"><input type="checkbox" data-study-density="0.20" aria-label="Canada has revealed specialization in printing machinery"></td></tr>
+            </tbody>
+          </table></div>
+        </div>
+        <div class="panel" aria-live="polite">
+          <p class="eyebrow">Candidate: coated board</p>
+          <div class="big-result" id="study-density-result">80%</div>
+          <p id="study-density-detail">(0.50 + 0.30) ÷ 1.00 = 0.80</p>
+          <p class="callout">Density is relatedness—not an 80% probability of success.</p>
+        </div>
+      </div>
+      <p class="source">Illustrative values. Course convention sets the candidate's self-link to zero.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Canada's candidate screen" aria-hidden="true" tabindex="-1">
+      <h2 data-step="5">Nearby and complex are different dimensions</h2>
+      <figure class="interactive-figure" data-expandable aria-labelledby="week03-study-candidates-caption">
+        <div class="figure-header">
+          <figcaption class="figure-title" id="week03-study-candidates-caption">Canadian product-space candidates, 2024<span class="figure-subtitle">Right = higher Canadian density · up = greater Atlas product complexity</span></figcaption>
+          <button class="expand-button" type="button" data-expand aria-label="Expand Canada's candidate scatterplot">Expand ↗</button>
+        </div>
+        <div class="expandable-content"><img class="static-figure study-candidate-figure" src="../../assets/figures/canada-product-space-candidates-web-2024.png" alt="Scatterplot of Canadian candidate products by density and product complexity with five discussion cases highlighted" aria-describedby="study-candidate-figure-summary"><p id="study-candidate-figure-summary" class="screen-reader-only">Among the five highlighted discussion cases, electrical control panels have the highest density at 26.4 percent; rail parts follow at 25.9 percent; filtering machinery at 24.1 percent; diagnostic reagents at 23.9 percent; and radar and navigation equipment at 23.3 percent. Diagnostic reagents have the highest product complexity at 1.18, followed by rail parts at 0.99. These are selected comparisons, not a ranking or forecast.</p><p class="mobile-chart-hint">Tap Expand, then scroll the enlarged figure →</p></div>
+      </figure>
+      <p class="source">Source: Course reconstruction from Harvard Growth Lab Atlas GraphQL data, 2024 HS92 four-digit goods; retrieved September 28, 2026. Red labels are discussion cases, not a top-five ranking.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Five discussion cases" aria-hidden="true" tabindex="-1">
+      <h2 data-step="6">A candidate row supports a narrow claim</h2>
+      <div class="two-col wide-left">
+        <figure class="interactive-figure" data-expandable aria-labelledby="week03-study-cases-caption">
+          <div class="figure-header">
+            <figcaption class="figure-title" id="week03-study-cases-caption">Density of five lecture cases</figcaption>
+            <button class="expand-button" type="button" data-expand aria-label="Expand five-case density chart">Expand ↗</button>
+          </div>
+          <div class="expandable-content"><div id="study-case-chart" class="chart compact" role="img" aria-label="Density comparison for five Canadian product-space discussion cases"></div><p class="mobile-chart-hint">Swipe the chart left to see every bar and value →</p></div>
+        </figure>
+        <div>
+          <div class="three-col case-metrics" style="gap:.6rem">
+            <div class="metric"><strong>0.73</strong><span>RCA</span></div>
+            <div class="metric"><strong>24.1%</strong><span>density</span></div>
+            <div class="metric"><strong>US$1.64B</strong><span>exports</span></div>
+          </div>
+          <p class="callout">For filtering machinery, Canada has positive exports, RCA below one, and a relatively present neighbourhood. We still need evidence on demand, costs, firms, workers, and policy.</p>
+        </div>
+      </div>
+      <p class="source">Source: Course reconstruction from Harvard Growth Lab Atlas GraphQL data, 2024. The five cases span sectors and trade-offs; they are not recommendations.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Binary and continuous RCA" aria-hidden="true" tabindex="-1">
+      <h2 data-step="7">The binary rule jumps; a continuous weight moves smoothly</h2>
+      <div class="two-col wide-left">
+        <div class="panel">
+          <div class="slider-control"><label for="study-continuous-rca">Choose RCA <output id="study-continuous-rca-value">0.73</output></label><input id="study-continuous-rca" type="range" min="0" max="3" step="0.01" value="0.73"></div>
+          <div class="two-col" style="gap:.7rem">
+            <div><p class="eyebrow">M = 1{RCA ≥ 1}</p><div class="big-result" id="study-binary-result">0</div></div>
+            <div><p class="eyebrow">RCA ÷ (1 + RCA)</p><div class="big-result" id="study-continuous-result">0.422</div></div>
+          </div>
+        </div>
+        <div>
+          <p class="study-rule"><strong>Why it matters:</strong> RCA values of 0.99 and 1.01 look almost identical continuously but lie on opposite sides of the binary cutoff.</p>
+          <p>The lab retains the classic binary method so every network step is transparent. Its output is not an exact copy of the current Atlas ranking.</p>
+        </div>
+      </div>
+      <p class="source">Source: <a href="https://atlas.hks.harvard.edu/glossary/" target="_blank" rel="noopener">Harvard Growth Lab Atlas glossary</a>, accessed September 28, 2026.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Evidence discipline and the public lab" aria-hidden="true" tabindex="-1">
+      <h2 data-step="8">Screen candidates, then try to disprove them</h2>
+      <div class="two-col">
+        <div class="panel">
+          <p class="eyebrow">Density can tell us</p>
+          <ul>
+            <li>how related a candidate is to Canada's observed export basket</li>
+            <li>which current specializations contribute most to that relatedness</li>
+            <li>which candidates merit closer investigation</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <p class="eyebrow">Density cannot establish</p>
+          <ul>
+            <li>future demand, profitability, or causal capabilities</li>
+            <li>domestic value added or distributional gains</li>
+            <li>that a subsidy or any other policy passes a cost-benefit test</li>
+          </ul>
+        </div>
+      </div>
+      <p class="study-rule"><strong>Audit rule:</strong> verify scope and units, calculate one RCA by hand, test proximity and density, reproduce the run, and compare every memo number with the CSV.</p>
+      <p style="margin:.45rem 0 0"><a class="lab-link" href="https://github.com/vaguiarl/econ342-codex-labs/tree/main/labs/week03-product-space" target="_blank" rel="noopener">Open the Week 3 public lab →</a></p>
+    </section>
+
+    <section class="slide" data-slide-title="Check yourself" aria-hidden="true" tabindex="-1">
+      <h2 data-step="9">Try first—then reveal the answer</h2>
+      <div class="study-checks">
+        <details>
+          <summary>1. What is the difference between RCA and Ricardian comparative advantage?</summary>
+          <p>RCA describes how prominent a product is in an observed export basket relative to a benchmark. Ricardian comparative advantage is a model concept based on relative opportunity cost. RCA can reflect technology, resources, geography, policy, prices, firms, and networks.</p>
+        </details>
+        <details>
+          <summary>2. Ten countries specialize in pulp, eight in paper, and six in both. Calculate proximity.</summary>
+          <p><span class="formula-line">min{6/8, 6/10} = min{0.75, 0.60} = 0.60</span>.</p>
+        </details>
+        <details>
+          <summary>3. What is fixed when calculating Canadian density for coated board?</summary>
+          <p>The country is fixed as Canada and the candidate is fixed as coated board. The neighbouring product <var>q</var> changes as we weight each link by whether Canada has RCA of at least one in that neighbour.</p>
+        </details>
+        <details>
+          <summary>4. Why is a high-density candidate not automatically a recommendation?</summary>
+          <p>The network omits demand, costs, profitability, firms, workers, regulations, geography within Canada, externalities, public cost, and the policy objective.</p>
+        </details>
+      </div>
+      <p class="study-rule"><strong>Ready when you can:</strong> calculate and distinguish RCA, proximity, and density—and state one missing fact before calling a candidate realistic.</p>
+    </section>
+  </main>
+
+  <footer class="deck-controls" aria-label="Slide navigation">
+    <button class="nav-button" type="button" data-action="previous" aria-label="Previous slide">←</button>
+    <span class="slide-count" data-slide-count aria-live="polite">1 / 10</span>
+    <button class="nav-button" type="button" data-action="next" aria-label="Next slide">→</button>
+  </footer>
+
+  <dialog id="figure-dialog" aria-labelledby="figure-dialog-title">
+    <div class="dialog-header">
+      <strong id="figure-dialog-title" data-dialog-title>Expanded figure</strong>
+      <button class="dialog-close" type="button" data-action="close-dialog" aria-label="Close expanded figure">×</button>
+    </div>
+    <div class="dialog-content" data-dialog-content></div>
+  </dialog>
+
+  <dialog id="overview-dialog" aria-labelledby="overview-dialog-title">
+    <div class="dialog-header">
+      <strong id="overview-dialog-title">Study slide overview</strong>
+      <button class="dialog-close" type="button" data-action="close-dialog" aria-label="Close slide overview">×</button>
+    </div>
+    <div class="dialog-content"><div class="overview-grid" data-overview-grid></div></div>
+  </dialog>
+
+  <noscript><p style="position:fixed;inset:1rem;z-index:100;padding:1rem;background:#fff4d6;border:2px solid #c99700">This study deck needs JavaScript for navigation, calculators, and charts. Enable JavaScript or open the public lab guide.</p></noscript>
+</body>
+</html>

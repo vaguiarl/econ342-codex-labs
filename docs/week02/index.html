@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interactive ECON 342 slides on opportunity cost, comparative advantage, gains from trade, and Canadian export specialization.">
+  <title>Week 2 · Comparative advantage and specialization · ECON 342</title>
+  <link rel="stylesheet" href="../assets/site.css?v=20261003-week02">
+  <style>
+    @media (min-width: 851px) {
+      .slide { padding-top: clamp(.8rem, 1.5vw, 1.35rem); padding-bottom: clamp(.8rem, 1.5vw, 1.35rem); }
+      .slide h2 { margin-bottom: clamp(.65rem, 1.3vw, 1.15rem); font-size: clamp(1.85rem, 3.35vw, 3.35rem); }
+      .slide p, .slide li, .slide label { font-size: clamp(.96rem, 1.35vw, 1.2rem); line-height: 1.42; }
+      .metric { min-height: 104px; }
+      .chart { min-height: clamp(220px, 34vh, 350px); }
+      .chart.compact { min-height: clamp(200px, 30vh, 310px); }
+    }
+    .calculator-results { margin-top: .8rem; }
+    .calculator-results .metric { min-height: 92px; }
+    .calculator-results .metric strong { font-size: clamp(1.45rem, 2.5vw, 2.7rem); }
+    .price-band { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .65rem; margin-top: .8rem; }
+    .price-band .definition-card { text-align: center; }
+    .price-band strong { display: block; color: var(--sfu-red); font-size: clamp(1.35rem, 2.4vw, 2.5rem); }
+    .bilateral-slide .source { margin-top:.45rem; }
+    @media (max-width: 850px) { .price-band { grid-template-columns: 1fr; } }
+  </style>
+  <script defer src="../assets/charts.js"></script>
+  <script defer src="../assets/week02.js"></script>
+  <script defer src="../assets/slides.js"></script>
+</head>
+<body class="deck-body">
+  <header class="deck-toolbar" aria-label="Presentation toolbar">
+    <a class="deck-brand" href="../">ECON 342</a>
+    <div class="deck-title" data-current-title>Comparative advantage and specialization</div>
+    <div class="toolbar-actions">
+      <a class="toolbar-link" href="study/" title="Open the simplified Week 2 study deck">Study</a>
+      <button class="icon-button" type="button" data-action="overview" aria-label="Open slide overview" title="Overview (O)">▦</button>
+      <button class="icon-button" type="button" data-action="fullscreen" aria-label="Enter full screen" title="Full screen (F)">⛶</button>
+    </div>
+  </header>
+
+  <div class="deck-progress" role="progressbar" aria-label="Slide progress" aria-valuemin="1" aria-valuenow="1" aria-valuemax="18"><span data-progress></span></div>
+
+  <main class="deck" aria-label="Week 2 slide deck">
+    <section class="slide cover-slide is-active" data-slide-title="Why does Canada export some products and import others?" aria-hidden="false" tabindex="0">
+      <div>
+        <p class="eyebrow">ECON 342 · Week 2</p>
+        <h1>Why does Canada export some products and import others?</h1>
+        <p class="callout">Comparative advantage is about <strong>relative opportunity cost</strong>—not who is most productive in absolute terms.</p>
+      </div>
+      <div class="cover-meta">
+        <p><strong>Model:</strong> Ricardo’s two-country logic</p>
+        <p><strong>Tools:</strong> opportunity cost, PPFs, trade prices</p>
+        <p><strong>Evidence:</strong> Canada and the United States</p>
+        <p class="subtle">Use ← →, swipe, or the controls below.</p>
+      </div>
+    </section>
+
+    <section class="slide" data-slide-title="Start with the export pattern" aria-hidden="true" tabindex="-1">
+      <h2>Start with the pattern—before explaining it</h2>
+      <div class="two-col wide-left">
+        <figure class="interactive-figure" data-expandable aria-labelledby="week02-specialization-caption">
+          <div class="figure-header">
+            <figcaption class="figure-title" id="week02-specialization-caption">Product prominence in Canada’s export basket relative to the U.S., 2023</figcaption>
+            <button class="expand-button" type="button" data-expand aria-label="Expand relative specialization chart">Expand ↗</button>
+          </div>
+          <div class="expandable-content">
+            <div id="specialization-chart" class="chart" role="img" aria-label="Interactive bars comparing selected product shares in Canadian and United States merchandise exports"></div>
+            <p class="mobile-chart-hint">Swipe the chart left to see every bar and value →</p>
+          </div>
+        </figure>
+        <div>
+          <div class="metric"><strong>6.19×</strong><span>fertilizers’ relative prominence</span></div>
+          <div class="metric"><strong>0.28×</strong><span>electrical equipment’s relative prominence</span></div>
+          <p class="prompt"><strong>Notice</strong> Both countries export products on both sides of the chart.</p>
+        </div>
+      </div>
+      <p class="source">Source: Author’s calculation from <a href="https://comtradeplus.un.org/" target="_blank" rel="noopener">UN Comtrade</a>, HS 2022 chapters, merchandise exports to the world, 2023.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Description is not explanation" aria-hidden="true" tabindex="-1">
+      <h2>The chart describes specialization; it does not identify its cause</h2>
+      <div class="two-col">
+        <div class="panel">
+          <p class="eyebrow">Supported by the chart</p>
+          <ul>
+            <li>Fertilizers and wood occupy larger shares of Canada’s export basket.</li>
+            <li>Machinery and electrical equipment occupy larger shares of the U.S. basket.</li>
+            <li>Specialization is a matter of degree, not all-or-nothing trade.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <p class="eyebrow">Requires more evidence</p>
+          <ul>
+            <li>Production technologies and factor endowments.</li>
+            <li>Distance, policy, scale, firms, and supply chains.</li>
+            <li>Whether a particular trade flow raises welfare.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="callout"><strong>Our next move:</strong> isolate one mechanism—relative production cost—with a deliberately simple model.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Absolute advantage compares levels" aria-hidden="true" tabindex="-1">
+      <h2>Absolute advantage compares productivity levels</h2>
+      <div class="two-col wide-right">
+        <div class="panel">
+          <p class="eyebrow">Illustrative technology</p>
+          <div class="table-scroll"><table class="number-table">
+            <thead><tr><th>Hours per unit</th><th>Lumber</th><th>Machinery</th></tr></thead>
+            <tbody><tr><td>Canada</td><td>2</td><td>8</td></tr><tr><td>United States</td><td>1</td><td>3</td></tr></tbody>
+          </table></div>
+        </div>
+        <div>
+          <div class="equation">productivity per hour = 1 ÷ hours per unit</div>
+          <p>The United States uses fewer hours for <em>both</em> goods, so it has the absolute advantage in both.</p>
+          <p class="callout">That fact alone does not tell us how the two countries should allocate production.</p>
+        </div>
+      </div>
+      <p class="source">Illustrative values chosen for teaching; they are not empirical estimates.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Opportunity cost compares ratios" aria-hidden="true" tabindex="-1">
+      <h2>Opportunity cost asks what must be given up</h2>
+      <div class="equation">OC(1 unit of A) = hours for A ÷ hours for B &nbsp; units of B</div>
+      <div class="two-col">
+        <div class="panel">
+          <p class="eyebrow">Canada</p>
+          <p class="formula-line">OC(1 lumber) = 2 ÷ 8 = ¼ machine</p>
+          <p class="formula-line">OC(1 machine) = 8 ÷ 2 = 4 lumber</p>
+        </div>
+        <div class="panel">
+          <p class="eyebrow">United States</p>
+          <p class="formula-line">OC(1 lumber) = 1 ÷ 3 = ⅓ machine</p>
+          <p class="formula-line">OC(1 machine) = 3 ÷ 1 = 3 lumber</p>
+        </div>
+      </div>
+      <p class="prompt"><strong>Check</strong> Within a country, why are the two opportunity costs reciprocals?</p>
+    </section>
+
+    <section class="slide" data-slide-title="Build the opportunity costs" aria-hidden="true" tabindex="-1">
+      <h2>Change the technology and recompute the prediction</h2>
+      <div class="two-col">
+        <div class="panel">
+          <p class="eyebrow">Canada · hours per unit</p>
+          <div class="slider-control"><label for="can-labour-l">Lumber <output id="can-labour-l-value">2 h</output></label><input id="can-labour-l" type="range" min="1" max="12" step="1" value="2"></div>
+          <div class="slider-control"><label for="can-labour-m">Machinery <output id="can-labour-m-value">8 h</output></label><input id="can-labour-m" type="range" min="1" max="12" step="1" value="8"></div>
+        </div>
+        <div class="panel">
+          <p class="eyebrow">United States · hours per unit</p>
+          <div class="slider-control"><label for="us-labour-l">Lumber <output id="us-labour-l-value">1 h</output></label><input id="us-labour-l" type="range" min="1" max="12" step="1" value="1"></div>
+          <div class="slider-control"><label for="us-labour-m">Machinery <output id="us-labour-m-value">3 h</output></label><input id="us-labour-m" type="range" min="1" max="12" step="1" value="3"></div>
+        </div>
+      </div>
+      <div class="three-col calculator-results" aria-live="polite">
+        <div class="metric"><strong id="can-machine-oc">4.00 L</strong><span>Canada: cost of one machine</span></div>
+        <div class="metric"><strong id="us-machine-oc">3.00 L</strong><span>U.S.: cost of one machine</span></div>
+        <div class="metric"><strong id="comparative-result">CAN → lumber</strong><span id="comparative-detail">U.S. → machinery</span></div>
+      </div>
+      <p class="callout" id="absolute-result" aria-live="polite">The United States has the absolute advantage in both goods.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Comparative advantage uses the lower cost" aria-hidden="true" tabindex="-1">
+      <h2>Comparative advantage follows the lower opportunity cost</h2>
+      <div class="two-col">
+        <div class="metric"><strong>¼ &lt; ⅓</strong><span>Canada gives up less machinery for one lumber</span></div>
+        <div class="metric"><strong>3 &lt; 4</strong><span>United States gives up less lumber for one machine</span></div>
+      </div>
+      <div class="concept-flow">
+        <div class="definition-card"><h3>Canada</h3><p>Comparative advantage in lumber.</p></div>
+        <div class="concept-arrow" aria-hidden="true">↔</div>
+        <div class="definition-card"><h3>United States</h3><p>Comparative advantage in machinery.</p></div>
+      </div>
+      <p class="prompt"><strong>Say it</strong> Absolute advantage compares levels. Comparative advantage compares opportunity costs.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Ricardo predicts allocation" aria-hidden="true" tabindex="-1">
+      <h2>Ricardo’s model predicts allocation from relative cost</h2>
+      <div class="two-col">
+        <div class="panel">
+          <h3>What the model needs</h3>
+          <ul><li>Different relative production costs.</li><li>A trade price acceptable to both sides.</li><li>Resources that can move between the two activities.</li></ul>
+        </div>
+        <div class="panel">
+          <h3>What it does not need</h3>
+          <ul><li>Equal productivity levels.</li><li>One country to be absolutely best at a good.</li><li>Observed exports to prove the technology.</li></ul>
+        </div>
+      </div>
+      <p class="callout"><strong>Prediction:</strong> a country tends to export the good for which its opportunity cost is lower.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Read the production possibility frontiers" aria-hidden="true" tabindex="-1">
+      <h2>Twenty-four labour hours produce linear PPFs</h2>
+      <div class="two-col wide-left">
+        <figure class="interactive-figure" data-expandable aria-labelledby="week02-ppf-caption">
+          <div class="figure-header">
+            <figcaption class="figure-title" id="week02-ppf-caption">Maximum machinery at each lumber quantity</figcaption>
+            <button class="expand-button" type="button" data-expand aria-label="Expand production possibility chart">Expand ↗</button>
+          </div>
+          <div class="expandable-content"><div id="ppf-chart" class="chart" role="img" aria-label="Canada and United States linear production possibility frontiers"></div><p class="mobile-chart-hint">Swipe the chart left to inspect the full figure →</p></div>
+        </figure>
+        <div>
+          <div class="equation">Canada: M = 3 − ¼L</div>
+          <div class="equation">U.S.: M = 8 − ⅓L</div>
+          <p class="callout">Intercepts show maximum output. Slopes show opportunity cost.</p>
+        </div>
+      </div>
+      <p class="source">Illustrative technologies with 24 labour hours in each country.</p>
+    </section>
+
+    <section class="slide" data-slide-title="A PPF slope is an opportunity cost" aria-hidden="true" tabindex="-1">
+      <h2>A PPF slope records the cost of the horizontal-axis good</h2>
+      <div class="equation">slope = Δ machinery ÷ Δ lumber = −OC(1 lumber)</div>
+      <div class="three-col">
+        <div class="definition-card"><h3>Canada</h3><p>Slope = −¼. One extra lumber costs ¼ machine.</p></div>
+        <div class="definition-card"><h3>United States</h3><p>Slope = −⅓. One extra lumber costs ⅓ machine.</p></div>
+        <div class="definition-card"><h3>Read the axes</h3><p>Reverse the axes and each numerical slope becomes its reciprocal.</p></div>
+      </div>
+      <p class="study-rule"><strong>Flatter here means cheaper lumber:</strong> Canada has the lower opportunity cost of the horizontal-axis good.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Test a trade price" aria-hidden="true" tabindex="-1">
+      <h2>A mutually beneficial price lies between domestic costs</h2>
+      <div class="two-col wide-left">
+        <div class="panel">
+          <div class="slider-control">
+            <label for="machine-price">Lumber paid for one machine <output id="machine-price-value">3.5 L</output></label>
+            <input id="machine-price" type="range" min="0" max="10" step="0.001" value="3.5">
+          </div>
+          <div class="price-band">
+            <div class="definition-card"><strong id="price-low">3.0</strong><span>lower domestic cost</span></div>
+            <div class="definition-card"><strong id="price-current">3.5</strong><span>proposed trade price</span></div>
+            <div class="definition-card"><strong id="price-high">4.0</strong><span>higher domestic cost</span></div>
+          </div>
+        </div>
+        <div class="panel" aria-live="polite">
+          <p class="eyebrow">Verdict</p>
+          <div class="big-result" id="price-verdict">Trade works</div>
+          <p id="price-explanation">The U.S. can export machinery above its 3-lumber cost; Canada can import it below its 4-lumber cost.</p>
+        </div>
+      </div>
+      <p class="prompt"><strong>Try</strong> Move the price to 2.5 and 4.5. Which side rejects each proposal?</p>
+    </section>
+
+    <section class="slide" data-slide-title="Trade expands feasible consumption" aria-hidden="true" tabindex="-1">
+      <h2>One exchange can create consumption points beyond both PPFs</h2>
+      <div class="table-scroll"><table class="number-table">
+        <thead><tr><th></th><th>Canada lumber</th><th>Canada machinery</th><th>U.S. lumber</th><th>U.S. machinery</th></tr></thead>
+        <tbody>
+          <tr><td>Production after specialization</td><td>12</td><td>0</td><td>0</td><td>8</td></tr>
+          <tr><td>Trade at 1M = 3.5L</td><td>−7</td><td>+2</td><td>+7</td><td>−2</td></tr>
+          <tr><td><strong>Consumption</strong></td><td><strong>5</strong></td><td><strong>2</strong></td><td><strong>7</strong></td><td><strong>6</strong></td></tr>
+        </tbody>
+      </table></div>
+      <div class="two-col">
+        <div class="callout"><strong>Canada:</strong> at M = 2, its PPF permits only L = 4. Trade permits (5, 2).</div>
+        <div class="callout"><strong>United States:</strong> at M = 6, its PPF permits only L = 6. Trade permits (7, 6).</div>
+      </div>
+      <p class="prompt"><strong>Discipline</strong> A larger feasible set supports possible gains; welfare also depends on preferences and the actual terms of trade.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Pair practice" aria-hidden="true" tabindex="-1">
+      <h2>Practice with wheat and software</h2>
+      <div class="two-col">
+        <div class="panel">
+          <div class="table-scroll"><table class="number-table">
+            <thead><tr><th>Hours per unit</th><th>Wheat</th><th>Software</th></tr></thead>
+            <tbody><tr><td>Country A</td><td>2</td><td>10</td></tr><tr><td>Country B</td><td>1</td><td>4</td></tr></tbody>
+          </table></div>
+          <ol><li>Compute each cost of one software unit.</li><li>Assign comparative advantage.</li><li>Test 1 software = 4.5 wheat.</li></ol>
+        </div>
+        <div class="study-checks">
+          <details><summary>Reveal the opportunity costs</summary><p>A: 10 ÷ 2 = 5 wheat per software. B: 4 ÷ 1 = 4 wheat per software.</p></details>
+          <details><summary>Reveal comparative advantage</summary><p>A has comparative advantage in wheat; B has comparative advantage in software.</p></details>
+          <details><summary>Reveal the price test</summary><p>4 &lt; 4.5 &lt; 5, so B can sell software above its domestic cost while A buys below its domestic cost.</p></details>
+        </div>
+      </div>
+      <p class="source">Illustrative technology table.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Measure revealed specialization" aria-hidden="true" tabindex="-1">
+      <h2>Revealed specialization compares export-basket shares</h2>
+      <div class="equation">RS<sub>i</sub> = (Canada product i exports ÷ all Canada exports) ÷ (U.S. product i exports ÷ all U.S. exports)</div>
+      <div class="two-col">
+        <div class="panel">
+          <h3>How to read it</h3>
+          <ul><li><strong>RS &gt; 1:</strong> more prominent in Canada’s basket.</li><li><strong>RS &lt; 1:</strong> more prominent in the U.S. basket.</li><li><strong>RS = 1:</strong> equal basket shares.</li></ul>
+        </div>
+        <div class="panel">
+          <p class="eyebrow">Fertilizers, 2023</p>
+          <div class="equation">1.683% ÷ 0.272% = 6.19</div>
+          <p>Fertilizers are about 6.2 times as prominent in Canada’s merchandise-export basket.</p>
+        </div>
+      </div>
+      <p class="source">Author’s calculation from <a href="https://comtradeplus.un.org/" target="_blank" rel="noopener">UN Comtrade</a>, HS 2022 chapters, 2023. This Canada–U.S. basket comparison is not the standard world Balassa RCA.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Interpret Canadian export evidence" aria-hidden="true" tabindex="-1">
+      <h2>Canada’s export basket is relatively resource intensive</h2>
+      <div class="three-col">
+        <div class="metric"><strong>6.19×</strong><span>fertilizers</span></div>
+        <div class="metric"><strong>5.02×</strong><span>wood</span></div>
+        <div class="metric"><strong>3.14×</strong><span>aluminum</span></div>
+      </div>
+      <div class="three-col">
+        <div class="metric"><strong>0.65×</strong><span>machinery</span></div>
+        <div class="metric"><strong>0.28×</strong><span>electrical equipment</span></div>
+        <div class="metric"><strong>0.28×</strong><span>precision instruments</span></div>
+      </div>
+      <p class="callout"><strong>Careful claim:</strong> these categories occupy different shares of the two export baskets. They do not reveal technology alone or prove a Ricardian cause.</p>
+      <p class="source">Author’s calculation from UN Comtrade, HS 2022 chapters, merchandise exports to the world, 2023.</p>
+    </section>
+
+    <section class="slide bilateral-slide" data-slide-title="Canada–U.S. flows are not one-way" aria-hidden="true" tabindex="-1">
+      <h2>Canada–U.S. trade mixes strong direction with two-way flows</h2>
+      <div class="two-col wide-left">
+        <figure class="interactive-figure" data-expandable aria-labelledby="week02-bilateral-caption">
+          <div class="figure-header">
+            <figcaption class="figure-title" id="week02-bilateral-caption">Selected Canada–U.S. merchandise flows, 2024</figcaption>
+            <button class="expand-button" type="button" data-expand aria-label="Expand Canada United States trade chart">Expand ↗</button>
+          </div>
+          <div class="expandable-content">
+            <div class="toggle-row" aria-label="Choose trade direction">
+              <button class="toggle-button" type="button" data-bilateral-mode="exports" aria-pressed="true">Domestic exports to U.S.</button>
+              <button class="toggle-button" type="button" data-bilateral-mode="imports" aria-pressed="false">Imports of U.S. origin</button>
+            </div>
+            <div id="bilateral-chart" class="chart compact" role="img" aria-label="Interactive chart of selected Canada United States merchandise flows"></div>
+            <p class="mobile-chart-hint">Swipe the chart left to see every bar and value →</p>
+          </div>
+        </figure>
+        <div>
+          <p class="callout" data-bilateral-summary>Energy has a strongly outward pattern: C$171.8B of domestic exports versus C$29.1B of U.S.-origin imports.</p>
+          <p>Vehicles and parts are large in both directions: C$75.6B outward and C$82.0B inward.</p>
+          <p class="prompt"><strong>Ask</strong> Which pattern resembles one-way specialization? Which points toward integrated supply chains?</p>
+        </div>
+      </div>
+      <p class="source">Sources: Statistics Canada Tables <a href="https://doi.org/10.25318/1210017801-eng" target="_blank" rel="noopener">12-10-0178-01</a> and <a href="https://doi.org/10.25318/1210017901-eng" target="_blank" rel="noopener">12-10-0179-01</a>, 2024, current C$. Domestic exports and origin-based imports are shown as separate flow concepts; their difference is not labelled a formal bilateral trade balance.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Observed trade has many causes" aria-hidden="true" tabindex="-1">
+      <h2>Observed specialization reflects several mechanisms</h2>
+      <div class="concept-flow">
+        <div class="panel">
+          <ul class="plain-list">
+            <li>Productivity and resources</li>
+            <li>Distance and infrastructure</li>
+            <li>Tariffs and institutions</li>
+            <li>Scale, firms, and networks</li>
+            <li>Prices and foreign demand</li>
+          </ul>
+        </div>
+        <div class="concept-arrow" aria-hidden="true">→</div>
+        <div class="panel">
+          <p class="eyebrow">What we observe</p>
+          <h3>Export shares and bilateral trade</h3>
+          <p>The data combine every mechanism at once. Ricardo isolates only the relative-production-cost channel.</p>
+        </div>
+      </div>
+      <p class="callout"><strong>Inference rule:</strong> say a pattern is “consistent with” comparative advantage unless you directly observe or identify the underlying relative costs.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Week 2 handwritten quick check" aria-hidden="true" tabindex="-1">
+      <h2>Week 2 handwritten quick check</h2>
+      <ol class="quiz-list">
+        <li>Country C needs 3 hours for wheat and 12 for software; Country D needs 2 and 6. Compute each cost of one software unit and identify comparative advantage. <strong>[4]</strong></li>
+        <li>Can 1 software = 3.5 wheat support mutually beneficial trade? Show the relevant inequalities. <strong>[3]</strong></li>
+        <li>Canada’s energy flow to the U.S. is much larger than the reverse displayed flow. Give one claim this supports and one causal claim it cannot establish. <strong>[3]</strong></li>
+      </ol>
+      <p class="callout"><strong>One-sentence discipline:</strong> every ratio needs units; every empirical interpretation must separate pattern from cause.</p>
+    </section>
+  </main>
+
+  <footer class="deck-controls" aria-label="Slide navigation">
+    <button class="nav-button" type="button" data-action="previous" aria-label="Previous slide">←</button>
+    <span class="slide-count" data-slide-count aria-live="polite">1 / 18</span>
+    <button class="nav-button" type="button" data-action="next" aria-label="Next slide">→</button>
+  </footer>
+
+  <dialog id="figure-dialog" aria-labelledby="figure-dialog-title">
+    <div class="dialog-header"><strong id="figure-dialog-title" data-dialog-title>Expanded figure</strong><button class="dialog-close" type="button" data-action="close-dialog" aria-label="Close expanded figure">×</button></div>
+    <div class="dialog-content" data-dialog-content></div>
+  </dialog>
+
+  <dialog id="overview-dialog" aria-labelledby="overview-dialog-title">
+    <div class="dialog-header"><strong id="overview-dialog-title">Slide overview</strong><button class="dialog-close" type="button" data-action="close-dialog" aria-label="Close slide overview">×</button></div>
+    <div class="dialog-content"><div class="overview-grid" data-overview-grid></div></div>
+  </dialog>
+
+  <noscript><p style="position:fixed;inset:1rem;z-index:100;padding:1rem;background:#fff4d6;border:2px solid #c99700">This live deck needs JavaScript for navigation, calculators, and charts. Enable JavaScript or use the printable Week 2 PDF from the course repository.</p></noscript>
+</body>
+</html>

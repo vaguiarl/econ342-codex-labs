@@ -17,15 +17,18 @@ separately in a private repository.
 Open the live course hub at
 <https://vaguiarl.github.io/econ342-codex-labs/>.
 
-The Week 4 deck on gravity includes keyboard and touch navigation, live
-calculators, accessible chart tooltips, and click-to-expand figures. The web
-version is the main classroom format; PDF remains useful for printing and
-offline access.
+Each week has a full classroom deck and a shorter study deck. The web slides
+include keyboard and touch navigation, accessible interactive figures, and
+click-to-expand visuals.
 
-Students can also use the shorter
-[Week 4 study deck](https://vaguiarl.github.io/econ342-codex-labs/week04/study/),
-which keeps only the essential intuition, calculations, evidence, and
-click-to-reveal review questions.
+| Week | Full class | Study version | Topic |
+|---|---|---|---|
+| 2 | [Interactive class](https://vaguiarl.github.io/econ342-codex-labs/week02/) | [Study deck](https://vaguiarl.github.io/econ342-codex-labs/week02/study/) | Comparative advantage and Canada–U.S. trade |
+| 3 | [Interactive class](https://vaguiarl.github.io/econ342-codex-labs/week03/) | [Study deck](https://vaguiarl.github.io/econ342-codex-labs/week03/study/) | Product space and Canada’s possible next exports |
+| 4 | [Interactive class](https://vaguiarl.github.io/econ342-codex-labs/week04/) | [Study deck](https://vaguiarl.github.io/econ342-codex-labs/week04/study/) | Gravity, distance, and trading partners |
+
+The web version is the main classroom format; PDF remains useful for printing
+and offline access.
 
 ## Available labs
 

@@ -1,5 +1,20 @@
 # Third-party data notices
 
+## UN Comtrade
+
+The Week 2 interactive class uses 2023 merchandise-trade values retrieved from
+the UN Comtrade API to compare Canada’s and the United States’ shares of world
+exports by HS 2022 chapter:
+
+- <https://comtradeapi.un.org/>
+- <https://unstats.un.org/unsd/classifications/Econ>
+
+The relative-specialization ratios are author calculations for teaching. They
+describe observed trade shares and should not, by themselves, be interpreted
+as causal estimates or immutable technological advantages. Third-party data
+are not relicensed under this repository’s MIT or CC BY 4.0 terms and remain
+subject to the source provider’s applicable terms.
+
 ## Harvard Growth Lab Atlas of Economic Complexity
 
 The Week 3 classroom files were retrieved from the public GraphQL API of the
