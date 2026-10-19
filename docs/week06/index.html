@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interactive ECON 342 slides on economies of scale, product variety, intra-industry trade, and the integrated Canadian auto industry.">
+  <title>Week 6 · Economies of scale and variety · ECON 342</title>
+  <link rel="stylesheet" href="../assets/site.css?v=20261019-week06">
+  <style>
+    @media (min-width: 851px) {
+      .slide { padding-top: clamp(.8rem, 1.5vw, 1.35rem); padding-bottom: clamp(.8rem, 1.5vw, 1.35rem); }
+      .slide h2 { margin-bottom: clamp(.65rem, 1.3vw, 1.15rem); font-size: clamp(1.85rem, 3.35vw, 3.35rem); }
+      .slide p, .slide li, .slide label { font-size: clamp(.96rem, 1.35vw, 1.2rem); line-height: 1.42; }
+      .metric { min-height: 102px; }
+      .chart { min-height: clamp(220px, 34vh, 350px); }
+      .chart.compact { min-height: clamp(190px, 29vh, 300px); }
+    }
+  </style>
+  <script defer src="../assets/charts.js"></script>
+  <script defer src="../assets/week06.js"></script>
+  <script defer src="../assets/slides.js"></script>
+</head>
+<body class="deck-body">
+  <header class="deck-toolbar" aria-label="Presentation toolbar">
+    <a class="deck-brand" href="../">ECON 342</a>
+    <div class="deck-title" data-current-title>Economies of scale, variety, and two-way trade</div>
+    <div class="toolbar-actions">
+      <a class="toolbar-link" href="study/" title="Open the simplified student study deck">Study</a>
+      <button class="icon-button" type="button" data-action="overview" aria-label="Open slide overview" title="Overview (O)">▦</button>
+      <button class="icon-button" type="button" data-action="fullscreen" aria-label="Enter full screen" title="Full screen (F)">⛶</button>
+    </div>
+  </header>
+
+  <div class="deck-progress" role="progressbar" aria-label="Slide progress" aria-valuemin="1" aria-valuenow="1" aria-valuemax="23"><span data-progress></span></div>
+
+  <main class="deck" aria-label="Week 6 slide deck">
+    <section class="slide cover-slide is-active" data-slide-title="Why does Canada both export and import cars?" aria-hidden="false" tabindex="0">
+      <div>
+        <p class="eyebrow">ECON 342 · Week 6</p>
+        <h1>Why does Canada both export and import cars?</h1>
+        <p class="callout">Comparative advantage explains specialization across industries. Economies of scale and a preference for variety help explain two-way trade within an industry.</p>
+      </div>
+      <div class="cover-meta">
+        <p><strong>Puzzle:</strong> C$140.8 billion in two-way Canada–U.S. auto trade</p>
+        <p><strong>Tool:</strong> average cost = marginal cost + fixed cost per unit</p>
+        <p><strong>Case:</strong> Auto Pact → FTA → NAFTA → CUSMA</p>
+        <p class="subtle">Use ← →, swipe, or the controls below.</p>
+      </div>
+    </section>
+
+    <section class="slide" data-slide-title="The scale of the accessible market" aria-hidden="true" tabindex="-1">
+      <h2>Canada produces inside a market 12.4 times its population</h2>
+      <div class="three-col">
+        <div class="metric"><strong>41.798M</strong><span>people in Canada, July 2026</span></div>
+        <div class="metric"><strong>517M</strong><span>consumers in the CUSMA market, 2025</span></div>
+        <div class="metric"><strong>12.4×</strong><span>CUSMA market ÷ Canadian population</span></div>
+      </div>
+      <div class="two-col">
+        <div class="metric"><strong>76.4%</strong><span>of Canadian auto output and payroll jobs supported by U.S. final demand, 2024</span></div>
+        <div class="panel">
+          <p class="eyebrow">The scale lesson</p>
+          <p>A Canadian plant can locate at home while spreading fixed cost across demand far beyond Canada. That opportunity also creates exposure to disruptions in market access.</p>
+        </div>
+      </div>
+      <p class="source">Sources: Statistics Canada, <a href="https://www150.statcan.gc.ca/n1/daily-quotidien/260923/dq260923b-eng.htm" target="_blank" rel="noopener">population estimate</a> and <a href="https://www150.statcan.gc.ca/n1/pub/13-605-x/2026001/article/00001-eng.htm" target="_blank" rel="noopener">Value Added in Exports</a>; Global Affairs Canada, <a href="https://www.international.gc.ca/trade-commerce/trade-agreements-accords-commerciaux/agr-acc/cusma-aceum/joint-review-examen-conjoint.aspx?lang=eng" target="_blank" rel="noopener">CUSMA joint review</a>.</p>
+    </section>
+
+    <section class="slide" data-slide-title="A market-access stress test" aria-hidden="true" tabindex="-1">
+      <h2>What if a model lost the demand that makes its run large?</h2>
+      <div class="two-col">
+        <div class="panel">
+          <p>Illustration: <var>F</var> = C$600M, <var>c</var> = C$30k, integrated-market output = 150,000 vehicles.</p>
+          <div class="toggle-row" aria-label="Choose market-access scenario">
+            <button class="toggle-button" type="button" data-stress-scenario="integrated" aria-pressed="true">Integrated market</button>
+            <button class="toggle-button" type="button" data-stress-scenario="domestic" aria-pressed="false">Remove 76.4%</button>
+          </div>
+          <div class="equation"><var>AC</var> = 30 + 600 ÷ <var>q</var> &nbsp; in C$000</div>
+        </div>
+        <div class="panel" aria-live="polite">
+          <div class="two-col" style="gap:.75rem">
+            <div class="metric"><strong id="stress-output">150,000</strong><span>vehicles in the run</span></div>
+            <div class="metric"><strong id="stress-cost">C$34.0k</strong><span>average cost per vehicle</span></div>
+          </div>
+          <p class="callout" id="stress-summary">Baseline integrated-market illustration.</p>
+        </div>
+      </div>
+      <p class="source"><strong>Stress test, not a forecast:</strong> mechanically applying the 76.4% demand share leaves q = 35,400 and raises illustrated AC to C$46,949 (+38.1%). In reality firms could redirect exports, change prices or inputs, reduce capacity, or close; the demand share is not a causal estimate of a tariff effect.</p>
+    </section>
+
+    <section class="slide" data-slide-title="The Canadian auto-trade puzzle" aria-hidden="true" tabindex="-1">
+      <h2>Canada exported and imported nearly the same auto value</h2>
+      <div class="two-col wide-left">
+        <figure class="interactive-figure" data-expandable>
+          <div class="figure-header">
+            <figcaption class="figure-title">Canada–U.S. motor vehicles and parts trade, 2025</figcaption>
+            <button class="expand-button" type="button" data-expand aria-label="Expand Canada U.S. auto trade chart">Expand ↗</button>
+          </div>
+          <div class="expandable-content"><div id="auto-trade-chart" class="chart compact" role="img" aria-label="Canadian auto exports to and imports from the United States in 2025"></div></div>
+        </figure>
+        <div>
+          <div class="metric"><strong>C$67.8B</strong><span>Canadian exports to the U.S.</span></div>
+          <div class="metric"><strong>C$73.0B</strong><span>Canadian imports from the U.S.</span></div>
+          <p class="callout"><strong>C$140.8B gross trade</strong>, but only a C$5.2B imbalance. The balance hides most of the economic activity.</p>
+        </div>
+      </div>
+      <p class="source">Source: ISED Trade Data Online using Statistics Canada data, NAICS 3361–3363, 2025. Values are current Canadian dollars; figures are rounded.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Measure two-way trade" aria-hidden="true" tabindex="-1">
+      <h2>A Grubel–Lloyd index measures two-way balance</h2>
+      <div class="equation"><var>GL</var><sub>i</sub> = 1 − |<var>X</var><sub>i</sub> − <var>M</var><sub>i</sub>| ÷ (<var>X</var><sub>i</sub> + <var>M</var><sub>i</sub>)</div>
+      <div class="two-col">
+        <div class="panel">
+          <p class="eyebrow">Read the endpoints</p>
+          <ul>
+            <li><strong>GL = 1:</strong> exports equal imports.</li>
+            <li><strong>GL = 0:</strong> trade moves only one way.</li>
+            <li>The index describes balance within the chosen category.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <p class="eyebrow">Autos, 2025</p>
+          <div class="equation">1 − |67.791 − 72.973| ÷ 140.764 = <strong>0.963</strong></div>
+          <p>About 96.3% of gross auto trade remains after subtracting the bilateral imbalance.</p>
+        </div>
+      </div>
+      <p class="prompt"><strong>Interpret</strong> Why does “Canada ran a C$5.2B auto deficit” miss the central trade pattern?</p>
+    </section>
+
+    <section class="slide" data-slide-title="The pattern varies by product" aria-hidden="true" tabindex="-1">
+      <h2>Some Canadian industries look two-way; others look one-way</h2>
+      <div class="two-col wide-left">
+        <figure class="interactive-figure" data-expandable>
+          <div class="figure-header">
+            <figcaption class="figure-title">Canada–U.S. Grubel–Lloyd indices for selected products, 2024</figcaption>
+            <button class="expand-button" type="button" data-expand aria-label="Expand product Grubel Lloyd chart">Expand ↗</button>
+          </div>
+          <div class="expandable-content"><div id="product-gl-chart" class="chart" role="img" aria-label="Grubel Lloyd indices for selected Canadian trade products in 2024"></div></div>
+        </figure>
+        <div>
+          <div class="metric"><strong>0.999</strong><span>plastic resins</span></div>
+          <div class="metric"><strong>0.194</strong><span>crude oil and bitumen</span></div>
+          <p class="callout">High GL suggests two-way specialization in varieties or stages. Low GL is closer to one-way comparative-advantage trade.</p>
+        </div>
+      </div>
+      <p class="source">Source: Author’s calculations from Statistics Canada <a href="https://doi.org/10.25318/1210017201-eng" target="_blank" rel="noopener">Table 12-10-0172-01</a>, 2024. Categories are selected; customs values are rounded.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Fixed and variable costs" aria-hidden="true" tabindex="-1">
+      <h2>Scale begins with fixed versus variable cost</h2>
+      <div class="equation"><var>C</var>(<var>q</var>) = <var>F</var> + <var>c</var><var>q</var> &nbsp;&nbsp;⇒&nbsp;&nbsp; <var>AC</var>(<var>q</var>) = <var>c</var> + <var>F</var> ÷ <var>q</var></div>
+      <div class="two-col">
+        <div class="definition-card">
+          <h3>Fixed cost <var>F</var></h3>
+          <p>Plant, stamping dies, engineering, software, model design, crash testing, and certification—paid before the next vehicle is built.</p>
+        </div>
+        <div class="definition-card">
+          <h3>Marginal cost <var>c</var></h3>
+          <p>Labour time, tires, steel, glass, battery cells, and transport needed for one more vehicle.</p>
+        </div>
+      </div>
+      <p class="callout"><strong>Economies of scale:</strong> more units share the same fixed cost, so fixed cost per unit falls.</p>
+      <p class="prompt"><strong>Classify</strong> A paint shop, one set of tires, a crash test, and one hour of assembly labour.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Average-cost laboratory" aria-hidden="true" tabindex="-1">
+      <h2>Build the average-cost curve yourself</h2>
+      <div class="two-col wide-left">
+        <figure class="interactive-figure" data-expandable>
+          <div class="figure-header">
+            <figcaption class="figure-title">Illustrative vehicle-model average cost</figcaption>
+            <button class="expand-button" type="button" data-expand aria-label="Expand average cost chart">Expand ↗</button>
+          </div>
+          <div class="expandable-content"><div id="average-cost-chart" class="chart" role="img" aria-label="Interactive average cost curve that falls toward marginal cost as output rises"></div></div>
+        </figure>
+        <div>
+          <div class="slider-control">
+            <label for="fixed-cost">Fixed cost <output id="fixed-cost-value">C$600M</output></label>
+            <input id="fixed-cost" type="range" min="100" max="1200" step="50" value="600">
+          </div>
+          <div class="slider-control">
+            <label for="marginal-cost">Marginal cost <output id="marginal-cost-value">C$30k</output></label>
+            <input id="marginal-cost" type="range" min="15" max="50" step="1" value="30">
+          </div>
+          <div class="slider-control">
+            <label for="model-output">Output <output id="model-output-value">60,000</output></label>
+            <input id="model-output" type="range" min="20" max="240" step="10" value="60">
+          </div>
+          <div class="metric" aria-live="polite"><strong id="average-cost-result">C$40.0k</strong><span>average cost per vehicle</span></div>
+        </div>
+      </div>
+      <p class="source">Illustrative arithmetic—not an estimate for a specific plant. It holds technology, capacity, input prices, and quality fixed.</p>
+    </section>
+
+    <section class="slide" data-slide-title="The size of the scale effect" aria-hidden="true" tabindex="-1">
+      <h2>A larger production run can make a large difference</h2>
+      <p>Keep <var>F</var> = C$600 million and <var>c</var> = C$30,000 per vehicle.</p>
+      <div class="three-col">
+        <div class="metric"><strong>C$60k</strong><span>AC at 20,000 vehicles</span></div>
+        <div class="metric"><strong>C$40k</strong><span>AC at 60,000 vehicles</span></div>
+        <div class="metric"><strong>C$35k</strong><span>AC at 120,000 vehicles</span></div>
+      </div>
+      <div class="two-col">
+        <div class="panel"><p><strong>20k → 60k:</strong> tripling output cuts fixed cost per vehicle from C$30k to C$10k.</p></div>
+        <div class="panel"><p><strong>60k → 120k:</strong> doubling again cuts it from C$10k to C$5k. The curve flattens.</p></div>
+      </div>
+      <p class="prompt"><strong>Calculate</strong> At 200,000 vehicles, what are fixed cost per vehicle and average cost?</p>
+    </section>
+
+    <section class="slide" data-slide-title="Trade enlarges the accessible market" aria-hidden="true" tabindex="-1">
+      <h2>Market access—not magic—connects trade to scale</h2>
+      <div class="concept-flow">
+        <div class="panel"><p class="eyebrow">1</p><h3>Lower border frictions</h3></div>
+        <div class="concept-arrow" aria-hidden="true">→</div>
+        <div class="panel"><p class="eyebrow">2</p><h3>More accessible customers</h3></div>
+        <div class="concept-arrow" aria-hidden="true">→</div>
+        <div class="panel"><p class="eyebrow">3</p><h3>Larger runs → lower fixed cost per unit</h3></div>
+      </div>
+      <p class="callout">Trade does not mechanically make every firm larger. Some plants contract or exit while surviving plants serve a broader market.</p>
+      <p class="prompt"><strong>Reverse it</strong> If trade costs rise, which arrows reverse? Which effects remain ambiguous?</p>
+    </section>
+
+    <section class="slide" data-slide-title="Ten-minute break" aria-hidden="true" tabindex="-1">
+      <div class="break-card">
+        <p class="eyebrow">10-minute break</p>
+        <h2>Return with one Canadian example of a large fixed cost</h2>
+        <p class="callout">After the break: why variety produces two-way trade, and what the Auto Pact evidence tells us.</p>
+      </div>
+    </section>
+
+    <section class="slide" data-slide-title="Preference for variety" aria-hidden="true" tabindex="-1">
+      <h2>“Cars” are not one homogeneous good</h2>
+      <div class="two-col">
+        <div class="panel">
+          <p class="eyebrow">Consumers and firms value choice</p>
+          <p>A pickup, minivan, compact car, SUV, delivery van, and luxury crossover perform different jobs even though all are “vehicles.”</p>
+          <p class="callout">More accessible varieties can raise welfare even if total vehicle consumption barely changes.</p>
+        </div>
+        <div class="panel">
+          <p class="eyebrow">Producers specialize by variety</p>
+          <ul>
+            <li>Canada makes selected models at larger scale.</li>
+            <li>It exports those models.</li>
+            <li>It imports other models made at scale elsewhere.</li>
+            <li>No country must produce every variety.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="prompt"><strong>Explain</strong> How can Canada export a Honda CR-V and import another Honda model without contradiction?</p>
+    </section>
+
+    <section class="slide" data-slide-title="The scale-and-variety mechanism" aria-hidden="true" tabindex="-1">
+      <h2>Three ingredients generate intra-industry trade</h2>
+      <div class="three-col">
+        <div class="definition-card"><h3>1 · Fixed costs</h3><p>Larger production runs reduce average cost.</p></div>
+        <div class="definition-card"><h3>2 · Differentiated varieties</h3><p>Customers value products that are similar—but not identical.</p></div>
+        <div class="definition-card"><h3>3 · Specialization</h3><p>Firms produce a subset of varieties for a larger market.</p></div>
+      </div>
+      <div class="equation">larger market → fewer duplicated small runs → more output per surviving variety → lower <var>AC</var> + more imported variety</div>
+      <p class="callout">Adjustment is real: some firms, plants, workers, and communities can lose even when aggregate gains are positive.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Comparative advantage versus scale" aria-hidden="true" tabindex="-1">
+      <h2>Use the two theories for different margins</h2>
+      <div class="table-scroll"><table class="number-table">
+        <thead><tr><th>Question</th><th>Comparative advantage</th><th>Scale and variety</th></tr></thead>
+        <tbody>
+          <tr><td>Main difference</td><td>Opportunity cost across goods and countries</td><td>Fixed costs and differentiated varieties</td></tr>
+          <tr><td>Typical pattern</td><td>Inter-industry trade</td><td>Intra-industry trade</td></tr>
+          <tr><td>Similar countries</td><td>Trade if relative costs differ</td><td>Can trade heavily as markets combine</td></tr>
+          <tr><td>Main gain</td><td>Reallocate toward lower opportunity cost</td><td>Lower unit cost and more accessible varieties</td></tr>
+          <tr><td>Canadian clue</td><td>Crude oil and aluminum</td><td>Autos, machinery, aerospace, chemicals</td></tr>
+        </tbody>
+      </table></div>
+      <p class="prompt"><strong>Judgment</strong> Do high exports and imports of car parts refute Ricardo—or show that another mechanism also operates?</p>
+    </section>
+
+    <section class="slide" data-slide-title="Canada's auto-production network" aria-hidden="true" tabindex="-1">
+      <h2>Canada specializes in selected models and stages</h2>
+      <div class="three-col">
+        <div class="metric"><strong>1.31M</strong><span>light-duty vehicles assembled in Canada, 2024</span></div>
+        <div class="metric"><strong>125,000+</strong><span>direct auto-industry jobs, 2024</span></div>
+        <div class="metric"><strong>≈700</strong><span>Canadian parts suppliers</span></div>
+      </div>
+      <div class="two-col">
+        <div class="panel"><p><strong>Examples:</strong> Honda Civic/CR-V; Chevrolet Silverado; Chrysler Pacifica/Voyager; Lexus NX/RX; Toyota RAV4.</p></div>
+        <div class="panel"><p><strong>Point:</strong> “Canada makes cars” is too broad. Model-level specialization permits larger runs while imports supply other varieties.</p></div>
+      </div>
+      <p class="source">Source: Innovation, Science and Economic Development Canada, <a href="https://ised-isde.canada.ca/site/canadian-automotive-industry/en" target="_blank" rel="noopener">Canadian automotive industry</a>, 2024 figures.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Honda Alliston: scale in one place" aria-hidden="true" tabindex="-1">
+      <h2>One Canadian plant system produced 401,000 vehicles</h2>
+      <div class="three-col">
+        <div class="metric"><strong>198,000</strong><span>Civic units produced in Alliston, 2025</span></div>
+        <div class="metric"><strong>202,000</strong><span>CR-V units produced in Alliston, 2025</span></div>
+        <div class="metric"><strong>C$3B</strong><span>purchased from Canadian suppliers each year</span></div>
+      </div>
+      <div class="two-col">
+        <div class="panel"><p><strong>Existing scale:</strong> two specialized model lines, more than 4,200 associates, and a Canadian supplier network serving continental demand.</p></div>
+        <div class="panel"><p><strong>Fixed-investment risk:</strong> a proposed C$15B EV value chain with planned 240,000-vehicle annual capacity was suspended indefinitely in May 2026.</p></div>
+      </div>
+      <p class="callout"><strong>Keep realized and planned activity separate.</strong> The 401,000 Civic/CR-V units were produced; the proposed EV capacity was not realized.</p>
+      <p class="source">Sources: Honda Canada, <a href="https://hondanews.ca/en-CA/hci-corporate/releases/release-034a78c2e218fc9e60916560d003f832-honda-in-canada-fact-sheet-2026" target="_blank" rel="noopener">2026 fact sheet</a>, <a href="https://hondanews.ca/en-CA/releases/release-5f60982dadd5edbf5cfac08991074cae-northwind-project" target="_blank" rel="noopener">2024 proposal</a>, and <a href="https://hondanews.ca/en-CA/releases/release-80046da63cbf9f2582c8895ecb01122d-honda-canada-statement-on-indefinite-suspension-of-canadian-value-chain-investment" target="_blank" rel="noopener">May 2026 suspension</a>.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Rationalization" aria-hidden="true" tabindex="-1">
+      <h2>More market can mean fewer—but larger—plants</h2>
+      <div class="concept-flow">
+        <div class="panel"><h3>Duplicated small plants</h3><p>Each country makes many varieties at short runs.</p></div>
+        <div class="concept-arrow" aria-hidden="true">→</div>
+        <div class="panel"><h3>Trade opens a larger market</h3><p>Plants compete for continental demand.</p></div>
+        <div class="concept-arrow" aria-hidden="true">→</div>
+        <div class="panel"><h3>Reallocation</h3><p>Some plants exit; survivors expand into longer runs.</p></div>
+      </div>
+      <p class="callout"><strong>New pattern:</strong> fewer duplicated plants, larger runs, lower unit cost, and imported varieties. Judge the change using output, productivity, prices, employment, and adjustment—not plant count alone.</p>
+    </section>
+
+    <section class="slide" data-slide-title="The Auto Pact scale experiment" aria-hidden="true" tabindex="-1">
+      <h2>The Auto Pact produced a striking two-way expansion</h2>
+      <div class="three-col">
+        <div class="metric"><strong>≈10×</strong><span>Canadian auto exports by 1968 versus pre-pact</span></div>
+        <div class="metric"><strong>≈4×</strong><span>Canadian auto imports by 1968 versus pre-pact</span></div>
+        <div class="metric"><strong>narrower</strong><span>Canada–U.S. vehicle price gap</span></div>
+      </div>
+      <p class="callout">Exports and imports rose together: Canadian plants specialized for a larger market while Canadian buyers accessed models made elsewhere.</p>
+      <p class="source">Source: Bank of Canada, <a href="https://www.bankofcanada.ca/2018/01/staff-discussion-paper-2018-1/" target="_blank" rel="noopener">Canada’s Experience with Trade Policy</a>, Staff Discussion Paper 2018-1. Historical before/after comparisons are not clean causal estimates.</p>
+      <p class="prompt"><strong>Evidence test</strong> Which fact is hardest to reconcile with simple one-way import dependence?</p>
+    </section>
+
+    <section class="slide" data-slide-title="FTA evidence on plant scale" aria-hidden="true" tabindex="-1">
+      <h2>Post-FTA: fewer plants, more output per plant</h2>
+      <div class="two-col">
+        <div>
+          <div class="two-col" style="gap:.75rem">
+            <div class="metric"><strong>−21%</strong><span>plant count, 1987–1994</span></div>
+            <div class="metric"><strong>+34%</strong><span>output per plant</span></div>
+          </div>
+          <p class="callout">The raw aggregate pattern is consistent with rationalization, but it is not a causal FTA effect by itself.</p>
+        </div>
+        <div class="panel">
+          <p class="eyebrow">Head and Ries: 230 industries</p>
+          <ul>
+            <li>U.S. tariff cuts raised access to the larger export market.</li>
+            <li>The authors estimate roughly a 10% Canadian scale increase from those U.S. cuts.</li>
+            <li>Canadian tariff cuts increased import competition and partly offset that effect.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="source">Source: Head and Ries (1999), <a href="https://doi.org/10.1016/S0022-1996(98)00019-1" target="_blank" rel="noopener">“Rationalization effects of tariff reductions”</a>, 230 Canadian manufacturing industries.</p>
+    </section>
+
+    <section class="slide" data-slide-title="From Auto Pact to CUSMA" aria-hidden="true" tabindex="-1">
+      <h2>Institutions determine the accessible market</h2>
+      <div class="table-scroll"><table class="number-table">
+        <thead><tr><th>Year</th><th>Institution</th><th>Scale interpretation</th></tr></thead>
+        <tbody>
+          <tr><td>1965</td><td>Auto Pact</td><td>Reduced costly duplication in autos.</td></tr>
+          <tr><td>1989</td><td>Canada–U.S. FTA</td><td>Broadened predictable bilateral market access.</td></tr>
+          <tr><td>1994</td><td>NAFTA</td><td>Extended integration to a three-country production network.</td></tr>
+          <tr><td>2020</td><td>CUSMA</td><td>Preserved access while tightening auto origin and labour-value rules.</td></tr>
+          <tr><td>2026</td><td>Joint review</td><td>Agreement continues; annual reviews preserve some policy uncertainty.</td></tr>
+        </tbody>
+      </table></div>
+      <p class="callout">Predictable access affects investment before a vehicle crosses the border: plants incur fixed costs today to serve expected demand tomorrow.</p>
+      <p class="source">Sources: <a href="https://www.bankofcanada.ca/2018/01/staff-discussion-paper-2018-1/" target="_blank" rel="noopener">Bank of Canada</a>; Global Affairs Canada, <a href="https://www.canada.ca/en/global-affairs/news/2026/07/statement-by-minister-leblanc-following-trilateral-cusma-joint-review-meeting.html" target="_blank" rel="noopener">2026 CUSMA joint-review statement</a>.</p>
+    </section>
+
+    <section class="slide" data-slide-title="CUSMA: scale with rules" aria-hidden="true" tabindex="-1">
+      <h2>CUSMA supports scale—but access is conditional</h2>
+      <div class="two-col">
+        <div class="panel">
+          <p class="eyebrow">Commitment and scale benefits</p>
+          <ul>
+            <li>predictable continental demand;</li>
+            <li>longer production runs and specialized suppliers;</li>
+            <li>common rules and dispute procedures;</li>
+            <li>investment planned around cross-border sales.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <p class="eyebrow">Rules and dependence</p>
+          <ul>
+            <li>75% regional value content for light vehicles and core parts;</li>
+            <li>origin compliance can raise input and administrative costs;</li>
+            <li>concentrated market access magnifies U.S. policy shocks;</li>
+            <li>uncertainty can delay fixed investment.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="source">Source: Global Affairs Canada, <a href="https://international.canada.ca/en/global-affairs/corporate/reports/impact-assessments/2020-02-cusma-economic" target="_blank" rel="noopener">CUSMA Economic Impact Assessment</a>. Its quantitative results depend on a model and reference scenario.</p>
+      <p class="prompt"><strong>Trade-off</strong> How can a rule of origin preserve preferential access and still raise average cost?</p>
+    </section>
+
+    <section class="slide" data-slide-title="The complete mechanism" aria-hidden="true" tabindex="-1">
+      <h2>One chain links policy, market size, and intra-industry trade</h2>
+      <div class="concept-flow">
+        <div class="panel"><h3>Variety demand + fixed cost</h3></div>
+        <div class="concept-arrow" aria-hidden="true">→</div>
+        <div class="panel"><h3>Market access expands q</h3></div>
+        <div class="concept-arrow" aria-hidden="true">→</div>
+        <div class="panel"><h3>Lower AC + imported variety</h3></div>
+      </div>
+      <div class="equation">larger <var>q</var> → smaller <var>F</var>/<var>q</var> → lower average cost &nbsp;&nbsp;+&nbsp;&nbsp; imports of varieties made elsewhere</div>
+      <p class="callout"><strong>Canada–U.S. answer:</strong> a continental market lets firms specialize in different models and stages, produce longer runs, and exchange varieties in both directions.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Week 6 synthesis check" aria-hidden="true" tabindex="-1">
+      <h2>Can you explain the puzzle with evidence?</h2>
+      <ol class="quiz-list">
+        <li>Use <span class="formula-line"><var>AC</var> = <var>c</var> + <var>F</var>/<var>q</var></span> to explain how a larger accessible market can lower average cost. <strong>[3]</strong></li>
+        <li>Canada exported C$67.791B and imported C$72.973B in motor vehicles and parts. Calculate and interpret the GL index. <strong>[3]</strong></li>
+        <li>Why can Canada export and import cars at the same time? Connect variety, plant specialization, and one Canadian data point. <strong>[4]</strong></li>
+      </ol>
+      <p class="callout"><strong>Strong answer:</strong> mechanism + short calculation + evidence + one caveat. Do not claim that a high GL index proves scale caused the pattern.</p>
+    </section>
+  </main>
+
+  <footer class="deck-controls" aria-label="Slide navigation">
+    <button class="nav-button" type="button" data-action="previous" aria-label="Previous slide">←</button>
+    <span class="slide-count" data-slide-count aria-live="polite">1 / 23</span>
+    <button class="nav-button" type="button" data-action="next" aria-label="Next slide">→</button>
+  </footer>
+
+  <dialog id="figure-dialog" aria-labelledby="figure-dialog-title">
+    <div class="dialog-header">
+      <strong id="figure-dialog-title" data-dialog-title>Expanded figure</strong>
+      <button class="dialog-close" type="button" data-action="close-dialog" aria-label="Close expanded figure">×</button>
+    </div>
+    <div class="dialog-content" data-dialog-content></div>
+  </dialog>
+
+  <dialog id="overview-dialog" aria-labelledby="overview-dialog-title">
+    <div class="dialog-header">
+      <strong id="overview-dialog-title">Slide overview</strong>
+      <button class="dialog-close" type="button" data-action="close-dialog" aria-label="Close slide overview">×</button>
+    </div>
+    <div class="dialog-content"><div class="overview-grid" data-overview-grid></div></div>
+  </dialog>
+
+  <noscript><p style="position:fixed;inset:1rem;z-index:100;padding:1rem;background:#fff4d6;border:2px solid #c99700">This live deck needs JavaScript for navigation and interactive charts. Enable JavaScript or use the printable Week 6 PDF from the course site.</p></noscript>
+</body>
+</html>
