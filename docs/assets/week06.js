@@ -88,8 +88,16 @@
     const outputNode = document.getElementById("stress-output");
     const costNode = document.getElementById("stress-cost");
     const summaryNode = document.getElementById("stress-summary");
+    const demandNode = document.getElementById("stress-demand");
+    const chainOutputNode = document.getElementById("stress-output-chain");
+    const fixedUnitNode = document.getElementById("stress-fixed-unit");
+    const chainCostNode = document.getElementById("stress-cost-chain");
     if (outputNode) outputNode.textContent = `${Math.round(output * 1000).toLocaleString()}`;
     if (costNode) costNode.textContent = formatThousands(averageCost);
+    if (demandNode) demandNode.textContent = scenario === "domestic" ? "23.6% remains" : "100% baseline";
+    if (chainOutputNode) chainOutputNode.textContent = `${Math.round(output * 1000).toLocaleString()}`;
+    if (fixedUnitNode) fixedUnitNode.textContent = formatThousands(600 / output);
+    if (chainCostNode) chainCostNode.textContent = formatThousands(averageCost);
     if (summaryNode) summaryNode.textContent = scenario === "domestic"
       ? `Mechanical illustration: average cost rises ${((averageCost / baselineCost - 1) * 100).toFixed(1)}%. This is not a forecast.`
       : "Baseline integrated-market illustration.";

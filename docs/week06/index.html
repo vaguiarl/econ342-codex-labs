@@ -7,6 +7,76 @@
   <title>Week 6 · The Krugman trade model · ECON 342</title>
   <link rel="stylesheet" href="../assets/site.css?v=20261020-krugman">
   <style>
+    .stress-slide > .two-col {
+      align-items: stretch;
+    }
+
+    .stress-slide > .two-col > .panel {
+      height: 100%;
+    }
+
+    .stress-mechanism {
+      margin-top: clamp(1rem, 2.2vh, 1.6rem);
+      padding: clamp(.9rem, 1.5vw, 1.3rem);
+      border: 1px solid var(--line);
+      border-radius: 1rem;
+      background: linear-gradient(135deg, rgba(237, 241, 243, .88), rgba(255, 255, 255, .96));
+    }
+
+    .stress-mechanism-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1.25rem;
+      margin-bottom: .8rem;
+    }
+
+    .stress-mechanism-header p {
+      margin: 0;
+    }
+
+    .stress-chain {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+      gap: clamp(.45rem, 1vw, .9rem);
+      align-items: stretch;
+    }
+
+    .stress-step {
+      display: grid;
+      align-content: center;
+      min-height: 112px;
+      padding: .8rem;
+      border: 1px solid var(--line);
+      border-radius: .85rem;
+      background: white;
+      text-align: center;
+      box-shadow: 0 6px 18px rgba(23, 42, 53, .06);
+    }
+
+    .stress-step span {
+      color: var(--muted);
+      font-size: clamp(.78rem, 1vw, .92rem);
+      font-weight: 800;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .stress-step strong {
+      margin-top: .35rem;
+      color: var(--sfu-red);
+      font-size: clamp(1.3rem, 2.15vw, 2.15rem);
+      line-height: 1.05;
+    }
+
+    .stress-arrow {
+      display: grid;
+      place-items: center;
+      color: var(--gold);
+      font-size: clamp(1.6rem, 3vw, 2.8rem);
+      font-weight: 900;
+    }
+
     @media (min-width: 851px) {
       .slide { padding-top: clamp(.8rem, 1.5vw, 1.35rem); padding-bottom: clamp(.8rem, 1.5vw, 1.35rem); }
       .slide h2 { margin-bottom: clamp(.65rem, 1.3vw, 1.15rem); font-size: clamp(1.85rem, 3.35vw, 3.35rem); }
@@ -15,9 +85,34 @@
       .chart { min-height: clamp(220px, 34vh, 350px); }
       .chart.compact { min-height: clamp(190px, 29vh, 300px); }
     }
+
+    @media (min-width: 851px) and (min-height: 800px) {
+      .stress-slide.is-active {
+        align-content: center;
+      }
+    }
+
+    @media (max-width: 850px) {
+      .stress-mechanism-header {
+        display: block;
+      }
+
+      .stress-mechanism-header .subtle {
+        margin-top: .35rem;
+      }
+
+      .stress-chain {
+        grid-template-columns: 1fr;
+      }
+
+      .stress-arrow {
+        min-height: 1.6rem;
+        transform: rotate(90deg);
+      }
+    }
   </style>
   <script defer src="../assets/charts.js"></script>
-  <script defer src="../assets/week06.js?v=20261020-krugman"></script>
+  <script defer src="../assets/week06.js?v=20261020-stress-chain"></script>
   <script defer src="../assets/slides.js"></script>
 </head>
 <body class="deck-body">
@@ -68,7 +163,7 @@
       <p class="source">Sources: Statistics Canada, <a href="https://www150.statcan.gc.ca/n1/daily-quotidien/260923/dq260923b-eng.htm" target="_blank" rel="noopener">population estimate</a> and <a href="https://www150.statcan.gc.ca/n1/pub/13-605-x/2026001/article/00001-eng.htm" target="_blank" rel="noopener">Value Added in Exports</a>; Global Affairs Canada, <a href="https://www.international.gc.ca/trade-commerce/trade-agreements-accords-commerciaux/agr-acc/cusma-aceum/joint-review-examen-conjoint.aspx?lang=eng" target="_blank" rel="noopener">CUSMA joint review</a>.</p>
     </section>
 
-    <section class="slide" data-slide-title="A market-access stress test" aria-hidden="true" tabindex="-1">
+    <section class="slide stress-slide" data-slide-title="A market-access stress test" aria-hidden="true" tabindex="-1">
       <h2>What if a model lost the demand that makes its run large?</h2>
       <div class="two-col">
         <div class="panel">
@@ -85,6 +180,33 @@
             <div class="metric"><strong id="stress-cost">C$34.0k</strong><span>average cost per vehicle</span></div>
           </div>
           <p class="callout" id="stress-summary">Baseline integrated-market illustration.</p>
+        </div>
+      </div>
+      <div class="stress-mechanism">
+        <div class="stress-mechanism-header">
+          <p class="eyebrow">Read the mechanism from left to right</p>
+          <p class="subtle"><strong>Only demand and output change:</strong> the C$600M fixed cost does not.</p>
+        </div>
+        <div class="stress-chain" aria-label="Causal chain from accessible demand to average cost">
+          <div class="stress-step">
+            <span>Accessible demand</span>
+            <strong id="stress-demand">100% baseline</strong>
+          </div>
+          <div class="stress-arrow" aria-hidden="true">→</div>
+          <div class="stress-step">
+            <span>Output, q</span>
+            <strong id="stress-output-chain">150,000</strong>
+          </div>
+          <div class="stress-arrow" aria-hidden="true">→</div>
+          <div class="stress-step">
+            <span>Fixed cost per vehicle, F/q</span>
+            <strong id="stress-fixed-unit">C$4.0k</strong>
+          </div>
+          <div class="stress-arrow" aria-hidden="true">→</div>
+          <div class="stress-step">
+            <span>Average cost, c + F/q</span>
+            <strong id="stress-cost-chain">C$34.0k</strong>
+          </div>
         </div>
       </div>
       <p class="source"><strong>Stress test, not a forecast:</strong> mechanically applying the 76.4% demand share leaves q = 35,400 and raises illustrated AC to C$46,949 (+38.1%). In reality firms could redirect exports, change prices or inputs, reduce capacity, or close; the demand share is not a causal estimate of a tariff effect.</p>
