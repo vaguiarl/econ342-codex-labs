@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Simplified ECON 342 study slides on economies of scale, variety, and Canadian two-way trade.">
-  <title>Week 6 study deck · Economies of scale · ECON 342</title>
-  <link rel="stylesheet" href="../../assets/site.css?v=20261019-week06">
+  <meta name="description" content="Simplified ECON 342 study slides on the Krugman model, economies of scale, variety, and Canadian two-way trade.">
+  <title>Week 6 study deck · The Krugman trade model · ECON 342</title>
+  <link rel="stylesheet" href="../../assets/site.css?v=20261020-krugman">
   <style>
     @media (min-width: 851px) {
       .study-deck .slide { padding-top: clamp(1rem, 2vw, 1.8rem); padding-bottom: clamp(1rem, 2vw, 1.8rem); }
@@ -18,7 +18,7 @@
     }
   </style>
   <script defer src="../../assets/charts.js"></script>
-  <script defer src="../../assets/week06-study.js"></script>
+  <script defer src="../../assets/week06-study.js?v=20261020-krugman"></script>
   <script defer src="../../assets/slides.js"></script>
 </head>
 <body class="deck-body study-deck">
@@ -32,22 +32,21 @@
     </div>
   </header>
 
-  <div class="deck-progress" role="progressbar" aria-label="Slide progress" aria-valuemin="1" aria-valuenow="1" aria-valuemax="13"><span data-progress></span></div>
+  <div class="deck-progress" role="progressbar" aria-label="Slide progress" aria-valuemin="1" aria-valuenow="1" aria-valuemax="16"><span data-progress></span></div>
 
   <main class="deck" aria-label="Simplified Week 6 study deck">
-    <section class="slide cover-slide is-active" data-slide-title="Week 6 in three ideas" aria-hidden="false" tabindex="0">
+    <section class="slide cover-slide is-active" data-slide-title="The Krugman model in four ideas" aria-hidden="false" tabindex="0">
       <div>
         <p class="eyebrow">ECON 342 · Week 6 · Study version</p>
-        <h1>Economies of scale in three ideas</h1>
-        <p class="study-rule"><strong>A larger accessible market</strong> can support longer production runs, lower fixed cost per unit, and trade in differentiated varieties.</p>
+        <h1>The Krugman trade model in four ideas</h1>
+        <p class="study-rule">The model explains why similar countries export and import different varieties within the same industry.</p>
       </div>
       <div class="cover-meta">
-        <ol class="study-steps">
-          <li>Fixed cost makes average cost fall with output.</li>
-          <li>People value different varieties of similar goods.</li>
-          <li>Countries specialize in varieties and trade both ways.</li>
-        </ol>
-        <p class="subtle">Thirteen short slides · interactive calculations · Canadian evidence</p>
+        <p><strong>1 · Variety:</strong> consumers value differentiated products.</p>
+        <p><strong>2 · Scale:</strong> every variety requires a fixed cost.</p>
+        <p><strong>3 · Competition:</strong> substitutes and entry limit pricing power.</p>
+        <p><strong>4 · Trade:</strong> countries specialize by variety.</p>
+        <p class="subtle">Sixteen short slides · interactive calculations · Canadian evidence</p>
       </div>
     </section>
 
@@ -101,8 +100,20 @@
       <p class="study-rule"><strong>Memory rule:</strong> the smaller the imbalance relative to total trade, the closer GL is to one.</p>
     </section>
 
+    <section class="slide" data-slide-title="The Krugman mental model" aria-hidden="true" tabindex="-1">
+      <h2 data-step="4">Why similar countries trade similar products</h2>
+      <div class="panel">
+        <p>People value different varieties. Each variety requires a fixed cost. A firm has some pricing power because its product differs from others, but close substitutes and entry limit profit. Trade lets countries specialize in different varieties, export some, and import others.</p>
+      </div>
+      <div class="two-col">
+        <div class="panel"><p><strong>“Monopolistic”:</strong> one firm controls its exact variety and faces downward-sloping demand.</p></div>
+        <div class="panel"><p><strong>“Competition”:</strong> close substitutes and entry prevent persistent excess profit.</p></div>
+      </div>
+      <p class="source">Sources: Krugman, <a href="https://doi.org/10.1016/0022-1996(79)90017-5" target="_blank" rel="noopener">1979</a> and <a href="https://www.princeton.edu/~pkrugman/scale_econ.pdf" target="_blank" rel="noopener">1980</a>.</p>
+    </section>
+
     <section class="slide" data-slide-title="A market-access stress test" aria-hidden="true" tabindex="-1">
-      <h2 data-step="4">A smaller production run means higher fixed cost per unit</h2>
+      <h2 data-step="5">A smaller production run means higher fixed cost per unit</h2>
       <div class="two-col">
         <div class="panel">
           <p>Illustration: <var>F</var> = C$600M, <var>c</var> = C$30k, integrated output = 150,000 vehicles.</p>
@@ -119,7 +130,7 @@
     </section>
 
     <section class="slide" data-slide-title="The cost equation" aria-hidden="true" tabindex="-1">
-      <h2 data-step="5">Fixed cost creates economies of scale</h2>
+      <h2 data-step="6">Fixed cost creates economies of scale</h2>
       <div class="equation"><var>AC</var>(<var>q</var>) = <var>c</var> + <var>F</var> ÷ <var>q</var></div>
       <div class="three-col">
         <div class="definition-card"><h3><var>F</var>: fixed cost</h3><p>Plant, design, engineering, testing, certification.</p></div>
@@ -130,7 +141,7 @@
     </section>
 
     <section class="slide" data-slide-title="Average-cost calculator" aria-hidden="true" tabindex="-1">
-      <h2 data-step="6">Move output and watch fixed cost spread</h2>
+      <h2 data-step="7">Move output and watch fixed cost spread</h2>
       <div class="two-col wide-left">
         <figure class="interactive-figure" data-expandable>
           <div class="figure-header">
@@ -151,8 +162,25 @@
       </div>
     </section>
 
+    <section class="slide" data-slide-title="Break-even production run" aria-hidden="true" tabindex="-1">
+      <h2 data-step="8">Price, marginal cost, and fixed cost determine break-even sales</h2>
+      <div class="equation"><var>π</var> = (<var>p</var> − <var>c</var>)<var>q</var> − <var>F</var></div>
+      <div class="two-col">
+        <div class="panel">
+          <p><strong>Contribution per vehicle:</strong></p>
+          <div class="equation">C$34k − C$30k = C$4k</div>
+        </div>
+        <div class="panel">
+          <p><strong>Break-even run:</strong></p>
+          <div class="equation">C$600M ÷ C$4k = 150,000</div>
+        </div>
+      </div>
+      <p class="study-rule">The firm must sell enough units for its total contribution margin to cover the fixed cost.</p>
+      <p class="callout">Illustrative teaching numbers, not an automaker estimate.</p>
+    </section>
+
     <section class="slide" data-slide-title="Accessible market size" aria-hidden="true" tabindex="-1">
-      <h2 data-step="7">Trade can enlarge the market a plant can serve</h2>
+      <h2 data-step="9">Trade can enlarge the market a plant can serve</h2>
       <div class="concept-flow">
         <div class="panel"><h3>Lower border frictions</h3></div>
         <div class="concept-arrow" aria-hidden="true">→</div>
@@ -164,8 +192,19 @@
       <p class="callout">Market access is useful only if demand exists and firms have capacity, inputs, finance, and reliable rules.</p>
     </section>
 
+    <section class="slide" data-slide-title="Trade between identical countries" aria-hidden="true" tabindex="-1">
+      <h2 data-step="10">Trade can double available varieties without changing technology</h2>
+      <p>Suppose each identical country demands 600,000 vehicles and a variety needs 150,000 sales to break even.</p>
+      <div class="two-col">
+        <div class="metric"><strong>4</strong><span>varieties available in each separate market</span></div>
+        <div class="metric"><strong>8</strong><span>varieties available after market integration</span></div>
+      </div>
+      <p class="study-rule">Canada produces four and imports four; the United States does the same. Trade is two-way even though the countries have identical technology.</p>
+      <p class="callout"><strong>Key nuance:</strong> in this clean long-run example, firm output remains 150,000. The gain comes from more variety. Larger surviving plants are an additional rationalization channel to test in the data.</p>
+    </section>
+
     <section class="slide" data-slide-title="Variety produces two-way trade" aria-hidden="true" tabindex="-1">
-      <h2 data-step="8">Specialize by model—not simply by “cars”</h2>
+      <h2 data-step="11">Specialize by model, not simply by “cars”</h2>
       <div class="two-col">
         <div class="panel">
           <p class="eyebrow">Canada</p>
@@ -180,25 +219,18 @@
       <p class="study-rule"><strong>Examples of varieties:</strong> pickups, minivans, compact cars, SUVs, delivery vans, luxury crossovers.</p>
     </section>
 
-    <section class="slide" data-slide-title="Two theories, two margins" aria-hidden="true" tabindex="-1">
-      <h2 data-step="9">Comparative advantage and scale are complements</h2>
-      <div class="two-col">
-        <div class="panel">
-          <p class="eyebrow">Comparative advantage</p>
-          <p>Explains specialization across goods or stages using opportunity cost.</p>
-          <p><strong>Canadian clue:</strong> crude oil and aluminum have low GL.</p>
-        </div>
-        <div class="panel">
-          <p class="eyebrow">Scale and variety</p>
-          <p>Explains specialization among differentiated products with fixed cost.</p>
-          <p><strong>Canadian clue:</strong> autos, machinery, aerospace, chemicals have high GL.</p>
-        </div>
+    <section class="slide" data-slide-title="Three models, three margins" aria-hidden="true" tabindex="-1">
+      <h2 data-step="12">Ricardo, Krugman, and gravity are complements</h2>
+      <div class="three-col">
+        <div class="panel"><p class="eyebrow">Ricardo</p><p><strong>What?</strong> Relative productivity explains which goods or stages Canada produces.</p></div>
+        <div class="panel"><p class="eyebrow">Krugman</p><p><strong>Why both ways?</strong> Fixed costs and variety explain exports and imports within autos.</p></div>
+        <div class="panel"><p class="eyebrow">Gravity</p><p><strong>With whom?</strong> Size and distance explain why the U.S. dominates the flow.</p></div>
       </div>
-      <p class="study-rule"><strong>Do not say:</strong> two-way car-parts trade refutes Ricardo. Say: it reveals an additional mechanism.</p>
+      <p class="study-rule">Canada–U.S. autos require all three ideas: location, variety-level specialization, and bilateral intensity.</p>
     </section>
 
     <section class="slide" data-slide-title="Canadian auto scale" aria-hidden="true" tabindex="-1">
-      <h2 data-step="10">The Canadian cluster serves a continental market</h2>
+      <h2 data-step="13">The Canadian cluster serves a continental market</h2>
       <div class="three-col">
         <div class="metric"><strong>1.31M</strong><span>light-duty vehicles assembled, 2024</span></div>
         <div class="metric"><strong>125,000+</strong><span>direct jobs</span></div>
@@ -210,7 +242,7 @@
     </section>
 
     <section class="slide" data-slide-title="Historical evidence" aria-hidden="true" tabindex="-1">
-      <h2 data-step="11">Integration increased two-way trade and plant scale</h2>
+      <h2 data-step="14">Integration increased two-way trade and plant scale</h2>
       <div class="three-col">
         <div class="metric"><strong>≈10×</strong><span>auto exports by 1968 after Auto Pact</span></div>
         <div class="metric"><strong>≈4×</strong><span>auto imports by 1968</span></div>
@@ -221,28 +253,28 @@
     </section>
 
     <section class="slide" data-slide-title="Check yourself" aria-hidden="true" tabindex="-1">
-      <h2 data-step="12">Try first—then reveal the answer</h2>
+      <h2 data-step="15">Try first, then reveal the answer</h2>
       <div class="study-checks">
         <details>
-          <summary>1. Why does average cost fall when output rises?</summary>
-          <p>Because <var>AC</var> = <var>c</var> + <var>F</var>/<var>q</var>. Marginal cost stays at <var>c</var>, while more units share the fixed cost, so <var>F</var>/<var>q</var> falls.</p>
+          <summary>1. Why can identical countries trade within one industry?</summary>
+          <p>Consumers value differentiated varieties and every variety has a fixed cost. Firms specialize in subsets of varieties, export those products, and import varieties produced elsewhere. Comparative advantage is not required for this two-way trade.</p>
         </details>
         <details>
-          <summary>2. What does the auto GL value of 0.963 mean?</summary>
-          <p>Canada’s exports and imports of vehicles and parts with the United States were very similar in size. About 96.3% of gross trade remains after subtracting the imbalance. It does not prove scale is the only cause.</p>
+          <summary>2. How do fixed cost and break-even sales fit together?</summary>
+          <p>Average cost is <var>c</var> + <var>F</var>/<var>q</var>. Each sale contributes <var>p</var> − <var>c</var> toward the fixed cost, so break-even output is <var>F</var>/(<var>p</var> − <var>c</var>).</p>
         </details>
         <details>
-          <summary>3. Why can Canada export and import cars simultaneously?</summary>
-          <p>Firms specialize in different vehicle models and stages, produce longer runs for a continental market, export those varieties, and import other varieties made at scale elsewhere.</p>
+          <summary>3. What does each model add to Canada–U.S. auto trade?</summary>
+          <p>Ricardo helps explain which models, parts, or stages locate in Canada. Krugman explains two-way variety trade. Gravity explains why the large and nearby United States is Canada’s dominant partner.</p>
         </details>
       </div>
-      <p class="study-rule"><strong>Ready when you can:</strong> state the mechanism, show the simple arithmetic, cite one Canadian fact, and add one caveat.</p>
+      <p class="study-rule"><strong>Ready when you can:</strong> state the Krugman mechanism in words, show one calculation, add Ricardo and gravity, and cite one Canadian fact.</p>
     </section>
   </main>
 
   <footer class="deck-controls" aria-label="Slide navigation">
     <button class="nav-button" type="button" data-action="previous" aria-label="Previous slide">←</button>
-    <span class="slide-count" data-slide-count aria-live="polite">1 / 13</span>
+    <span class="slide-count" data-slide-count aria-live="polite">1 / 16</span>
     <button class="nav-button" type="button" data-action="next" aria-label="Next slide">→</button>
   </footer>
 

@@ -26,7 +26,7 @@ click-to-expand visuals.
 | 2 | [Interactive class](https://vaguiarl.github.io/econ342-codex-labs/week02/) | [Study deck](https://vaguiarl.github.io/econ342-codex-labs/week02/study/) | Comparative advantage and Canada–U.S. trade |
 | 3 | [Interactive class](https://vaguiarl.github.io/econ342-codex-labs/week03/) | [Study deck](https://vaguiarl.github.io/econ342-codex-labs/week03/study/) | Product space and Canada’s possible next exports |
 | 4 | [Interactive class](https://vaguiarl.github.io/econ342-codex-labs/week04/) | [Study deck](https://vaguiarl.github.io/econ342-codex-labs/week04/study/) | Gravity, distance, and trading partners |
-| 6 | [Interactive class](https://vaguiarl.github.io/econ342-codex-labs/week06/) | [Study deck](https://vaguiarl.github.io/econ342-codex-labs/week06/study/) | Economies of scale, variety, and two-way trade |
+| 6 | [Interactive class](https://vaguiarl.github.io/econ342-codex-labs/week06/) | [Study deck](https://vaguiarl.github.io/econ342-codex-labs/week06/study/) | Krugman model: scale, variety, monopolistic competition, and two-way trade |
 
 The web version is the main classroom format; PDF remains useful for printing
 and offline access.
