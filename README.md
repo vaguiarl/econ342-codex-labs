@@ -28,6 +28,8 @@ click-to-expand visuals.
 | 4 | [Interactive class](https://vaguiarl.github.io/econ342-codex-labs/week04/) | [Study deck](https://vaguiarl.github.io/econ342-codex-labs/week04/study/) | Gravity, distance, and trading partners |
 | 6 | [Interactive class](https://vaguiarl.github.io/econ342-codex-labs/week06/) | [Study deck](https://vaguiarl.github.io/econ342-codex-labs/week06/study/) | Krugman model: scale, variety, monopolistic competition, and two-way trade |
 
+Week 6 assignment: [Market Scale, Political Size, and Canada's Future](https://vaguiarl.github.io/econ342-codex-labs/week06/econ342_scale_nations_ai_assignment.pdf)
+
 The web version is the main classroom format; PDF remains useful for printing
 and offline access.
 
