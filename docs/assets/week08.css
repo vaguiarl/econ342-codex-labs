@@ -1,0 +1,197 @@
+.abundance-slide .abundance-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(300px, 0.82fr);
+  gap: clamp(1rem, 2.5vw, 2.4rem);
+  align-items: start;
+}
+
+.abundance-slide .abundance-controls {
+  display: grid;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.abundance-slide .abundance-scale {
+  position: relative;
+  height: 1.2rem;
+  color: var(--muted);
+  font-size: clamp(0.78rem, 1vw, 0.92rem);
+  font-weight: 700;
+}
+
+.abundance-slide .abundance-scale span {
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+}
+
+.abundance-slide .abundance-scale span:first-child {
+  left: 0;
+}
+
+.abundance-slide .abundance-scale span:nth-child(2) {
+  left: 33.333%;
+  transform: translateX(-50%);
+  color: var(--ink);
+}
+
+.abundance-slide .abundance-scale span:last-child {
+  right: 0;
+}
+
+.abundance-slide .abundance-bars {
+  display: grid;
+  gap: 0.95rem;
+  padding: clamp(0.9rem, 1.6vw, 1.25rem);
+  border: 1px solid var(--line);
+  border-radius: 0.9rem;
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.abundance-slide .abundance-bar-row {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.abundance-slide .abundance-bar-label {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  color: var(--ink);
+  font-size: clamp(0.95rem, 1.35vw, 1.18rem);
+  font-weight: 800;
+}
+
+.abundance-slide .abundance-bar-label output,
+.abundance-slide .abundance-bar-label strong {
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.abundance-slide .abundance-bar-track {
+  position: relative;
+  height: clamp(1.45rem, 2.7vw, 2.25rem);
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--soft);
+}
+
+.abundance-slide .abundance-bar-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0;
+  min-width: 0;
+  border-radius: inherit;
+  transition: width 180ms linear;
+}
+
+.abundance-slide .abundance-bar-fill.grain {
+  background: var(--sfu-red);
+}
+
+.abundance-slide .abundance-bar-fill.apparel {
+  background: var(--blue);
+}
+
+.abundance-slide .abundance-reference {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  left: var(--reference-position, 50%);
+  width: 3px;
+  background: var(--ink);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.8);
+  pointer-events: none;
+}
+
+.abundance-slide .grain-reference {
+  --reference-position: 33.333%;
+}
+
+.abundance-slide .apparel-reference {
+  --reference-position: 66.667%;
+}
+
+.abundance-slide .abundance-marker-note,
+.abundance-slide .abundance-lead {
+  margin: 0;
+}
+
+.abundance-slide .abundance-legend {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(0.78rem, 1vw, 0.92rem);
+  line-height: 1.35;
+}
+
+.abundance-slide .abundance-readout {
+  display: grid;
+  gap: 0.7rem;
+  min-width: 0;
+}
+
+.abundance-slide .abundance-readout .equation {
+  margin: 0;
+  font-size: clamp(1rem, 1.8vw, 1.5rem);
+}
+
+.abundance-slide .abundance-production-result {
+  margin: 0;
+  color: var(--slate);
+  font-size: clamp(0.98rem, 1.35vw, 1.18rem);
+  line-height: 1.4;
+}
+
+.abundance-slide .abundance-trade-result {
+  margin: 0;
+  padding: 0.8rem 0.9rem;
+  border-left: 6px solid var(--gold);
+  border-radius: 0.35rem 0.75rem 0.75rem 0.35rem;
+  background: #fffaf0;
+  color: var(--ink);
+  font-size: clamp(1rem, 1.45vw, 1.25rem);
+  font-weight: 760;
+  line-height: 1.4;
+}
+
+.abundance-slide .abundance-trade-result[data-state="land"] {
+  border-left-color: var(--sfu-red);
+}
+
+.abundance-slide .abundance-trade-result[data-state="labour"] {
+  border-left-color: var(--blue);
+}
+
+.abundance-slide .abundance-trade-result[data-state="equal"] {
+  border-left-color: var(--gold);
+}
+
+.abundance-slide #abundance-play[aria-pressed="true"] {
+  border-color: var(--sfu-red);
+  background: var(--sfu-red);
+  color: white;
+}
+
+@media (max-width: 850px) {
+  .abundance-slide .abundance-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .abundance-slide .abundance-bars {
+    padding: 0.85rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .abundance-slide .abundance-bar-fill {
+    transition: none;
+  }
+}
+
+@media print {
+  .abundance-slide #abundance-play {
+    display: none;
+  }
+}

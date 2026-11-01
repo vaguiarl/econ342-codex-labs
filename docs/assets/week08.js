@@ -160,6 +160,136 @@
     setText("resource-real-wage", (wage / price).toFixed(2));
   }
 
+  let abundanceFrame = 0;
+  let abundancePlaying = false;
+  const abundanceMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  function abundanceTradeText(ratio) {
+    if (ratio > 1.005) {
+      return "Home is relatively land abundant. H–O predicts grain exports and apparel imports.";
+    }
+    if (ratio < 0.995) {
+      return "Home is relatively labour abundant. H–O predicts apparel exports and grain imports.";
+    }
+    return "Home and partner have the same factor ratio. H–O alone gives no clear trade direction.";
+  }
+
+  function updateAbundance(announce = false) {
+    const input = byId("abundance-ratio");
+    if (!input) return;
+
+    const ratio = Math.max(0.5, Math.min(2, Number(input.value)));
+    const grain = Math.max(0, 20 * ratio - 10);
+    const apparel = Math.max(0, 40 - 20 * ratio);
+    const maximumOutput = 30;
+    const grainWidth = Math.max(0, Math.min(100, (grain / maximumOutput) * 100));
+    const apparelWidth = Math.max(0, Math.min(100, (apparel / maximumOutput) * 100));
+    const grainBar = byId("abundance-grain-bar");
+    const apparelBar = byId("abundance-apparel-bar");
+    const bars = byId("abundance-bars");
+    const tradeResult = byId("abundance-trade-result");
+    const tradeBox = tradeResult?.closest(".abundance-trade-result");
+    const productionResult = byId("abundance-production-result");
+
+    setText("abundance-ratio-value", ratio.toFixed(2));
+    setText("abundance-grain-value", grain.toFixed(1));
+    setText("abundance-apparel-value", apparel.toFixed(1));
+
+    if (grainBar) {
+      grainBar.style.width = `${grainWidth}%`;
+      grainBar.setAttribute("aria-valuenow", grain.toFixed(1));
+      grainBar.setAttribute("aria-label", `Grain output ${grain.toFixed(1)} teaching units`);
+    }
+    if (apparelBar) {
+      apparelBar.style.width = `${apparelWidth}%`;
+      apparelBar.setAttribute("aria-valuenow", apparel.toFixed(1));
+      apparelBar.setAttribute("aria-label", `Apparel output ${apparel.toFixed(1)} teaching units`);
+    }
+
+    const tradeText = abundanceTradeText(ratio);
+    if (tradeResult) {
+      tradeResult.textContent = tradeText;
+      tradeBox?.setAttribute("data-state", ratio > 1.005 ? "land" : ratio < 0.995 ? "labour" : "equal");
+    }
+    if (productionResult) {
+      const outputDifference = Math.abs(20 * (ratio - 1));
+      productionResult.textContent = ratio > 1.005
+        ? `Relative to the partner, grain output is ${outputDifference.toFixed(1)} units higher and apparel output is ${outputDifference.toFixed(1)} units lower.`
+        : ratio < 0.995
+          ? `Relative to the partner, grain output is ${outputDifference.toFixed(1)} units lower and apparel output is ${outputDifference.toFixed(1)} units higher.`
+          : "At the partner ratio, home and partner produce the same mix in this teaching model.";
+    }
+
+    const summary = `At land per worker ${ratio.toFixed(2)}, grain output is ${grain.toFixed(1)} and apparel output is ${apparel.toFixed(1)} teaching units. ${tradeText}`;
+    bars?.setAttribute("aria-label", summary);
+    if (announce) setText("abundance-live", summary);
+
+    document.querySelectorAll("[data-abundance-value]").forEach((button) => {
+      const selected = Math.abs(Number(button.dataset.abundanceValue) - ratio) < 0.006;
+      button.setAttribute("aria-pressed", selected ? "true" : "false");
+    });
+  }
+
+  function stopAbundanceAnimation(announce = false) {
+    if (abundanceFrame) cancelAnimationFrame(abundanceFrame);
+    abundanceFrame = 0;
+    abundancePlaying = false;
+    const button = byId("abundance-play");
+    if (button) {
+      button.textContent = "Play endowment change";
+      button.setAttribute("aria-pressed", "false");
+    }
+    if (announce) updateAbundance(true);
+  }
+
+  function playAbundanceAnimation() {
+    const input = byId("abundance-ratio");
+    const button = byId("abundance-play");
+    if (!input || !button) return;
+
+    if (abundancePlaying) {
+      stopAbundanceAnimation(true);
+      return;
+    }
+
+    if (abundanceMotionQuery.matches) {
+      input.value = "1.75";
+      updateAbundance(true);
+      return;
+    }
+
+    let startRatio = Number(input.value);
+    if (startRatio >= 1.84) {
+      startRatio = 0.55;
+      input.value = startRatio.toFixed(2);
+      updateAbundance(false);
+    }
+    const endRatio = 1.85;
+    const fullDuration = 4200;
+    const duration = Math.max(900, fullDuration * ((endRatio - startRatio) / 1.3));
+    const startTime = performance.now();
+    abundancePlaying = true;
+    button.textContent = "Pause endowment change";
+    button.setAttribute("aria-pressed", "true");
+
+    const step = (time) => {
+      if (!abundancePlaying) return;
+      const progress = Math.min(1, (time - startTime) / duration);
+      const eased = progress < 0.5
+        ? 2 * progress * progress
+        : 1 - ((-2 * progress + 2) ** 2) / 2;
+      input.value = (startRatio + (endRatio - startRatio) * eased).toFixed(2);
+      updateAbundance(false);
+      if (progress < 1) {
+        abundanceFrame = requestAnimationFrame(step);
+      } else {
+        stopAbundanceAnimation(true);
+      }
+    };
+
+    abundanceFrame = requestAnimationFrame(step);
+  }
+
   if (!Charts) {
     ["ho-specialization-chart", "trefler-chart", "recent-exposure-chart", "attitudes-chart"].forEach(fallback);
   } else {
@@ -171,6 +301,22 @@
 
   byId("grain-price")?.addEventListener("input", updateFactorPrices);
   byId("resource-price")?.addEventListener("input", updateSpecificFactors);
+  byId("abundance-ratio")?.addEventListener("input", () => {
+    if (abundancePlaying) stopAbundanceAnimation(false);
+    updateAbundance(false);
+  });
+  byId("abundance-ratio")?.addEventListener("change", () => updateAbundance(true));
+  document.querySelectorAll("[data-abundance-value]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const input = byId("abundance-ratio");
+      if (!input) return;
+      if (abundancePlaying) stopAbundanceAnimation(false);
+      input.value = button.dataset.abundanceValue;
+      updateAbundance(true);
+    });
+  });
+  byId("abundance-play")?.addEventListener("click", playAbundanceAnimation);
   updateFactorPrices();
   updateSpecificFactors();
+  updateAbundance();
 })();
