@@ -6,7 +6,7 @@
   <meta name="description" content="Simplified ECON 342 study slides on Heckscher–Ohlin, specific factors, Canadian trade adjustment, winners and losers, and trade policy.">
   <title>Week 8 study deck · Who gains and who loses from trade? · ECON 342</title>
   <link rel="stylesheet" href="../../assets/site.css?v=20261101-distribution">
-  <link rel="stylesheet" href="../../assets/week08.css?v=20261101-abundance-1">
+  <link rel="stylesheet" href="../../assets/week08.css?v=20261101-abundance-2">
   <style>
     .compact-table th,.compact-table td { padding:.4rem .55rem; }
     .result-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:.72rem; }
@@ -30,7 +30,7 @@
     @media (max-width:850px) { .result-grid,.memory-grid,.case-steps { grid-template-columns:1fr; } }
   </style>
   <script defer src="../../assets/charts.js"></script>
-  <script defer src="../../assets/week08.js?v=20261101-abundance-1"></script>
+  <script defer src="../../assets/week08.js?v=20261101-abundance-2"></script>
   <script defer src="../../assets/slides.js"></script>
 </head>
 <body class="deck-body study-deck">
@@ -144,19 +144,17 @@
               <div class="abundance-bar-label"><strong>Apparel</strong><span><output id="abundance-apparel-value">27.0</output> units</span></div>
               <div class="abundance-bar-track"><div class="abundance-bar-fill apparel" id="abundance-apparel-bar" role="progressbar" aria-valuemin="0" aria-valuemax="30" aria-valuenow="27.0" aria-label="Apparel output 27.0 teaching units" style="width:90%"></div><span class="abundance-reference apparel-reference" aria-hidden="true"></span></div>
             </div>
-            <p class="subtle abundance-marker-note">Thin marker: partner output at T/L = 1.</p>
+            <p class="subtle abundance-marker-note" id="abundance-caveat">Thin marker = partner output. Stylized model, not a Canada–Korea forecast.</p>
           </div>
         </div>
         <div class="panel abundance-readout">
           <p class="eyebrow">Teaching coefficients</p>
           <p>Grain uses 4 land and 2 labour per unit. Apparel uses 1 land and 2 labour.</p>
           <div class="equation" id="abundance-model-note">Q<sub>G</sub> = 20(T/L) − 10<br>Q<sub>A</sub> = 40 − 20(T/L)</div>
-          <p class="abundance-production-result"><strong>Production response:</strong> <span id="abundance-production-result">Compared with the partner, grain output is 7 units lower and apparel output is 7 units higher.</span></p>
-          <p class="abundance-trade-result" data-state="labour"><strong>H–O trade prediction:</strong> <span id="abundance-trade-result">The home economy is relatively labour abundant, so it exports apparel and imports grain.</span></p>
+          <p class="abundance-production-result"><strong>Rybczynski at fixed prices:</strong> <span id="abundance-production-result">Compared with the partner, grain output is 7 units lower and apparel output is 7 units higher.</span></p>
+          <p class="abundance-trade-result" data-state="labour"><strong>H–O trade direction:</strong> <span id="abundance-trade-result">The home economy is relatively labour abundant, so it exports apparel and imports grain.</span><span class="abundance-volume-note">Demand and trade costs determine volume.</span></p>
         </div>
       </div>
-      <p class="study-rule"><strong>Two results:</strong> at fixed goods prices, more land expands the land-intensive sector and contracts the labour-intensive sector. This is the Rybczynski result. H–O identifies trade direction, while demand and trade costs help determine actual volumes.</p>
-      <p class="source" id="abundance-caveat">Stylized teaching model while both goods are produced. The model does not calibrate a Canada–Korea forecast. Technology, preferences, scale, policy, and trade costs stay fixed.</p>
       <p class="screen-reader-only" id="abundance-live" aria-live="polite"></p>
     </section>
 

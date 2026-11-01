@@ -168,6 +168,14 @@
   border-left-color: var(--gold);
 }
 
+.abundance-slide .abundance-volume-note {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--muted);
+  font-size: 0.88em;
+  font-weight: 650;
+}
+
 .abundance-slide #abundance-play[aria-pressed="true"] {
   border-color: var(--sfu-red);
   background: var(--sfu-red);

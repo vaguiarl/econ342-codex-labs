@@ -162,6 +162,7 @@
 
   let abundanceFrame = 0;
   let abundancePlaying = false;
+  let abundancePaused = false;
   const abundanceMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
   function abundanceTradeText(ratio) {
@@ -230,10 +231,11 @@
     });
   }
 
-  function stopAbundanceAnimation(announce = false) {
+  function stopAbundanceAnimation(announce = false, preservePosition = false) {
     if (abundanceFrame) cancelAnimationFrame(abundanceFrame);
     abundanceFrame = 0;
     abundancePlaying = false;
+    abundancePaused = preservePosition;
     const button = byId("abundance-play");
     if (button) {
       button.textContent = "Play endowment change";
@@ -248,22 +250,21 @@
     if (!input || !button) return;
 
     if (abundancePlaying) {
-      stopAbundanceAnimation(true);
+      stopAbundanceAnimation(true, true);
       return;
     }
 
     if (abundanceMotionQuery.matches) {
+      abundancePaused = false;
       input.value = "1.75";
       updateAbundance(true);
       return;
     }
 
-    let startRatio = Number(input.value);
-    if (startRatio >= 1.84) {
-      startRatio = 0.55;
-      input.value = startRatio.toFixed(2);
-      updateAbundance(false);
-    }
+    const startRatio = abundancePaused ? Number(input.value) : 0.55;
+    abundancePaused = false;
+    input.value = startRatio.toFixed(2);
+    updateAbundance(false);
     const endRatio = 1.85;
     const fullDuration = 4200;
     const duration = Math.max(900, fullDuration * ((endRatio - startRatio) / 1.3));
@@ -283,7 +284,7 @@
       if (progress < 1) {
         abundanceFrame = requestAnimationFrame(step);
       } else {
-        stopAbundanceAnimation(true);
+        stopAbundanceAnimation(true, false);
       }
     };
 
@@ -302,7 +303,8 @@
   byId("grain-price")?.addEventListener("input", updateFactorPrices);
   byId("resource-price")?.addEventListener("input", updateSpecificFactors);
   byId("abundance-ratio")?.addEventListener("input", () => {
-    if (abundancePlaying) stopAbundanceAnimation(false);
+    if (abundancePlaying) stopAbundanceAnimation(false, false);
+    abundancePaused = false;
     updateAbundance(false);
   });
   byId("abundance-ratio")?.addEventListener("change", () => updateAbundance(true));
@@ -310,7 +312,8 @@
     button.addEventListener("click", () => {
       const input = byId("abundance-ratio");
       if (!input) return;
-      if (abundancePlaying) stopAbundanceAnimation(false);
+      if (abundancePlaying) stopAbundanceAnimation(false, false);
+      abundancePaused = false;
       input.value = button.dataset.abundanceValue;
       updateAbundance(true);
     });
