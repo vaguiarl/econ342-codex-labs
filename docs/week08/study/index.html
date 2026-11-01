@@ -6,7 +6,7 @@
   <meta name="description" content="Simplified ECON 342 study slides on Heckscher–Ohlin, specific factors, Canadian trade adjustment, winners and losers, and trade policy.">
   <title>Week 8 study deck · Who gains and who loses from trade? · ECON 342</title>
   <link rel="stylesheet" href="../../assets/site.css?v=20261101-distribution">
-  <link rel="stylesheet" href="../../assets/week08.css?v=20261101-abundance-2">
+  <link rel="stylesheet" href="../../assets/week08.css?v=20261101-policy-1">
   <style>
     .compact-table th,.compact-table td { padding:.4rem .55rem; }
     .result-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:.72rem; }
@@ -30,7 +30,7 @@
     @media (max-width:850px) { .result-grid,.memory-grid,.case-steps { grid-template-columns:1fr; } }
   </style>
   <script defer src="../../assets/charts.js"></script>
-  <script defer src="../../assets/week08.js?v=20261101-abundance-2"></script>
+  <script defer src="../../assets/week08.js?v=20261101-policy-1"></script>
   <script defer src="../../assets/slides.js"></script>
 </head>
 <body class="deck-body study-deck">
@@ -180,33 +180,64 @@
       <p class="source">Sources: <a href="https://data.worldbank.org/indicator/AG.LND.ARBL.HA.PC?locations=CA-KR" target="_blank" rel="noopener">World Bank, arable land per person</a>; author’s grouping of <a href="https://doi.org/10.25318/1210017101-eng" target="_blank" rel="noopener">Statistics Canada Table 12-10-0171-01</a>.</p>
     </section>
 
-    <section class="slide" data-slide-title="Factor-price calculation" aria-hidden="true" tabindex="-1">
-      <h2 data-step="7">A product-price increase redistributes factor income</h2>
-      <div class="two-col">
-        <div class="panel">
-          <p id="factor-price-equations">Zero-profit conditions: <strong>2r + w = p<sub>G</sub></strong> and <strong>r + 2w = 6</strong>.</p>
-          <div class="slider-control"><label for="grain-price">Grain price <output id="grain-price-value">8.0</output></label><input id="grain-price" type="range" min="5" max="9" step="0.1" value="8" aria-describedby="factor-price-equations"></div>
-          <p class="subtle">Baseline p<sub>G</sub> = 6 gives r = 2 and w = 2. Move the slider.</p>
+    <section class="slide factor-policy-slide" data-slide-title="Openness, factor incomes, and inequality" aria-hidden="true" tabindex="-1">
+      <h2 data-step="7">Openness changes factor incomes and inequality</h2>
+      <div class="factor-policy-layout">
+        <div class="factor-policy-visual">
+          <div class="slider-control factor-policy-control">
+            <label for="trade-openness">Openness to the grain export market <output id="trade-openness-value">100%</output></label>
+            <input id="trade-openness" type="range" min="0" max="100" step="1" value="100" aria-describedby="factor-policy-model factor-policy-inequality-note">
+            <div class="factor-policy-scale" aria-hidden="true"><span>0 · closed</span><span>50 · partly open</span><span>100 · world price</span></div>
+          </div>
+          <figure class="factor-policy-figure">
+            <svg id="factor-price-chart" class="factor-policy-chart" viewBox="0 0 680 310" role="img" aria-labelledby="factor-price-chart-title factor-price-chart-desc">
+              <title id="factor-price-chart-title">Factor payments as openness changes</title>
+              <desc id="factor-price-chart-desc">Land rent rises and the wage falls as openness raises the relative price of land-intensive grain.</desc>
+              <rect class="factor-chart-frame" x="62" y="45" width="558" height="200" aria-hidden="true"></rect>
+              <g class="factor-chart-grid" aria-hidden="true">
+                <line x1="62" y1="245" x2="620" y2="245"></line><line x1="62" y1="165" x2="620" y2="165"></line><line x1="62" y1="85" x2="620" y2="85"></line>
+              </g>
+              <g class="factor-chart-axes factor-chart-axis" aria-hidden="true">
+                <line x1="62" y1="45" x2="62" y2="245"></line><line x1="62" y1="245" x2="620" y2="245"></line>
+                <text class="factor-chart-tick" x="48" y="250" text-anchor="end">1</text><text class="factor-chart-tick" x="48" y="170" text-anchor="end">2</text><text class="factor-chart-tick" x="48" y="90" text-anchor="end">3</text>
+                <text class="factor-chart-tick" x="62" y="270" text-anchor="middle">0</text><text class="factor-chart-tick" x="341" y="270" text-anchor="middle">50</text><text class="factor-chart-tick" x="620" y="270" text-anchor="middle">100</text>
+                <text class="factor-axis-title factor-chart-label" x="341" y="300" text-anchor="middle">Openness to world price (%)</text>
+                <text class="factor-axis-title factor-chart-label" x="17" y="145" text-anchor="middle" transform="rotate(-90 17 145)">Factor payment</text>
+              </g>
+              <line class="factor-rent-line" x1="62" y1="165" x2="620" y2="58.3" aria-hidden="true"></line>
+              <line class="factor-wage-line" x1="62" y1="165" x2="620" y2="218.3" aria-hidden="true"></line>
+              <text class="factor-rent-label factor-chart-series-label" x="628" y="61" aria-hidden="true">rent r</text><text class="factor-wage-label factor-chart-series-label" x="628" y="222" aria-hidden="true">wage w</text>
+              <line id="factor-policy-guide" class="factor-policy-guide" x1="620" y1="45" x2="620" y2="245" aria-hidden="true"></line>
+              <circle id="factor-rent-marker" class="factor-rent-marker" cx="620" cy="58.3" r="7" aria-hidden="true"></circle>
+              <circle id="factor-wage-marker" class="factor-wage-marker" cx="620" cy="218.3" r="7" aria-hidden="true"></circle>
+            </svg>
+          </figure>
+          <p id="factor-policy-model" class="subtle factor-policy-caveat">Closed prices are p<sub>G</sub> = p<sub>A</sub> = 6. Openness moves p<sub>G</sub> toward 8. Moving left shows the relative-price direction of an apparel tariff.</p>
         </div>
-        <div class="result-grid">
-          <div class="metric"><strong id="land-rent-result">3.33</strong><span>land rent r</span></div>
-          <div class="metric"><strong id="wage-result">1.33</strong><span>wage w</span></div>
-          <div class="metric"><strong id="land-rent-change">+66.7%</strong><span>rent change</span></div>
-          <div class="metric"><strong id="wage-change">−33.3%</strong><span>wage change</span></div>
+        <div class="factor-policy-results factor-policy-readout">
+          <div class="factor-policy-metrics factor-result-grid">
+            <div class="metric"><strong id="policy-price-ratio">1.33</strong><span>grain ÷ apparel price</span></div>
+            <div class="metric"><strong id="land-rent-result">3.33</strong><span>land rent r</span></div>
+            <div class="metric"><strong id="wage-result">1.33</strong><span>wage w</span></div>
+            <div class="metric"><strong id="factor-income-ratio">2.50×</strong><span>one land unit ÷ one labour unit</span></div>
+          </div>
+          <p class="factor-change-line">From closed: rent <strong id="land-rent-change">+66.7%</strong>; wage <strong id="wage-change">−33.3%</strong>.</p>
+          <p class="factor-change-line">Worker purchasing power: <strong id="wage-grain-result">0.167</strong> grain or <strong id="wage-apparel-result">0.222</strong> apparel.</p>
+          <p class="callout factor-inequality-result"><strong>Distributional pressure:</strong> <span id="factor-inequality-result">One land unit earns 2.50 times one labour unit. Concentrated land ownership can widen household inequality.</span></p>
+          <p id="factor-policy-inequality-note" class="subtle factor-policy-caveat">Toy household comparison. This is not a Gini coefficient or a Canadian forecast.</p>
         </div>
       </div>
-      <div class="two-col"><div class="metric"><strong id="wage-grain-result">0.167</strong><span>real wage in grain</span></div><div class="metric"><strong id="wage-apparel-result">0.222</strong><span>real wage in apparel</span></div></div>
-      <p class="study-rule"><strong>Read it:</strong> the land-intensive good’s price rises 33.3%; land rent rises more, while the wage falls.</p>
+      <p id="factor-policy-live" class="screen-reader-only" aria-live="polite"></p>
     </section>
 
     <section class="slide" data-slide-title="Stolper–Samuelson" aria-hidden="true" tabindex="-1">
-      <h2 data-step="8">Stolper–Samuelson is the distribution theorem</h2>
+      <h2 data-step="8">Stolper–Samuelson connects trade policy to inequality pressure</h2>
       <div class="two-col">
-        <div class="panel"><p class="eyebrow">Winner</p><h3>The factor used intensively in the rising-price good</h3><p>Its real return rises. In the toy example, landowners gain.</p></div>
-        <div class="panel"><p class="eyebrow">Loser</p><h3>The other factor</h3><p>Its real return can fall in terms of both goods. In the toy example, workers lose.</p></div>
+        <div class="panel"><p class="eyebrow">More openness</p><h3>The land-intensive export price rises</h3><p>Land rent rises while the wage falls in terms of both goods. If land ownership is concentrated, the factor-income gap can widen household inequality.</p></div>
+        <div class="panel"><p class="eyebrow">Tariff on labour-intensive apparel</p><h3>The domestic apparel price rises</h3><p>The wage rises and land rent falls in this model. The factor-income gap can narrow, but consumers pay more for apparel.</p></div>
       </div>
-      <p class="callout"><strong>Magnification:</strong> the winning factor’s return can rise proportionally more than the product price.</p>
-      <p class="study-rule"><strong>Long-run question:</strong> who owns land, labour, capital, and skills that can move across industries?</p>
+      <p class="callout"><strong>Magnification:</strong> the intensive factor’s return changes proportionally more than the product price that moved.</p>
+      <p class="study-rule"><strong>Do not jump from factor prices to a Gini:</strong> household inequality also depends on factor ownership and policy redistribution. Tariff revenue, retaliation, and efficiency costs lie outside this experiment.</p>
     </section>
 
     <section class="slide" data-slide-title="Long run versus short run" aria-hidden="true" tabindex="-1">

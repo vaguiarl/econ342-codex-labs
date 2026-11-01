@@ -123,22 +123,59 @@
     if (node) node.textContent = value;
   }
 
-  function updateFactorPrices() {
-    const input = byId("grain-price");
+  function updateFactorPrices(announce = false) {
+    const input = byId("trade-openness");
     if (!input) return;
-    const grainPrice = Number(input.value);
+    const openness = Math.max(0, Math.min(100, Number(input.value)));
+    const opennessShare = openness / 100;
+    const grainPrice = 6 + 2 * opennessShare;
     const apparelPrice = 6;
     const rent = (2 * grainPrice - apparelPrice) / 3;
     const wage = (2 * apparelPrice - grainPrice) / 3;
     const rentChange = ((rent - 2) / 2) * 100;
     const wageChange = ((wage - 2) / 2) * 100;
-    setText("grain-price-value", grainPrice.toFixed(1));
+    const incomeRatio = rent / wage;
+
+    setText("trade-openness-value", `${openness.toFixed(0)}%`);
+    setText("policy-price-ratio", (grainPrice / apparelPrice).toFixed(2));
     setText("land-rent-result", rent.toFixed(2));
     setText("wage-result", wage.toFixed(2));
     setText("land-rent-change", pct(rentChange));
     setText("wage-change", pct(wageChange));
     setText("wage-grain-result", (wage / grainPrice).toFixed(3));
     setText("wage-apparel-result", (wage / apparelPrice).toFixed(3));
+    setText("factor-income-ratio", `${incomeRatio.toFixed(2)}×`);
+
+    const distributionText = openness < 0.5
+      ? "One land unit and one labour unit each earn 2. Ownership still determines household inequality."
+      : `One land unit earns ${incomeRatio.toFixed(2)} times one labour unit. Concentrated land ownership can widen household inequality.`;
+    setText("factor-inequality-result", distributionText);
+
+    input.setAttribute("aria-valuetext", `${openness.toFixed(0)} percent openness; grain-to-apparel price ratio ${(grainPrice / apparelPrice).toFixed(2)}`);
+
+    const chart = byId("factor-price-chart");
+    const guide = byId("factor-policy-guide");
+    const rentMarker = byId("factor-rent-marker");
+    const wageMarker = byId("factor-wage-marker");
+    const x = 62 + (558 * opennessShare);
+    const y = (value) => 245 - (((value - 1) / 2.5) * 200);
+    if (guide) {
+      guide.setAttribute("x1", x.toFixed(2));
+      guide.setAttribute("x2", x.toFixed(2));
+    }
+    if (rentMarker) {
+      rentMarker.setAttribute("cx", x.toFixed(2));
+      rentMarker.setAttribute("cy", y(rent).toFixed(2));
+    }
+    if (wageMarker) {
+      wageMarker.setAttribute("cx", x.toFixed(2));
+      wageMarker.setAttribute("cy", y(wage).toFixed(2));
+    }
+
+    const summary = `At ${openness.toFixed(0)} percent openness, the grain-to-apparel price ratio is ${(grainPrice / apparelPrice).toFixed(2)}, land rent is ${rent.toFixed(2)}, the wage is ${wage.toFixed(2)}, and the one-unit land-to-labour income ratio is ${incomeRatio.toFixed(2)}.`;
+    setText("factor-price-chart-desc", summary);
+    chart?.setAttribute("aria-label", summary);
+    if (announce) setText("factor-policy-live", summary);
   }
 
   function updateSpecificFactors() {
@@ -300,7 +337,8 @@
     renderAttitudes();
   }
 
-  byId("grain-price")?.addEventListener("input", updateFactorPrices);
+  byId("trade-openness")?.addEventListener("input", () => updateFactorPrices(false));
+  byId("trade-openness")?.addEventListener("change", () => updateFactorPrices(true));
   byId("resource-price")?.addEventListener("input", updateSpecificFactors);
   byId("abundance-ratio")?.addEventListener("input", () => {
     if (abundancePlaying) stopAbundanceAnimation(false, false);

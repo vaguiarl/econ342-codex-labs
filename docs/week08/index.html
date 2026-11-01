@@ -6,7 +6,7 @@
   <meta name="description" content="Interactive ECON 342 slides on Heckscher–Ohlin, specific factors, Canadian trade adjustment, winners and losers, and support for protection.">
   <title>Week 8 · Who gains and who loses from trade? · ECON 342</title>
   <link rel="stylesheet" href="../assets/site.css?v=20261101-distribution">
-  <link rel="stylesheet" href="../assets/week08.css?v=20261101-abundance-2">
+  <link rel="stylesheet" href="../assets/week08.css?v=20261101-policy-1">
   <style>
     .process-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:.75rem; counter-reset:process; }
     .process-grid .panel { position:relative; min-height:132px; padding-top:2.8rem; }
@@ -47,7 +47,7 @@
     @media (max-width:850px) { .result-grid,.process-grid,.case-steps,.region-grid { grid-template-columns:1fr; } }
   </style>
   <script defer src="../assets/charts.js"></script>
-  <script defer src="../assets/week08.js?v=20261101-abundance-2"></script>
+  <script defer src="../assets/week08.js?v=20261101-policy-1"></script>
   <script defer src="../assets/slides.js"></script>
 </head>
 <body class="deck-body">
@@ -263,13 +263,13 @@
     </section>
 
     <section class="slide" data-slide-title="Product prices and factor demand" aria-hidden="true" tabindex="-1">
-      <h2>Trade changes product prices and therefore factor demand</h2>
+      <h2>Openness and tariffs push factor incomes in opposite directions</h2>
       <div class="two-col">
-        <div class="panel"><p class="eyebrow">Export opportunity</p><p>Foreign demand raises the relative price of Canada’s export good. Producers demand more of the factors used intensively in that sector.</p></div>
-        <div class="panel"><p class="eyebrow">Import competition</p><p>Access to lower-priced imports reduces the relative price received by domestic producers of the import-competing good.</p></div>
+        <div class="panel"><p class="eyebrow">More openness in the land-abundant example</p><p>World demand raises the relative price of grain. Grain uses land intensively, so land rent rises while the wage falls in real terms in the long-run model.</p></div>
+        <div class="panel"><p class="eyebrow">Tariff on labour-intensive apparel</p><p>The tariff raises the domestic price of apparel. Apparel uses labour intensively, so the wage rises and land rent falls, but every apparel buyer faces a higher price.</p></div>
       </div>
-      <div class="equation">Product prices &nbsp;⟶&nbsp; factor demand &nbsp;⟶&nbsp; wages and rents</div>
-      <p class="callout">Every household may enjoy a cheaper imported good while some households lose factor income.</p>
+      <div class="equation">Trade policy changes domestic relative prices. Relative prices change factor demand. Factor demand changes real wages and rents.</div>
+      <p class="callout"><strong>Inequality link:</strong> a larger gap between land income and labour income can widen household inequality when land ownership is concentrated. Ownership, consumption, and taxes or transfers determine the final household result.</p>
     </section>
 
     <section class="slide" data-slide-title="Factor prices before trade" aria-hidden="true" tabindex="-1">
@@ -283,23 +283,55 @@
       <p class="prompt"><strong>Your move</strong> Verify the solution in both equations.</p>
     </section>
 
-    <section class="slide" data-slide-title="Interactive factor-price calculation" aria-hidden="true" tabindex="-1">
-      <h2>Change the grain price and watch factor incomes move</h2>
-      <div class="two-col wide-left">
-        <div class="panel">
-          <div class="slider-control"><label for="grain-price">Grain price <output id="grain-price-value">8.0</output></label><input id="grain-price" type="range" min="5" max="9" step="0.1" value="8" aria-describedby="factor-price-equations"></div>
-          <div id="factor-price-equations" class="equation">2r + w = p<sub>G</sub><br>r + 2w = 6</div>
-          <p>The apparel price stays at 6. The baseline is p<sub>G</sub> = 6, r = 2, and w = 2.</p>
+    <section class="slide factor-policy-slide" data-slide-title="Openness, factor incomes, and inequality" aria-hidden="true" tabindex="-1">
+      <h2>Openness changes factor incomes and the income gap</h2>
+      <p class="factor-policy-lead">Canada exports land-intensive grain. Openness moves p<sub>G</sub> from 6 toward its world price of 8 while p<sub>A</sub> stays at 6.</p>
+      <div class="factor-policy-layout">
+        <div class="factor-policy-visual">
+          <div class="slider-control factor-policy-control">
+            <label for="trade-openness">Openness to the grain export market <output id="trade-openness-value">100%</output></label>
+            <input id="trade-openness" type="range" min="0" max="100" step="1" value="100" aria-describedby="factor-policy-model factor-policy-inequality-note">
+            <div class="factor-policy-scale" aria-hidden="true"><span>0 · closed</span><span>50 · partly open</span><span>100 · world price</span></div>
+          </div>
+          <figure class="factor-policy-figure">
+            <svg id="factor-price-chart" class="factor-policy-chart" viewBox="0 0 680 310" role="img" aria-labelledby="factor-price-chart-title factor-price-chart-desc">
+              <title id="factor-price-chart-title">Factor payments as openness changes</title>
+              <desc id="factor-price-chart-desc">Land rent rises and the wage falls as openness raises the relative price of land-intensive grain.</desc>
+              <rect class="factor-chart-frame" x="62" y="45" width="558" height="200" aria-hidden="true"></rect>
+              <g class="factor-chart-grid" aria-hidden="true">
+                <line x1="62" y1="245" x2="620" y2="245"></line><line x1="62" y1="165" x2="620" y2="165"></line><line x1="62" y1="85" x2="620" y2="85"></line>
+              </g>
+              <g class="factor-chart-axes factor-chart-axis" aria-hidden="true">
+                <line x1="62" y1="45" x2="62" y2="245"></line><line x1="62" y1="245" x2="620" y2="245"></line>
+                <text class="factor-chart-tick" x="48" y="250" text-anchor="end">1</text><text class="factor-chart-tick" x="48" y="170" text-anchor="end">2</text><text class="factor-chart-tick" x="48" y="90" text-anchor="end">3</text>
+                <text class="factor-chart-tick" x="62" y="270" text-anchor="middle">0</text><text class="factor-chart-tick" x="341" y="270" text-anchor="middle">50</text><text class="factor-chart-tick" x="620" y="270" text-anchor="middle">100</text>
+                <text class="factor-axis-title factor-chart-label" x="341" y="300" text-anchor="middle">Openness to world price (%)</text>
+                <text class="factor-axis-title factor-chart-label" x="17" y="145" text-anchor="middle" transform="rotate(-90 17 145)">Factor payment</text>
+              </g>
+              <line class="factor-rent-line" x1="62" y1="165" x2="620" y2="58.3" aria-hidden="true"></line>
+              <line class="factor-wage-line" x1="62" y1="165" x2="620" y2="218.3" aria-hidden="true"></line>
+              <text class="factor-rent-label factor-chart-series-label" x="628" y="61" aria-hidden="true">rent r</text><text class="factor-wage-label factor-chart-series-label" x="628" y="222" aria-hidden="true">wage w</text>
+              <line id="factor-policy-guide" class="factor-policy-guide" x1="620" y1="45" x2="620" y2="245" aria-hidden="true"></line>
+              <circle id="factor-rent-marker" class="factor-rent-marker" cx="620" cy="58.3" r="7" aria-hidden="true"></circle>
+              <circle id="factor-wage-marker" class="factor-wage-marker" cx="620" cy="218.3" r="7" aria-hidden="true"></circle>
+            </svg>
+          </figure>
+          <p id="factor-policy-model" class="subtle factor-policy-caveat">Moving left has the same relative-price direction as a tariff on labour-intensive apparel. The experiment omits tariff revenue, retaliation, and quantity responses.</p>
         </div>
-        <div class="result-grid">
-          <div class="metric"><strong id="land-rent-result">3.33</strong><span>land rent r</span></div>
-          <div class="metric"><strong id="wage-result">1.33</strong><span>wage w</span></div>
-          <div class="metric"><strong id="land-rent-change">+66.7%</strong><span>rent change</span></div>
-          <div class="metric"><strong id="wage-change">−33.3%</strong><span>wage change</span></div>
+        <div class="factor-policy-results factor-policy-readout">
+          <div class="factor-policy-metrics factor-result-grid">
+            <div class="metric"><strong id="policy-price-ratio">1.33</strong><span>grain ÷ apparel price</span></div>
+            <div class="metric"><strong id="land-rent-result">3.33</strong><span>land rent r</span></div>
+            <div class="metric"><strong id="wage-result">1.33</strong><span>wage w</span></div>
+            <div class="metric"><strong id="factor-income-ratio">2.50×</strong><span>one land unit ÷ one labour unit</span></div>
+          </div>
+          <p class="factor-change-line">From the closed baseline: rent <strong id="land-rent-change">+66.7%</strong>; wage <strong id="wage-change">−33.3%</strong>.</p>
+          <p class="factor-change-line">Worker purchasing power: <strong id="wage-grain-result">0.167</strong> grain or <strong id="wage-apparel-result">0.222</strong> apparel.</p>
+          <p class="callout factor-inequality-result"><strong>Distributional pressure:</strong> <span id="factor-inequality-result">One land unit earns 2.50 times one labour unit. Concentrated land ownership can widen household inequality.</span></p>
+          <p id="factor-policy-inequality-note" class="subtle factor-policy-caveat">Toy households: one owns one land unit; one supplies one labour unit. This is not a Gini coefficient or a Canadian forecast.</p>
         </div>
       </div>
-      <div class="two-col"><p class="callout">Real wage in grain: <strong id="wage-grain-result">0.167</strong></p><p class="callout">Real wage in apparel: <strong id="wage-apparel-result">0.222</strong></p></div>
-      <p class="prompt"><strong>Interpret</strong> When grain rises from 6 to 8, its price rises 33.3%; land rent rises more and the wage falls in terms of both goods.</p>
+      <p id="factor-policy-live" class="screen-reader-only" aria-live="polite"></p>
     </section>
 
     <section class="slide" data-slide-title="Stolper–Samuelson" aria-hidden="true" tabindex="-1">
