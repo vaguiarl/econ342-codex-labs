@@ -178,25 +178,6 @@
     if (announce) setText("factor-policy-live", summary);
   }
 
-  function updateSpecificFactors() {
-    const input = byId("resource-price");
-    if (!input) return;
-    const price = Number(input.value);
-    const labourR = (20 * price - 6) / (0.2 * price + 0.1);
-    const boundedR = Math.max(0, Math.min(100, labourR));
-    const labourM = 100 - boundedR;
-    const wage = 6 + 0.1 * boundedR;
-    const baselineLabourR = 46.6666667;
-    const baselineWage = 10.6666667;
-    setText("resource-price-value", price.toFixed(2));
-    setText("resource-labour-result", boundedR.toFixed(1));
-    setText("manufacturing-labour-result", labourM.toFixed(1));
-    setText("specific-wage-result", wage.toFixed(2));
-    setText("specific-wage-change", pct(((wage - baselineWage) / baselineWage) * 100));
-    setText("specific-labour-shift", (boundedR - baselineLabourR).toFixed(1));
-    setText("resource-real-wage", (wage / price).toFixed(2));
-  }
-
   let abundanceFrame = 0;
   let abundancePlaying = false;
   let abundancePaused = false;
@@ -339,7 +320,6 @@
 
   byId("trade-openness")?.addEventListener("input", () => updateFactorPrices(false));
   byId("trade-openness")?.addEventListener("change", () => updateFactorPrices(true));
-  byId("resource-price")?.addEventListener("input", updateSpecificFactors);
   byId("abundance-ratio")?.addEventListener("input", () => {
     if (abundancePlaying) stopAbundanceAnimation(false, false);
     abundancePaused = false;
@@ -358,6 +338,5 @@
   });
   byId("abundance-play")?.addEventListener("click", playAbundanceAnimation);
   updateFactorPrices();
-  updateSpecificFactors();
   updateAbundance();
 })();

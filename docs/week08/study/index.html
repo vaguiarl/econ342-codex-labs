@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Simplified ECON 342 study slides on Heckscher–Ohlin, specific factors, Canadian trade adjustment, winners and losers, and trade policy.">
+  <meta name="description" content="Simplified ECON 342 study slides on Heckscher–Ohlin, Stolper–Samuelson, Canadian trade adjustment, winners and losers, and trade policy.">
   <title>Week 8 study deck · Who gains and who loses from trade? · ECON 342</title>
   <link rel="stylesheet" href="../../assets/site.css?v=20261101-distribution">
   <link rel="stylesheet" href="../../assets/week08.css?v=20261101-policy-1">
@@ -16,7 +16,6 @@
     .case-steps { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:.6rem; counter-reset:case; }
     .case-steps .panel { position:relative; padding:.75rem; min-height:118px; }
     .case-steps .panel::before { counter-increment:case; content:counter(case); display:grid; width:1.65rem; height:1.65rem; place-items:center; margin-bottom:.45rem; border-radius:.42rem; background:var(--blue); color:#fff; font-weight:900; }
-    .specific-factor-study .study-rule { margin:.4rem 0 0; padding:.55rem .75rem; font-size:clamp(.88rem,1.15vw,1.02rem); line-height:1.28; }
     @media (min-width:851px) {
       .study-deck .slide { padding-top:clamp(1rem,2vw,1.8rem); padding-bottom:clamp(1rem,2vw,1.8rem); }
       .study-deck .slide h2 { margin-bottom:clamp(.7rem,1.25vw,1.05rem); font-size:clamp(1.9rem,3.2vw,3.3rem); }
@@ -30,7 +29,7 @@
     @media (max-width:850px) { .result-grid,.memory-grid,.case-steps { grid-template-columns:1fr; } }
   </style>
   <script defer src="../../assets/charts.js"></script>
-  <script defer src="../../assets/week08.js?v=20261101-policy-1"></script>
+  <script defer src="../../assets/week08.js?v=20261101-ho-1"></script>
   <script defer src="../../assets/slides.js"></script>
 </head>
 <body class="deck-body study-deck">
@@ -51,14 +50,14 @@
       <div>
         <p class="eyebrow">ECON 342 · Week 8 · Study version</p>
         <h1>Who gains and who loses from trade?</h1>
-        <p class="study-rule">Heckscher–Ohlin links trade to factor ownership. Specific factors explain why immediate gains and losses concentrate in industries, regions, and communities.</p>
+        <p class="study-rule">Heckscher–Ohlin links endowments to trade patterns. Stolper–Samuelson links product-price changes to the real incomes of factor owners.</p>
       </div>
       <div class="cover-meta">
         <p><strong>Predict:</strong> connect endowments to export patterns.</p>
         <p><strong>Compute:</strong> trace a product-price shock into factor prices.</p>
-        <p><strong>Distinguish:</strong> long-run factor effects from short-run sector effects.</p>
+        <p><strong>Test:</strong> separate H–O predictions from adjustment evidence.</p>
         <p><strong>Evaluate:</strong> connect adjustment costs to policy demands.</p>
-        <p class="subtle">Eighteen short slides · three calculators · Canadian evidence</p>
+        <p class="subtle">Eighteen short slides · two calculators · Canadian evidence</p>
       </div>
     </section>
 
@@ -240,37 +239,35 @@
       <p class="study-rule"><strong>Do not jump from factor prices to a Gini:</strong> household inequality also depends on factor ownership and policy redistribution. Tariff revenue, retaliation, and efficiency costs lie outside this experiment.</p>
     </section>
 
-    <section class="slide" data-slide-title="Long run versus short run" aria-hidden="true" tabindex="-1">
-      <h2 data-step="9">H–O and specific factors answer different time-horizon questions</h2>
+    <section class="slide" data-slide-title="One H–O chain" aria-hidden="true" tabindex="-1">
+      <h2 data-step="9">Use one H–O chain to answer four questions</h2>
       <div class="table-scroll"><table class="number-table compact-table">
-        <thead><tr><th></th><th>Heckscher–Ohlin / Stolper–Samuelson</th><th>Specific factors</th></tr></thead>
+        <thead><tr><th>Question</th><th>H–O / Stolper–Samuelson logic</th><th>Canadian application</th></tr></thead>
         <tbody>
-          <tr><td><strong>Mobility</strong></td><td>Factors move across sectors</td><td>Some capital, land, and skills are stuck</td></tr>
-          <tr><td><strong>Group line</strong></td><td>Factor ownership</td><td>Industry and region</td></tr>
-          <tr><td><strong>Best horizon</strong></td><td>Longer run</td><td>Short to medium run</td></tr>
-          <tr><td><strong>Question</strong></td><td>Which factor gains?</td><td>Which sector’s workers and assets gain?</td></tr>
+          <tr><td><strong>Trade pattern</strong></td><td>Relative abundance × factor intensity</td><td>Why Canada exports land- and resource-intensive goods</td></tr>
+          <tr><td><strong>Goods-price shock</strong></td><td>Identify the factor used intensively in the good</td><td>Which return rises or falls</td></tr>
+          <tr><td><strong>Distribution</strong></td><td>Map factor returns to ownership and consumption</td><td>Who gains or loses in real terms</td></tr>
+          <tr><td><strong>Evidence check</strong></td><td>Test assumptions and competing forces</td><td>Technology, input links, trade costs, and slow adjustment</td></tr>
         </tbody>
       </table></div>
-      <p class="study-rule"><strong>Exam rule:</strong> state the time horizon before naming winners and losers.</p>
+      <p class="study-rule"><strong>Exam rule:</strong> H–O predicts the trade pattern; Stolper–Samuelson predicts factor-income incidence.</p>
     </section>
 
-    <section class="slide specific-factor-study" data-slide-title="Specific-factors calculation" aria-hidden="true" tabindex="-1">
-      <h2 data-step="10">A resource-price shock pulls mobile labour toward resources</h2>
+    <section class="slide" data-slide-title="H–O policy screen" aria-hidden="true" tabindex="-1">
+      <h2 data-step="10">Use H–O for a prediction, then test what it omits</h2>
       <div class="two-col">
         <div class="panel">
-          <p>Labour is mobile; sector assets are fixed:</p>
-          <div class="equation">P<sub>R</sub>(20 − 0.2L<sub>R</sub>) = 6 + 0.1(100 − L<sub>R</sub>)</div>
-          <div class="slider-control"><label for="resource-price">Resource price <output id="resource-price-value">1.25</output></label><input id="resource-price" type="range" min="0.75" max="1.5" step="0.01" value="1.25"></div>
+          <p class="eyebrow">Directional prediction</p>
+          <h3>Trace the relative goods price</h3>
+          <p>A higher price for land-intensive grain raises land rent. A tariff that raises the price of labour-intensive apparel raises the wage in the toy model. The other factor’s real return moves in the opposite direction.</p>
         </div>
-        <div class="result-grid">
-          <div class="metric"><strong id="resource-labour-result">54.3</strong><span>resource labour</span></div>
-          <div class="metric"><strong id="manufacturing-labour-result">45.7</strong><span>manufacturing labour</span></div>
-          <div class="metric"><strong id="specific-wage-result">11.43</strong><span>nominal wage</span></div>
-          <div class="metric"><strong id="specific-wage-change">+7.1%</strong><span>wage change</span></div>
+        <div class="panel">
+          <p class="eyebrow">Evidence check</p>
+          <h3>Do not stop at the model</h3>
+          <p>Measure ownership, consumption, input linkages, mobility, tariff revenue, retaliation, and efficiency costs. Slow adjustment is evidence to document, not a second formal model in this week.</p>
         </div>
       </div>
-      <div class="two-col"><div class="metric"><strong id="specific-labour-shift">7.6</strong><span>workers shifted into resources</span></div><div class="metric"><strong id="resource-real-wage">9.14</strong><span>wage ÷ resource price</span></div></div>
-      <p class="study-rule">Mobile labour’s nominal wage rises, but its real income is ambiguous: purchasing power falls in the resource good and rises in the manufacturing good. Resource owners gain; manufacturing-specific owners lose.</p>
+      <p class="study-rule"><strong>Policy rule:</strong> a factor-income prediction is not yet a complete tariff cost–benefit analysis.</p>
     </section>
 
     <section class="slide" data-slide-title="FTA adjustment evidence" aria-hidden="true" tabindex="-1">
@@ -328,7 +325,7 @@
       <h2 data-step="16">Use this five-step recipe on any trade shock</h2>
       <div class="case-steps">
         <div class="panel"><h3>Name the shock</h3><p>Product price, trade cost, demand, technology, or policy?</p></div>
-        <div class="panel"><h3>Choose horizon</h3><p>Are factors mobile or tied to sectors and places?</p></div>
+        <div class="panel"><h3>Choose horizon</h3><p>How quickly can factors and households adjust?</p></div>
         <div class="panel"><h3>Map incidence</h3><p>Who owns the expanding and contracting factors?</p></div>
         <div class="panel"><h3>Test evidence</h3><p>Separate aggregate, sectoral, regional, and worker outcomes.</p></div>
         <div class="panel"><h3>Match policy</h3><p>Target the diagnosed market or adjustment failure.</p></div>
@@ -341,7 +338,7 @@
       <div class="memory-grid">
         <div class="panel"><h3>Explain H–O</h3><p>Relative abundance → relative cost → specialization → trade.</p></div>
         <div class="panel"><h3>Compute distribution</h3><p>A product-price change can raise one factor’s real return and lower another’s.</p></div>
-        <div class="panel"><h3>Choose the horizon</h3><p>Long-run factor ownership differs from short-run industry and regional exposure.</p></div>
+        <div class="panel"><h3>Test adjustment</h3><p>Compare the H–O benchmark with sector, region, and worker evidence.</p></div>
         <div class="panel"><h3>Read evidence</h3><p>Productivity gains can coexist with concentrated employment losses.</p></div>
         <div class="panel"><h3>Explain politics</h3><p>Large, visible, concentrated stakes organize more easily than diffuse stakes.</p></div>
         <div class="panel"><h3>Evaluate policy</h3><p>Target adjustment failures while preserving gains from exchange where possible.</p></div>
