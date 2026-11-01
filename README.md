@@ -27,6 +27,8 @@ click-to-expand visuals.
 | 3 | [Interactive class](https://vaguiarl.github.io/econ342-codex-labs/week03/) | [Study deck](https://vaguiarl.github.io/econ342-codex-labs/week03/study/) | Product space and Canada’s possible next exports |
 | 4 | [Interactive class](https://vaguiarl.github.io/econ342-codex-labs/week04/) | [Study deck](https://vaguiarl.github.io/econ342-codex-labs/week04/study/) | Gravity, distance, and trading partners |
 | 6 | [Interactive class](https://vaguiarl.github.io/econ342-codex-labs/week06/) | [Study deck](https://vaguiarl.github.io/econ342-codex-labs/week06/study/) | Krugman model: scale, variety, monopolistic competition, and two-way trade |
+| 7 | [Interactive class](https://vaguiarl.github.io/econ342-codex-labs/week07/) | [Study deck](https://vaguiarl.github.io/econ342-codex-labs/week07/study/) | Firm heterogeneity: exporter selection, entry, exit, and reallocation |
+| 8 | [Interactive class](https://vaguiarl.github.io/econ342-codex-labs/week08/) | [Study deck](https://vaguiarl.github.io/econ342-codex-labs/week08/study/) | Heckscher–Ohlin, specific factors, Canadian trade adjustment, and the distribution of gains and losses |
 
 Week 6 assignment: [Market Scale, Political Size, and Canada's Future](https://vaguiarl.github.io/econ342-codex-labs/week06/econ342_scale_nations_ai_assignment.pdf)
 

@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Simplified ECON 342 study slides on Heckscher–Ohlin, specific factors, Canadian trade adjustment, winners and losers, and trade policy.">
+  <title>Week 8 study deck · Who gains and who loses from trade? · ECON 342</title>
+  <link rel="stylesheet" href="../../assets/site.css?v=20261101-distribution">
+  <style>
+    .compact-table th,.compact-table td { padding:.4rem .55rem; }
+    .result-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:.72rem; }
+    .result-grid .metric { min-height:98px; }
+    .memory-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.75rem; }
+    .memory-grid .panel { padding:.8rem .9rem; }
+    .case-steps { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:.6rem; counter-reset:case; }
+    .case-steps .panel { position:relative; padding:.75rem; min-height:118px; }
+    .case-steps .panel::before { counter-increment:case; content:counter(case); display:grid; width:1.65rem; height:1.65rem; place-items:center; margin-bottom:.45rem; border-radius:.42rem; background:var(--blue); color:#fff; font-weight:900; }
+    .specific-factor-study .study-rule { margin:.4rem 0 0; padding:.55rem .75rem; font-size:clamp(.88rem,1.15vw,1.02rem); line-height:1.28; }
+    @media (min-width:851px) {
+      .study-deck .slide { padding-top:clamp(1rem,2vw,1.8rem); padding-bottom:clamp(1rem,2vw,1.8rem); }
+      .study-deck .slide h2 { margin-bottom:clamp(.7rem,1.25vw,1.05rem); font-size:clamp(1.9rem,3.2vw,3.3rem); }
+      .study-deck .slide p,.study-deck .slide li,.study-deck .slide label { font-size:clamp(.96rem,1.35vw,1.2rem); line-height:1.4; }
+      .study-deck .metric { min-height:92px; padding:.72rem; }
+      .study-deck .metric strong { font-size:clamp(1.8rem,3vw,3rem); }
+      .study-deck .chart { min-height:clamp(220px,33vh,340px); }
+      .study-deck .chart.compact { min-height:clamp(195px,29vh,285px); }
+    }
+    @media (max-width:980px) { .case-steps { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+    @media (max-width:850px) { .result-grid,.memory-grid,.case-steps { grid-template-columns:1fr; } }
+  </style>
+  <script defer src="../../assets/charts.js"></script>
+  <script defer src="../../assets/week08.js?v=20261101-distribution-1"></script>
+  <script defer src="../../assets/slides.js"></script>
+</head>
+<body class="deck-body study-deck">
+  <header class="deck-toolbar" aria-label="Study deck toolbar">
+    <a class="deck-brand" href="../../">ECON 342</a>
+    <div class="deck-title" data-current-title aria-live="polite">Week 8 study deck</div>
+    <div class="toolbar-actions">
+      <a class="toolbar-link" href="../" title="Open the full Week 8 lecture deck">Full deck</a>
+      <button class="icon-button" type="button" data-action="overview" aria-label="Open slide overview" title="Overview (O)">▦</button>
+      <button class="icon-button" type="button" data-action="fullscreen" aria-label="Enter full screen" title="Full screen (F)">⛶</button>
+    </div>
+  </header>
+
+  <div class="deck-progress" role="progressbar" aria-label="Slide progress" aria-valuemin="1" aria-valuenow="1" aria-valuemax="16"><span data-progress></span></div>
+
+  <main class="deck" aria-label="Simplified Week 8 study deck">
+    <section class="slide cover-slide is-active" data-slide-title="Who gains and who loses from trade?" aria-hidden="false" tabindex="0">
+      <div>
+        <p class="eyebrow">ECON 342 · Week 8 · Study version</p>
+        <h1>Who gains and who loses from trade?</h1>
+        <p class="study-rule">Heckscher–Ohlin links trade to factor ownership. Specific factors explain why immediate gains and losses concentrate in industries, regions, and communities.</p>
+      </div>
+      <div class="cover-meta">
+        <p><strong>Predict:</strong> connect endowments to export patterns.</p>
+        <p><strong>Compute:</strong> trace a product-price shock into factor prices.</p>
+        <p><strong>Distinguish:</strong> long-run factor effects from short-run sector effects.</p>
+        <p><strong>Evaluate:</strong> connect adjustment costs to policy demands.</p>
+        <p class="subtle">Sixteen short slides · two calculators · Canadian evidence</p>
+      </div>
+    </section>
+
+    <section class="slide" data-slide-title="One gain, many experiences" aria-hidden="true" tabindex="-1">
+      <h2 data-step="1">A national gain does not mean every person gains</h2>
+      <div class="two-col">
+        <div class="panel"><p class="eyebrow">Aggregate result</p><p>Lower prices, export access, productivity, and variety can raise total Canadian real income.</p><p class="callout">The winners could compensate the losers <em>in principle</em>.</p></div>
+        <div class="panel"><p class="eyebrow">Distribution</p><p>Compensation may not occur. A worker, plant, or town tied to one industry can bear a large transition cost.</p><p class="prompt"><strong>Ask:</strong> who owns the factors that gain, and how quickly can resources move?</p></div>
+      </div>
+      <p class="study-rule"><strong>Memory rule:</strong> efficiency asks whether the total pie grows. Distribution asks who receives each slice.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Canadian specialization" aria-hidden="true" tabindex="-1">
+      <h2 data-step="2">Canada’s export basket reflects land, resources, skills—and more</h2>
+      <div class="two-col wide-left">
+        <figure class="interactive-figure" data-expandable>
+          <div class="figure-header"><figcaption class="figure-title">Selected products relative to the U.S. export basket, 2023</figcaption><button class="expand-button" type="button" data-expand aria-label="Expand Canadian specialization chart">Expand ↗</button></div>
+          <div class="expandable-content"><div id="ho-specialization-chart" class="chart" role="img" aria-label="Relative prominence of selected products in Canadian and United States merchandise exports"></div></div>
+        </figure>
+        <div>
+          <div class="metric"><strong>6.19×</strong><span>fertilizers’ relative prominence</span></div>
+          <div class="metric"><strong>5.02×</strong><span>wood’s relative prominence</span></div>
+          <p class="callout">This pattern is consistent with an endowment story. The chart alone does not prove its cause.</p>
+        </div>
+      </div>
+      <p class="source">Source: Author’s calculation from <a href="https://comtradeplus.un.org/" target="_blank" rel="noopener">UN Comtrade</a>, HS chapters, merchandise exports to the world, 2023.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Abundance and intensity" aria-hidden="true" tabindex="-1">
+      <h2 data-step="3">Do not confuse abundance with intensity</h2>
+      <div class="two-col">
+        <div class="panel"><p class="eyebrow">Country ratio</p><div class="equation">(T/L)<sub>Canada</sub> &gt; (T/L)<sub>Partner</sub></div><p>Canada is relatively land abundant. Compare factor supplies across countries.</p></div>
+        <div class="panel"><p class="eyebrow">Good ratio</p><div class="equation">(T/L)<sub>Grain</sub> &gt; (T/L)<sub>Apparel</sub></div><p>Grain is relatively land intensive. Compare production requirements across goods.</p></div>
+      </div>
+      <p class="study-rule"><strong>H–O prediction:</strong> a country tends to export the good that uses its relatively abundant factor intensively.</p>
+      <p class="prompt"><strong>Check yourself:</strong> why does “Canada has many workers” fail to establish labour abundance?</p>
+    </section>
+
+    <section class="slide" data-slide-title="The H–O mechanism" aria-hidden="true" tabindex="-1">
+      <h2 data-step="4">The Heckscher–Ohlin mechanism in four links</h2>
+      <div class="concept-flow">
+        <div class="panel"><h3>Endowments</h3><p>Canada has a high land-to-labour ratio.</p></div>
+        <div class="concept-arrow" aria-hidden="true">→</div>
+        <div class="panel"><h3>Relative costs</h3><p>Land-intensive goods are relatively less costly.</p></div>
+        <div class="concept-arrow" aria-hidden="true">→</div>
+        <div class="panel"><h3>Specialization</h3><p>Canada expands land-intensive production.</p></div>
+        <div class="concept-arrow" aria-hidden="true">→</div>
+        <div class="panel"><h3>Trade</h3><p>Canada exports the land-intensive good.</p></div>
+      </div>
+      <p class="callout"><strong>Limited job:</strong> H–O predicts a broad tendency. Technology, scale, geography, institutions, firms, and trade costs still matter.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Factor-price calculation" aria-hidden="true" tabindex="-1">
+      <h2 data-step="5">A product-price increase redistributes factor income</h2>
+      <div class="two-col">
+        <div class="panel">
+          <p id="factor-price-equations">Zero-profit conditions: <strong>2r + w = p<sub>G</sub></strong> and <strong>r + 2w = 6</strong>.</p>
+          <div class="slider-control"><label for="grain-price">Grain price <output id="grain-price-value">8.0</output></label><input id="grain-price" type="range" min="5" max="9" step="0.1" value="8" aria-describedby="factor-price-equations"></div>
+          <p class="subtle">Baseline p<sub>G</sub> = 6 gives r = 2 and w = 2. Move the slider.</p>
+        </div>
+        <div class="result-grid">
+          <div class="metric"><strong id="land-rent-result">3.33</strong><span>land rent r</span></div>
+          <div class="metric"><strong id="wage-result">1.33</strong><span>wage w</span></div>
+          <div class="metric"><strong id="land-rent-change">+66.7%</strong><span>rent change</span></div>
+          <div class="metric"><strong id="wage-change">−33.3%</strong><span>wage change</span></div>
+        </div>
+      </div>
+      <div class="two-col"><div class="metric"><strong id="wage-grain-result">0.167</strong><span>real wage in grain</span></div><div class="metric"><strong id="wage-apparel-result">0.222</strong><span>real wage in apparel</span></div></div>
+      <p class="study-rule"><strong>Read it:</strong> the land-intensive good’s price rises 33.3%; land rent rises more, while the wage falls.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Stolper–Samuelson" aria-hidden="true" tabindex="-1">
+      <h2 data-step="6">Stolper–Samuelson is the distribution theorem</h2>
+      <div class="two-col">
+        <div class="panel"><p class="eyebrow">Winner</p><h3>The factor used intensively in the rising-price good</h3><p>Its real return rises. In the toy example, landowners gain.</p></div>
+        <div class="panel"><p class="eyebrow">Loser</p><h3>The other factor</h3><p>Its real return can fall in terms of both goods. In the toy example, workers lose.</p></div>
+      </div>
+      <p class="callout"><strong>Magnification:</strong> the winning factor’s return can rise proportionally more than the product price.</p>
+      <p class="study-rule"><strong>Long-run question:</strong> who owns land, labour, capital, and skills that can move across industries?</p>
+    </section>
+
+    <section class="slide" data-slide-title="Long run versus short run" aria-hidden="true" tabindex="-1">
+      <h2 data-step="7">H–O and specific factors answer different time-horizon questions</h2>
+      <div class="table-scroll"><table class="number-table compact-table">
+        <thead><tr><th></th><th>Heckscher–Ohlin / Stolper–Samuelson</th><th>Specific factors</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Mobility</strong></td><td>Factors move across sectors</td><td>Some capital, land, and skills are stuck</td></tr>
+          <tr><td><strong>Group line</strong></td><td>Factor ownership</td><td>Industry and region</td></tr>
+          <tr><td><strong>Best horizon</strong></td><td>Longer run</td><td>Short to medium run</td></tr>
+          <tr><td><strong>Question</strong></td><td>Which factor gains?</td><td>Which sector’s workers and assets gain?</td></tr>
+        </tbody>
+      </table></div>
+      <p class="study-rule"><strong>Exam rule:</strong> state the time horizon before naming winners and losers.</p>
+    </section>
+
+    <section class="slide specific-factor-study" data-slide-title="Specific-factors calculation" aria-hidden="true" tabindex="-1">
+      <h2 data-step="8">A resource-price shock pulls mobile labour toward resources</h2>
+      <div class="two-col">
+        <div class="panel">
+          <p>Labour is mobile; sector assets are fixed:</p>
+          <div class="equation">P<sub>R</sub>(20 − 0.2L<sub>R</sub>) = 6 + 0.1(100 − L<sub>R</sub>)</div>
+          <div class="slider-control"><label for="resource-price">Resource price <output id="resource-price-value">1.25</output></label><input id="resource-price" type="range" min="0.75" max="1.5" step="0.01" value="1.25"></div>
+        </div>
+        <div class="result-grid">
+          <div class="metric"><strong id="resource-labour-result">54.3</strong><span>resource labour</span></div>
+          <div class="metric"><strong id="manufacturing-labour-result">45.7</strong><span>manufacturing labour</span></div>
+          <div class="metric"><strong id="specific-wage-result">11.43</strong><span>nominal wage</span></div>
+          <div class="metric"><strong id="specific-wage-change">+7.1%</strong><span>wage change</span></div>
+        </div>
+      </div>
+      <div class="two-col"><div class="metric"><strong id="specific-labour-shift">7.6</strong><span>workers shifted into resources</span></div><div class="metric"><strong id="resource-real-wage">9.14</strong><span>wage ÷ resource price</span></div></div>
+      <p class="study-rule">Mobile labour’s nominal wage rises, but its real income is ambiguous: purchasing power falls in the resource good and rises in the manufacturing good. Resource owners gain; manufacturing-specific owners lose.</p>
+    </section>
+
+    <section class="slide" data-slide-title="FTA adjustment evidence" aria-hidden="true" tabindex="-1">
+      <h2 data-step="9">Canadian trade liberalization brought both disruption and productivity growth</h2>
+      <div class="two-col wide-left">
+        <figure class="interactive-figure" data-expandable><div class="figure-header"><figcaption class="figure-title">Most exposed Canadian manufacturing industries</figcaption><button class="expand-button" type="button" data-expand aria-label="Expand FTA adjustment chart">Expand ↗</button></div><div class="expandable-content"><div id="trefler-chart" class="chart compact" role="img" aria-label="Employment fell while productivity rose in different groups of trade-exposed industries"></div></div></figure>
+        <div><div class="metric"><strong>−12%</strong><span>employment in industries with deepest Canadian tariff cuts</span></div><div class="metric"><strong>+15%</strong><span>industry labour productivity</span></div><p class="callout">The effects are estimated for highly exposed groups—not all manufacturing.</p></div>
+      </div>
+      <p class="source">Source: Daniel Trefler, <a href="https://doi.org/10.1257/0002828042002633" target="_blank" rel="noopener">The Long and Short of the Canada–U.S. Free Trade Agreement</a>.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Recent exposed employment" aria-hidden="true" tabindex="-1">
+      <h2 data-step="10">Recent employment losses were concentrated in exposed industries</h2>
+      <div class="two-col wide-left">
+        <figure class="interactive-figure" data-expandable><div class="figure-header"><figcaption class="figure-title">Payroll employment, December 2024 to August 2025</figcaption><button class="expand-button" type="button" data-expand aria-label="Expand recent employment chart">Expand ↗</button></div><div class="expandable-content"><div id="recent-exposure-chart" class="chart compact" role="img" aria-label="Employment changes in industries with different exposure to United States demand"></div></div></figure>
+        <div><div class="metric"><strong>−1.4%</strong><span>highly U.S.-demand-dependent industries</span></div><div class="metric"><strong>−7.8%</strong><span>motor-vehicle-parts manufacturing</span></div><p class="callout">Descriptive exposure evidence is not automatically a causal tariff estimate.</p></div>
+      </div>
+      <p class="source">Source: Statistics Canada, <a href="https://www150.statcan.gc.ca/n1/pub/36-28-0001/2025012/article/00003-eng.htm" target="_blank" rel="noopener">Employment changes amid trade uncertainty</a>.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Concentrated interests" aria-hidden="true" tabindex="-1">
+      <h2 data-step="11">Small losses per consumer can coexist with large stakes per producer</h2>
+      <div class="two-col">
+        <div class="panel"><p class="eyebrow">Consumers</p><div class="equation">$5 × 30,000,000 = $150M</div><p>A small annual cost per consumer is diffuse and hard to organize around.</p></div>
+        <div class="panel"><p class="eyebrow">Protected producers</p><div class="equation">$150M ÷ 10,000 = $15,000</div><p>A large benefit per worker or owner is visible and worth organizing to defend.</p></div>
+      </div>
+      <p class="study-rule"><strong>Political-economy mechanism:</strong> concentrated stakes produce stronger organization, information, and pressure than diffuse stakes.</p>
+      <p class="prompt"><strong>Important:</strong> this explains why support can arise. It does not prove every protective policy is inefficient or every concern is illegitimate.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Public attitudes" aria-hidden="true" tabindex="-1">
+      <h2 data-step="12">Most Canadians viewed growing protectionism as bad in 2021</h2>
+      <div class="two-col wide-left">
+        <figure class="interactive-figure" data-expandable><div class="figure-header"><figcaption class="figure-title">Views of growing protectionism, February 2021</figcaption><button class="expand-button" type="button" data-expand aria-label="Expand public-attitudes chart">Expand ↗</button></div><div class="expandable-content"><div id="attitudes-chart" class="chart compact" role="img" aria-label="Fifty-nine percent said growing protectionism was bad for Canada"></div></div></figure>
+        <div><div class="metric"><strong>59%</strong><span>said growing protectionism was bad for Canada</span></div><p class="callout">Support for openness at the national level can coexist with concern about local job loss, bargaining power, resilience, or fairness.</p></div>
+      </div>
+      <p class="source">Source: Global Affairs Canada public-opinion research, <a href="https://epe.bac-lac.gc.ca/100/200/301/pwgsc-tpsgc/por-ef/global_affairs_canada/2021/106-20-e/POR106_20-report.html?nodisclaimer=1" target="_blank" rel="noopener">February 2021 report</a>, n = 2,043.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Match policy to the mechanism" aria-hidden="true" tabindex="-1">
+      <h2 data-step="13">Target the adjustment problem directly</h2>
+      <div class="table-scroll"><table class="number-table compact-table">
+        <thead><tr><th>Diagnosed problem</th><th>Targeted response</th><th>Why not a broad barrier?</th></tr></thead>
+        <tbody>
+          <tr><td>Temporary income loss</td><td>Time-limited income or wage insurance</td><td>A barrier raises costs for many buyers</td></tr>
+          <tr><td>Skills mismatch</td><td>Training tied to real employer demand</td><td>Protection does not create portable skills</td></tr>
+          <tr><td>Geographic immobility</td><td>Mobility, housing, and local transition support</td><td>A national barrier poorly targets one place</td></tr>
+          <tr><td>Firm financing constraint</td><td>Conditional transition finance</td><td>Blanket protection can preserve weak incentives</td></tr>
+        </tbody>
+      </table></div>
+      <p class="study-rule"><strong>Design rule:</strong> openness is more likely to remain politically durable when credible adjustment policy targets the problem while preserving gains from exchange.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Case-reading recipe" aria-hidden="true" tabindex="-1">
+      <h2 data-step="14">Use this five-step recipe on any trade shock</h2>
+      <div class="case-steps">
+        <div class="panel"><h3>Name the shock</h3><p>Product price, trade cost, demand, technology, or policy?</p></div>
+        <div class="panel"><h3>Choose horizon</h3><p>Are factors mobile or tied to sectors and places?</p></div>
+        <div class="panel"><h3>Map incidence</h3><p>Who owns the expanding and contracting factors?</p></div>
+        <div class="panel"><h3>Test evidence</h3><p>Separate aggregate, sectoral, regional, and worker outcomes.</p></div>
+        <div class="panel"><h3>Match policy</h3><p>Target the diagnosed market or adjustment failure.</p></div>
+      </div>
+      <p class="callout"><strong>Write precisely:</strong> “The model predicts…” and “The evidence is consistent with…” are not the same claim.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Week 8 summary" aria-hidden="true" tabindex="-1">
+      <h2 data-step="15">What you should be able to do</h2>
+      <div class="memory-grid">
+        <div class="panel"><h3>Explain H–O</h3><p>Relative abundance → relative cost → specialization → trade.</p></div>
+        <div class="panel"><h3>Compute distribution</h3><p>A product-price change can raise one factor’s real return and lower another’s.</p></div>
+        <div class="panel"><h3>Choose the horizon</h3><p>Long-run factor ownership differs from short-run industry and regional exposure.</p></div>
+        <div class="panel"><h3>Read evidence</h3><p>Productivity gains can coexist with concentrated employment losses.</p></div>
+        <div class="panel"><h3>Explain politics</h3><p>Large, visible, concentrated stakes organize more easily than diffuse stakes.</p></div>
+        <div class="panel"><h3>Evaluate policy</h3><p>Target adjustment failures while preserving gains from exchange where possible.</p></div>
+      </div>
+      <p class="study-rule"><strong>One sentence:</strong> trade can enlarge the national pie while changing relative prices in ways that create identifiable winners and losers.</p>
+    </section>
+  </main>
+
+  <footer class="deck-controls" aria-label="Slide navigation">
+    <button class="nav-button" type="button" data-action="previous" aria-label="Previous slide">←</button>
+    <span class="slide-count" data-slide-count aria-live="polite">1 / 16</span>
+    <button class="nav-button" type="button" data-action="next" aria-label="Next slide">→</button>
+  </footer>
+  <dialog id="figure-dialog" aria-labelledby="figure-dialog-title">
+    <div class="dialog-header"><strong id="figure-dialog-title" data-dialog-title>Expanded figure</strong><button class="dialog-close" type="button" data-action="close-dialog" aria-label="Close expanded figure">×</button></div>
+    <div class="dialog-content" data-dialog-content></div>
+  </dialog>
+  <dialog id="overview-dialog" aria-labelledby="overview-dialog-title">
+    <div class="dialog-header"><strong id="overview-dialog-title">Slide overview</strong><button class="dialog-close" type="button" data-action="close-dialog" aria-label="Close slide overview">×</button></div>
+    <div class="dialog-content"><div class="overview-grid" data-overview-grid></div></div>
+  </dialog>
+  <noscript><p style="position:fixed;inset:1rem;z-index:100;padding:1rem;background:#fff4d6;border:2px solid #c99700">This study deck needs JavaScript for navigation, charts, and the calculators. Enable JavaScript to use it.</p></noscript>
+</body>
+</html>

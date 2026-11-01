@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interactive ECON 342 slides on firm heterogeneity, exporter selection, entry, exit, and evidence from Canada and the United States.">
+  <title>Week 7 · Which firms export? · ECON 342</title>
+  <link rel="stylesheet" href="../assets/site.css?v=20261026-firms">
+  <style>
+    .decision-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(.7rem, 2vw, 1.5rem);
+      margin-top: 1rem;
+    }
+    .decision-zone {
+      min-height: 118px;
+      padding: 1rem;
+      border-radius: 1rem;
+      color: white;
+      text-align: center;
+    }
+    .decision-zone strong { display:block; font-size:clamp(1.35rem,2.2vw,2.15rem); }
+    .decision-zone span { display:block; margin-top:.35rem; font-weight:700; }
+    .decision-zone.exit { background:var(--sfu-red); }
+    .decision-zone.domestic { background:var(--blue); }
+    .decision-zone.export { background:var(--green); }
+    .model-result {
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:.75rem;
+      margin-top:.75rem;
+    }
+    .model-result .metric { min-height:96px; }
+    .model-result .metric strong { font-size:clamp(1.7rem,3vw,3rem); }
+    .status-result {
+      margin-top:.75rem;
+      padding:1rem;
+      border-radius:.85rem;
+      background:var(--green);
+      color:white;
+      font-size:clamp(1.15rem,1.8vw,1.55rem);
+      font-weight:850;
+      text-align:center;
+    }
+    .compact-table th,.compact-table td { padding:.38rem .52rem; }
+    .marginal-grid {
+      display:grid;
+      grid-template-columns:minmax(0,1.45fr) minmax(280px,.8fr);
+      gap:clamp(.8rem,1.8vw,1.5rem);
+      align-items:stretch;
+    }
+    .marginal-chart {
+      width:100%;
+      min-height:330px;
+      border:1px solid var(--line);
+      border-radius:1rem;
+      background:#fff;
+    }
+    .marginal-chart text { font-family:Inter,ui-sans-serif,system-ui,sans-serif; fill:var(--ink); }
+    .marginal-chart .axis { stroke:#667985; stroke-width:2; }
+    .marginal-chart .guide { stroke:#9cabb3; stroke-width:1.5; stroke-dasharray:6 6; }
+    .marginal-chart .demand { stroke:var(--blue); stroke-width:4; fill:none; }
+    .marginal-chart .mr { stroke:var(--sfu-red); stroke-width:4; fill:none; }
+    .marginal-chart .mc { stroke:var(--green); stroke-width:4; fill:none; }
+    .marginal-chart .profit-area { fill:#f4c64e; fill-opacity:.42; stroke:#c89400; stroke-width:2; }
+    .fixed-cost-comparison { display:grid; gap:.75rem; }
+    .fixed-cost-card { padding:.9rem 1rem; border-radius:.9rem; border:2px solid var(--line); background:#fff; }
+    .fixed-cost-card strong { display:block; font-size:clamp(1.25rem,2vw,1.85rem); }
+    .fixed-cost-card.no-export { border-color:var(--sfu-red); background:#fff6f6; }
+    .fixed-cost-card.export { border-color:var(--green); background:#f2fbf5; }
+    .slide.recipe-slide h2 { margin-bottom:.55rem; }
+    .recipe-slide .two-col { gap:.85rem; }
+    .recipe-slide .quiz-list { gap:.38rem; }
+    .recipe-slide .quiz-list li { padding:.58rem .75rem .58rem 3.35rem; }
+    .recipe-slide .quiz-list li::before { left:.72rem; top:.52rem; width:1.9rem; height:1.9rem; }
+    .recipe-results { display:grid; gap:.5rem; }
+    .recipe-slide .panel { padding:.62rem .75rem; }
+    .recipe-slide .panel p { margin:.25rem 0; }
+    .recipe-slide .equation { margin:.38rem auto; padding:.48rem .65rem; }
+    .recipe-slide .callout { margin-top:.55rem; padding:.58rem .8rem; line-height:1.32; }
+    @media (min-width:851px) {
+      .slide { padding-top:clamp(.8rem,1.45vw,1.3rem); padding-bottom:clamp(.8rem,1.45vw,1.3rem); }
+      .slide h2 { margin-bottom:clamp(.6rem,1.25vw,1.05rem); font-size:clamp(1.85rem,3.2vw,3.25rem); }
+      .slide p,.slide li,.slide label { font-size:clamp(.94rem,1.28vw,1.15rem); line-height:1.4; }
+      .metric { min-height:102px; }
+      .chart { min-height:clamp(220px,34vh,350px); }
+      .chart.compact { min-height:clamp(190px,28vh,290px); }
+    }
+    @media (max-width:850px) {
+      .decision-strip,.model-result,.marginal-grid { grid-template-columns:1fr; }
+      .marginal-chart { min-height:270px; }
+    }
+  </style>
+  <script defer src="../assets/charts.js"></script>
+  <script defer src="../assets/week07.js?v=20261026-firms-3"></script>
+  <script defer src="../assets/slides.js"></script>
+</head>
+<body class="deck-body">
+  <header class="deck-toolbar" aria-label="Presentation toolbar">
+    <a class="deck-brand" href="../">ECON 342</a>
+    <div class="deck-title" data-current-title aria-live="polite">Which firms export?</div>
+    <div class="toolbar-actions">
+      <a class="toolbar-link" href="study/" title="Open the simplified student study deck">Study</a>
+      <button class="icon-button" type="button" data-action="overview" aria-label="Open slide overview" title="Overview (O)">▦</button>
+      <button class="icon-button" type="button" data-action="fullscreen" aria-label="Enter full screen" title="Full screen (F)">⛶</button>
+    </div>
+  </header>
+
+  <div class="deck-progress" role="progressbar" aria-label="Slide progress" aria-valuemin="1" aria-valuenow="1" aria-valuemax="31"><span data-progress></span></div>
+
+  <main class="deck" aria-label="Week 7 slide deck">
+    <section class="slide cover-slide is-active" data-slide-title="Which firms export?" aria-hidden="false" tabindex="0">
+      <div>
+        <p class="eyebrow">ECON 342 · Week 7</p>
+        <h1>Which firms export?</h1>
+        <p class="callout">Firms in the same industry differ. Fixed export costs select the most productive firms into foreign markets and turn trade into a process of entry, expansion, contraction, and exit.</p>
+      </div>
+      <div class="cover-meta">
+        <p><strong>10:30</strong> five stylized facts</p>
+        <p><strong>10:55</strong> firm optimization and cutoffs</p>
+        <p><strong>11:30–11:40</strong> ten-minute break</p>
+        <p><strong>11:40</strong> entry, exit, and reallocation</p>
+        <p><strong>12:05</strong> Canada–U.S. evidence and synthesis</p>
+        <p><strong>12:18–12:30</strong> brief in-class quiz</p>
+      </div>
+    </section>
+
+    <section class="slide" data-slide-title="Five stylized facts" aria-hidden="true" tabindex="-1">
+      <h2>Five facts any firm-level trade model must explain</h2>
+      <ol class="quiz-list">
+        <li>Only a minority of firms export.</li>
+        <li>A small group of exporters accounts for most export value.</li>
+        <li>Exporters tend to be larger and more productive and often pay more.</li>
+        <li>Many firms enter and leave export markets after short spells.</li>
+        <li>Trade changes market shares and survival within the same industry.</li>
+      </ol>
+      <p class="prompt"><strong>Model test</strong> Which fact is hardest for a model in which every firm is identical?</p>
+    </section>
+
+    <section class="slide" data-slide-title="Fact 1: exporting is selective" aria-hidden="true" tabindex="-1">
+      <h2>Fact 1: exporting is selective</h2>
+      <div class="three-col">
+        <div class="metric"><strong>15.1%</strong><span>of Canadian SMEs exported goods or services, 2023</span></div>
+        <div class="metric"><strong>40.3%</strong><span>of manufacturing SMEs exported, 2023</span></div>
+        <div class="metric"><strong>4%</strong><span>of all U.S. firms exported, 2000</span></div>
+      </div>
+      <p class="callout"><strong>Different universes:</strong> the Canadian figures cover SMEs and goods plus services; the U.S. figure covers all firms and goods. Use them as separate demonstrations of selectivity, not as a league table.</p>
+      <p class="source">Sources: ISED, <a href="https://ised-isde.canada.ca/site/sme-research-statistics/en/research-reports/smes-glance-canadian-exporters" target="_blank" rel="noopener">SMEs at a Glance: Canadian Exporters</a>; U.S. Census Bureau, <a href="https://www.census.gov/library/working-papers/2007/adrm/ces-wp-07-14.html" target="_blank" rel="noopener">Firms in International Trade</a>.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Fact 2: Canadian exports are concentrated" aria-hidden="true" tabindex="-1">
+      <h2>Fact 2: one percent of exporters generated 77.7% of export value</h2>
+      <div class="two-col wide-left">
+        <figure class="interactive-figure" data-expandable>
+          <div class="figure-header">
+            <figcaption class="figure-title">Share of Canadian goods-export value, 2024</figcaption>
+            <button class="expand-button" type="button" data-expand aria-label="Expand Canadian exporter concentration chart">Expand ↗</button>
+          </div>
+          <div class="expandable-content"><div id="concentration-chart" class="chart compact" role="img" aria-label="Top 500 Canadian goods exporters generated 77.7 percent of export value"></div></div>
+        </figure>
+        <div>
+          <div class="metric"><strong>48,036</strong><span>goods-exporting enterprises</span></div>
+          <div class="metric"><strong>&lt;1%</strong><span>value from the 74.6% exporting less than C$1M each</span></div>
+        </div>
+      </div>
+      <p class="source">Source: Statistics Canada, <a href="https://www150.statcan.gc.ca/n1/daily-quotidien/250516/dq250516b-eng.htm" target="_blank" rel="noopener">Trade in goods by exporter characteristics, 2024</a>.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Canada and U.S. exporter concentration" aria-hidden="true" tabindex="-1">
+      <h2>Small firms dominate the count; large firms dominate the value</h2>
+      <div class="two-col wide-left">
+        <figure class="interactive-figure" data-expandable>
+          <div class="figure-header">
+            <figcaption class="figure-title">SME and large-enterprise shares among identified goods exporters, 2024</figcaption>
+            <button class="expand-button" type="button" data-expand aria-label="Expand Canada and United States SME exporter chart">Expand ↗</button>
+          </div>
+          <div class="expandable-content"><div id="sme-comparison-chart" class="chart compact" role="img" aria-label="SMEs make up about 97 percent of exporters in Canada and the United States but a much smaller share of export value"></div></div>
+        </figure>
+        <div>
+          <div class="metric"><strong>270,001</strong><span>identified U.S. goods exporters, 2024</span></div>
+          <div class="metric"><strong>96%</strong><span>of known U.S. goods-export value from the top 10% of exporters, 2000</span></div>
+          <p class="callout">The same qualitative pattern appears on both sides of the border.</p>
+        </div>
+      </div>
+      <p class="source">Sources: <a href="https://www150.statcan.gc.ca/n1/daily-quotidien/250516/dq250516b-eng.htm" target="_blank" rel="noopener">Statistics Canada</a>; U.S. Census Bureau, <a href="https://www.census.gov/foreign-trade/Press-Release/edb/2024prelimprofile.pdf" target="_blank" rel="noopener">Preliminary Profile of U.S. Importing and Exporting Companies, 2024</a> and <a href="https://www.census.gov/library/working-papers/2007/adrm/ces-wp-07-14.html" target="_blank" rel="noopener">Firms in International Trade</a>. SME means fewer than 500 employees; U.S. treatment also includes some firms with missing employment information.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Fact 3: exporters are exceptional" aria-hidden="true" tabindex="-1">
+      <h2>Fact 3: exporters are exceptional before we claim causation</h2>
+      <div class="three-col">
+        <div class="metric"><strong>35%</strong><span>of Canadian manufacturing firms exported, 1974–2010 average</span></div>
+        <div class="metric"><strong>&gt;70%</strong><span>of manufacturing employment and shipments at exporters</span></div>
+        <div class="metric"><strong>+13%</strong><span>labour productivity relative to non-exporters</span></div>
+      </div>
+      <div class="two-col">
+        <div class="panel"><p><strong>Selection:</strong> productive firms may export because they can cover the cost.</p></div>
+        <div class="panel"><p><strong>Learning:</strong> exporting may later improve technology, quality, or management.</p></div>
+      </div>
+      <p class="callout">A cross-sectional premium alone cannot separate selection from learning.</p>
+      <p class="source">Source: Statistics Canada, <a href="https://www150.statcan.gc.ca/n1/pub/11f0027m/11f0027m2015097-eng.htm" target="_blank" rel="noopener">Empirical Evidence from Canadian Firm-level Data on Trade and Productivity</a>.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Fact 4: export spells are fragile" aria-hidden="true" tabindex="-1">
+      <h2>Fact 4: many export spells end quickly</h2>
+      <div class="two-col wide-left">
+        <figure class="interactive-figure" data-expandable>
+          <div class="figure-header">
+            <figcaption class="figure-title">Survival of Canadian export spells</figcaption>
+            <button class="expand-button" type="button" data-expand aria-label="Expand Canadian export survival chart">Expand ↗</button>
+          </div>
+          <div class="expandable-content"><div id="survival-chart" class="chart" role="img" aria-label="About 60 percent of Canadian export spells survive year one and 30 percent survive year five"></div></div>
+        </figure>
+        <div>
+          <div class="metric"><strong>2 years</strong><span>median continuous export duration</span></div>
+          <div class="metric"><strong>30.2%</strong><span>still active in year five</span></div>
+        </div>
+      </div>
+      <p class="callout">An export spell can end while the firm continues serving Canada. Export-market exit and firm death are different events.</p>
+      <p class="source">Source: Global Affairs Canada, <a href="https://international.canada.ca/en/global-affairs/corporate/reports/chief-economist/diversification/2025-07-export-performance" target="_blank" rel="noopener">Export performance and longevity of new Canadian exporters, 2005–2018</a>.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Economy-wide business churn" aria-hidden="true" tabindex="-1">
+      <h2>Economy-wide context: businesses continually enter and exit</h2>
+      <div class="two-col">
+        <div class="panel">
+          <p class="eyebrow">Canada, 2021</p>
+          <div class="two-col" style="gap:.7rem">
+            <div class="metric"><strong>13%</strong><span>entry rate</span></div>
+            <div class="metric"><strong>12%</strong><span>exit rate</span></div>
+          </div>
+        </div>
+        <div class="panel">
+          <p class="eyebrow">United States, 2021</p>
+          <div class="two-col" style="gap:.7rem">
+            <div class="metric"><strong>10%</strong><span>entry rate</span></div>
+            <div class="metric"><strong>10%</strong><span>exit rate</span></div>
+          </div>
+        </div>
+      </div>
+      <p class="callout"><strong>Not a trade effect:</strong> these are economy-wide business rates—not export entry and not estimates of trade-induced exit. Canadian business entry fell from 24.5% in 1983 to 13.1% in 2012; exit fell from 16.5% to 11.6%. Cross-country statistical units differ.</p>
+      <p class="source">Source: Statistics Canada, <a href="https://www150.statcan.gc.ca/n1/pub/36-28-0001/2025009/article/00001-eng.htm" target="_blank" rel="noopener">The long-run evolution of business entry and exit rates in Canada</a>.</p>
+    </section>
+
+    <section class="slide" data-slide-title="The representative-firm gap" aria-hidden="true" tabindex="-1">
+      <h2>An identical-firm model misses the central facts</h2>
+      <div class="two-col">
+        <div class="panel">
+          <p class="eyebrow">Week 6: symmetric firms</p>
+          <p>Every variety has the same productivity and cost. The model explains scale, variety, and two-way trade.</p>
+        </div>
+        <div class="panel">
+          <p class="eyebrow">Week 7: heterogeneous firms</p>
+          <p>Firms draw different productivity. Fixed operating and export costs create different decisions inside one industry.</p>
+        </div>
+      </div>
+      <p class="callout"><strong>The extension:</strong> keep differentiated varieties and fixed costs, then allow productivity to differ across firms.</p>
+      <p class="source">Conceptual source: Melitz (2003), <a href="https://doi.org/10.1111/1468-0262.00467" target="_blank" rel="noopener">The Impact of Trade on Intra-Industry Reallocations and Aggregate Industry Productivity</a>.</p>
+    </section>
+
+    <section class="slide" data-slide-title="The heterogeneous-firm mental model" aria-hidden="true" tabindex="-1">
+      <h2>The heterogeneous-firm model in one paragraph</h2>
+      <div class="panel">
+        <p>A prospective firm pays to enter and discovers how productive it is. Higher productivity means lower unit cost. Every active firm must cover a domestic operating cost; exporting adds market research, compliance, distribution, customs, and relationship costs. The weakest firms exit, a middle group serves only Canada, and the most productive group also exports.</p>
+      </div>
+      <div class="decision-strip" aria-label="Three firm outcomes">
+        <div class="decision-zone exit"><strong>Exit</strong><span>cannot cover domestic fixed cost</span></div>
+        <div class="decision-zone domestic"><strong>Domestic only</strong><span>covers Canada, not export cost</span></div>
+        <div class="decision-zone export"><strong>Exporter</strong><span>covers both fixed costs</span></div>
+      </div>
+      <p class="callout"><strong>Scope:</strong> our linear-demand version makes productive firms choose larger quantities and shows selection. Churn over time still needs changing demand, costs, or productivity, possibly interacting with sunk costs.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Productivity and unit cost" aria-hidden="true" tabindex="-1">
+      <h2>Productivity lowers the labour cost of one unit</h2>
+      <div class="equation"><var>c</var> = <var>w</var> ÷ <var>a</var></div>
+      <div class="three-col">
+        <div class="definition-card"><h3><var>w</var> = 96</h3><p>One worker’s wage cost in the classroom illustration.</p></div>
+        <div class="definition-card"><h3><var>a</var></h3><p>Units produced by that worker. Larger <var>a</var> means higher productivity.</p></div>
+        <div class="definition-card"><h3><var>c</var></h3><p>Labour cost per unit. It falls when the same worker produces more.</p></div>
+      </div>
+      <p class="prompt"><strong>Calculate</strong> If productivity rises from 6 to 12 units per worker, what happens to unit labour cost?</p>
+    </section>
+
+    <section class="slide" data-slide-title="A numerical firm-selection model" aria-hidden="true" tabindex="-1">
+      <h2>Three productivity types choose sales in two markets</h2>
+      <div class="two-col">
+        <div class="panel">
+          <p class="eyebrow">Domestic market</p>
+          <p>Inverse demand <strong>p<sub>D</sub>(q<sub>D</sub>) = 30 − q<sub>D</sub>/2</strong>; fixed operating cost <strong>120</strong>.</p>
+          <div class="equation"><var>π</var><sub>D</sub>(q<sub>D</sub>) = (30 − q<sub>D</sub>/2 − <var>c</var>)q<sub>D</sub> − 120</div>
+        </div>
+        <div class="panel">
+          <p class="eyebrow">Export market</p>
+          <p>Inverse demand <strong>p<sub>X</sub>(q<sub>X</sub>) = 34 − q<sub>X</sub>/2</strong>; border cost <strong>2</strong> per unit; fixed export cost <strong>210</strong>.</p>
+          <div class="equation"><var>π</var><sub>X</sub>(q<sub>X</sub>) = (34 − q<sub>X</sub>/2 − <var>c</var> − 2)q<sub>X</sub> − 210</div>
+        </div>
+      </div>
+      <p class="callout">The firm chooses each quantity. Export profit is incremental: an exporter must first find domestic operation worthwhile.</p>
+    </section>
+
+    <section class="slide" data-slide-title="One-derivative optimization" aria-hidden="true" tabindex="-1">
+      <h2>One derivative delivers the optimal quantity</h2>
+      <p>Write inverse demand as <strong>p(q) = A − q/2</strong>, delivered marginal cost as <strong>m</strong>, and the fixed cost as <strong>F</strong>.</p>
+      <div class="equation">π(q) = (A − q/2 − m)q − F</div>
+      <div class="two-col">
+        <div class="panel">
+          <p class="eyebrow">First-order condition</p>
+          <div class="equation">π′(q) = A − q − m = 0</div>
+          <p>Therefore <strong>q* = A − m</strong>. Since π″(q) = −1, this is the unique maximum.</p>
+        </div>
+        <div class="panel">
+          <p class="eyebrow">Profit at the optimum</p>
+          <div class="equation">p(q*) − m = q*/2</div>
+          <div class="equation">π* = (q*)²/2 − F</div>
+          <p>A fixed cost changes entry, not q* conditional on entry.</p>
+        </div>
+      </div>
+      <p class="prompt"><strong>Compute</strong> For Maple, a = 8 and c = 12. Find domestic q<sub>D</sub>*, price, and profit.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Marginal conditions and entry" aria-hidden="true" tabindex="-1">
+      <h2>Marginal conditions choose quantity; fixed costs choose entry</h2>
+      <div class="marginal-grid">
+        <svg class="marginal-chart" viewBox="0 0 720 360" role="img" aria-labelledby="maple-export-chart-title maple-export-chart-desc">
+          <title id="maple-export-chart-title">Maple's optimal export quantity and variable profit</title>
+          <desc id="maple-export-chart-desc">Export demand is p equals 34 minus q over 2, marginal revenue is 34 minus q, and delivered marginal cost is 14. Marginal revenue equals marginal cost at quantity 20. Price is 24 and the shaded variable-profit rectangle is 200.</desc>
+          <line class="axis" x1="68" y1="310" x2="680" y2="310" />
+          <line class="axis" x1="68" y1="310" x2="68" y2="28" />
+          <rect class="profit-area" x="68" y="130" width="300" height="75" rx="5" />
+          <line class="guide" x1="368" y1="130" x2="368" y2="310" />
+          <line class="guide" x1="68" y1="130" x2="368" y2="130" />
+          <path class="demand" d="M 68 55 L 668 205" />
+          <path class="mr" d="M 68 55 L 578 310" />
+          <line class="mc" x1="68" y1="205" x2="668" y2="205" />
+          <circle cx="368" cy="205" r="7" fill="var(--ink)" />
+          <text x="676" y="218" font-size="18" font-weight="800" text-anchor="end">MC = c+t = 14</text>
+          <text x="646" y="178" font-size="18" font-weight="800" text-anchor="end">Demand: p = 34−q/2</text>
+          <text x="474" y="266" font-size="18" font-weight="800" fill="var(--sfu-red)">MR = 34−q</text>
+          <text x="218" y="160" font-size="20" font-weight="850" text-anchor="middle">Variable profit</text>
+          <text x="218" y="186" font-size="24" font-weight="900" text-anchor="middle">(24−14)×20 = 200</text>
+          <text x="359" y="225" font-size="16" font-weight="800" text-anchor="end">MR = MC</text>
+          <text x="368" y="338" font-size="18" font-weight="850" text-anchor="middle">q* = 20</text>
+          <text x="54" y="136" font-size="17" font-weight="800" text-anchor="end">24</text>
+          <text x="54" y="211" font-size="17" font-weight="800" text-anchor="end">14</text>
+          <text x="684" y="337" font-size="18" font-weight="800">q</text>
+          <text x="28" y="42" font-size="18" font-weight="800">$/unit</text>
+        </svg>
+        <div class="fixed-cost-comparison">
+          <div class="equation">π<sub>X</sub>* = 200 − F<sub>X</sub></div>
+          <div class="fixed-cost-card no-export">
+            <p class="eyebrow">F<sub>X</sub> = 210</p>
+            <strong>π<sub>X</sub> = 200 − 210 = −10</strong>
+            <p>Do not export.</p>
+          </div>
+          <div class="fixed-cost-card export">
+            <p class="eyebrow">F<sub>X</sub> = 180</p>
+            <strong>π<sub>X</sub> = 200 − 180 = +20</strong>
+            <p>Export.</p>
+          </div>
+        </div>
+      </div>
+      <p class="callout"><strong>Key distinction:</strong> F<sub>X</sub> does not move MR, MC, or q* conditional on exporting. It changes only the entry decision—the extensive margin.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Classify the three firms" aria-hidden="true" tabindex="-1">
+      <h2>Optimization still produces three firm decisions</h2>
+      <div class="table-scroll"><table class="number-table compact-table">
+        <thead><tr><th>Firm</th><th><var>a</var></th><th><var>c</var></th><th>q<sub>D</sub>*</th><th>π<sub>D</sub>*</th><th>q<sub>X</sub>*</th><th>π<sub>X</sub>*</th><th>Decision</th></tr></thead>
+        <tbody>
+          <tr><td>Spruce</td><td>6</td><td>16</td><td>14</td><td>−22</td><td>16</td><td>−82</td><td><strong>Exit</strong></td></tr>
+          <tr><td>Maple</td><td>8</td><td>12</td><td>18</td><td>42</td><td>20</td><td>−10</td><td><strong>Domestic only</strong></td></tr>
+          <tr><td>Cedar</td><td>12</td><td>8</td><td>22</td><td>122</td><td>24</td><td>78</td><td><strong>Export</strong></td></tr>
+        </tbody>
+      </table></div>
+      <p class="prompt"><strong>Verify Maple</strong> q<sub>D</sub>* = 18, p<sub>D</sub>* = 21, and π<sub>D</sub>* = (21 − 12)18 − 120 = 42.</p>
+      <p class="callout">Productivity now explains selection and size: lower-cost firms choose larger quantities and earn more.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Two productivity cutoffs" aria-hidden="true" tabindex="-1">
+      <h2>Two break-even conditions divide firms into three groups</h2>
+      <div class="two-col">
+        <div class="panel">
+          <p class="eyebrow">Domestic cutoff</p>
+          <div class="equation">(30 − 96/a)²/2 − 120 = 0</div>
+          <div class="equation"><var>a</var><sub>D</sub>* = 96 ÷ (30 − √240) = <strong>6.62</strong></div>
+          <p>Below 6.62, a firm cannot cover the domestic fixed cost.</p>
+        </div>
+        <div class="panel">
+          <p class="eyebrow">Export cutoff</p>
+          <div class="equation">(32 − 96/a)²/2 − 210 = 0</div>
+          <div class="equation"><var>a</var><sub>X</sub>* = 96 ÷ (32 − √420) = <strong>8.34</strong></div>
+          <p>Only firms above 8.34 cover the additional export cost.</p>
+        </div>
+      </div>
+      <div class="decision-strip">
+        <div class="decision-zone exit"><strong><var>a</var> &lt; 6.62</strong><span>exit</span></div>
+        <div class="decision-zone domestic"><strong>6.62 ≤ <var>a</var> &lt; 8.34</strong><span>domestic only</span></div>
+        <div class="decision-zone export"><strong><var>a</var> ≥ 8.34</strong><span>export</span></div>
+      </div>
+      <p class="callout"><strong>At either cutoff, profit is exactly zero:</strong> the firm is indifferent between the adjacent choices. The region labels describe choices away from the boundary.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Firm-selection calculator" aria-hidden="true" tabindex="-1">
+      <h2>Change productivity or the fixed export cost</h2>
+      <div class="two-col wide-left">
+        <div class="panel">
+          <div class="slider-control">
+            <label for="firm-productivity">Productivity <var>a</var> <output id="firm-productivity-value">8.0</output></label>
+            <input id="firm-productivity" type="range" min="5" max="14" step="0.5" value="8">
+          </div>
+          <div class="slider-control">
+            <label for="export-fixed-cost">Fixed export cost <var>F</var><sub>X</sub> <output id="export-fixed-cost-value">210</output></label>
+            <input id="export-fixed-cost" type="range" min="150" max="270" step="15" value="210">
+          </div>
+          <p class="source">Held fixed: w=96; p<sub>D</sub>=30−q<sub>D</sub>/2, F<sub>D</sub>=120; p<sub>X</sub>=34−q<sub>X</sub>/2; border cost=2.</p>
+        </div>
+        <div>
+          <div class="model-result">
+            <div class="metric"><strong id="unit-cost-result">12.0</strong><span>unit cost</span></div>
+            <div class="metric"><strong id="domestic-output-result">18.0</strong><span>domestic q*</span></div>
+            <div class="metric"><strong id="domestic-profit-result">+42</strong><span>domestic profit</span></div>
+            <div class="metric"><strong id="export-output-result">20.0</strong><span>export q*</span></div>
+            <div class="metric"><strong id="export-price-result">24.0</strong><span>export price</span></div>
+            <div class="metric"><strong id="export-profit-result">−10</strong><span>export profit</span></div>
+          </div>
+          <p class="callout">Export cutoff: <strong id="export-cutoff-result">8.34</strong></p>
+          <div class="status-result" id="firm-status-result" aria-live="polite">Domestic only</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-slide-title="Lower fixed export costs" aria-hidden="true" tabindex="-1">
+      <h2>A lower fixed export cost moves the export cutoff</h2>
+      <div class="three-col">
+        <div class="metric"><strong>210 → 180</strong><span>fixed export cost</span></div>
+        <div class="metric"><strong>8.34 → 7.37</strong><span>export productivity cutoff</span></div>
+        <div class="metric"><strong>−10 → +20</strong><span>Maple’s maximized export profit</span></div>
+      </div>
+      <p class="callout">Maple keeps q<sub>X</sub>* = 20 and p<sub>X</sub>* = 24 but becomes an exporter. A fixed cost moves the extensive margin without changing optimal quantity conditional on entry.</p>
+      <p class="prompt"><strong>Policy distinction</strong> Why would lowering the per-unit border cost also change Maple’s optimal q<sub>X</sub>?</p>
+    </section>
+
+    <section class="slide cover-slide" data-slide-title="Break" aria-hidden="true" tabindex="-1">
+      <div><p class="eyebrow">11:30–11:40</p><h1>Ten-minute break</h1></div>
+      <div class="cover-meta"><p>After the break: uncertain entry, four kinds of exit, reallocation, and Canadian evidence.</p></div>
+    </section>
+
+    <section class="slide" data-slide-title="Entry before the productivity draw" aria-hidden="true" tabindex="-1">
+      <h2>A firm may pay to enter before knowing its productivity</h2>
+      <p>Suppose Spruce, Maple, and Cedar productivity types are equally likely. A failed type exits and earns zero after observing its draw.</p>
+      <div class="equation">Expected operating profit = (0 + 42 + 200) ÷ 3 = <strong>80.7</strong></div>
+      <div class="two-col">
+        <div class="panel"><p>If the sunk entry cost is <strong>75</strong>, expected net profit is 5.7 and entry is worthwhile.</p></div>
+        <div class="panel"><p>If the sunk entry cost is <strong>90</strong>, expected net profit is −9.3 and the firm stays out.</p></div>
+      </div>
+      <p class="callout">Free entry does not mean costless entry. It means potential entrants compare a sunk cost with uncertain expected profit.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Four different transitions" aria-hidden="true" tabindex="-1">
+      <h2>“Exit” can mean four different things</h2>
+      <div class="two-col">
+        <div class="definition-card"><h3>Business entry</h3><p>A new firm begins operating.</p></div>
+        <div class="definition-card"><h3>Export entry</h3><p>An existing firm begins selling abroad.</p></div>
+        <div class="definition-card"><h3>Export exit</h3><p>A firm stops selling abroad but may remain active in Canada.</p></div>
+        <div class="definition-card"><h3>Firm exit</h3><p>The business ceases operating.</p></div>
+      </div>
+      <p class="callout">The export-survival curve tracks export spells. The business-dynamism series tracks operating firms. Combining the two without checking definitions creates false conclusions.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Reallocation raises industry productivity" aria-hidden="true" tabindex="-1">
+      <h2>Industry productivity can rise even if no firm learns</h2>
+      <div class="two-col">
+        <div class="panel">
+          <p class="eyebrow">Before</p>
+          <div class="equation">0.40(2) + 0.40(3) + 0.20(4) = <strong>2.80</strong></div>
+          <p>Three firms with productivity 2, 3, and 4.</p>
+        </div>
+        <div class="panel">
+          <p class="eyebrow">After selection and expansion</p>
+          <div class="equation">0.35(3) + 0.65(4) = <strong>3.65</strong></div>
+          <p>The weakest firm exits; market share shifts toward the strongest.</p>
+        </div>
+      </div>
+      <div class="metric"><strong>+30.4%</strong><span>weighted-average productivity, with no within-firm productivity change</span></div>
+    </section>
+
+    <section class="slide" data-slide-title="Canadian reallocation evidence" aria-hidden="true" tabindex="-1">
+      <h2>Canadian evidence makes reallocation first-order</h2>
+      <div class="three-col">
+        <div class="metric"><strong>13.8%</strong><span>estimated manufacturing productivity gain from CUSFTA, 1988–1996</span></div>
+        <div class="metric"><strong>61%</strong><span>of that gain attributed to reallocation across plants</span></div>
+        <div class="metric"><strong>53%</strong><span>of broader manufacturing productivity growth from market-share changes</span></div>
+      </div>
+      <p class="callout">Trade policy changed which plants expanded and which contracted. Aggregate productivity is partly a composition statistic.</p>
+      <p class="source">Source: Statistics Canada, <a href="https://www150.statcan.gc.ca/n1/pub/11f0027m/11f0027m2015097-eng.htm" target="_blank" rel="noopener">Empirical Evidence from Canadian Firm-level Data on Trade and Productivity</a>, synthesis of Trefler, Lileeva–Trefler, and related plant studies.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Selection and learning" aria-hidden="true" tabindex="-1">
+      <h2>Selection and learning can coexist</h2>
+      <div class="two-col">
+        <div class="panel">
+          <p class="eyebrow">Selection</p>
+          <p><strong>Exporters often differ before entry:</strong> more productive plants are already more likely to enter exporting. Evidence that the advantage predates export entry supports this channel.</p>
+        </div>
+        <div class="panel">
+          <p class="eyebrow">Learning and investment</p>
+          <p>Some Canadian plants induced to export after U.S. tariff cuts adopted advanced technology, innovated, and raised productivity.</p>
+        </div>
+      </div>
+      <div class="metric"><strong>+15.3%</strong><span>labour-productivity increase among FTA-induced new exporters in Lileeva–Trefler’s Canadian estimate</span></div>
+      <p class="callout">Do not turn a heterogeneous effect into “exporting raises every firm’s productivity by 15.3%.”</p>
+      <p class="source">Source: Lileeva and Trefler (2010), <a href="https://doi.org/10.1162/qjec.2010.125.3.1051" target="_blank" rel="noopener">Improved Access to Foreign Markets Raises Plant-level Productivity…For Some Plants</a>.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Extensive and intensive margins" aria-hidden="true" tabindex="-1">
+      <h2>Export growth has a count margin and a sales margin</h2>
+      <p>Exports rise from C$100M to C$150M. Exporters rise from 100 to 120; average exports per exporter rise from C$1.00M to C$1.25M.</p>
+      <div class="two-col">
+        <div class="panel">
+          <p class="eyebrow">Extensive margin</p>
+          <div class="equation">(120 − 100) × 1.00 = <strong>C$20M</strong></div>
+          <p>More firms export.</p>
+        </div>
+        <div class="panel">
+          <p class="eyebrow">Intensive margin</p>
+          <div class="equation">120 × (1.25 − 1.00) = <strong>C$30M</strong></div>
+          <p>Average exports per firm rise.</p>
+        </div>
+      </div>
+      <p class="callout"><strong>One exact base-weighted accounting decomposition:</strong> add new firms at the base average, then apply the average-sales change to all final exporters. The 40%/60% split is order-dependent bookkeeping—not a causal decomposition.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Firm selection meets gravity" aria-hidden="true" tabindex="-1">
+      <h2>Firms add destinations one fixed cost at a time</h2>
+      <div class="three-col">
+        <div class="metric"><strong>85.7%</strong><span>of Canadian goods exporters sold to the United States, 2024</span></div>
+        <div class="metric"><strong>65.9%</strong><span>sold exclusively to the United States</span></div>
+        <div class="metric"><strong>34.1%</strong><span>sold to at least one non-U.S. destination</span></div>
+      </div>
+      <div class="panel"><p>A nearby, large, familiar market has lower delivered and fixed entry costs. More firms can clear the U.S. cutoff than a distant-market cutoff. Gravity therefore appears at the firm level as a destination ladder.</p></div>
+      <p class="source">Source: Statistics Canada, <a href="https://www150.statcan.gc.ca/n1/daily-quotidien/250516/dq250516b-eng.htm" target="_blank" rel="noopener">Trade in goods by exporter characteristics, 2024</a>.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Fixed and variable trade costs" aria-hidden="true" tabindex="-1">
+      <h2>Different trade costs act on different margins</h2>
+      <div class="two-col">
+        <div class="panel">
+          <p class="eyebrow">Fixed export costs</p>
+          <p>Certification, legal setup, market research, distributor search, and customs systems. Lowering them mainly helps firms begin serving a market.</p>
+        </div>
+        <div class="panel">
+          <p class="eyebrow">Per-unit trade costs</p>
+          <p>Freight, tariffs, delays, and border paperwork tied to each shipment. Lowering them raises sales and can also bring marginal firms across the cutoff.</p>
+        </div>
+      </div>
+      <p class="prompt"><strong>Policy judgment</strong> Which instrument would better help a capable small firm that cannot afford its first foreign certification?</p>
+    </section>
+
+    <section class="slide" data-slide-title="Four models together" aria-hidden="true" tabindex="-1">
+      <h2>Four models describe different margins of the same trade flow</h2>
+      <div class="table-scroll"><table class="number-table compact-table">
+        <thead><tr><th>Model</th><th>Question</th><th>Firm-level interpretation</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Ricardo</strong></td><td>What does Canada produce?</td><td>Industry and product productivity shape opportunities.</td></tr>
+          <tr><td><strong>Gravity</strong></td><td>Which destinations?</td><td>More firms clear the cutoff for large nearby markets.</td></tr>
+          <tr><td><strong>Krugman</strong></td><td>Why two-way trade?</td><td>Firms sell differentiated varieties with fixed costs.</td></tr>
+          <tr><td><strong>Heterogeneous firms</strong></td><td>Which firms export?</td><td>Productivity and market-entry costs create selection.</td></tr>
+        </tbody>
+      </table></div>
+      <p class="callout"><strong>Countries summarize patterns; firms do the exporting.</strong> No single model should be asked to explain the product, partner, variety, and firm margins at once.</p>
+    </section>
+
+    <section class="slide" data-slide-title="What to remember" aria-hidden="true" tabindex="-1">
+      <h2>What to remember</h2>
+      <ol class="quiz-list">
+        <li>Most firms do not export, and export value is extremely concentrated.</li>
+        <li>Higher productivity lowers unit cost and helps firms cover fixed market-entry costs.</li>
+        <li>Two cutoffs separate exit, domestic-only production, and exporting.</li>
+        <li>Trade can raise industry productivity through reallocation, even without learning.</li>
+        <li>Export entry and firm entry are different, as are export exit and firm death.</li>
+      </ol>
+      <p class="prompt"><strong>Synthesis pause</strong> Connect one Canadian stylized fact to the cutoff model, then state one fact the model does not by itself prove.</p>
+    </section>
+
+    <section class="slide recipe-slide" data-slide-title="Five-step linear-demand recipe" aria-hidden="true" tabindex="-1">
+      <h2>A five-step recipe for a linear-demand firm problem</h2>
+      <div class="two-col wide-left">
+        <ol class="quiz-list">
+          <li><strong>Compute costs:</strong> unit cost <var>c</var> = <var>w</var>/<var>a</var>; delivered marginal cost <var>m</var> = <var>c</var> + <var>t</var>.</li>
+          <li><strong>Write the problem:</strong> <var>p</var>(<var>q</var>) = <var>A</var> − <var>bq</var> and π(<var>q</var>) = [<var>p</var>(<var>q</var>) − <var>m</var>]<var>q</var> − <var>F</var>.</li>
+          <li><strong>Optimize:</strong> differentiate, set π′(<var>q</var>) = 0, and check π″(<var>q</var>) &lt; 0.</li>
+          <li><strong>Plug back:</strong> after finding <var>q</var>*, use inverse demand: <var>p</var>* = <var>p</var>(<var>q</var>*) = <var>A</var> − <var>bq</var>*. Then compute π*.</li>
+          <li><strong>Make the decision:</strong> enter or export if and only if π* ≥ 0.</li>
+        </ol>
+        <div class="recipe-results">
+          <div class="panel">
+            <p class="eyebrow">Symbolic result</p>
+            <div class="equation">π′(<var>q</var>) = <var>A</var> − 2<var>bq</var> − <var>m</var></div>
+            <div class="equation"><var>q</var>* = (<var>A</var> − <var>m</var>) ÷ (2<var>b</var>)</div>
+            <p>MR determines the optimal quantity; demand determines price. With <var>b</var> &gt; 0, π″(<var>q</var>) = −2<var>b</var> &lt; 0.</p>
+          </div>
+          <div class="panel">
+            <p class="eyebrow">Classroom shortcut</p>
+            <div class="equation"><var>b</var> = 1/2 &nbsp;⇒&nbsp; <var>q</var>* = <var>A</var> − <var>m</var></div>
+          </div>
+        </div>
+      </div>
+      <p class="callout"><strong>Keep the two decisions separate:</strong> <var>F</var> is absent from the first-order condition. It changes entry, not <var>q</var>* conditional on entry.</p>
+    </section>
+
+    <section class="slide" data-slide-title="Brief in-class quiz" aria-hidden="true" tabindex="-1">
+      <p class="eyebrow">12:18–12:30 · Final class activity</p>
+      <h2>Brief in-class quiz</h2>
+      <div class="two-col">
+        <div class="panel"><p class="eyebrow">Part A · Previous class</p><p>One conceptual question on Krugman: scale, preference for variety, and two-way trade.</p></div>
+        <div class="panel"><p class="eyebrow">Part B · Today</p><p>One simple computation using linear demand, MR = MC, and the resulting export profit and decision.</p></div>
+      </div>
+      <div class="two-col">
+        <div class="metric"><strong>12:00 p.m.</strong><span>separate question PDF opens in Canvas</span></div>
+        <div class="metric"><strong>12:30 p.m.</strong><span>handwritten response upload closes in Canvas</span></div>
+      </div>
+      <p class="callout"><strong>Tuesday, October 27, 2026:</strong> work independently for the final 12 minutes. You may use a phone or computer only to open the Canvas question PDF and upload a clear photo or PDF of your handwritten response. A basic calculator is allowed. The exact questions do not appear on the public slides.</p>
+    </section>
+  </main>
+
+  <footer class="deck-controls" aria-label="Slide navigation">
+    <button class="nav-button" type="button" data-action="previous" aria-label="Previous slide">←</button>
+    <span class="slide-count" data-slide-count aria-live="polite">1 / 31</span>
+    <button class="nav-button" type="button" data-action="next" aria-label="Next slide">→</button>
+  </footer>
+
+  <dialog id="figure-dialog" aria-labelledby="figure-dialog-title">
+    <div class="dialog-header"><strong id="figure-dialog-title" data-dialog-title>Expanded figure</strong><button class="dialog-close" type="button" data-action="close-dialog" aria-label="Close expanded figure">×</button></div>
+    <div class="dialog-content" data-dialog-content></div>
+  </dialog>
+  <dialog id="overview-dialog" aria-labelledby="overview-dialog-title">
+    <div class="dialog-header"><strong id="overview-dialog-title">Slide overview</strong><button class="dialog-close" type="button" data-action="close-dialog" aria-label="Close slide overview">×</button></div>
+    <div class="dialog-content"><div class="overview-grid" data-overview-grid></div></div>
+  </dialog>
+  <noscript><p style="position:fixed;inset:1rem;z-index:100;padding:1rem;background:#fff4d6;border:2px solid #c99700">This live deck needs JavaScript for navigation, charts, and the firm calculator. Enable JavaScript to use it.</p></noscript>
+</body>
+</html>
