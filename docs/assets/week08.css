@@ -1,3 +1,31 @@
+.ai-model-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(260px, 0.85fr);
+  gap: 1.2rem;
+  align-items: start;
+}
+.ai-model-slide .chart { min-height: 220px; }
+.ai-model-readout { display: grid; grid-template-columns: 1fr 1fr; gap: .7rem; }
+.ai-model-readout .metric { min-height: 108px; padding: .8rem; }
+.ai-model-readout .metric strong { font-size: clamp(1.8rem, 3vw, 3rem); }
+.ai-model-readout .metric span { font-size: clamp(.86rem, 1.15vw, 1.08rem); }
+.ai-model-readout .ai-positive strong { color: var(--green); }
+.ai-model-readout .ai-negative strong { color: var(--sfu-red); }
+.ai-model-controls { margin-top: .8rem; }
+.ai-model-controls label { display: block; font-weight: 750; }
+.ai-model-controls input { width: 100%; accent-color: var(--blue); }
+.ai-model-slide .ai-assumptions { font-size: clamp(.8rem, 1.05vw, .98rem); line-height: 1.35; }
+.ai-model-slide details { margin-top: .6rem; font-size: .95rem; }
+.ai-model-slide summary { cursor: pointer; font-weight: 750; }
+.ai-model-slide details p { font-size: .95rem; }
+.ai-model-slide .ai-caption { margin-top: .5rem; font-size: .9rem; }
+.ai-mechanisms li { margin-bottom: .65rem; }
+.ai-evidence-slide .metric { min-height: 180px; }
+@media (max-width: 850px) {
+  .ai-model-layout { grid-template-columns: 1fr; }
+  .ai-model-readout { grid-template-columns: 1fr 1fr; }
+}
+
 .abundance-slide .abundance-layout {
   display: grid;
   grid-template-columns: minmax(0, 1.18fr) minmax(300px, 0.82fr);

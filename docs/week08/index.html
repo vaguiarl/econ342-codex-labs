@@ -6,7 +6,7 @@
   <meta name="description" content="Interactive ECON 342 slides on Heckscher–Ohlin, Stolper–Samuelson, Canadian trade adjustment, winners and losers, and support for protection.">
   <title>Week 8 · Who gains and who loses from trade? · ECON 342</title>
   <link rel="stylesheet" href="../assets/site.css?v=20261101-distribution">
-  <link rel="stylesheet" href="../assets/week08.css?v=20261101-policy-1">
+  <link rel="stylesheet" href="../assets/week08.css?v=20261103-ai-1">
   <style>
     .process-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:.75rem; counter-reset:process; }
     .process-grid .panel { position:relative; min-height:132px; padding-top:2.8rem; }
@@ -44,7 +44,7 @@
     @media (max-width:850px) { .result-grid,.process-grid,.case-steps,.region-grid { grid-template-columns:1fr; } }
   </style>
   <script defer src="../assets/charts.js"></script>
-  <script defer src="../assets/week08.js?v=20261101-ho-1"></script>
+  <script defer src="../assets/week08.js?v=20261103-ai-1"></script>
   <script defer src="../assets/slides.js"></script>
 </head>
 <body class="deck-body">
@@ -54,12 +54,13 @@
     <div class="toolbar-actions">
       <a class="toolbar-link" href="project/" title="Open the Week 8 AI-enhanced project">Project</a>
       <a class="toolbar-link" href="study/" title="Open the simplified Week 8 study deck">Study</a>
+      <a class="toolbar-link" href="econ342_week08_slides.pdf" title="Download the Week 8 lecture PDF">PDF</a>
       <button class="icon-button" type="button" data-action="overview" aria-label="Open slide overview" title="Overview (O)">▦</button>
       <button class="icon-button" type="button" data-action="fullscreen" aria-label="Enter full screen" title="Full screen (F)">⛶</button>
     </div>
   </header>
 
-  <div class="deck-progress" role="progressbar" aria-label="Slide progress" aria-valuemin="1" aria-valuenow="1" aria-valuemax="32"><span data-progress></span></div>
+  <div class="deck-progress" role="progressbar" aria-label="Slide progress" aria-valuemin="1" aria-valuenow="1" aria-valuemax="36"><span data-progress></span></div>
 
   <main class="deck" aria-label="Week 8 slide deck">
     <section class="slide cover-slide is-active" data-slide-title="Who gains and who loses from trade?" aria-hidden="false" tabindex="0">
@@ -73,7 +74,7 @@
         <p><strong>10:50</strong> H–O and factor prices</p>
         <p><strong>11:20</strong> H–O, policy, and evidence</p>
         <p><strong>11:35–11:45</strong> ten-minute break</p>
-        <p><strong>11:45</strong> Canadian evidence</p>
+        <p><strong>11:45</strong> Canadian evidence, AI and robots</p>
         <p><strong>12:05</strong> political economy and policy</p>
       </div>
     </section>
@@ -462,6 +463,56 @@
       <p class="source">Illustrative synthesis from Statistics Canada provincial merchandise exports and Natural Resources Canada sector evidence.</p>
     </section>
 
+    <section class="slide" data-slide-title="AI, tasks and relative scarcity" aria-hidden="true" tabindex="-1">
+      <h2>AI changes which human tasks remain scarce</h2>
+      <div class="two-col">
+        <div><p class="eyebrow">The H–O connection</p><p>Relative factor supplies and production techniques shape comparative advantage. AI and robots change the tasks machines can perform, so demand for different human capabilities changes.</p><p class="callout"><strong>Canadian export thought experiment:</strong> an auto plant uses fewer assembly hours per vehicle and expands exports. Maintenance and engineering can gain while some assembly tasks contract.</p></div>
+        <div><p class="eyebrow">Three forces affect labour demand</p><ul class="ai-mechanisms"><li><strong>Replacement:</strong> machines perform some human tasks.</li><li><strong>Complementarity:</strong> machines make other human tasks more productive.</li><li><strong>Expansion:</strong> lower costs can increase sales and exports.</li></ul><p>Wages depend on the balance of these forces and on adjustment and institutions.</p></div>
+      </div>
+      <p class="callout"><strong>Model boundary:</strong> this is a technology extension. Stolper–Samuelson describes goods-price changes with technology fixed. More capital need not change wages in the diversified textbook economy at fixed world prices.</p>
+      <p class="source">Task framework: <a href="https://doi.org/10.1257/jep.33.2.3" target="_blank" rel="noopener">Acemoglu and Restrepo, Automation and New Tasks (2019)</a>. The auto example is a thought experiment.</p>
+    </section>
+
+    <section class="slide ai-evidence-slide" data-slide-title="Canadian AI exposure" aria-hidden="true" tabindex="-1">
+      <h2>Canadian AI exposure reaches professional work too</h2>
+      <p>Employment by potential AI exposure and complementarity, March 2026, ages 15–69:</p>
+      <div class="three-col">
+        <div class="metric"><strong>31.2%</strong><span>High exposure and high complementarity, such as engineers and teachers</span></div>
+        <div class="metric"><strong>29.6%</strong><span>High exposure and low complementarity, including accounting and software development</span></div>
+        <div class="metric"><strong>39.3%</strong><span>Low exposure, including many skilled trades and first responders</span></div>
+      </div>
+      <p class="callout"><strong>35.9%</strong> reported using generative AI at work during the previous twelve months. Exposure describes potential task transformation. It does not measure job losses or predict a wage change.</p>
+      <p class="source">Source: <a href="https://www150.statcan.gc.ca/n1/daily-quotidien/260730/dq260730b-eng.htm" target="_blank" rel="noopener">Statistics Canada, July 30, 2026 release</a>, March 2026 LFS supplement, provinces. Categories sum to 100.1% because of rounding.</p>
+    </section>
+
+    <section class="slide ai-model-slide" id="ai-wages" data-slide-title="AI productivity and different wages" aria-hidden="true" tabindex="-1">
+      <h2>Productivity can rise while some wages fall</h2>
+      <div class="ai-model-layout">
+        <div>
+          <figure class="interactive-figure" data-expandable><div class="figure-header"><figcaption class="figure-title">An illustrative task model</figcaption><button class="expand-button" type="button" data-expand aria-label="Expand AI productivity and wage graph">Expand ↗</button></div><div class="expandable-content"><div id="ai-wage-chart" class="chart" role="img" aria-label="Model curves showing productivity rising faster than average hourly wages while the wage for a substitutable task falls"><img src="data/ai_robotics_productivity_wages.svg" alt="Illustration: productivity rises 41.4%, average hourly wages rise 6.1%, and pay for a substitutable task falls 29.3% at robot capacity one."></div></div></figure>
+          <div class="ai-model-controls"><label for="ai-robot-capacity">Robot task capacity added: <output id="ai-robot-value" for="ai-robot-capacity">1.00</output></label><input id="ai-robot-capacity" type="range" min="0" max="1" step="0.05" value="1"><p class="ai-caption">One unit can perform one worker's substitutable task. The vertical guide marks your selection.</p></div>
+        </div>
+        <div><div class="ai-model-readout">
+          <div class="metric ai-positive"><strong id="ai-productivity-value">+41.4%</strong><span>Output per human hour</span></div>
+          <div class="metric ai-positive"><strong id="ai-average-wage-value">+6.1%</strong><span>Average hourly wage</span></div>
+          <div class="metric ai-negative"><strong id="ai-substitute-wage-value">−29.3%</strong><span>Pay for work robots can also do</span></div>
+          <div class="metric ai-positive"><strong id="ai-complement-wage-value">+41.4%</strong><span>Pay for work that complements robots</span></div>
+        </div><p class="ai-assumptions"><strong>Why the gap?</strong> Robots add output but reduce the marginal contribution of the task they can replace. The other human task becomes more productive. Part of the extra income pays for robot services.</p></div>
+      </div>
+      <details><summary>Assumptions, equations and downloadable data</summary><p>Y = 2√[H(L + R)], with H = L = 1, unchanged human hours and output price, and payments equal to marginal products. The complementary task earns √(1 + R); the substitutable task earns 1/√(1 + R). Average pay is their mean. Task reassignment, new tasks and retraining are outside this illustration.</p><p><a href="data/README.md">Model explanation and sources</a> · <a href="data/ai_robotics_model.csv" download>Download model CSV</a> · <a href="data/ai_robotics_model.json">Assumptions JSON</a></p></details>
+      <p class="source"><strong>Illustration, not Canadian estimates or a forecast.</strong> Output price stays fixed, so the wage changes also change purchasing power. <span id="ai-model-live" class="sr-only" aria-live="polite"></span></p>
+    </section>
+
+    <section class="slide" data-slide-title="Canadian robot adoption evidence" aria-hidden="true" tabindex="-1">
+      <h2>Canadian robot adopters expand, but workers differ</h2>
+      <div class="two-col">
+        <div><p class="eyebrow">Bank of Canada, September 2026</p><p>Robot adoption in Canadian private corporations is associated with higher revenue, value added, non-owner employment and payroll.</p><p>The study finds little evidence of a lower labour share and no increase in the total owner income share. The falling-share outcome in the illustration is not universal.</p></div>
+        <div><p class="eyebrow">Statistics Canada, historical evidence</p><p>Robot adopters tended to hire more workers overall but needed fewer managers. Middle-skilled workers faced weaker outcomes than high- and low-skilled workers.</p><p class="callout"><strong>Payroll = total hours × average hourly pay.</strong> Higher payroll does not establish that every worker earns more.</p></div>
+      </div>
+      <p class="prompt"><strong>Interpret:</strong> what worker-level evidence would you need before claiming that automation raised everyone's living standard?</p>
+      <p class="source">Sources: <a href="https://www.bankofcanada.ca/2026/09/staff-working-paper-2026-34/" target="_blank" rel="noopener">Galassi and MacKenzie, Bank of Canada WP 2026-34</a>; <a href="https://www150.statcan.gc.ca/n1/pub/11-626-x/11-626-x2020024-eng.htm" target="_blank" rel="noopener">Statistics Canada, Dixon (2020)</a>. Firm growth alone does not identify economy-wide job effects.</p>
+    </section>
+
     <section class="slide" data-slide-title="Concentrated political interests" aria-hidden="true" tabindex="-1">
       <h2>Concentrated losses can dominate political attention</h2>
       <div class="two-col">
@@ -556,6 +607,7 @@
         <li>Long-run mobility can offset average losses while the transition remains economically important.</li>
         <li>Concentrated losses help explain support for protection without proving that protection is efficient.</li>
         <li>Adjustment and industrial policies need a diagnosed problem, evidence, and an exit test.</li>
+        <li>AI can raise productivity while changing wages differently across tasks. Evidence must test who actually gains.</li>
       </ol>
       <p class="callout"><strong>Core conclusion:</strong> gains from trade are more likely to remain politically durable when institutions address who bears the adjustment.</p>
     </section>
@@ -563,7 +615,7 @@
 
   <footer class="deck-controls" aria-label="Slide navigation">
     <button class="nav-button" type="button" data-action="previous" aria-label="Previous slide">←</button>
-    <span class="slide-count" data-slide-count aria-live="polite">1 / 32</span>
+    <span class="slide-count" data-slide-count aria-live="polite">1 / 36</span>
     <button class="nav-button" type="button" data-action="next" aria-label="Next slide">→</button>
   </footer>
 

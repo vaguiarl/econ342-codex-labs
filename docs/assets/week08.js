@@ -309,6 +309,44 @@
     abundanceFrame = requestAnimationFrame(step);
   }
 
+  // The same competitive task model generates the Beamer graph and downloadable CSV.
+  // Y = 2 sqrt(H (L+R)), H=L=1, price=1, wages=marginal products.
+  // These are model implications, not Canadian estimates or an AI wage forecast.
+  function updateAIRobotics(announce = false) {
+    const input = byId("ai-robot-capacity");
+    const node = byId("ai-wage-chart");
+    if (!input || !node) return;
+    const capacity = Math.max(0, Math.min(1, Number(input.value)));
+    const productive = Math.sqrt(1 + capacity);
+    const substitutable = 1 / productive;
+    const average = (productive + substitutable) / 2;
+    setText("ai-robot-value", capacity.toFixed(2));
+    setText("ai-productivity-value", pct(100 * (productive - 1)));
+    setText("ai-average-wage-value", pct(100 * (average - 1)));
+    setText("ai-substitute-wage-value", pct(100 * (substitutable - 1)));
+    setText("ai-complement-wage-value", pct(100 * (productive - 1)));
+    const summary = `Robot task capacity ${capacity.toFixed(2)}. Output per human hour changes ${pct(100 * (productive - 1))}; average hourly pay ${pct(100 * (average - 1))}; pay for the substitutable task ${pct(100 * (substitutable - 1))}; pay for the complementary task ${pct(100 * (productive - 1))}. Illustrative model, not Canadian estimates.`;
+    input.setAttribute("aria-valuetext", summary);
+    if (announce) setText("ai-model-live", summary);
+    if (!Charts) return;
+    const grid = [...new Set([...Array.from({ length: 21 }, (_, i) => i / 20), capacity])].sort((a, b) => a - b);
+    const values = (fn) => grid.map((x) => ({ x, y: 100 * fn(x), display: `${(100 * fn(x)).toFixed(1)} (before AI = 100)` }));
+    Charts.lineChart(node, [
+      { label: "Productivity", color: colours.blue, values: values((r) => Math.sqrt(1 + r)) },
+      { label: "Average wage", color: colours.green, values: values((r) => (Math.sqrt(1 + r) + 1 / Math.sqrt(1 + r)) / 2) },
+      { label: "Pay for replaceable work", color: colours.red, values: values((r) => 1 / Math.sqrt(1 + r)) }
+    ], {
+      title: "Illustrative productivity and task wages as robot capacity increases",
+      description: summary,
+      height: 330,
+      xDomain: [0, 1], yDomain: [50, 150],
+      xLabel: "Robot task capacity added", yLabel: "Index (before AI = 100)",
+      xTicks: 3, yTicks: 5, xFormat: (v) => Number(v).toFixed(1),
+      valueFormat: (v) => Number(v).toFixed(1), pointRadius: 2, lineWidth: 4,
+      referenceLines: [{ y: 100, label: "Before AI" }, { x: capacity, color: colours.grey }]
+    });
+  }
+
   if (!Charts) {
     ["ho-specialization-chart", "trefler-chart", "recent-exposure-chart", "attitudes-chart"].forEach(fallback);
   } else {
@@ -337,6 +375,9 @@
     });
   });
   byId("abundance-play")?.addEventListener("click", playAbundanceAnimation);
+  byId("ai-robot-capacity")?.addEventListener("input", () => updateAIRobotics(false));
+  byId("ai-robot-capacity")?.addEventListener("change", () => updateAIRobotics(true));
   updateFactorPrices();
   updateAbundance();
+  updateAIRobotics();
 })();

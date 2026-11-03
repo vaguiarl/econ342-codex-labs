@@ -1,0 +1,24 @@
+{
+  "status": "Illustrative competitive task model; not Canadian estimates or a forecast",
+  "production_function": "Y = 2 sqrt(H (L + R))",
+  "human_inputs": {
+    "H": 1,
+    "L": 1
+  },
+  "robot_capacity_range": [
+    0,
+    1
+  ],
+  "output_price": 1,
+  "wage_rule": "Value of the marginal product; unchanged output price",
+  "adjustment": "Human hours and task assignments are fixed; new tasks and retraining are outside this illustration",
+  "baseline": "Each series at R=0 is indexed to 100",
+  "endpoint": {
+    "robot_capacity": 1.0,
+    "productivity_index": 141.4213562373095,
+    "complementary_task_wage_index": 141.4213562373095,
+    "substitutable_task_wage_index": 70.71067811865474,
+    "average_hourly_wage_index": 106.06601717798215
+  },
+  "interpretation": "Robots add output and complement H, while reducing the marginal product of substitutable human input L. Average wages rise less than productivity, and one task wage falls."
+}
