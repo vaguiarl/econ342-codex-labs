@@ -338,7 +338,7 @@
     ], {
       title: "Illustrative productivity and task wages as robot capacity increases",
       description: summary,
-      height: 330,
+      height: 300,
       xDomain: [0, 1], yDomain: [50, 150],
       xLabel: "Robot task capacity added", yLabel: "Index (before AI = 100)",
       xTicks: 3, yTicks: 5, xFormat: (v) => Number(v).toFixed(1),

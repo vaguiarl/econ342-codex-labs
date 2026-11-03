@@ -45,7 +45,7 @@ def main():
     output.mkdir(parents=True, exist_ok=True)
     rows = [outcome(i / 100) for i in range(101)]
     with (output / "ai_robotics_model.csv").open("w", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
+        writer = csv.DictWriter(handle, fieldnames=list(rows[0]), lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
     assumptions = {
@@ -89,6 +89,8 @@ def main():
         ax.spines[spine].set_color("#c8d3d9")
     for suffix in ("png", "svg"):
         fig.savefig(output / f"ai_robotics_productivity_wages.{suffix}", dpi=200, facecolor="white")
+    svg = output / "ai_robotics_productivity_wages.svg"
+    svg.write_text("\n".join(line.rstrip() for line in svg.read_text().splitlines()) + "\n")
     plt.close(fig)
     if args.course_root:
         destination = args.course_root / "tex/figures/generated/ai_robotics_productivity_wages.png"
