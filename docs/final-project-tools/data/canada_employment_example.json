@@ -1,0 +1,41 @@
+{
+  "source": "Statistics Canada 14-10-0023-01",
+  "source_url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410002301",
+  "filters": {
+    "measure": "Employment",
+    "age": "15 years and over",
+    "gender": "Total - Gender"
+  },
+  "resource_group": "Forestry, fishing, mining, quarrying, oil and gas [21, 113-114, 1153, 2100]",
+  "denominator": "Sum of 16 non-overlapping course groups; published rounded thousands",
+  "rows": [
+    {
+      "geography": "British Columbia",
+      "year": 2010,
+      "resource_employment_thousands": 41.4,
+      "included_employment_thousands": 2221.7,
+      "employment_share_percent": 1.8634379079083587
+    },
+    {
+      "geography": "British Columbia",
+      "year": 2024,
+      "resource_employment_thousands": 53.1,
+      "included_employment_thousands": 2914.1,
+      "employment_share_percent": 1.8221749425208469
+    },
+    {
+      "geography": "Canada",
+      "year": 2010,
+      "resource_employment_thousands": 326.2,
+      "included_employment_thousands": 16978.1,
+      "employment_share_percent": 1.9212986140969839
+    },
+    {
+      "geography": "Canada",
+      "year": 2024,
+      "resource_employment_thousands": 354.2,
+      "included_employment_thousands": 20730.5,
+      "employment_share_percent": 1.7085936180989363
+    }
+  ]
+}

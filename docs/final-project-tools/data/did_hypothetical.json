@@ -1,0 +1,18 @@
+{
+  "status": "Invented classroom example, not Canadian estimates",
+  "unit": "Employment rate, percent",
+  "treated": [
+    68,
+    69,
+    70,
+    64
+  ],
+  "comparison": [
+    58,
+    59,
+    60,
+    58
+  ],
+  "counterfactual_after_assuming_parallel_trends": 68,
+  "did_percentage_points": -4
+}
