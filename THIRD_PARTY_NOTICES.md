@@ -65,3 +65,22 @@ CEPII Gravity V202211 and BACI merchandise-trade data for 2019:
 
 The estimates and figures are author calculations for teaching. They are
 descriptive, not causal, and third-party data remain subject to CEPII's terms.
+
+
+## Podcast music
+
+The course podcast *A Mill, a Home, and the Canadian Trade Puzzle* uses:
+
+> 'Neon' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au
+
+- Track source: <https://www.scottbuckley.com.au/library/neon/>
+- Licence: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+- Changes: excerpts from the original track, fades, level adjustment, and
+  mixing with narration. No artist endorsement is implied.
+
+*Four-Note Thread* is an original instrumental theme generated for ECON 342
+with ElevenLabs Music. The narration is AI-generated in Victor Aguiar's
+authorized voice. The episode's complete audience-facing music credits are
+in [docs/podcast/music_credits.txt](docs/podcast/music_credits.txt), its audio
+metadata, the listening page, and the transcript. Repository text and code
+licences do not replace the third-party music licence.

@@ -35,6 +35,16 @@ Week 6 assignment: [Market Scale, Political Size, and Canada's Future](https://v
 The web version is the main classroom format; PDF remains useful for printing
 and offline access.
 
+## Course podcast
+
+[**A Mill, a Home, and the Canadian Trade Puzzle**](https://vaguiarl.github.io/econ342-codex-labs/podcast/)
+connects Canadian trade and risk to scale, exporting firms, and factor rewards.
+The 30:22 episode has clickable chapters, a searchable transcript, licensed
+music interludes, and nine Midterm 2 practice questions reviewing Weeks 6–8.
+The new research paper is final-project enrichment, not additional Midterm 2 material.
+The review revisits already covered material and begins at 20:16. Download the [transcript and source notes](https://vaguiarl.github.io/econ342-codex-labs/podcast/transcript.pdf).
+Narration is AI-generated in Victor Aguiar's authorized voice.
+
 ## Available labs
 
 | Week | Lab | Main question |

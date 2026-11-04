@@ -1,0 +1,381 @@
+{
+  "title": "A Mill, a Home, and the Canadian Trade Puzzle",
+  "subtitle": "A story-led lesson on scale, firms, factor rewards, and a Midterm 2 review",
+  "duration": 1821.8357708333333,
+  "sampleRate": 48000,
+  "durationSamples": 87448117,
+  "reviewStart": 1216.0141875,
+  "reviewEnd": 1821.8357708333333,
+  "reviewDuration": 605.8215833333334,
+  "sections": [
+    {
+      "id": "speech_01",
+      "title": "A home, a cluster, and a choice",
+      "group": "The mill and the household",
+      "role": "story",
+      "topics": [
+        "1. A question about a home",
+        "2. The power of a cluster",
+        "3. Choosing before the future arrives"
+      ],
+      "start": 5.0,
+      "end": 137.36245833333334,
+      "startSample": 240000,
+      "endSample": 6593398,
+      "text": "At a sawmill in British Columbia, a question about trade became a question about a home. In April 2025, Gorman Group site manager Jeremy Griffin told Reuters that employees were wondering whether it was a sensible time to move from renting to buying. Uncertainty about an export market had reached a major household decision.\n\nYou're hearing an AI-generated version of my voice for ECON 342. Today, we will follow that household question into an economic puzzle. Specialization can make a community more productive. It can also tie people's livelihoods to the fortunes of one industry. A family chooses skills, a place to live, and commitments that stretch years into the future. How much security comes with the opportunity?\n\nStart with the opportunity. Ricardo helps us understand why places specialize. Gravity explains the importance of access to large, nearby markets. Krugman's model shows how a larger market supports scale and variety. Together, these ideas help explain why producing for customers beyond Canada's borders can support productive activity at home.\n\nNow zoom in on the community around a mill. Think of experienced machine operators, maintenance specialists, suppliers who understand the equipment, and workers learning from one another. Shared capabilities help us picture local external economies of scale: the productivity of an industry can rise as that industry grows in a place. Each person's choice contributes a little to the cluster. The cluster, in turn, helps shape the opportunities available to each person.\n\nEconomists Xiao Ma and Natalia Ramondo study what happens when that feedback meets uncertainty. Their working paper focuses on productivity shocks. Workers choose their industry and location before discovering which activities will have a good or bad year. They care about the risk they face, as well as the average rewards.\n\nThe baseline keeps workers in their chosen industry and location after the shock arrives. Wages adjust to clear labour markets, and households face risk without financial insurance or saving. Those assumptions put the early decision at the centre of the story. The prospect of a volatile income can change where people choose to work. Their choices change the size of local industries, which feeds back into productivity."
+    },
+    {
+      "id": "speech_02",
+      "title": "Risk, prices, and the gains from trade",
+      "group": "The mill and the household",
+      "role": "story",
+      "topics": [
+        "4. A larger average, a harder choice",
+        "5. Both sides of the border",
+        "6. How much does risk change the gains?"
+      ],
+      "start": 140.36245833333334,
+      "end": 305.43022916666666,
+      "startSample": 6737398,
+      "endSample": 14660651,
+      "text": "Here is a hypothetical choice. Two outcomes are equally likely. A specialized livelihood provides real consumption of 120 in a good year and 60 in a bad year. Its average is 90. A steady alternative provides 84 in either year. Which would you choose?\n\nFor someone who dislikes risk, the bad year can carry a lot of weight. Using one illustrative risk preference, the risky livelihood feels as good as a guaranteed 80. Economists call that sure amount its certainty equivalent. The steady alternative provides 84, so this person chooses stability, even though the risky path has a higher average.\n\nNow give consumption on the specialized path a ten percent lift in both years: 132 and 66. Average consumption rises to 99, and the certainty equivalent rises to 88. The choice reverses. These hypothetical payoffs expose the central trade-off. Productivity gains can make risk worth bearing. The strength of that gain, the household's preferences, and its ability to share risk determine the balance.\n\nA household's living standard depends on what its income can buy. Wages provide purchasing power; prices determine how far that power reaches. Someone whose pay becomes less secure may still gain access to a wider range of affordable goods.\n\nThat gives trade two roles. Specialization can concentrate a worker's income exposure. Imports provide access to alternative suppliers, which can cushion consumption when domestic supply is disrupted. The net effect on real-wage risk depends on how wages and the prices people pay move together.\n\nThe paper therefore measures welfare through expected utility, expressed in consumption-equivalent units. This keeps the average level of consumption and its uncertainty in the same picture. It asks how much consumption would make people equally well off under two different economic arrangements.\n\nThe authors' October 2026 U.S. calibration gives the puzzle some scale. The benchmark is autarky: an economy closed to international trade. With uncertainty, the modeled consumption-equivalent gain from trade is 1.87 percent. Removing uncertainty raises that gain to 2.27 percent.\n\nThe difference is 0.40 percentage points, or about 18 percent of the gain in the comparison without uncertainty. Trade still brings a positive aggregate gain. Risk changes how much that gain is worth to households.\n\nIn the latest baseline, every U.S. commuting zone gains in the simulation. The smallest reported regional gain is 0.50 percent. The paper also documents an observational association between uncertainty and employment growth. Its U.S. model results give us a mechanism to investigate in Canada, alongside evidence about Canadian industries and households."
+    },
+    {
+      "id": "speech_03",
+      "title": "Sharing a bad year; returning home",
+      "group": "The mill and the household",
+      "role": "story",
+      "topics": [
+        "7. Who shares a bad year?",
+        "8. What prosperity feels like"
+      ],
+      "start": 308.43022916666666,
+      "end": 397.0375833333333,
+      "startSample": 14804651,
+      "endSample": 19057804,
+      "text": "The next question is institutional. If a community's productive strengths come with exposure to a volatile industry, who can help households share the risk? The authors explore idealized insurance arrangements. Complete national risk sharing largely removes uncertainty's effect on aggregate gains from trade in their calibration. Partial insurance leaves some workers exposed; global securities leave some price risk.\n\nFor Canada, this points toward a practical comparison. Income protection, opportunities to use related skills, access to alternative suppliers, and support for productive local capabilities address different parts of the problem. Their value depends on how institutions work and which risks households actually face. The research gives us channels to examine. Canadian evidence helps us judge which channels matter in a particular community.\n\nReturn to the question Griffin reported: is this a sensible time to commit to buying a home? A productive industry can support the income behind that commitment. Access to a large market can strengthen the industry. Yet the family's decision also depends on how confidently it can meet the payments when conditions change.\n\nThat is the human meaning of the trade-off. Specialization helps communities produce more. Wages, prices, and institutions shape how those gains reach households, and how securely families can build their lives around them. To understand prosperity, we need to follow the chain all the way from a larger market to the choices people can make at home."
+    },
+    {
+      "id": "middle_01",
+      "title": "The car market: variety, scale, and firms",
+      "group": "The Canadian trade puzzle",
+      "role": "middle",
+      "topics": [],
+      "start": 409.0375833333333,
+      "end": 759.5856666666666,
+      "startSample": 19633804,
+      "endSample": 36460112,
+      "text": "Picture a Canadian autoworker, a car buyer, and a parts firm. These imagined roles carry the mill household's question into a new setting. The worker cares about jobs and pay. The buyer cares about choice and price. The firm must cover the cost of reaching customers. Trade connects them, and each model helps us follow a different link.\n\nStart with an observed pattern. In 2024, Canada exported 48.33 billion Canadian dollars in passenger cars and light trucks to the United States and imported 36.32 billion. In engines and parts, Canada exported 22.00 billion and imported 30.52 billion. Cars and parts crossed the border in both directions, though the balance differed by product group.\n\nA buyer may value different car models. A producer may also use parts made across the border, where a stage of production is efficient. Broad groups contain many models and inputs, so these totals leave room for both variety trade and linked supply chains. Product and firm records help us tell those channels apart.\n\nCar buyers see different models as similar but distinct. Some prefer one model enough to pay a little more for it. That gives its maker room to price above the cost of one extra unit. Close rivals limit that room, and expected profit draws new firms in. Each variety also needs design, setup, and a way to reach buyers.\n\nThe variety model links differentiated choices, buyer preference for options, and fixed costs. Access to more customers can support more varieties and attract rivals. Buyers can gain from choice even if existing firms' output and average costs stay unchanged. That gain comes from variety.\n\nScale gives the firm a second route to a lower price. Total cost is a fixed bill plus a per-vehicle cost times the number made. Average cost is the per-unit cost plus the fixed bill spread across output. Use invented numbers: a fixed cost of 240 million Canadian dollars and marginal cost of 20,000 dollars per car. At 40,000 cars, fixed cost per car is 6,000 dollars, so average cost is 26,000. At 80,000, fixed cost per car is 3,000 dollars, so average cost is 23,000. The larger run cuts average cost by about 11.5 percent. Marginal cost stays at the assumed 20,000 dollars.\n\nA bigger market brings both new buyers and new rivals. Some plants grow, others shrink, and entry can add more varieties. The cost formula tells us what happens if a plant's run gets larger. How large that run becomes depends on sales, entry, and the share of demand each firm wins. Buyers can enjoy more choice even when the run at each firm stays the same.\n\nIn the Week 7 exercise, demand gives buyers' willingness to pay. The firm sets marginal revenue equal to marginal cost to choose quantity, then reads price from demand at that quantity.\n\nHere is the arithmetic. Let price be 44 minus quantity, and let marginal cost be 12 dollars per unit. Marginal revenue is 44 minus two times quantity. Setting it equal to 12 gives quantity 16. Demand then gives price 28 dollars. Revenue above variable cost is 256 dollars. With an avoidable fixed cost of 200 dollars, net profit is 56, so the firm operates. Raise that avoidable cost to 300, holding demand and marginal cost fixed. The best operating quantity and price remain 16 and 28. That plan now loses 44 dollars, so the firm chooses to stay out. Fixed cost sets the entry hurdle. Demand and marginal cost set the best quantity while the firm is open.\n\nHome sales and exports can have separate setup bills. Firms differ in output per worker and in unit cost. Lower-cost firms can more readily cover the extra cost of serving a foreign buyer. This is selection into exporting. A firm can also close its export line while it keeps selling at home. Those two doors can move on their own.\n\nCanadian data show why it is useful to ask which firms participate. In 2024, Canada counted 48,036 exporting enterprises. The largest 500, about one percent of exporters, accounted for 77.7 percent of linked goods-export value. Firms each exporting less than one million dollars made up 74.6 percent of exporters, but together accounted for less than one percent of value. The number of firms and the value of exports have different denominators. Many small exporters coexist with a small group carrying most linked export value.\n\nOver 1974 to 2010, Canadian manufacturing exporters averaged 13 percent higher productivity than firms selling only at home. We are comparing two groups with different histories. One channel is selection: more productive firms can cover the export hurdle. Learning from foreign buyers is a further possible channel. To tell their roles apart, we need to track firms before and after entry with a suitable comparison group.\n\nAmong identifiable Canadian exporters entering during 2005 to 2018, 59.8 percent of export spells remained active after year one, and 28.1 percent after year six. A spell is a run of years with exports. Ending that run means the firm stops exporting. It may still sell at home and may start a fresh export spell later.\n\nVariety helps explain the value of choice. Scale shows how a larger run spreads a setup bill. Selection tells us which producers clear the export hurdle. Together they give us several ways to read the Canadian trade pattern. Matching products to firms lets us learn how much weight each channel carries."
+    },
+    {
+      "id": "middle_02",
+      "title": "Resources, factor returns, and household welfare",
+      "group": "The Canadian trade puzzle",
+      "role": "middle",
+      "topics": [],
+      "start": 774.5856666666666,
+      "end": 1216.0141875,
+      "startSample": 37180112,
+      "endSample": 58368681,
+      "text": "The worker now asks which kinds of work trade will reward. Compare each country's mix of resources with the inputs used in each good. Both comparisons are relative. A large land stock can sit beside an even larger workforce. What matters for land abundance is land compared with labour, and that ratio compared with the partner's.\n\nThe class evidence gives a striking clue. In 2024, arable land per person was about 0.92 hectares in Canada and 0.025 in South Korea, a ratio of roughly 36.7 to one. Land per person is one screen for resource abundance. A fuller account also traces skills, capital, technology, and the resources available in each region.\n\nIn 2025, four resource groups made up 68.4 percent of Canada's exports to Korea, while three manufacturing groups made up 71.8 percent of imports. Those broad shares suggest a role for the two countries' different resource mixes and ways of using inputs. Establishing each channel's contribution takes evidence beyond the trade shares.\n\nHeckscher–Ohlin compares abundance across countries with intensity across goods. Abundance is a factor-supply ratio. Intensity is an input ratio at common factor prices. Under the standard two-country, two-good, two-factor assumptions, including common technology and preferences, the relatively abundant factor supports exports of the good using it relatively intensively.\n\nTry invented units. Canada has 80 units of land and 40 units of labour. Its partner has 90 units of land and 60 units of labour. Canada has less land in total, yet its land-to-labour ratio is 2, compared with 1.5 for the partner. Canada is relatively land abundant. Suppose grain uses three units of land per worker and apparel uses half a unit. Grain is land intensive. Under the benchmark assumptions, Canada exports grain and imports apparel. Relative ratios drive the result.\n\nNow follow a goods-price change into pay. In the standard competitive two-good, two-factor Stolper–Samuelson model, technology is common and fixed, both goods are produced, and goods differ in factor intensity. A rise in the export good's relative price raises the intensive factor's real return relative to both goods and lowers the other factor's. These conditions define the benchmark we are using.\n\nIf land-intensive grain's relative price rises, land's real return rises and labour's real wage falls relative to both goods in the benchmark. Household welfare also depends on asset ownership and the prices of its consumption basket. A worker may own land; a landowner may earn wages.\n\nFollow one household's buying power. It earns 3,000 dollars and its fixed basket costs 2,000 dollars. That income buys 1.5 baskets. If income falls four percent, it becomes 2,880. If the basket price falls five percent, it becomes 1,900. Buying power rises to about 1.516 baskets, roughly one percent more. Here the price fall outweighs the income fall. Other households have different income changes, assets, and baskets. Reading wages and prices together is how we learn who gains.\n\nResearch discussed in class follows Canadian industries with the deepest tariff cuts. Employment fell 12 percent while productivity rose 15 percent in those industries. In industries most exposed to U.S. tariff cuts and improved access, plant productivity rose 14 percent. Gains in productive capacity can come alongside contraction in employment. The groups and their exposure tell us where these results apply.\n\nMatched Canadian worker records from 1984 to 2004 add a longer view. Import competition raised layoffs and lowered earnings at the initial employer. Workers moved among manufacturing, construction, and services. Average cumulative earnings and years worked showed little long-run effect, as import competition and improved U.S. access partly offset. An average can hide different paths. Following those paths shows us who adjusts, how long it takes, and where support may matter.\n\nThe more recent class evidence shows exposure in a different setting. From December 2024 to August 2025, payroll employment fell 1.4 percent in highly U.S.-demand-dependent industries and rose 0.2 percent in less-dependent ones. Motor-vehicle-parts employment fell 7.8 percent, or 5,600 jobs. This is a descriptive comparison. Exposed employment was already weakening in 2024. Isolating a tariff effect requires a design that accounts for the other forces at work.\n\nNew technology adds a further force. AI and robots can replace some tasks, help with others, and cut costs enough to raise sales. In March 2026, among employed people aged 15 to 69 in the Canadian provinces, 31.2 percent worked in occupations with high potential AI exposure and high complementarity; 29.6 percent had high exposure and low complementarity; 39.3 percent had low exposure. These categories describe tasks that AI could affect. Adoption tracks actual use, while job and wage changes require evidence on what followed.\n\nCanadian corporations adopting robots are associated with higher revenue, value added, non-owner employment, and payroll. Growth can be part of the story. A lower cost can help a firm win buyers and hire more people. Total payroll equals total hours times average hourly pay, so a larger payroll can reflect more hours. To assess the worker's gain, trace hourly pay, hours, job changes, consumer prices, and who owns the machines.\n\nThe factor-price model traces a change in goods prices while technology stays fixed. AI and robots change tasks and methods of production. Replacement, complementarity, and expansion can then pull different kinds of work in different directions. Keeping the shock clear helps us choose the right mechanism for the question.\n\nReturn to the car buyer, worker, and parts supplier. Ricardo links specialization to relative productivity; gravity links trade to market size and distance. Variety models explain exchange of differentiated products, choice, and scale. Firm selection asks who can cover home and export costs. Heckscher–Ohlin links relative resources and input intensity to trade; Stolper–Samuelson traces a goods-price change to factor returns under its assumptions.\n\nHousehold welfare connects earnings, hours, asset ownership, basket prices, and adjustment. Cheaper imports are one channel; an average gain can coexist with a difficult transition or losses for some people. Measure who is affected, when, and through which channel.\n\nA market brings customers, rivals, variety, and scale; firms differ in their costs; countries differ in relative resources; prices connect these changes to wages and household baskets. Now rehearse the models. Pause after each question and try an answer before the explanation."
+    },
+    {
+      "id": "review_01",
+      "title": "Review 1 · Two-way trade: question",
+      "group": "Midterm 2 practice",
+      "role": "review",
+      "topics": [],
+      "start": 1231.0141875,
+      "end": 1251.0991666666666,
+      "startSample": 59088681,
+      "endSample": 60052760,
+      "text": "Return to the Canadian parts firm. Canada exported 22.00 billion dollars of engines and parts to the United States in 2024 and imported 30.52 billion. Give two reasons why trade could go both ways in this broad group. What extra data would help you tell them apart?"
+    },
+    {
+      "id": "review_02",
+      "title": "Review 1 · Explanation / 2 · Scale and average cost: question",
+      "group": "Midterm 2 practice",
+      "role": "review",
+      "topics": [],
+      "start": 1260.0991666666666,
+      "end": 1299.051125,
+      "startSample": 60484760,
+      "endSample": 62354454,
+      "text": "Buyers can value distinct models or parts, and producers in each country can supply varieties that are close substitutes. Production can also be linked across stages, with inputs crossing the border. Both channels fit the broad totals. Matched product and firm records help us trace the role of each channel and the path of a particular part.\n\nNow solve the plant example. A hypothetical plant has fixed cost of 240 million dollars and marginal cost of 20,000 dollars per vehicle. Output rises from 40,000 to 80,000. What happens to average cost, and why does marginal cost stay the same?"
+    },
+    {
+      "id": "review_03",
+      "title": "Review 2 · Explanation / 3 · Quantity, price, and entry: question",
+      "group": "Midterm 2 practice",
+      "role": "review",
+      "topics": [],
+      "start": 1308.051125,
+      "end": 1359.5346458333333,
+      "startSample": 62786454,
+      "endSample": 65257663,
+      "text": "Average cost is marginal cost plus fixed cost divided by output. At 40,000 vehicles, fixed cost per vehicle is 6,000 dollars, so average cost is 26,000. At 80,000, fixed cost per vehicle is 3,000 dollars, so average cost is 23,000. The fixed cost is spread over twice as many vehicles. Marginal cost remains 20,000 because the example holds the cost of one extra vehicle fixed. These invented numbers isolate the fixed-cost channel. Actual plant output also depends on demand and rivals.\n\nA firm faces price equal to 44 minus quantity, marginal cost of 12 dollars, and an avoidable fixed cost of 200 dollars. Find its quantity, price, and profit. Then raise fixed cost to 300. What changes?"
+    },
+    {
+      "id": "review_04",
+      "title": "Review 3 · Explanation / 4 · Export selection and learning: question",
+      "group": "Midterm 2 practice",
+      "role": "review",
+      "topics": [],
+      "start": 1369.5346458333333,
+      "end": 1422.5990416666666,
+      "startSample": 65737663,
+      "endSample": 68284754,
+      "text": "Marginal revenue is 44 minus two times quantity. Equating it to 12 gives quantity 16. Demand then gives price 28 dollars. Variable profit is 16 dollars per unit times 16 units, or 256 dollars. Subtract fixed cost of 200 and net profit is 56, so the firm enters or stays in. At fixed cost 300, the same conditional output and price give net profit of minus 44, so it stays out. That comparison holds demand, marginal cost, and market conditions fixed.\n\nA Canadian exporter is more productive than a firm selling only at home in a historical comparison. Explain how selection and learning could each contribute. What evidence helps tell them apart? Then explain how an export spell can end while the firm stays open."
+    },
+    {
+      "id": "review_05",
+      "title": "Review 4 · Explanation / 5 · Relative abundance and intensity: question",
+      "group": "Midterm 2 practice",
+      "role": "review",
+      "topics": [],
+      "start": 1430.5990416666666,
+      "end": 1471.6348541666666,
+      "startSample": 68668754,
+      "endSample": 70638473,
+      "text": "Lower-cost firms can clear the export hurdle, which creates selection. Foreign buyers and new methods can also help firms learn. A group comparison fits both channels; tracking firms before and after entry with a sound comparison helps us study their roles. When an export spell ends, the firm stops exporting. It may still serve home buyers and may export again later.\n\nUse the invented endowment example. Canada has 80 land and 40 labour; its partner has 90 land and 60 labour. Grain uses three land per worker and apparel one-half. Which country is land abundant, which good is land intensive, and what does the model predict?"
+    },
+    {
+      "id": "review_06",
+      "title": "Review 5 · Explanation / 6 · Factor returns and household welfare: question",
+      "group": "Midterm 2 practice",
+      "role": "review",
+      "topics": [],
+      "start": 1480.6348541666666,
+      "end": 1525.3514791666666,
+      "startSample": 71070473,
+      "endSample": 73216871,
+      "text": "Canada's land-to-labour ratio is 2, compared with 1.5 for the partner, so Canada is relatively land abundant even with less land in absolute terms. Grain's land-to-labour ratio of 3 exceeds apparel's one-half, so grain is land intensive. The standard Heckscher–Ohlin model predicts that Canada exports grain and imports apparel, under the standard assumptions, including common technology and preferences. We used invented input units for this exercise.\n\nSuppose trade raises the relative price of land-intensive grain. State the factor-return result and its conditions. Then trace the two channels that shape a worker's buying power: the income earned and the price of the household's basket."
+    },
+    {
+      "id": "review_07",
+      "title": "Review 6 · Explanation / 7 · Purchasing power: question",
+      "group": "Midterm 2 practice",
+      "role": "review",
+      "topics": [],
+      "start": 1534.3514791666666,
+      "end": 1576.3552291666667,
+      "startSample": 73648871,
+      "endSample": 75665051,
+      "text": "In the standard two-good, two-factor competitive model, with common fixed technology and both goods produced, land's real return rises relative to both goods and labour's real return falls relative to both. To apply that factor-price result to a household, trace its sources of income and spending. A worker's earnings, asset ownership, hours, and basket prices all matter. The worker can lose if earnings fall more than the prices of the goods the household buys.\n\nA household earns 3,000 dollars and its fixed basket costs 2,000. Earnings fall four percent, while that basket price falls five percent. Find the new levels and compare purchasing power in baskets."
+    },
+    {
+      "id": "review_08",
+      "title": "Review 7 · Explanation / 8 · Robots, tasks, and workers: question",
+      "group": "Midterm 2 practice",
+      "role": "review",
+      "topics": [],
+      "start": 1584.3552291666667,
+      "end": 1628.9178958333334,
+      "startSample": 76049051,
+      "endSample": 78188059,
+      "text": "Income becomes 2,880 dollars and the basket costs 1,900. Before, the household bought 1.5 baskets. After, it buys about 1.516, roughly 1.05 percent more. For this household and this fixed basket, the price fall more than offsets the income fall. To judge other households, repeat the comparison with their earnings, assets, and spending.\n\nA Canadian firm adopts robots. Revenue, output per worker, and payroll rise. Explain replacement, complementarity, and expansion. Which worker outcomes would you examine? Explain how this technology shock differs from the goods-price change in Stolper–Samuelson."
+    },
+    {
+      "id": "review_09",
+      "title": "Review 8 · Explanation / 9 · Reading evidence: question",
+      "group": "Midterm 2 practice",
+      "role": "review",
+      "topics": [],
+      "start": 1637.9178958333334,
+      "end": 1687.272125,
+      "startSample": 78620059,
+      "endSample": 80989062,
+      "text": "Robots can replace tasks performed by some workers, complement tasks performed by others, and lower costs enough to expand sales and employment. Payroll can rise through more hours while different workers can face different changes in hourly pay. We would want hourly pay, hours, displacement and re-employment, consumer prices, and who owns the machines. Robot adoption changes tasks and technology. Stolper–Samuelson holds technology fixed and traces a goods-price change through factor returns in a specified two-good, two-factor model.\n\nImagine a chart shows jobs falling in one Canadian industry group as productivity rises. Name four details you would check. Then explain what further evidence would help connect those changes to trade and to a worker's living standard."
+    },
+    {
+      "id": "review_10",
+      "title": "Review 9 · Reading evidence: explanation and closing",
+      "group": "Midterm 2 practice",
+      "role": "review",
+      "topics": [],
+      "start": 1696.272125,
+      "end": 1813.8357708333333,
+      "startSample": 81421062,
+      "endSample": 87064117,
+      "text": "Check the date range, industry group and population, units and denominator, and whether the number is a measured change or a causal estimate. Then look at the comparison and method behind it. The chart shows the two movements for the stated group and period. A causal claim needs evidence that isolates trade from other forces. Productivity can rise within plants, or through a shift toward more productive firms. Each path has a different meaning for workers. Following wages, hours, prices, and assets connects the industry result to living standards.\n\nKeep the questions distinct as you study. Why exchange varieties? How can a larger market change scale and entry? Which firms can cover the fixed cost of exporting? How do relative resources and input intensity shape trade? If a price changes, who gains through earnings, and what happens to the prices households pay? A figure is a starting point: read its date, units, group, and denominator, then separate what it shows from the cause you infer. If jobs fall while productivity rises, say both facts plainly, then ask whether the change occurred within plants or through firms entering and exiting. The answer affects what we can say about workers. Connect the measured result to wages, hours, prices, assets, and adjustment before making a household claim. That is how we return from trade patterns to a Canadian household deciding about work, a car, or a home. For a last mental picture, follow a car from a Canadian plant to a buyer across the border. Market access brings the buyer within reach. Scale spreads the setup bill. The firm's costs decide whether it serves that buyer. The mix of land, labour, skills, and tools helps shape what it makes. Goods prices feed into pay and asset returns. At the end of that chain is a home, where income meets the cost of life. Each model lights up one link."
+    }
+  ],
+  "practices": [
+    {
+      "number": 1,
+      "title": "Two-way trade",
+      "question": "Return to the Canadian parts firm. Canada exported 22.00 billion dollars of engines and parts to the United States in 2024 and imported 30.52 billion. Give two reasons why trade could go both ways in this broad group. What extra data would help you tell them apart?",
+      "think": 1251.0991666666666,
+      "pauseEnd": 1260.0991666666666,
+      "explanation": 1260.0991666666666,
+      "pauseSeconds": 9.0
+    },
+    {
+      "number": 2,
+      "title": "Scale and average cost",
+      "question": "Now solve the plant example. A hypothetical plant has fixed cost of 240 million dollars and marginal cost of 20,000 dollars per vehicle. Output rises from 40,000 to 80,000. What happens to average cost, and why does marginal cost stay the same?",
+      "think": 1299.051125,
+      "pauseEnd": 1308.051125,
+      "explanation": 1308.051125,
+      "pauseSeconds": 9.0
+    },
+    {
+      "number": 3,
+      "title": "Quantity, price, and entry",
+      "question": "A firm faces price equal to 44 minus quantity, marginal cost of 12 dollars, and an avoidable fixed cost of 200 dollars. Find its quantity, price, and profit. Then raise fixed cost to 300. What changes?",
+      "think": 1359.5346458333333,
+      "pauseEnd": 1369.5346458333333,
+      "explanation": 1369.5346458333333,
+      "pauseSeconds": 10.0
+    },
+    {
+      "number": 4,
+      "title": "Export selection and learning",
+      "question": "A Canadian exporter is more productive than a firm selling only at home in a historical comparison. Explain how selection and learning could each contribute. What evidence helps tell them apart? Then explain how an export spell can end while the firm stays open.",
+      "think": 1422.5990416666666,
+      "pauseEnd": 1430.5990416666666,
+      "explanation": 1430.5990416666666,
+      "pauseSeconds": 8.0
+    },
+    {
+      "number": 5,
+      "title": "Relative abundance and intensity",
+      "question": "Use the invented endowment example. Canada has 80 land and 40 labour; its partner has 90 land and 60 labour. Grain uses three land per worker and apparel one-half. Which country is land abundant, which good is land intensive, and what does the model predict?",
+      "think": 1471.6348541666666,
+      "pauseEnd": 1480.6348541666666,
+      "explanation": 1480.6348541666666,
+      "pauseSeconds": 9.0
+    },
+    {
+      "number": 6,
+      "title": "Factor returns and household welfare",
+      "question": "Suppose trade raises the relative price of land-intensive grain. State the factor-return result and its conditions. Then trace the two channels that shape a worker's buying power: the income earned and the price of the household's basket.",
+      "think": 1525.3514791666666,
+      "pauseEnd": 1534.3514791666666,
+      "explanation": 1534.3514791666666,
+      "pauseSeconds": 9.0
+    },
+    {
+      "number": 7,
+      "title": "Purchasing power",
+      "question": "A household earns 3,000 dollars and its fixed basket costs 2,000. Earnings fall four percent, while that basket price falls five percent. Find the new levels and compare purchasing power in baskets.",
+      "think": 1576.3552291666667,
+      "pauseEnd": 1584.3552291666667,
+      "explanation": 1584.3552291666667,
+      "pauseSeconds": 8.0
+    },
+    {
+      "number": 8,
+      "title": "Robots, tasks, and workers",
+      "question": "A Canadian firm adopts robots. Revenue, output per worker, and payroll rise. Explain replacement, complementarity, and expansion. Which worker outcomes would you examine? Explain how this technology shock differs from the goods-price change in Stolper–Samuelson.",
+      "think": 1628.9178958333334,
+      "pauseEnd": 1637.9178958333334,
+      "explanation": 1637.9178958333334,
+      "pauseSeconds": 9.0
+    },
+    {
+      "number": 9,
+      "title": "Reading evidence",
+      "question": "Imagine a chart shows jobs falling in one Canadian industry group as productivity rises. Name four details you would check. Then explain what further evidence would help connect those changes to trade and to a worker's living standard.",
+      "think": 1687.272125,
+      "pauseEnd": 1696.272125,
+      "explanation": 1696.272125,
+      "pauseSeconds": 9.0
+    }
+  ],
+  "music": [
+    {
+      "id": "music-1",
+      "cue": "opening",
+      "kind": "opening",
+      "title": "Opening theme",
+      "track": "Four-Note Thread",
+      "start": 0.0,
+      "end": 22.0,
+      "credit": "Original theme: Four-Note Thread, generated for ECON 342 with ElevenLabs Music."
+    },
+    {
+      "id": "music-2",
+      "cue": "original_bridge_01",
+      "kind": "bridge",
+      "title": "Theme transition",
+      "track": "Four-Note Thread",
+      "start": 137.36245833333334,
+      "end": 140.36245833333334,
+      "credit": "Original theme: Four-Note Thread, generated for ECON 342 with ElevenLabs Music."
+    },
+    {
+      "id": "music-3",
+      "cue": "original_bridge_02",
+      "kind": "bridge",
+      "title": "Theme transition",
+      "track": "Four-Note Thread",
+      "start": 305.43022916666666,
+      "end": 308.43022916666666,
+      "credit": "Original theme: Four-Note Thread, generated for ECON 342 with ElevenLabs Music."
+    },
+    {
+      "id": "music-4",
+      "cue": "music_act_two",
+      "kind": "bridge",
+      "title": "Cyberpunk interlude",
+      "track": "Neon — Scott Buckley",
+      "start": 397.0375833333333,
+      "end": 409.0375833333333,
+      "credit": "'Neon' by Scott Buckley — released under CC-BY 4.0. www.scottbuckley.com.au. Excerpted, faded and mixed for ECON342."
+    },
+    {
+      "id": "music-5",
+      "cue": "music_factors",
+      "kind": "bridge",
+      "title": "Cyberpunk interlude",
+      "track": "Neon — Scott Buckley",
+      "start": 759.5856666666666,
+      "end": 774.5856666666666,
+      "credit": "'Neon' by Scott Buckley — released under CC-BY 4.0. www.scottbuckley.com.au. Excerpted, faded and mixed for ECON342."
+    },
+    {
+      "id": "music-6",
+      "cue": "music_review",
+      "kind": "bridge",
+      "title": "Cyberpunk interlude",
+      "track": "Neon — Scott Buckley",
+      "start": 1216.0141875,
+      "end": 1231.0141875,
+      "credit": "'Neon' by Scott Buckley — released under CC-BY 4.0. www.scottbuckley.com.au. Excerpted, faded and mixed for ECON342."
+    },
+    {
+      "id": "music-7",
+      "cue": "outro",
+      "kind": "outro",
+      "title": "Closing theme",
+      "track": "Four-Note Thread",
+      "start": 1813.8357708333333,
+      "end": 1821.8357708333333,
+      "credit": "Original theme: Four-Note Thread, generated for ECON 342 with ElevenLabs Music."
+    }
+  ],
+  "credits": [
+    {
+      "credit": "Original theme: Four-Note Thread, generated for ECON 342 with ElevenLabs Music.",
+      "title": "Four-Note Thread",
+      "author": "ECON 342",
+      "source": null,
+      "licence": null,
+      "licenceUrl": null
+    },
+    {
+      "credit": "'Neon' by Scott Buckley — released under CC-BY 4.0. www.scottbuckley.com.au. Excerpted, faded and mixed for ECON342.",
+      "title": "Neon",
+      "author": "Scott Buckley",
+      "source": "https://www.scottbuckley.com.au/library/neon/",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  ],
+  "timingNote": "Times mark measured audio sections. Text within each section is not word synchronized. Practice buttons use the actual thinking-pause and explanation boundaries.",
+  "voiceNote": "AI-generated narration in Victor Aguiar’s authorized voice.",
+  "audio": "episode.mp3",
+  "audioSha256": "06ff3966ca39587d711ec744912f07362721998023c62ebe836177c63ab520a4",
+  "usedOriginalTheme": true
+}

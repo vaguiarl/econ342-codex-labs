@@ -130,6 +130,24 @@ input:focus-visible {
   line-height: 1.12;
 }
 
+.resource-feature {
+  grid-column: 1 / -1;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 0.35fr);
+  gap: 1rem 2.5rem;
+  min-height: 0;
+}
+
+.resource-feature .card-actions {
+  align-self: center;
+  margin-top: 0;
+}
+
+@media (max-width: 700px) {
+  .resource-feature {
+    grid-template-columns: 1fr;
+  }
+}
+
 .resource-card p {
   margin: 0;
   line-height: 1.55;

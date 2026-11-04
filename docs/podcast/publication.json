@@ -1,0 +1,28 @@
+{
+  "version": "2026-11-04",
+  "title": "A Mill, a Home, and the Canadian Trade Puzzle",
+  "audio": "episode.mp3",
+  "audio_sha256": "06ff3966ca39587d711ec744912f07362721998023c62ebe836177c63ab520a4",
+  "audio_bytes": 36438498,
+  "duration_seconds": 1821.8357708333333,
+  "review_start_seconds": 1216.0141875,
+  "review_duration_seconds": 605.8215833333334,
+  "speech_sections": 15,
+  "practice_questions": 9,
+  "synthetic_voice_disclosure": "AI-generated narration in Victor Aguiar’s authorized voice.",
+  "music_credits": "music_credits.txt",
+  "publication_authorized": true,
+  "source_paper": "https://www.nber.org/papers/w35942",
+  "audio_elementary_stream_sha256": "77c9339652ef76b6ad7f672571891d130d6316924bb609a0384ecf950032dec1",
+  "audio_packet_payload_identical_to_approved": true,
+  "pdf": "transcript.pdf",
+  "pdf_sha256": "306f0d572d883b591c751578e18239c81c2b42e2636997f37ada3bc78f23a3f3",
+  "checks": {
+    "local_links": true,
+    "js_syntax": true,
+    "public_metadata": true,
+    "no_private_paths_or_identifiers": true,
+    "all_fifteen_speech_sections": true,
+    "nine_practice_questions": true
+  }
+}

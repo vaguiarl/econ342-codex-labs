@@ -1,0 +1,119 @@
+{
+  "version": "1.2.0",
+  "title": "A Mill, a Home, and the Canadian Trade Puzzle",
+  "author": "Victor Aguiar",
+  "podcastName": "ECON 342",
+  "fileName": "episode.mp3",
+  "chapters": [
+    {
+      "startTime": 0.0,
+      "title": "Opening theme",
+      "endTime": 5.0
+    },
+    {
+      "startTime": 5.0,
+      "endTime": 137.36245833333334,
+      "title": "A home, a cluster, and a choice"
+    },
+    {
+      "startTime": 137.36245833333334,
+      "endTime": 140.36245833333334,
+      "title": "Theme transition · Four-Note Thread"
+    },
+    {
+      "startTime": 140.36245833333334,
+      "endTime": 305.43022916666666,
+      "title": "Risk, prices, and the gains from trade"
+    },
+    {
+      "startTime": 305.43022916666666,
+      "endTime": 308.43022916666666,
+      "title": "Theme transition · Four-Note Thread"
+    },
+    {
+      "startTime": 308.43022916666666,
+      "endTime": 397.0375833333333,
+      "title": "Sharing a bad year; returning home"
+    },
+    {
+      "startTime": 397.0375833333333,
+      "endTime": 409.0375833333333,
+      "title": "Cyberpunk interlude · Neon — Scott Buckley"
+    },
+    {
+      "startTime": 409.0375833333333,
+      "endTime": 759.5856666666666,
+      "title": "The car market: variety, scale, and firms"
+    },
+    {
+      "startTime": 759.5856666666666,
+      "endTime": 774.5856666666666,
+      "title": "Cyberpunk interlude · Neon — Scott Buckley"
+    },
+    {
+      "startTime": 774.5856666666666,
+      "endTime": 1216.0141875,
+      "title": "Resources, factor returns, and household welfare"
+    },
+    {
+      "startTime": 1216.0141875,
+      "endTime": 1231.0141875,
+      "title": "Cyberpunk interlude · Neon — Scott Buckley"
+    },
+    {
+      "startTime": 1231.0141875,
+      "endTime": 1251.0991666666666,
+      "title": "Review 1 · Two-way trade: question"
+    },
+    {
+      "startTime": 1260.0991666666666,
+      "endTime": 1299.051125,
+      "title": "Review 1 · Explanation / 2 · Scale and average cost: question"
+    },
+    {
+      "startTime": 1308.051125,
+      "endTime": 1359.5346458333333,
+      "title": "Review 2 · Explanation / 3 · Quantity, price, and entry: question"
+    },
+    {
+      "startTime": 1369.5346458333333,
+      "endTime": 1422.5990416666666,
+      "title": "Review 3 · Explanation / 4 · Export selection and learning: question"
+    },
+    {
+      "startTime": 1430.5990416666666,
+      "endTime": 1471.6348541666666,
+      "title": "Review 4 · Explanation / 5 · Relative abundance and intensity: question"
+    },
+    {
+      "startTime": 1480.6348541666666,
+      "endTime": 1525.3514791666666,
+      "title": "Review 5 · Explanation / 6 · Factor returns and household welfare: question"
+    },
+    {
+      "startTime": 1534.3514791666666,
+      "endTime": 1576.3552291666667,
+      "title": "Review 6 · Explanation / 7 · Purchasing power: question"
+    },
+    {
+      "startTime": 1584.3552291666667,
+      "endTime": 1628.9178958333334,
+      "title": "Review 7 · Explanation / 8 · Robots, tasks, and workers: question"
+    },
+    {
+      "startTime": 1637.9178958333334,
+      "endTime": 1687.272125,
+      "title": "Review 8 · Explanation / 9 · Reading evidence: question"
+    },
+    {
+      "startTime": 1696.272125,
+      "endTime": 1813.8357708333333,
+      "title": "Review 9 · Reading evidence: explanation and closing"
+    },
+    {
+      "startTime": 1813.8357708333333,
+      "endTime": 1821.8357708333333,
+      "title": "Closing theme · Four-Note Thread"
+    }
+  ]
+}
