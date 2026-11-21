@@ -1,0 +1,40 @@
+ECON 342 anonymous 100-million-Canadians memo: source references and notes
+
+These references reproduce the source memo's bibliography and data notes. The source memo and its references were accessed October 21, 2026. No source data or estimates have been updated for this teaching adaptation.
+
+[1] Statistics Canada (2026). Population Projections for Canada, Provinces and Territories, 2025 to 2075. Catalogue 17-20-0003, released January 27; printed p. 6, first Canada bullet. Published 2025 base and 2075 LG/M1/HG totals, rounded to 0.1 million; underlying table 17-10-0057-01. No annual M1/HG interpolation is used.
+https://publications.gc.ca/collections/collection_2026/statcan/172000032026001-eng.pdf
+
+[2] Statistics Canada (2024). Canada at a Glance, 2023: Population, tables 1-2, 2021 Census column. National count 36,991,981; cross-checks the six largest CMA populations. Census counts differ conceptually from postcensal estimates.
+https://www150.statcan.gc.ca/n1/pub/12-581-x/2023001/sec1-eng.htm?wbdisable=true
+
+[3] Arbenser, L., Bernard, M.-C., Dormer, A., and Vipond, O. (2024). Short-term rentals in the Canadian housing market. Statistics Canada, catalogue 11-621-M, July 30, table C.1, printed p. 16. Only the 2021 Census Population column is used; rental and dwelling columns are excluded. Fourteen selected CMAs plus Canada's residual define exhaustive, non-overlapping regions.
+https://publications.gc.ca/collections/collection_2024/statcan/11-621-m/11-621-m2024010-eng.pdf
+
+[4] Statistics Canada (2025). Gross domestic product, income and expenditure, fourth quarter 2024, February 28, printed p. 1; per-capita series table 36-10-0706-01. Annual 2024 real GDP-per-person change, -1.4%, is a historical release vintage, not a current revised estimate. Volume measures use chained 2017 dollars; no nominal CMA GDP comparison is made.
+https://www150.statcan.gc.ca/n1/daily-quotidien/250228/dq250228a-eng.pdf
+
+[5a] CMHC (2026). Housing starts up 5.6% in 2025 from 2024, January 16, opening paragraph: 259,028 actual dwelling starts, Canada all areas.
+https://www.cmhc-schl.gc.ca/media-newsroom/news-releases/2026/housing-starts-december-2025
+
+[5b] CMHC (2025). Updating Canada's housing supply shortages: new housing supply gap estimates, June 19. Annual starts benchmark by 2035, 430,000-480,000; model baseline 245,000-250,000. Different horizon and assumptions from this memo.
+https://www.cmhc-schl.gc.ca/observer/2025/updating-canada-housing-supply-shortages-new-housing-supply-gap-estimates
+
+[6] Duranton, G., and Puga, D. (2004). Micro-foundations of urban agglomeration economies. Handbook of Regional and Urban Economics 4:2063-2117, sections 2-4. The linked author draft is dated June 11, 2003; the chapter was published in 2004.
+https://diegopuga.org/papers/urbanagg.pdf
+
+[7] Duranton, G., and Puga, D. (2020). The Economics of Urban Density. Journal of Economic Perspectives 34(3):3-26.
+https://diegopuga.org/papers/density.pdf
+
+[8] Statistics Canada (2022), shelter-cost shares by tenure, September 21, table 4 and accompanying discussion, Canada row: owners 14.8%, renters 33.2% in 2021. Non-farm, non-reserve private dwellings; household income must be positive. These are household shares, not shares of people.
+https://www150.statcan.gc.ca/n1/en/daily-quotidien/220921/dq220921b-eng.pdf
+
+[9] Picot, G., Hou, F., Xu, L., and Bonikowska, A. (2022). Immigration selection factors and the earnings of economic principal applicants. Statistics Canada, June 22; sections on predictive factors and earnings differences.
+https://www150.statcan.gc.ca/n1/pub/36-28-0001/2022006/article/00001-eng.htm
+
+[10] Statistics Canada (2025). Canada's population estimates: Age and gender, July 1, 2025, September 24, pp. 1, 3-4. Used for demographic accounting and aging mechanisms, not new numerical inputs.
+https://www150.statcan.gc.ca/n1/daily-quotidien/250924/dq250924a-eng.pdf
+
+Source notes from the earlier memo
+
+During the table-download outage, official publications were accessed through preserved retrieval-service text captures, not complete CSV cubes; CMHC HTML files were downloaded directly. Raw JSON captures are unchanged retrieval responses, not original PDFs. The ZIP records exact source locations, transformations, hashes, assumptions, and exclusions. Synthetic 2025 regional estimates hold 2021 shares constant; they are not observed CMA populations. Household size, vacancy, allocation shares, capacity ceiling, and policy thresholds are explicit assumptions, not official observations.
