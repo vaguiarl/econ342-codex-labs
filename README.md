@@ -29,6 +29,7 @@ click-to-expand visuals.
 | 6 | [Interactive class](https://vaguiarl.github.io/econ342-codex-labs/week06/) | [Study deck](https://vaguiarl.github.io/econ342-codex-labs/week06/study/) | Krugman model: scale, variety, monopolistic competition, and two-way trade |
 | 7 | [Interactive class](https://vaguiarl.github.io/econ342-codex-labs/week07/) | [Study deck](https://vaguiarl.github.io/econ342-codex-labs/week07/study/) | Firm heterogeneity: exporter selection, entry, exit, and reallocation |
 | 8 | [Interactive class](https://vaguiarl.github.io/econ342-codex-labs/week08/) | [Study deck](https://vaguiarl.github.io/econ342-codex-labs/week08/study/) | Heckscher–Ohlin, Stolper–Samuelson, Canadian adjustment evidence, and the distribution of gains and losses |
+| 11 | [Interactive class](https://vaguiarl.github.io/econ342-codex-labs/week11/) | [Study deck](https://vaguiarl.github.io/econ342-codex-labs/week11/study/) | War, peace, and trade; [Panama Canal structural experiment](https://vaguiarl.github.io/econ342-codex-labs/week11/model/) |
 
 Week 6 assignment: [Market Scale, Political Size, and Canada's Future](https://vaguiarl.github.io/econ342-codex-labs/week06/econ342_scale_nations_ai_assignment.pdf)
 

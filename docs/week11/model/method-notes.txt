@@ -1,0 +1,61 @@
+# Week 11: illustrative Panama Canal structural counterfactual
+
+Prepared 2026-11-23. This is a small equilibrium illustration for teaching, not a calibrated reconstruction of the historical economy. It holds fundamentals fixed and changes two route distances. The exercise provides a classroom simulation, without a historical causal estimate or replication of Maurer–Rauch.
+
+## Contract and economic interpretation
+
+Three regions each supply one differentiated good: Atlantic US (New York), Pacific US (San Francisco), and Pacific Asia (Yokohama). These are teaching labels, not measured regional boundaries. Labor endowments are **assumed relative units** `L = [2, 1, 3]`, fixed in both cases. Productivity is one everywhere. Production is constant returns with perfect competition: `p_i = w_i`, `y_i = L_i`. There is no migration, firm entry, increasing returns, investment, or endogenous productivity.
+
+Consumers have equal CES taste weights `b_i = 1/3`. Set substitution elasticity `sigma = theta + 1`, where the slider `theta` ranges from 2 to 8 (default 4). Shipping uses iceberg resources: shipping `tau_ij` units delivers one unit. With distance `d_ij` in nautical miles, the **assumed** cost rule is:
+
+`tau_ii = 1; tau_ij = 1 + freight * d_ij / 10000` for `i != j`.
+
+The `freight` slider ranges from 0 to 0.5 (default 0.2); at distance 10,000 nautical miles, 0.2 means 1.2 units shipped per unit delivered. It is not an observed freight rate. No tolls, tariffs, port charges, transshipment, capacity constraints, congestion, or separately modeled alternative modes are included. In particular, toll revenue is not silently treated as destroyed resources.
+
+Matrices have **exporter rows i and importer columns j**:
+
+`pi_ij = (w_i * tau_ij)^(-theta) / sum_k (w_k * tau_kj)^(-theta)`
+
+`P_j = [sum_i b_i * (w_i * tau_ij)^(-theta)]^(-1/theta)`
+
+`E_j = w_j * L_j; X_ij = pi_ij * E_j; sum_j X_ij = w_i * L_i`.
+
+The last equation clears each producing region's market. Expenditure equals income, so there are no trade deficits or transfers. Normalize world nominal income to `sum_i w_i L_i = 6` in each scenario. This is a numeraire, not a restriction that world real income is fixed. `realIncome[i] = w_i / P_i` measures purchasing power per worker; it is proportional to per-worker CES consumption utility. Percentage changes are invariant to the numeraire. Nominal trade values are in common arbitrary units, not dollars.
+
+`crossRegionShare = sum_(i != j) X_ij / sum_j E_j`. Say “trade with other regions,” since trade between the two US coasts is domestic. Each column of `shares` sums to one. `sharePp` and `domesticSharePp` report percentage-point differences; real-income, wage, and price-index changes are percentages.
+
+## Inputs and provenance
+
+The course CSV `../data/historical_route_comparisons.csv`, checked against the solver inputs, contains the [USF catalog's Marshall 1913 route comparisons](https://etc.usf.edu/maps/pages/10400/10479/10479.htm):
+
+| Pair | Canal off | Canal on | Status |
+|---|---:|---:|---|
+| New York–San Francisco | 13,135 | 5,262 | Historical route comparison; nautical miles |
+| New York–Yokohama | 13,079 | 9,798 | Historical route comparison; nautical miles |
+| San Francisco–Yokohama | 4,600 | 4,600 | Assumed illustration; not a verified historical distance |
+
+Reverse-direction distances equal forward-direction distances by assumption. Off-case alternatives are Magellan and Suez respectively. These comparisons are not observed shipment distances or measured trade costs. The model has a pairwise cost matrix, not a reconstructed global multimodal network. It omits the rest of the world and assumes these port-based distances represent whole regions.
+
+The [WTO–UNCTAD structural-gravity guide](https://www.wto.org/english/res_e/booksp_e/advancedwtounctad2016_e.pdf) provides the theoretical framework, particularly its general-equilibrium chapter. [Donaldson–Hornbeck (2016)](https://doi.org/10.1093/qje/qjw002) motivates calculating access through freight networks; this small illustration does not reproduce their historical network. [Maurer–Rauch's published Section 6](https://academic.oup.com/oep/article/75/1/142/6554037) already applies a Redding general-equilibrium framework to welfare. Our fixed-labor exercise is a separate model; neither its inputs nor its outputs reproduce that calculation.
+
+## Results and verification
+
+At default assumptions, simulated real-income changes are **Atlantic US +4.2182%, Pacific US +4.4302%, Pacific Asia +0.4675%**. The world expenditure share purchased from another modeled region rises **4.5385 percentage points**. These are deterministic model outputs, not observed historical effects or confidence intervals. Lower route costs change demand and equilibrium wages even between pairs whose own route is unchanged. Thus the exercise can illustrate trade diversion without designating unaffected control regions.
+
+`model.js` exports browser global `PanamaModel` and an identical CommonJS interface. `run({theta, freight})` returns parameters, region metadata, off/on equilibria, changes, and diagnostics. `solve({labor, distances, theta, freight, worldIncome})` exposes the equilibrium routine for verification. The solver updates log wages using damped expenditure/revenue imbalances, renormalizes each iteration, and stops only below relative market error `1e-12`. It throws on invalid inputs, nonfinite values, or failure to converge after 20,000 iterations.
+
+Run inside this model folder (Node.js and Python 3 required):
+
+```sh
+node check-model.cjs --write-results
+```
+
+The check passed **1,275 parameter combinations / 2,550 equilibria** over the slider ranges (theta steps 0.25, freight steps 0.01). Maximum relative market error was **9.999e-13**; maximum iterations **289**. Checks also cover expenditure shares, positive prices/incomes/flows, the source CSV, analytical symmetric two-region and unequal-labor frictionless cases, zero-freight on/off equivalence, numeraire and permutation invariance, invalid inputs, and browser/CommonJS agreement. A separate Python finite-difference Newton solver agrees with default wages, shares, and price indices within `1e-9`; it does not reuse the JavaScript iteration method.
+
+`model-results.json` stores the default run, 42 coarse sensitivity cases, a zero-freight matched case, and validation metadata including the model SHA-256. It can be regenerated by the command above. No packages or network access are needed to run the model/checker; the checker needs Node and Python 3.
+
+## Claim boundary
+
+Numerical implementation checks pass; no Lean theorem or kernel certificate was produced. Model assumptions are declared, not empirically established. Historical bilateral trade, regional production, regional populations, and freight rates have not been calibrated or validated. The two historical distance comparisons are the limited empirical inputs. Numerical accuracy does not supply historical accuracy.
+
+These comparative statics answer a controlled transport-cost question within the model. They do not isolate observed wartime effects, explain the paper's population relocation, show an entry/scale mechanism, estimate a peace effect, or measure construction's effect on Panama. Consumption gains under assumed variable resource costs are not project net benefits: construction/maintenance costs, financing, ownership, and revenue distribution are omitted. A serious historical application would require those choices plus cost-network and baseline-flow evidence; validation must include evidence not used to calibrate the model.

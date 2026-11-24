@@ -1,0 +1,91 @@
+.week11 .slide.is-active { align-content: center; }
+.week11 .slide { padding-top: clamp(1rem, 2.2vh, 2rem); padding-bottom: clamp(1rem, 2.2vh, 2rem); }
+.week11 .slide h2 { font-size: clamp(1.9rem, 3.3vw, 3.45rem); }
+.week11 .slide p, .week11 .slide li, .week11 .slide label { font-size: clamp(1.02rem, 1.48vw, 1.4rem); line-height: 1.45; }
+.week11 .slide .source { font-size: clamp(.75rem, 1vw, .95rem) !important; }
+.week11 .two-col { align-items: center; }
+.week11 .figure-slide { align-content: start; }
+.week11 .figure-slide h2 { margin-bottom: .8rem; }
+.week11 .chart-image { display: block; width: 100%; max-height: 46vh; object-fit: contain; }
+.week11 .figure-header { padding: 0 0 .45rem; }
+.week11 .figure-title { font-size: clamp(.95rem, 1.2vw, 1.15rem); }
+.week11 .interactive-figure { box-shadow: none; }
+.week11 #figure-dialog .chart-image { max-height: 80vh; }
+.week11 .timeline { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1.5rem; }
+.week11 .timeline-item { border-top: 5px solid var(--sfu-red); padding-top: .8rem; }
+.week11 .timeline-year { display: block; color: var(--sfu-red); font-size: clamp(2rem,4vw,4rem); font-weight: 850; }
+.week11 .model-line { padding: 1rem 0; border-bottom: 1px solid var(--line); }
+.week11 .model-line strong { color: var(--sfu-red); }
+.week11 .terms-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1.7rem; }
+.week11 .terms-grid > div { border-left: 4px solid var(--line); padding-left: 1.1rem; }
+.week11 .comparison { width: 100%; border-collapse: collapse; font-size: clamp(1rem,1.5vw,1.35rem); }
+.week11 .comparison th { color: var(--sfu-red); text-align: left; }
+.week11 .comparison td, .week11 .comparison th { padding: .65rem .7rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+.week11 .comparison caption { text-align: left; margin-bottom: .65rem; color: var(--muted); font-size: 1rem; }
+.week11 .substitution-example { max-width: 1060px; width: 100%; margin: 0 auto; }
+.week11 .substitution-bar { display: flex; height: 4rem; border-radius: .45rem; overflow: hidden; margin: 1.4rem 0 .6rem; background: var(--soft); }
+.week11 .preserved-bar { background: var(--green); }
+.week11 .lost-bar { background: var(--sfu-red); }
+.week11 .substitution-key { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
+.week11 .substitution-key p { margin-top: 0; }
+.week11 .preserved-label { color: var(--green); font-weight: 800; }
+.week11 .lost-label { color: var(--sfu-red); font-weight: 800; }
+.week11 input[type="range"] { width: 100%; accent-color: var(--green); }
+.week11 .slider-control output { white-space: nowrap; }
+.week11 .break-slide { text-align: center; }
+.week11 .reading-list li + li { margin-top: .7rem; }
+@media (max-width:850px) {
+  .week11 .slide.is-active { align-content: start; }
+  .week11 .terms-grid, .week11 .timeline { grid-template-columns: 1fr; }
+  .week11 .cover-slide { grid-template-columns: 1fr; gap: 1rem; }
+  .week11 .chart-image { max-height: none; }
+  .week11 .slide h1 { font-size: clamp(3rem,11vw,4.5rem); }
+  .week11 .comparison { font-size: .94rem; }
+  .week11 .comparison td, .week11 .comparison th { padding: .45rem .3rem; }
+}
+@media print {
+  .week11 .slide { position: relative; display: block !important; overflow: visible; min-height: 95vh; break-after: page; }
+  .week11 .deck { position: static; }
+  body.week11 { height: auto; overflow: visible; }
+  .week11 .deck-toolbar, .week11 .deck-controls, .week11 .deck-progress, .week11 .expand-button { display: none; }
+}
+.week11 .evidence-label { color: var(--green); font-weight: 800; margin: 0 0 .75rem; }
+.week11 .causal-chain { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: .7rem; align-items: center; margin: .8rem 0; }
+.week11 .causal-chain > div { border: 1px solid var(--line); border-top: 4px solid var(--green); border-radius: .65rem; padding: 1rem; font-size: clamp(1rem, 1.45vw, 1.35rem); line-height: 1.4; text-align: center; background: white; }
+.week11 .causal-chain > span { font-size: 1.8rem; color: var(--green); }
+@media (max-width:850px) {
+  .week11 .causal-chain { grid-template-columns: 1fr; gap: .3rem; }
+  .week11 .causal-chain > span { transform: rotate(90deg); text-align: center; }
+}
+.week11 .chart-detail { display: none; }
+.week11 #figure-dialog .chart-wide { display: none; }
+.week11 #figure-dialog .chart-detail { display: block; }
+@media (min-width:851px) {
+  .week11.study-deck .chart-wide { max-height: 42vh; }
+}
+@media (min-width:851px) and (max-height:800px) {
+  .week11 .chart-image { max-height: 40vh; }
+  .week11.study-deck .chart-wide { max-height: 35vh; }
+  .week11 .substitution-bar { height: 3rem; margin-top: 1rem; }
+  .week11 .substitution-example p { margin-top: .7rem; margin-bottom: .7rem; }
+}
+@media (min-width:851px) and (max-height:800px) {
+  .week11 .figure-slide p { margin-top: .7rem; margin-bottom: .7rem; }
+  .week11 .substitution-example .equation { margin: .4rem auto; padding-top: .5rem; padding-bottom: .5rem; }
+}
+@media (min-width:851px) {
+  .week11 .panama-route-slide .panama-chart { max-height: 33vh; }
+  .week11 .panama-route-slide .panama-equation { font-size: clamp(1.1rem, 1.7vw, 1.6rem); margin: .5rem auto; padding: .5rem 1rem; }
+}
+@media (min-width:851px) and (max-height:800px) {
+  .week11 .panama-route-slide .panama-chart { max-height: 35vh; }
+  .week11 .panama-route-slide .interactive-figure { padding: .5rem; }
+  .week11.study-deck .panama-route-slide .panama-chart { max-height: 33vh; }
+  .week11 .cover-slide { grid-template-columns: minmax(0, 1fr) minmax(320px, 1fr); gap: 4vw; }
+  .week11 .cover-meta p { margin-top: 0; margin-bottom: .55rem; }
+}
+.week11 .model-launch { display: inline-block; color: white; background: var(--sfu-red); border-radius: .6rem; padding: .7rem 1rem; text-decoration: none; font-weight: 750; }
+.week11 .model-invitation { margin: .65rem 0; }
+@media (min-width:851px) { .week11 .model-result-slide .chart-image { max-height: 32vh; } }
+@media (min-width:851px) and (max-height:800px) { .week11 .model-result-slide .chart-image { max-height: 28vh; } .week11 .model-result-slide .interactive-figure { padding: .5rem; } }
+@media (min-width:851px) and (max-height:800px) { .week11 .model-cost-slide .equation { margin: .35rem auto; padding: .55rem; } }

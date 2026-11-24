@@ -1,0 +1,165 @@
+ECON 342 Week 11 — data, exact versions, and transformations
+Prepared 2026-11-23. The two CSVs contain the numbers shown in the course charts.
+
+SUEZ: RECONSTRUCTION OF FEYRER'S FIGURE 1
+Primary source: Feyrer (2021), Journal of Development Economics.
+Author article and replication links:
+https://economics.dartmouth.edu/people/james-feyrer
+
+We use the author's replication archive, the July 16, 2021 do-file, and working
+bilateral dataset (Suez_bilat_trade.dta). This is a reconstruction from author
+working data, not a new raw-data build or a replication of the regression tables.
+
+The file feyrer_figure1_group_year_means.csv contains 108 group-year observations:
+27 years (1958–1984) x four distance groups. The balanced panel contains 34,938
+observations and 1,294 pairs. The author's sample flags and combatant exclusions
+are retained; excluded countries are ISR, EGY, SYR, JOR, SDN, LBN, LBY, and TUR.
+The upstream sample and US/Canada east/west port splits are inherited from the
+working data. Group pair counts are 1,060; 155; 55; 24.
+
+For each pair-year, adjusted log trade is:
+  ln_trade - pair mean of ln_trade - year mean of ln_trade + overall mean.
+In this complete balanced panel, that is the residual from a regression on
+pair and year fixed effects. Average these residuals within each year and
+sea-distance group. This removes fixed pair differences and common year shocks,
+not pair-specific trends. The exported mean_ln_trade_residual column supplies
+the plotted line. Both sets of residual means are below 2.7e-15 in absolute value.
+
+Reverse the sign of the author's suez_change and calculate exp(suez_change)-1.
+The author's float storage is matched before applying strict thresholds >0.1,
+>0.5, and >1. Groups are 0–10%, >10–50%, >50–100%, and >100% route increases.
+Annual points are connected by straight lines; no smoothing or invented annual
+observations are used. Event lines are 1967.417 and 1975.417, as in the do-file.
+The difference from emulating the author's final Stata float storage is at most
+1.36e-8 log points. Double precision is retained in this export.
+
+Zero is an adjusted baseline, not zero trade. Lower values mean weaker trade
+after adjustment. These paths are descriptive group averages, not four causal
+coefficients. Pre-closure trends also differ. The design needs the comparison
+that other shocks do not track route exposure. This transport-channel evidence
+does not establish whether trade prevents war.
+
+COLOMBIA: TRANSFORMATION OF PUBLISHED ESTIMATES
+Primary source: Dube and Vargas (2013), Commodity Price Shocks and Civil Conflict:
+Evidence from Colombia, Review of Economic Studies. Published author-hosted PDF:
+https://odube.net/papers/Dube_commodities_conflict.pdf
+Exact numerical sources: Table 2, column 2, and printed page 1403.
+
+The file dube_vargas_table2_paramilitary_transformation.csv contains published
+coefficients and standard errors plus our arithmetic transformation. No
+regression was independently re-estimated.
+
+Input                          Coefficient   Department-clustered SE   Exposure
+Domestic coffee price          -0.160        0.061                     1.52
+World oil price                 0.726        0.156                     0.083
+Coffee exposure: thousand hectares. Oil: hundred thousand barrels per day.
+Exposure is the rounded published mean among positive-producing municipalities.
+
+For a 10% price rise, the expected differential annual paramilitary attacks per
+100 equally exposed municipalities, relative to municipalities with zero
+exposure, are:
+  effect = 100 x coefficient x mean positive exposure x ln(1.10)
+  transformed SE = 100 x clustered SE x mean positive exposure x ln(1.10)
+  approximate normal 95% interval = effect +/- 1.96 x transformed SE
+The log change is 0.0953101798043, not 0.10.
+
+Coffee: -2.31794357284; interval [-4.05002690765, -0.585860238036].
+Oil:     0.574320081465; interval [0.332441144676, 0.816199018254].
+
+The per-100 unit is a rescaling of the annual per-municipality outcome. Fractional
+counts describe expected averages. Dots are estimates; bars show uncertainty
+under the statistical and identification assumptions. Exposure is held fixed;
+intervals do not include uncertainty in the rounded exposure means. They use a
+normal critical value and the published clustered standard errors.
+
+Compare directions, not an intrinsic ranking of coffee versus oil effects:
+production units and typical exposures differ. Opposite signs are consistent
+with opportunity-cost and revenue-capture mechanisms; the chart does not by
+itself establish those mechanisms or an effect for Canada.
+
+ATLANTIC DESIGN: VERSION USED IN THE CLASS
+Ahsan, Panza and Song, CEPR DP14206, revised March 2020, Tables 4–5:
+https://economics.yale.edu/sites/default/files/cepr-dp14206_ada-ns.pdf
+Later publication, Economic Journal (2025):
+https://doi.org/10.1093/ej/ueae102
+
+The class uses the accessible March 2020 design and qualitative finding. The
+historical data cover 1640–1896; main IV estimates restrict to the sailing era
+before 1871. The course does not quote a final-2025 numerical estimate.
+Cyclone shocks interacted with wind-based sailing time shift Atlantic market
+integration measured using wheat-price transmission. Causal interpretation
+requires that this variation affect European conflict only through trade.
+Fleet destruction is a plausible alternative military-power channel, even for
+land conflict; this is a concern to examine, not a demonstrated invalidation.
+
+REUSE AND VERIFICATION
+These teaching transformations retain attribution to the original sources.
+Original source data remain subject to their source terms. CSVs allow the chart
+values to be inspected without proprietary software. For full upstream
+reconstruction, obtain the original replication archive from the author's
+page. The course reconstruction used Python, pandas, NumPy, and matplotlib;
+source graphs and rebuilt graphs were visually checked. The public download
+contains processed chart values rather than redistribution of full source
+archives or articles.
+
+PANAMA CONSTRUCTION AND OPENING: ROUTE ARITHMETIC AND PUBLISHED EVIDENCE
+Added 2026-11-23. No new causal estimates or synthetic DiD were run.
+
+Historical route source: Marshall (1913), map on p. 226, University of South
+Florida collection:
+https://etc.usf.edu/maps/pages/10400/10479/10479.htm
+
+The file historical_route_comparisons.csv contains selected distances from the
+1913 comparison, in nautical miles. All routes start in New York:
+Destination       Alternative route     Alternative miles   Panama miles
+San Francisco     Strait of Magellan     13,135              5,262
+Yokohama          Suez                   13,079              9,798
+Manila            Suez                   11,589              11,548
+
+Saved distance = alternative distance - Panama distance.
+Percentage reduction = 100 x saved distance / alternative distance.
+The results are 59.939094%, 25.086016%, and 0.353784%, respectively, displayed
+as 59.9%, 25.1%, and 0.4%. These are route arithmetic from historical map
+values, not observed freight-cost savings, trade effects, or causal estimates.
+A 60% distance saving need not imply a 60% freight-cost saving. Tolls,
+congestion, inland connections, destination size, and firms' responses matter.
+Construction began under US administration in 1904; commercial passage opened
+in August 1914. Canal Authority opening chronology:
+https://pancanal.com/en/history-in-pictures-107-years-of-the-panama-canal/
+
+Final published research: Stephan Maurer and Ferdinand Rauch (2023), Economic
+geography aspects of the Panama Canal, Oxford Economic Papers 75(1), 142–162.
+Online publication: 25 March 2022. DOI:
+https://doi.org/10.1093/oep/gpac009
+
+Author-reported published Table 3, column 3: preferred coefficient 2.303,
+clustered standard error 1.058, 12,125 observations and 47 spatial clusters.
+The outcome is log county population. Exposure is the log change in total
+market potential, interacted with the 1940 indicator. The panel years are
+1880, 1900, 1910, 1920, and 1940. County/year effects and year-specific effects
+of longitude, latitude, 1880 log population, and coastal status are included.
+
+Interpretation: approximately 2.3% greater population by 1940 per 1%
+improvement in market potential, conditional on the identification assumptions.
+This is continuous-exposure DiD, not synthetic DiD. It is not an annual growth
+rate, trade-flow elasticity, or estimate of aggregate welfare gains.
+
+Published Table 6, Panel D adds state x year effects (despite the short heading
+'State FE'): coefficient -0.342, standard error 1.403. The positive, precise
+baseline result does not survive this specification. Much exposure varies
+across states, so other regional changes are difficult to separate from canal
+access. Predicted access gains must not proxy for other differential population
+shocks. World War I, anticipation, regional development, and spillovers remain
+relevant. Population can also move between regions.
+
+The classroom synthetic-DiD extension is proposed, not estimated: weight
+lower-exposure places to resemble higher-exposure places before the opening,
+then compare changes. Few pre-opening observations are available, and 1910 is
+already during construction. Lower exposure is not necessarily zero exposure.
+A good pre-opening match does not establish that the comparison is unaffected
+by war, anticipation, or spillovers.
+
+Published table text and notes were source-audited; no local final paper PDF,
+replication files, independently verified research dataset, or fresh estimates
+were obtained. The route chart is a separate teaching calculation. The 2019
+working-paper estimate and its pre-period description are not used here.

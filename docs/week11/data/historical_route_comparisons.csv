@@ -1,0 +1,4 @@
+destination,alternative_route,alternative_nautical_miles,panama_nautical_miles,origin,saved_nautical_miles,distance_reduction_percent,source_year
+San Francisco,Strait of Magellan,13135,5262,New York,7873,59.939094023601065,1913
+Yokohama,Suez,13079,9798,New York,3281,25.086015750439635,1913
+Manila,Suez,11589,11548,New York,41,0.35378376046250753,1913

@@ -1,0 +1,93 @@
+.model-page { background: #f7f9fa; color: var(--ink); font-size: 16px; line-height: 1.5; }
+.model-header { display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:1rem max(1.25rem,calc((100vw - 1200px)/2)); border-bottom:1px solid var(--line); background:white; }
+.model-header nav { display:flex; gap:1.2rem; font-size:.9rem; font-weight:650; }
+.model-shell { max-width:1240px; margin:auto; padding:2.6rem 1.25rem; }
+.model-intro { max-width:930px; margin-bottom:2rem; }
+.model-eyebrow { color:var(--sfu-red); font-size:.8rem; font-weight:800; letter-spacing:.045em; text-transform:uppercase; margin:0 0 .55rem; }
+.model-intro h1 { font-size:clamp(2rem,4.8vw,3.7rem); line-height:1.06; letter-spacing:-.045em; margin:.3rem 0 1rem; max-width:900px; }
+.intro-copy { font-size:1.16rem; max-width:850px; margin:.6rem 0; }
+.scope-note { color:var(--muted); font-size:.96rem; margin:.7rem 0 0; }
+.model-page h2 { font-size:1.4rem; line-height:1.2; letter-spacing:-.025em; margin:0 0 .8rem; }
+.model-page h3 { font-size:1.05rem; margin:0; }
+.experiment-grid { display:grid; grid-template-columns:310px minmax(0,1fr); gap:1.2rem; align-items:stretch; }
+.control-card,.network-card,.income-card,.trade-section,.explanation-section,.download-section { background:white; border:1px solid var(--line); border-radius:1rem; padding:1.4rem; }
+.control-card { border-top:4px solid var(--sfu-red); }
+.state-control { margin:1.1rem 0 1.4rem; padding:0; border:0; }
+.state-control legend { font-size:.9rem; font-weight:700; margin-bottom:.5rem; }
+.state-buttons { display:grid; grid-template-columns:1fr 1fr; gap:.35rem; padding:.25rem; background:var(--soft); border-radius:.65rem; }
+.state-buttons button { border:1px solid transparent; background:transparent; padding:.65rem .4rem; border-radius:.5rem; font-weight:750; cursor:pointer; }
+.state-buttons button[aria-pressed=true] { color:white; background:var(--sfu-red); box-shadow:0 2px 4px #172a3520; }
+.model-control { margin:1.4rem 0; }
+.model-control label { display:flex; justify-content:space-between; gap:.3rem; align-items:baseline; font-size:.95rem; font-weight:750; }
+.model-control output { color:var(--sfu-red); font-size:1.2rem; margin-left:auto; }
+.model-control input { width:100%; margin:1rem 0 .25rem; accent-color:var(--sfu-red); height:24px; cursor:pointer; }
+.range-ticks { display:flex; justify-content:space-between; color:var(--muted); font-size:.78rem; }
+.model-control p,.control-note { color:var(--muted); font-size:.85rem; margin:.55rem 0; }
+.reset-button,.download-actions button { border:1px solid var(--line); background:white; border-radius:.55rem; padding:.65rem .8rem; font-size:.88rem; font-weight:700; cursor:pointer; }
+.reset-button:hover,.download-actions button:hover { border-color:var(--sfu-red); color:var(--sfu-red); }
+.control-note { margin-top:1rem; }
+.section-heading { display:flex; justify-content:space-between; gap:1rem; align-items:center; }
+.section-heading h2 { margin-bottom:0; }
+.state-badge { background:#f9ecee; color:var(--sfu-red); font-size:.85rem; font-weight:800; border-radius:2rem; padding:.35rem .75rem; white-space:nowrap; }
+.muted { color:var(--muted); font-size:.9rem; }
+.route-network { display:block; width:100%; height:auto; margin:1.5rem 0 .5rem; overflow:visible; }
+.route { fill:none; stroke:var(--sfu-red); stroke-width:6; stroke-linecap:round; }
+.route.assumed { stroke:#7d8990; stroke-dasharray:8 9; stroke-width:4; }
+.route-label rect { fill:white; }
+.route-label text { fill:var(--sfu-red); font-size:25px; font-weight:750; text-anchor:middle; }
+.route-label .route-unit { fill:var(--muted); font-size:16px; font-weight:500; }
+.region-node rect { fill:#edf3f5; stroke:#cbdbe2; stroke-width:1.5; }
+.region-node text { fill:var(--ink); font-size:23px; font-weight:800; text-anchor:middle; }
+.region-node .node-place { font-size:18px; font-weight:500; fill:var(--slate); }
+.network-legend { text-anchor:middle; font-size:15px; fill:var(--muted); }
+.route-summary { display:grid; grid-template-columns:1fr 1fr; gap:1rem; padding-top:.8rem; border-top:1px solid var(--line); }
+.route-summary p { margin:0; font-size:.85rem; }
+.route-summary strong,.route-summary span { display:block; }
+.route-summary span { color:var(--muted); margin-top:.2rem; }
+.results-section { margin:2rem 0 1.2rem; }
+.comparison-label { color:var(--muted); font-size:.9rem; margin:0; }
+.income-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; margin-top:1rem; }
+.income-card { border-top:3px solid var(--green); }
+.income-card p { margin:.25rem 0; color:var(--muted); font-size:.9rem; }
+.income-card .income-value { color:var(--green); font-size:clamp(2rem,4vw,3.1rem); font-weight:800; letter-spacing:-.045em; }
+.income-card .income-value.negative { color:var(--sfu-red); }
+.result-summary { color:var(--slate); font-size:.92rem; margin:.8rem 0; }
+.trade-section { margin:1.2rem 0; }
+.trade-section>p { font-size:.94rem; }
+.table-scroll { overflow:auto; border:1px solid var(--line); border-radius:.7rem; }
+.trade-table { width:100%; border-collapse:collapse; min-width:570px; font-size:.95rem; }
+.trade-table caption { text-align:left; padding:.75rem 1rem; color:var(--muted); font-size:.85rem; }
+.trade-table th,.trade-table td { padding:.95rem 1rem; border-top:1px solid var(--line); text-align:center; }
+.trade-table th { background:#f7f9fa; font-size:.88rem; }
+.trade-table th:first-child { text-align:left; }
+.trade-table td.same-region { background:#eff5f3; }
+.share-value { display:block; font-weight:800; font-size:1.15rem; }
+.share-change { display:block; color:var(--muted); font-size:.82rem; margin-top:.15rem; }
+.explanation-section { margin:1.2rem 0; }
+.mechanism-steps { padding-left:1.3rem; margin:1rem 0 1.5rem; }
+.mechanism-steps li+li { margin-top:.7rem; }
+.assumptions { border-top:1px solid var(--line); padding-top:1rem; }
+.assumptions summary { cursor:pointer; font-weight:750; color:var(--sfu-red); }
+.assumptions-content { max-width:950px; font-size:.95rem; }
+.download-section { margin-top:1.2rem; }
+.download-section>p { font-size:.95rem; }
+.download-actions { display:flex; flex-wrap:wrap; gap:.7rem; }
+.model-footer { color:var(--muted); font-size:.82rem; padding:1.3rem .1rem 0; }
+.model-error { border:2px solid var(--sfu-red); border-radius:.65rem; padding:1rem; background:#fff1f3; }
+.skip-link { position:absolute; top:-100px; padding:1rem; background:white; z-index:20; }
+.skip-link:focus { top:0; }
+@media(max-width:800px) { .experiment-grid { grid-template-columns:1fr; } .control-card { display:grid; grid-template-columns:1fr 1fr; gap:0 1.5rem; } .control-card h2,.state-control,.control-note,.reset-button { grid-column:1/-1; } .state-control { margin:.5rem 0; } .model-control { margin:.7rem 0; } .reset-button { justify-self:start; } .model-shell { padding-top:1.7rem; } }
+@media(max-width:520px) { .model-header { padding:.8rem 1rem; } .model-header nav { gap:.8rem; font-size:.8rem; } .model-shell { padding:1.4rem .8rem; } .model-intro { margin-bottom:1.4rem; } .intro-copy { font-size:1rem; } .control-card,.network-card,.trade-section,.explanation-section,.download-section { padding:1rem; } .control-card { grid-template-columns:1fr; gap:0; } .model-control { margin:.9rem 0; } .section-heading { align-items:start; flex-wrap:wrap; gap:.5rem; } .model-page h2 { font-size:1.25rem; } .income-grid { grid-template-columns:1fr; gap:.6rem; } .income-card { display:grid; grid-template-columns:1fr auto; padding:.9rem 1rem; align-items:center; } .income-card .income-value { grid-column:2; grid-row:1/3; font-size:2rem; } .income-card p:last-child { grid-column:1; } .route-summary { grid-template-columns:1fr; gap:.6rem; } .route-network { margin-top:1rem; } .network-legend { font-size:17px; } .download-actions { flex-direction:column; } .download-actions button { text-align:left; } }
+@media print { .model-page { background:white; font-size:11pt; } .model-header,.skip-link,.download-section,.reset-button { display:none; } .model-shell { padding:0; max-width:none; } .model-intro h1 { font-size:25pt; } .experiment-grid { grid-template-columns:240px 1fr; } .model-control input { display:none; } .control-card,.network-card,.income-card,.trade-section,.explanation-section { break-inside:avoid; } .trade-table { min-width:0; } .assumptions-content { display:block; } .income-card .income-value { font-size:24pt; } }
+.mobile-table-hint { display:none; }
+.route-comparison-label { margin-bottom:.45rem; }
+@media(max-width:520px) { .mobile-table-hint { display:block; color:var(--muted); font-size:.8rem; } }
+
+/* Keep the result visible beside the controls during a classroom demonstration. */
+.live-readout { border-block:1px solid var(--line); margin-top:1rem; padding:.6rem 0; }
+.live-readout p { margin:0 0 .3rem; color:var(--muted); font-size:.85rem; }
+.live-readout > div { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.6rem; }
+.live-readout span { font-size:.85rem; font-weight:650; }
+.live-readout strong { display:block; font-size:clamp(1.35rem,2.4vw,2rem); color:var(--green); }
+.live-readout strong.negative { color:var(--sfu-red); }
+@media print { .live-readout { display:none; } }

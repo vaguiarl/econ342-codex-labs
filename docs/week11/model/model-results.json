@@ -1,0 +1,2641 @@
+{
+  "default": {
+    "version": "1.0.0",
+    "parameters": {
+      "theta": 4,
+      "sigma": 5,
+      "freight": 0.2
+    },
+    "regions": [
+      {
+        "id": "atlantic",
+        "name": "Atlantic US (New York)",
+        "labor": 2
+      },
+      {
+        "id": "pacific",
+        "name": "Pacific US (San Francisco)",
+        "labor": 1
+      },
+      {
+        "id": "asia",
+        "name": "Pacific Asia (Yokohama)",
+        "labor": 3
+      }
+    ],
+    "off": {
+      "distances": [
+        [
+          0,
+          13135,
+          13079
+        ],
+        [
+          13135,
+          0,
+          4600
+        ],
+        [
+          13079,
+          4600,
+          0
+        ]
+      ],
+      "tau": [
+        [
+          1,
+          1.2627,
+          1.26158
+        ],
+        [
+          1.2627,
+          1,
+          1.092
+        ],
+        [
+          1.26158,
+          1.092,
+          1
+        ]
+      ],
+      "wages": [
+        0.9966958774318487,
+        1.1581882513815593,
+        0.9494733312515811
+      ],
+      "income": [
+        1.9933917548636975,
+        1.1581882513815593,
+        2.848419993754743
+      ],
+      "priceIndex": [
+        1.1495931320110677,
+        1.1331334052333992,
+        1.1037512531513651
+      ],
+      "realIncome": [
+        0.8669988099948505,
+        1.022111117748752,
+        0.8602240120142116
+      ],
+      "shares": [
+        [
+          0.5899357834370771,
+          0.2190541812938341,
+          0.19790362738103873
+        ],
+        [
+          0.12727351689504401,
+          0.3054121401716749,
+          0.1933554464658864
+        ],
+        [
+          0.2827906996678789,
+          0.475533678534491,
+          0.6087409261530748
+        ]
+      ],
+      "tradeFlows": [
+        [
+          1.1759731266025253,
+          0.2537059791905248,
+          0.5637126490687393
+        ],
+        [
+          0.25370597919108623,
+          0.35372475257613184,
+          0.5507575196148057
+        ],
+        [
+          0.5637126490700859,
+          0.5507575196149027,
+          1.733949825071198
+        ]
+      ],
+      "domesticShares": [
+        0.5899357834370771,
+        0.3054121401716749,
+        0.6087409261530748
+      ],
+      "crossRegionShare": 0.45605871595835745,
+      "diagnostics": {
+        "converged": true,
+        "iterations": 22,
+        "maxRelativeMarketError": 9.571232695293475e-13,
+        "maxShareSumError": 0,
+        "worldIncome": 6,
+        "targetWorldIncome": 6
+      }
+    },
+    "on": {
+      "distances": [
+        [
+          0,
+          5262,
+          9798
+        ],
+        [
+          5262,
+          0,
+          4600
+        ],
+        [
+          9798,
+          4600,
+          0
+        ]
+      ],
+      "tau": [
+        [
+          1,
+          1.10524,
+          1.19596
+        ],
+        [
+          1.10524,
+          1,
+          1.092
+        ],
+        [
+          1.19596,
+          1.092,
+          1
+        ]
+      ],
+      "wages": [
+        1.004223928393451,
+        1.1679904907868552,
+        0.9411872174754142
+      ],
+      "income": [
+        2.008447856786902,
+        1.1679904907868552,
+        2.8235616524262426
+      ],
+      "priceIndex": [
+        1.1113947623683125,
+        1.0942458740482726,
+        1.0890271634678605
+      ],
+      "realIncome": [
+        0.9035708664430926,
+        1.0673930955442008,
+        0.8642458600190743
+      ],
+      "shares": [
+        [
+          0.5000689238164528,
+          0.3149124116538113,
+          0.22534333391075903
+        ],
+        [
+          0.1831338070337898,
+          0.25679182177748533,
+          0.1771682166624016
+        ],
+        [
+          0.31679726914975737,
+          0.42829576656870333,
+          0.5974884494268393
+        ]
+      ],
+      "tradeFlows": [
+        [
+          1.0043623582848873,
+          0.36781470224240725,
+          0.6362707962603014
+        ],
+        [
+          0.3678147022422413,
+          0.29993040594793574,
+          0.5002453825967013
+        ],
+        [
+          0.6362707962597736,
+          0.5002453825965122,
+          1.68704547356924
+        ]
+      ],
+      "domesticShares": [
+        0.5000689238164528,
+        0.25679182177748533,
+        0.5974884494268393
+      ],
+      "crossRegionShare": 0.5014436270329894,
+      "diagnostics": {
+        "converged": true,
+        "iterations": 22,
+        "maxRelativeMarketError": 3.452793606584237e-13,
+        "maxShareSumError": 0,
+        "worldIncome": 6,
+        "targetWorldIncome": 6
+      }
+    },
+    "changes": {
+      "realIncomePct": [
+        4.218236060607672,
+        4.430240216463388,
+        0.46753496167184494
+      ],
+      "wagesPct": [
+        0.7553007022563119,
+        0.8463425003321534,
+        -0.8727063208025188
+      ],
+      "priceIndexPct": [
+        -3.322772951499109,
+        -3.431858155935019,
+        -1.334004345767692
+      ],
+      "domesticSharePp": [
+        -8.986685962062424,
+        -4.862031839418957,
+        -1.1252476726235527
+      ],
+      "crossRegionSharePp": 4.538491107463194,
+      "sharePp": [
+        [
+          -8.986685962062424,
+          9.585823035997718,
+          2.7439706529720302
+        ],
+        [
+          5.58602901387458,
+          -4.862031839418957,
+          -1.6187229803484804
+        ],
+        [
+          3.400656948187847,
+          -4.72379119657877,
+          -1.1252476726235527
+        ]
+      ]
+    },
+    "diagnostics": {
+      "converged": true,
+      "maxRelativeMarketError": 9.571232695293475e-13,
+      "interpretation": "Illustrative comparative statics; not calibrated historical effects or project net benefits."
+    }
+  },
+  "sensitivity": [
+    {
+      "theta": 2,
+      "freight": 0,
+      "changes": {
+        "realIncomePct": [
+          0,
+          0,
+          0
+        ],
+        "wagesPct": [
+          0,
+          0,
+          0
+        ],
+        "priceIndexPct": [
+          0,
+          0,
+          0
+        ],
+        "domesticSharePp": [
+          0,
+          0,
+          0
+        ],
+        "crossRegionSharePp": 0,
+        "sharePp": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "diagnostics": {
+        "converged": true,
+        "maxRelativeMarketError": 9.50350909079134e-13,
+        "interpretation": "Illustrative comparative statics; not calibrated historical effects or project net benefits."
+      }
+    },
+    {
+      "theta": 2,
+      "freight": 0.1,
+      "changes": {
+        "realIncomePct": [
+          3.1982080778401256,
+          2.6873839321894577,
+          0.3620153054237907
+        ],
+        "wagesPct": [
+          0.5432953576316679,
+          0.3439259523760674,
+          -0.5712448142244586
+        ],
+        "priceIndexPct": [
+          -2.572634515325989,
+          -2.282128427150232,
+          -0.9298937619059755
+        ],
+        "domesticSharePp": [
+          -2.4710249731826064,
+          -1.2473156704678856,
+          -0.3487447122128007
+        ],
+        "crossRegionSharePp": 1.292522060822554,
+        "sharePp": [
+          [
+            -2.4710249731826064,
+            2.790881096693665,
+            0.8934652067564774
+          ],
+          [
+            1.7353787653078212,
+            -1.2473156704678856,
+            -0.5447204945436601
+          ],
+          [
+            0.7356462078747905,
+            -1.5435654262257958,
+            -0.3487447122128007
+          ]
+        ]
+      },
+      "diagnostics": {
+        "converged": true,
+        "maxRelativeMarketError": 3.8191672047105385e-13,
+        "interpretation": "Illustrative comparative statics; not calibrated historical effects or project net benefits."
+      }
+    },
+    {
+      "theta": 2,
+      "freight": 0.2,
+      "changes": {
+        "realIncomePct": [
+          5.390974262471615,
+          4.771578537884169,
+          0.6117740602783694
+        ],
+        "wagesPct": [
+          0.8892612885043283,
+          0.6516663585603322,
+          -0.9662789883811751
+        ],
+        "priceIndexPct": [
+          -4.271440704927887,
+          -3.9322803348182056,
+          -1.5684576317221977
+        ],
+        "domesticSharePp": [
+          -4.6263657220219745,
+          -2.3900092926384815,
+          -0.6295453817867336
+        ],
+        "crossRegionSharePp": 2.4074126781657323,
+        "sharePp": [
+          [
+            -4.6263657220219745,
+            5.0740716923200315,
+            1.5698842235236377
+          ],
+          [
+            3.20193783898082,
+            -2.3900092926384815,
+            -0.9403388417369068
+          ],
+          [
+            1.4244278830411516,
+            -2.6840623996815416,
+            -0.6295453817867336
+          ]
+        ]
+      },
+      "diagnostics": {
+        "converged": true,
+        "maxRelativeMarketError": 5.830891325331322e-13,
+        "interpretation": "Illustrative comparative statics; not calibrated historical effects or project net benefits."
+      }
+    },
+    {
+      "theta": 2,
+      "freight": 0.3,
+      "changes": {
+        "realIncomePct": [
+          6.86527124014733,
+          6.369302534992327,
+          0.781047595924278
+        ],
+        "wagesPct": [
+          1.1039055274289833,
+          0.9159516192647876,
+          -1.2391446495381375
+        ],
+        "priceIndexPct": [
+          -5.391242305249422,
+          -5.126808943711514,
+          -2.0045358662694857
+        ],
+        "domesticSharePp": [
+          -6.430732112515047,
+          -3.4293511313918446,
+          -0.8505244283434132
+        ],
+        "crossRegionSharePp": 3.344170996370921,
+        "sharePp": [
+          [
+            -6.430732112515047,
+            6.933213645254183,
+            2.068762089775633
+          ],
+          [
+            4.416340653690224,
+            -3.4293511313918446,
+            -1.2182376614322172
+          ],
+          [
+            2.014391458824838,
+            -3.5038625138623605,
+            -0.8505244283434132
+          ]
+        ]
+      },
+      "diagnostics": {
+        "converged": true,
+        "maxRelativeMarketError": 3.199662756969701e-13,
+        "interpretation": "Illustrative comparative statics; not calibrated historical effects or project net benefits."
+      }
+    },
+    {
+      "theta": 2,
+      "freight": 0.4,
+      "changes": {
+        "realIncomePct": [
+          7.828762220731966,
+          7.575344890043945,
+          0.892728928847375
+        ],
+        "wagesPct": [
+          1.2311506515046533,
+          1.1359187767092438,
+          -1.4255703536997677
+        ],
+        "priceIndexPct": [
+          -6.1186008569045995,
+          -5.985968364699767,
+          -2.2977862797051274
+        ],
+        "domesticSharePp": [
+          -7.895205709855324,
+          -4.366830103423619,
+          -1.0209260885093108
+        ],
+        "crossRegionSharePp": 4.11551967622038,
+        "sharePp": [
+          [
+            -7.895205709855324,
+            8.437536824603917,
+            2.425431707190648
+          ],
+          [
+            5.4045469249823315,
+            -4.366830103423619,
+            -1.4045056186813287
+          ],
+          [
+            2.4906587848729957,
+            -4.070706721180311,
+            -1.0209260885093108
+          ]
+        ]
+      },
+      "diagnostics": {
+        "converged": true,
+        "maxRelativeMarketError": 9.43023437116608e-13,
+        "interpretation": "Illustrative comparative statics; not calibrated historical effects or project net benefits."
+      }
+    },
+    {
+      "theta": 2,
+      "freight": 0.5,
+      "changes": {
+        "realIncomePct": [
+          8.429555717466375,
+          8.467008158187706,
+          0.9634072933530247
+        ],
+        "wagesPct": [
+          1.3001352603391858,
+          1.3141297629703397,
+          -1.5498111868723519
+        ],
+        "priceIndexPct": [
+          -6.575163395213246,
+          -6.594519860624937,
+          -2.4892369895195054
+        ],
+        "domesticSharePp": [
+          -9.052963763489075,
+          -5.204938802240655,
+          -1.149848297453826
+        ],
+        "crossRegionSharePp": 4.739880919184403,
+        "sharePp": [
+          [
+            -9.052963763489075,
+            9.644895495324674,
+            2.670265005355482
+          ],
+          [
+            6.195535481353725,
+            -5.204938802240655,
+            -1.5204167079016617
+          ],
+          [
+            2.8574282821353494,
+            -4.4399566930840075,
+            -1.149848297453826
+          ]
+        ]
+      },
+      "diagnostics": {
+        "converged": true,
+        "maxRelativeMarketError": 5.450084827884893e-13,
+        "interpretation": "Illustrative comparative statics; not calibrated historical effects or project net benefits."
+      }
+    },
+    {
+      "theta": 3,
+      "freight": 0,
+      "changes": {
+        "realIncomePct": [
+          0,
+          0,
+          0
+        ],
+        "wagesPct": [
+          0,
+          0,
+          0
+        ],
+        "priceIndexPct": [
+          0,
+          0,
+          0
+        ],
+        "domesticSharePp": [
+          0,
+          0,
+          0
+        ],
+        "crossRegionSharePp": 0,
+        "sharePp": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "diagnostics": {
+        "converged": true,
+        "maxRelativeMarketError": 9.698908343125368e-13,
+        "interpretation": "Illustrative comparative statics; not calibrated historical effects or project net benefits."
+      }
+    },
+    {
+      "theta": 3,
+      "freight": 0.1,
+      "changes": {
+        "realIncomePct": [
+          3.024392045979152,
+          2.688090204626481,
+          0.31683066384389225
+        ],
+        "wagesPct": [
+          0.5572476584640773,
+          0.41643836187783556,
+          -0.5839713871373386
+        ],
+        "priceIndexPct": [
+          -2.394718705463461,
+          -2.212186280046624,
+          -0.8979570477059551
+        ],
+        "domesticSharePp": [
+          -3.7502401990137213,
+          -1.8488832745393173,
+          -0.4878626115962126
+        ],
+        "crossRegionSharePp": 1.9001696031142101,
+        "sharePp": [
+          [
+            -3.7502401990137213,
+            4.112280508351879,
+            1.2767532686265903
+          ],
+          [
+            2.443989431984164,
+            -1.8488832745393173,
+            -0.788890657030375
+          ],
+          [
+            1.3062507670295542,
+            -2.2633972338125696,
+            -0.4878626115962126
+          ]
+        ]
+      },
+      "diagnostics": {
+        "converged": true,
+        "maxRelativeMarketError": 5.877520692365579e-13,
+        "interpretation": "Illustrative comparative statics; not calibrated historical effects or project net benefits."
+      }
+    },
+    {
+      "theta": 3,
+      "freight": 0.2,
+      "changes": {
+        "realIncomePct": [
+          4.786496962023801,
+          4.636167237111577,
+          0.524765555173845
+        ],
+        "wagesPct": [
+          0.8418584100480242,
+          0.7798312769992322,
+          -0.9367134416367828
+        ],
+        "priceIndexPct": [
+          -3.7644531178529617,
+          -3.6854713450786836,
+          -1.4538496943904855
+        ],
+        "domesticSharePp": [
+          -6.910507988829706,
+          -3.6021055548734138,
+          -0.8842086671142835
+        ],
+        "crossRegionSharePp": 3.5125633079091667,
+        "sharePp": [
+          [
+            -6.910507988829706,
+            7.401199543541937,
+            2.1984744379962367
+          ],
+          [
+            4.453818334974274,
+            -3.6021055548734138,
+            -1.3142657708819505
+          ],
+          [
+            2.4566896538554426,
+            -3.7990939886685227,
+            -0.8842086671142835
+          ]
+        ]
+      },
+      "diagnostics": {
+        "converged": true,
+        "maxRelativeMarketError": 6.992184609089236e-13,
+        "interpretation": "Illustrative comparative statics; not calibrated historical effects or project net benefits."
+      }
+    },
+    {
+      "theta": 3,
+      "freight": 0.3,
+      "changes": {
+        "realIncomePct": [
+          5.729502105851569,
+          5.970472921632797,
+          0.6441872212174626
+        ],
+        "wagesPct": [
+          0.9691021101839947,
+          1.0676613651416034,
+          -1.141536633963569
+        ],
+        "priceIndexPct": [
+          -4.502433002003259,
+          -4.626582689799752,
+          -1.7742940794543638
+        ],
+        "domesticSharePp": [
+          -9.309198847783085,
+          -5.196852001416841,
+          -1.1684538552839685
+        ],
+        "crossRegionSharePp": 4.771481211702966,
+        "sharePp": [
+          [
+            -9.309198847783085,
+            9.929780778784359,
+            2.791505592760357
+          ],
+          [
+            6.0073423898011455,
+            -5.196852001416841,
+            -1.6230517374763913
+          ],
+          [
+            3.3018564579819385,
+            -4.732928777367507,
+            -1.1684538552839685
+          ]
+        ]
+      },
+      "diagnostics": {
+        "converged": true,
+        "maxRelativeMarketError": 9.956480084838404e-13,
+        "interpretation": "Illustrative comparative statics; not calibrated historical effects or project net benefits."
+      }
+    },
+    {
+      "theta": 3,
+      "freight": 0.4,
+      "changes": {
+        "realIncomePct": [
+          6.156073671014473,
+          6.817799153070991,
+          0.7011089357995548
+        ],
+        "wagesPct": [
+          1.0079761905489981,
+          1.2773406207526872,
+          -1.2500592822893064
+        ],
+        "priceIndexPct": [
+          -4.8495552844388445,
+          -5.186830824307453,
+          -1.937583646008112
+        ],
+        "domesticSharePp": [
+          -10.976963145089014,
+          -6.589849560827976,
+          -1.3514540981991785
+        ],
+        "crossRegionSharePp": 5.690542052382597,
+        "sharePp": [
+          [
+            -10.976963145089014,
+            11.793213107972559,
+            3.1197137863035214
+          ],
+          [
+            7.141020415367705,
+            -6.589849560827976,
+            -1.7682596881043455
+          ],
+          [
+            3.8359427297213116,
+            -5.203363547144585,
+            -1.3514540981991785
+          ]
+        ]
+      },
+      "diagnostics": {
+        "converged": true,
+        "maxRelativeMarketError": 9.323652960802065e-13,
+        "interpretation": "Illustrative comparative statics; not calibrated historical effects or project net benefits."
+      }
+    },
+    {
+      "theta": 3,
+      "freight": 0.5,
+      "changes": {
+        "realIncomePct": [
+          6.263410143512704,
+          7.293231005512313,
+          0.7175978196328314
+        ],
+        "wagesPct": [
+          0.9984136730721849,
+          1.416742308777108,
+          -1.2952393340328272
+        ],
+        "priceIndexPct": [
+          -4.954665451946205,
+          -5.4770358219833115,
+          -1.9984959900158694
+        ],
+        "domesticSharePp": [
+          -12.028743595276614,
+          -7.759114102859216,
+          -1.4551542474190993
+        ],
+        "crossRegionSharePp": 6.317386144126347,
+        "sharePp": [
+          [
+            -12.028743595276614,
+            13.097370530410124,
+            3.253281580990877
+          ],
+          [
+            7.916462194215369,
+            -7.759114102859216,
+            -1.7981273335718
+          ],
+          [
+            4.112281401061246,
+            -5.338256427550908,
+            -1.4551542474190993
+          ]
+        ]
+      },
+      "diagnostics": {
+        "converged": true,
+        "maxRelativeMarketError": 6.898925875020723e-13,
+        "interpretation": "Illustrative comparative statics; not calibrated historical effects or project net benefits."
+      }
+    },
+    {
+      "theta": 4,
+      "freight": 0,
+      "changes": {
+        "realIncomePct": [
+          0,
+          0,
+          0
+        ],
+        "wagesPct": [
+          0,
+          0,
+          0
+        ],
+        "priceIndexPct": [
+          0,
+          0,
+          0
+        ],
+        "domesticSharePp": [
+          0,
+          0,
+          0
+        ],
+        "crossRegionSharePp": 0,
+        "sharePp": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "diagnostics": {
+        "converged": true,
+        "maxRelativeMarketError": 9.805489753489383e-13,
+        "interpretation": "Illustrative comparative statics; not calibrated historical effects or project net benefits."
+      }
+    },
+    {
+      "theta": 4,
+      "freight": 0.1,
+      "changes": {
+        "realIncomePct": [
+          2.8475221414257845,
+          2.6618562558291314,
+          0.2932398164719352
+        ],
+        "wagesPct": [
+          0.5430234962080949,
+          0.46231381461352417,
+          -0.5745323648889911
+        ],
+        "priceIndexPct": [
+          -2.2406943767189325,
+          -2.142511855361784,
+          -0.8652349679289073
+        ],
+        "domesticSharePp": [
+          -5.021700628400117,
+          -2.471641783770029,
+          -0.6321269052380396
+        ],
+        "crossRegionSharePp": 2.5045979974190447,
+        "sharePp": [
+          [
+            -5.021700628400117,
+            5.416110580290745,
+            1.6498265769342546
+          ],
+          [
+            3.127194200217903,
+            -2.471641783770029,
+            -1.0176996716962123
+          ],
+          [
+            1.8945064281822133,
+            -2.944468796520705,
+            -0.6321269052380396
+          ]
+        ]
+      },
+      "diagnostics": {
+        "converged": true,
+        "maxRelativeMarketError": 9.203748874142548e-13,
+        "interpretation": "Illustrative comparative statics; not calibrated historical effects or project net benefits."
+      }
+    },
+    {
+      "theta": 4,
+      "freight": 0.2,
+      "changes": {
+        "realIncomePct": [
+          4.218236060607672,
+          4.430240216463388,
+          0.46753496167184494
+        ],
+        "wagesPct": [
+          0.7553007022563119,
+          0.8463425003321534,
+          -0.8727063208025188
+        ],
+        "priceIndexPct": [
+          -3.322772951499109,
+          -3.431858155935019,
+          -1.334004345767692
+        ],
+        "domesticSharePp": [
+          -8.986685962062424,
+          -4.862031839418957,
+          -1.1252476726235527
+        ],
+        "crossRegionSharePp": 4.538491107463194,
+        "sharePp": [
+          [
+            -8.986685962062424,
+            9.585823035997718,
+            2.7439706529720302
+          ],
+          [
+            5.58602901387458,
+            -4.862031839418957,
+            -1.6187229803484804
+          ],
+          [
+            3.400656948187847,
+            -4.72379119657877,
+            -1.1252476726235527
+          ]
+        ]
+      },
+      "diagnostics": {
+        "converged": true,
+        "maxRelativeMarketError": 9.571232695293475e-13,
+        "interpretation": "Illustrative comparative statics; not calibrated historical effects or project net benefits."
+      }
+    },
+    {
+      "theta": 4,
+      "freight": 0.3,
+      "changes": {
+        "realIncomePct": [
+          4.735484423991343,
+          5.4531406123367265,
+          0.5400795438124328
+        ],
+        "wagesPct": [
+          0.8064415998377816,
+          1.1128522666184804,
+          -1.0086283651329242
+        ],
+        "priceIndexPct": [
+          -3.7513960485903386,
+          -4.115845503050364,
+          -1.5403885853009447
+        ],
+        "domesticSharePp": [
+          -11.560707722954245,
+          -6.9679280074060825,
+          -1.4160390813810042
+        ],
+        "crossRegionSharePp": 5.9409509033690355,
+        "sharePp": [
+          [
+            -11.560707722954245,
+            12.50336814117721,
+            3.2937237757755202
+          ],
+          [
+            7.294977701523236,
+            -6.9679280074060825,
+            -1.8776846943944991
+          ],
+          [
+            4.265730021430994,
+            -5.5354401337711305,
+            -1.4160390813810042
+          ]
+        ]
+      },
+      "diagnostics": {
+        "converged": true,
+        "maxRelativeMarketError": 8.111289417911394e-13,
+        "interpretation": "Illustrative comparative statics; not calibrated historical effects or project net benefits."
+      }
+    },
+    {
+      "theta": 4,
+      "freight": 0.4,
+      "changes": {
+        "realIncomePct": [
+          4.787969457495933,
+          5.91770580596489,
+          0.5493558522488895
+        ],
+        "wagesPct": [
+          0.7843207865050772,
+          1.265803625431161,
+          -1.0483280246474935
+        ],
+        "priceIndexPct": [
+          -3.8207140492542924,
+          -4.391996734762882,
+          -1.5889548603812753
+        ],
+        "domesticSharePp": [
+          -12.916345569522548,
+          -8.662217203991169,
+          -1.540353882535772
+        ],
+        "crossRegionSharePp": 6.770226340177921,
+        "sharePp": [
+          [
+            -12.916345569522548,
+            14.326348647980893,
+            3.442254111722148
+          ],
+          [
+            8.33376552681695,
+            -8.662217203991169,
+            -1.9019002291863651
+          ],
+          [
+            4.582580042705612,
+            -5.664131443989717,
+            -1.540353882535772
+          ]
+        ]
+      },
+      "diagnostics": {
+        "converged": true,
+        "maxRelativeMarketError": 9.339196083146817e-13,
+        "interpretation": "Illustrative comparative statics; not calibrated historical effects or project net benefits."
+      }
+    },
+    {
+      "theta": 4,
+      "freight": 0.5,
+      "changes": {
+        "realIncomePct": [
+          4.600660159087888,
+          5.998851024909135,
+          0.5257680164120648
+        ],
+        "wagesPct": [
+          0.7316994723937986,
+          1.3279259352672046,
+          -1.031640393330846
+        ],
+        "priceIndexPct": [
+          -3.6987918439613576,
+          -4.406580868074029,
+          -1.549262881024338
+        ],
+        "domesticSharePp": [
+          -13.372792942837897,
+          -9.900389521880498,
+          -1.5549508500697806
+        ],
+        "crossRegionSharePp": 7.155001107928783,
+        "sharePp": [
+          [
+            -13.372792942837897,
+            15.273953195023859,
+            3.342321271392368
+          ],
+          [
+            8.841082363731312,
+            -9.900389521880498,
+            -1.7873704213225734
+          ],
+          [
+            4.531710579106576,
+            -5.37356367314335,
+            -1.5549508500697806
+          ]
+        ]
+      },
+      "diagnostics": {
+        "converged": true,
+        "maxRelativeMarketError": 9.306999615432687e-13,
+        "interpretation": "Illustrative comparative statics; not calibrated historical effects or project net benefits."
+      }
+    },
+    {
+      "theta": 5,
+      "freight": 0,
+      "changes": {
+        "realIncomePct": [
+          0,
+          0,
+          0
+        ],
+        "wagesPct": [
+          0,
+          0,
+          0
+        ],
+        "priceIndexPct": [
+          0,
+          0,
+          0
+        ],
+        "domesticSharePp": [
+          0,
+          0,
+          0
+        ],
+        "crossRegionSharePp": 0,
+        "sharePp": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "diagnostics": {
+        "converged": true,
+        "maxRelativeMarketError": 9.878764473114643e-13,
+        "interpretation": "Illustrative comparative statics; not calibrated historical effects or project net benefits."
+      }
+    },
+    {
+      "theta": 5,
+      "freight": 0.1,
+      "changes": {
+        "realIncomePct": [
+          2.673405487590985,
+          2.6189451273033404,
+          0.2776311838357248
+        ],
+        "wagesPct": [
+          0.5168759927963951,
+          0.49263771922598565,
+          -0.5561067876426851
+        ],
+        "priceIndexPct": [
+          -2.1003778773610815,
+          -2.072041771078037,
+          -0.8314296634609808
+        ],
+        "domesticSharePp": [
+          -6.26361265552115,
+          -3.116435607915835,
+          -0.7794279694801398
+        ],
+        "crossRegionSharePp": 3.101148006973653,
+        "sharePp": [
+          [
+            -6.26361265552115,
+            6.696631568304046,
+            2.009161702671647
+          ],
+          [
+            3.7887235023215644,
+            -3.116435607915835,
+            -1.2297337331915181
+          ],
+          [
+            2.474889153199583,
+            -3.580195960388216,
+            -0.7794279694801398
+          ]
+        ]
+      },
+      "diagnostics": {
+        "converged": true,
+        "maxRelativeMarketError": 5.939693181744587e-13,
+        "interpretation": "Illustrative comparative statics; not calibrated historical effects or project net benefits."
+      }
+    },
+    {
+      "theta": 5,
+      "freight": 0.2,
+      "changes": {
+        "realIncomePct": [
+          3.7004210021631234,
+          4.178196790814703,
+          0.41810211485249216
+        ],
+        "wagesPct": [
+          0.6618945620930461,
+          0.8724377936339067,
+          -0.7990623691141341
+        ],
+        "priceIndexPct": [
+          -2.9301003898592803,
+          -3.173177400851579,
+          -1.2120966821046908
+        ],
+        "domesticSharePp": [
+          -10.76527340088058,
+          -6.139068572925971,
+          -1.332348296115149
+        ],
+        "crossRegionSharePp": 5.446467241145381,
+        "sharePp": [
+          [
+            -10.76527340088058,
+            11.57235348235513,
+            3.1802579349958977
+          ],
+          [
+            6.585752497908097,
+            -6.139068572925971,
+            -1.8479096388807514
+          ],
+          [
+            4.179520902972469,
+            -5.433284909429154,
+            -1.332348296115149
+          ]
+        ]
+      },
+      "diagnostics": {
+        "converged": true,
+        "maxRelativeMarketError": 8.952838470577262e-13,
+        "interpretation": "Illustrative comparative statics; not calibrated historical effects or project net benefits."
+      }
+    },
+    {
+      "theta": 5,
+      "freight": 0.3,
+      "changes": {
+        "realIncomePct": [
+          3.8928412671916934,
+          4.875425530042721,
+          0.4474680257353425
+        ],
+        "wagesPct": [
+          0.6572882409624725,
+          1.08889726276582,
+          -0.8739804557475139
+        ],
+        "priceIndexPct": [
+          -3.114317586048121,
+          -3.6105009807013255,
+          -1.3155617632335859
+        ],
+        "domesticSharePp": [
+          -13.084999997246316,
+          -8.629138746333076,
+          -1.5651140538161967
+        ],
+        "crossRegionSharePp": 6.793563490509524,
+        "sharePp": [
+          [
+            -13.084999997246316,
+            14.538676095165961,
+            3.55258203311192
+          ],
+          [
+            8.25550007996477,
+            -8.629138746333076,
+            -1.9874679792957428
+          ],
+          [
+            4.829499917281551,
+            -5.9095373488328775,
+            -1.5651140538161967
+          ]
+        ]
+      },
+      "diagnostics": {
+        "converged": true,
+        "maxRelativeMarketError": 8.628653347386717e-13,
+        "interpretation": "Illustrative comparative statics; not calibrated historical effects or project net benefits."
+      }
+    },
+    {
+      "theta": 5,
+      "freight": 0.4,
+      "changes": {
+        "realIncomePct": [
+          3.7036612387449486,
+          4.989789873991324,
+          0.42135250796844215
+        ],
+        "wagesPct": [
+          0.6003285451555707,
+          1.1655321885376102,
+          -0.859684266206151
+        ],
+        "priceIndexPct": [
+          -2.9925006084837613,
+          -3.6425043711808436,
+          -1.2756617414338756
+        ],
+        "domesticSharePp": [
+          -13.739306784778528,
+          -10.364005438397989,
+          -1.579508135925367
+        ],
+        "crossRegionSharePp": 7.33045879944727,
+        "sharePp": [
+          [
+            -13.739306784778528,
+            15.916733514830838,
+            3.4272875045044575
+          ],
+          [
+            8.987824304321865,
+            -10.364005438397989,
+            -1.8477793685790889
+          ],
+          [
+            4.75148248045667,
+            -5.55272807643285,
+            -1.579508135925367
+          ]
+        ]
+      },
+      "diagnostics": {
+        "converged": true,
+        "maxRelativeMarketError": 7.953637748414621e-13,
+        "interpretation": "Illustrative comparative statics; not calibrated historical effects or project net benefits."
+      }
+    },
+    {
+      "theta": 5,
+      "freight": 0.5,
+      "changes": {
+        "realIncomePct": [
+          3.3620050369488785,
+          4.764800087770826,
+          0.3752646677428473
+        ],
+        "wagesPct": [
+          0.5298700949851742,
+          1.1477533980953192,
+          -0.8011040328275487
+        ],
+        "priceIndexPct": [
+          -2.7400154833986723,
+          -3.452540057963349,
+          -1.1719707085847797
+        ],
+        "domesticSharePp": [
+          -13.364706859193697,
+          -11.332723229839935,
+          -1.482680708028472
+        ],
+        "crossRegionSharePp": 7.323707536348922,
+        "sharePp": [
+          [
+            -13.364706859193697,
+            16.14523315692144,
+            3.069323420543496
+          ],
+          [
+            9.05704388004461,
+            -11.332723229839935,
+            -1.5866427125150184
+          ],
+          [
+            4.307662979149099,
+            -4.812509927081493,
+            -1.482680708028472
+          ]
+        ]
+      },
+      "diagnostics": {
+        "converged": true,
+        "maxRelativeMarketError": 7.962519532611623e-13,
+        "interpretation": "Illustrative comparative statics; not calibrated historical effects or project net benefits."
+      }
+    },
+    {
+      "theta": 6,
+      "freight": 0,
+      "changes": {
+        "realIncomePct": [
+          0,
+          0,
+          0
+        ],
+        "wagesPct": [
+          0,
+          0,
+          0
+        ],
+        "priceIndexPct": [
+          0,
+          0,
+          0
+        ],
+        "domesticSharePp": [
+          0,
+          0,
+          0
+        ],
+        "crossRegionSharePp": 0,
+        "sharePp": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "diagnostics": {
+        "converged": true,
+        "maxRelativeMarketError": 9.93205517829665e-13,
+        "interpretation": "Illustrative comparative statics; not calibrated historical effects or project net benefits."
+      }
+    },
+    {
+      "theta": 6,
+      "freight": 0.1,
+      "changes": {
+        "realIncomePct": [
+          2.504944314089941,
+          2.564167674774298,
+          0.26497559164340156
+        ],
+        "wagesPct": [
+          0.48576523098595725,
+          0.512556490804994,
+          -0.5337320006001844
+        ],
+        "priceIndexPct": [
+          -1.9698357934002875,
+          -2.0003196345090735,
+          -0.7965968051461325
+        ],
+        "domesticSharePp": [
+          -7.456796973788809,
+          -3.7805751816698985,
+          -0.9255636528682665
+        ],
+        "crossRegionSharePp": 3.6824819428010414,
+        "sharePp": [
+          [
+            -7.456796973788809,
+            7.9446723941972195,
+            2.3488633144471445
+          ],
+          [
+            4.42668722546615,
+            -3.7805751816698985,
+            -1.423299661578875
+          ],
+          [
+            3.0301097483226513,
+            -4.164097212527334,
+            -0.9255636528682665
+          ]
+        ]
+      },
+      "diagnostics": {
+        "converged": true,
+        "maxRelativeMarketError": 3.6215475063272606e-13,
+        "interpretation": "Illustrative comparative statics; not calibrated historical effects or project net benefits."
+      }
+    },
+    {
+      "theta": 6,
+      "freight": 0.2,
+      "changes": {
+        "realIncomePct": [
+          3.23639260291122,
+          3.896680545244746,
+          0.37113263654655615
+        ],
+        "wagesPct": [
+          0.5734522835160405,
+          0.8698301471483871,
+          -0.7246301143897571
+        ],
+        "priceIndexPct": [
+          -2.5794589022864467,
+          -2.9133273384785663,
+          -1.0917110549147346
+        ],
+        "domesticSharePp": [
+          -12.195422179233983,
+          -7.393280339957403,
+          -1.4910421209296199
+        ],
+        "crossRegionSharePp": 6.207960986483451,
+        "sharePp": [
+          [
+            -12.195422179233983,
+            13.312067592466818,
+            3.4918930200258878
+          ],
+          [
+            7.437754875677578,
+            -7.393280339957403,
+            -2.0008508990962763
+          ],
+          [
+            4.7576673035564205,
+            -5.918787252509416,
+            -1.4910421209296199
+          ]
+        ]
+      },
+      "diagnostics": {
+        "converged": true,
+        "maxRelativeMarketError": 7.972511539833249e-13,
+        "interpretation": "Illustrative comparative statics; not calibrated historical effects or project net benefits."
+      }
+    },
+    {
+      "theta": 6,
+      "freight": 0.3,
+      "changes": {
+        "realIncomePct": [
+          3.1900938350171826,
+          4.282362835322928,
+          0.36471027752433827
+        ],
+        "wagesPct": [
+          0.5315582094489013,
+          1.0213022732814325,
+          -0.7483677575401915
+        ],
+        "priceIndexPct": [
+          -2.5763477159142845,
+          -3.1271448722265505,
+          -1.1090332767231703
+        ],
+        "domesticSharePp": [
+          -13.903706485951828,
+          -10.070792374235504,
+          -1.6146376332764834
+        ],
+        "crossRegionSharePp": 7.319999486221818,
+        "sharePp": [
+          [
+            -13.903706485951828,
+            15.979109486302479,
+            3.5885063970750126
+          ],
+          [
+            8.885218906864237,
+            -10.070792374235504,
+            -1.9738687637985197
+          ],
+          [
+            5.018487579087594,
+            -5.908317112066963,
+            -1.6146376332764834
+          ]
+        ]
+      },
+      "diagnostics": {
+        "converged": true,
+        "maxRelativeMarketError": 8.421041641781812e-13,
+        "interpretation": "Illustrative comparative statics; not calibrated historical effects or project net benefits."
+      }
+    },
+    {
+      "theta": 6,
+      "freight": 0.4,
+      "changes": {
+        "realIncomePct": [
+          2.8570127736505357,
+          4.113777040282707,
+          0.3169064676723732
+        ],
+        "wagesPct": [
+          0.45778333749326716,
+          1.0224463009232077,
+          -0.6949380627013668
+        ],
+        "priceIndexPct": [
+          -2.3325871240661544,
+          -2.96918508504731,
+          -1.0086480594373226
+        ],
+        "domesticSharePp": [
+          -13.660313935534795,
+          -11.545201180858383,
+          -1.5027291909820217
+        ],
+        "crossRegionSharePp": 7.4384685931678245,
+        "sharePp": [
+          [
+            -13.660313935534795,
+            16.593029997437643,
+            3.171559164427213
+          ],
+          [
+            9.161833817209066,
+            -11.545201180858383,
+            -1.6688299734451824
+          ],
+          [
+            4.498480118325723,
+            -5.047828816579258,
+            -1.5027291909820217
+          ]
+        ]
+      },
+      "diagnostics": {
+        "converged": true,
+        "maxRelativeMarketError": 8.236744619694036e-13,
+        "interpretation": "Illustrative comparative statics; not calibrated historical effects or project net benefits."
+      }
+    },
+    {
+      "theta": 6,
+      "freight": 0.5,
+      "changes": {
+        "realIncomePct": [
+          2.4513060897193295,
+          3.6910555998255212,
+          0.2625414226440137
+        ],
+        "wagesPct": [
+          0.38349927099183834,
+          0.9423273347582528,
+          -0.6120670955178209
+        ],
+        "priceIndexPct": [
+          -2.0183313396870406,
+          -2.6508827103423616,
+          -0.8723183212312913
+        ],
+        "domesticSharePp": [
+          -12.459290149837477,
+          -11.953478804085988,
+          -1.3087255319142344
+        ],
+        "crossRegionSharePp": 7.000779198628459,
+        "sharePp": [
+          [
+            -12.459290149837477,
+            15.920279584222891,
+            2.6088350621177563
+          ],
+          [
+            8.728047170811164,
+            -11.953478804085988,
+            -1.3001095302035317
+          ],
+          [
+            3.7312429790263195,
+            -3.966800780136909,
+            -1.3087255319142344
+          ]
+        ]
+      },
+      "diagnostics": {
+        "converged": true,
+        "maxRelativeMarketError": 9.756639940405876e-13,
+        "interpretation": "Illustrative comparative statics; not calibrated historical effects or project net benefits."
+      }
+    },
+    {
+      "theta": 7,
+      "freight": 0,
+      "changes": {
+        "realIncomePct": [
+          0,
+          0,
+          0
+        ],
+        "wagesPct": [
+          0,
+          0,
+          0
+        ],
+        "priceIndexPct": [
+          0,
+          0,
+          0
+        ],
+        "domesticSharePp": [
+          0,
+          0,
+          0
+        ],
+        "crossRegionSharePp": 0,
+        "sharePp": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "diagnostics": {
+        "converged": true,
+        "maxRelativeMarketError": 9.969802761133906e-13,
+        "interpretation": "Illustrative comparative statics; not calibrated historical effects or project net benefits."
+      }
+    },
+    {
+      "theta": 7,
+      "freight": 0.1,
+      "changes": {
+        "realIncomePct": [
+          2.3436206562070128,
+          2.500317568873145,
+          0.2532030379303496
+        ],
+        "wagesPct": [
+          0.45307972292170096,
+          0.5248248624076579,
+          -0.5096985788099251
+        ],
+        "priceIndexPct": [
+          -1.847248437336424,
+          -1.9273039862906627,
+          -0.7609748054150822
+        ],
+        "domesticSharePp": [
+          -8.584913301718544,
+          -4.459672472527928,
+          -1.0661658852856415
+        ],
+        "crossRegionSharePp": 4.241024593033405,
+        "sharePp": [
+          [
+            -8.584913301718544,
+            9.150319643284178,
+            2.663048660986722
+          ],
+          [
+            5.037566643823957,
+            -4.459672472527928,
+            -1.596882775701089
+          ],
+          [
+            3.547346657894596,
+            -4.6906471707562405,
+            -1.0661658852856415
+          ]
+        ]
+      },
+      "diagnostics": {
+        "converged": true,
+        "maxRelativeMarketError": 8.919531779838508e-13,
+        "interpretation": "Illustrative comparative statics; not calibrated historical effects or project net benefits."
+      }
+    },
+    {
+      "theta": 7,
+      "freight": 0.2,
+      "changes": {
+        "realIncomePct": [
+          2.8247247147662247,
+          3.598918016905217,
+          0.326078437003563
+        ],
+        "wagesPct": [
+          0.494083793787814,
+          0.8464787010440178,
+          -0.652999423003986
+        ],
+        "priceIndexPct": [
+          -2.266615279003714,
+          -2.65682245389095,
+          -0.9758956746448777
+        ],
+        "domesticSharePp": [
+          -13.260586180336652,
+          -8.582936220370874,
+          -1.5953486465641875
+        ],
+        "crossRegionSharePp": 6.808302563527535,
+        "sharePp": [
+          [
+            -13.260586180336652,
+            14.770587610608773,
+            3.676770563196424
+          ],
+          [
+            8.131875577251266,
+            -8.582936220370874,
+            -2.081421916632231
+          ],
+          [
+            5.128710603085379,
+            -6.187651390237903,
+            -1.5953486465641875
+          ]
+        ]
+      },
+      "diagnostics": {
+        "converged": true,
+        "maxRelativeMarketError": 7.327471962526033e-13,
+        "interpretation": "Illustrative comparative statics; not calibrated historical effects or project net benefits."
+      }
+    },
+    {
+      "theta": 7,
+      "freight": 0.3,
+      "changes": {
+        "realIncomePct": [
+          2.6094072941713176,
+          3.7072577607602186,
+          0.29298129922983307
+        ],
+        "wagesPct": [
+          0.42905917479969524,
+          0.9290799602981625,
+          -0.635413414794006
+        ],
+        "priceIndexPct": [
+          -2.1249008028286998,
+          -2.6788653566281573,
+          -0.9256826370071858
+        ],
+        "domesticSharePp": [
+          -14.11342543812777,
+          -11.210513647279813,
+          -1.581504766399111
+        ],
+        "crossRegionSharePp": 7.548387833330194,
+        "sharePp": [
+          [
+            -14.11342543812777,
+            16.828608784475758,
+            3.4488433389955997
+          ],
+          [
+            9.20428406081158,
+            -11.210513647279813,
+            -1.8673385725964913
+          ],
+          [
+            4.909141377316178,
+            -5.6180951371959225,
+            -1.581504766399111
+          ]
+        ]
+      },
+      "diagnostics": {
+        "converged": true,
+        "maxRelativeMarketError": 9.394707234378075e-13,
+        "interpretation": "Illustrative comparative statics; not calibrated historical effects or project net benefits."
+      }
+    },
+    {
+      "theta": 7,
+      "freight": 0.4,
+      "changes": {
+        "realIncomePct": [
+          2.201041888763089,
+          3.3348098906157864,
+          0.23491295190367634
+        ],
+        "wagesPct": [
+          0.34948810694730437,
+          0.867466216730084,
+          -0.5560838277753666
+        ],
+        "priceIndexPct": [
+          -1.8116779903584845,
+          -2.3877178237396324,
+          -0.7891429806085593
+        ],
+        "domesticSharePp": [
+          -12.951304398793173,
+          -12.155659917441186,
+          -1.3550126071617319
+        ],
+        "crossRegionSharePp": 7.2024769614761786,
+        "sharePp": [
+          [
+            -12.951304398793173,
+            16.491329237183038,
+            2.7817965087256202
+          ],
+          [
+            8.950724848078488,
+            -12.155659917441186,
+            -1.4267839015638981
+          ],
+          [
+            4.000579550714671,
+            -4.335669319741847,
+            -1.3550126071617319
+          ]
+        ]
+      },
+      "diagnostics": {
+        "converged": true,
+        "maxRelativeMarketError": 9.99866855977416e-13,
+        "interpretation": "Illustrative comparative statics; not calibrated historical effects or project net benefits."
+      }
+    },
+    {
+      "theta": 7,
+      "freight": 0.5,
+      "changes": {
+        "realIncomePct": [
+          1.7859831085324407,
+          2.81098175535488,
+          0.18116895312585424
+        ],
+        "wagesPct": [
+          0.2783507710734101,
+          0.7483395086170574,
+          -0.46259711090960165
+        ],
+        "priceIndexPct": [
+          -1.4811787354369277,
+          -2.0062470093379914,
+          -0.6426018689566826
+        ],
+        "domesticSharePp": [
+          -11.076433582462863,
+          -11.839625266252696,
+          -1.0947327096917703
+        ],
+        "crossRegionSharePp": 6.375975110788401,
+        "sharePp": [
+          [
+            -11.076433582462863,
+            14.916809345679122,
+            2.0994598275929617
+          ],
+          [
+            8.03982131001431,
+            -11.839625266252696,
+            -1.0047271179011816
+          ],
+          [
+            3.0366122724485587,
+            -3.0771840794264147,
+            -1.0947327096917703
+          ]
+        ]
+      },
+      "diagnostics": {
+        "converged": true,
+        "maxRelativeMarketError": 9.662270983312737e-13,
+        "interpretation": "Illustrative comparative statics; not calibrated historical effects or project net benefits."
+      }
+    },
+    {
+      "theta": 8,
+      "freight": 0,
+      "changes": {
+        "realIncomePct": [
+          0,
+          0,
+          0
+        ],
+        "wagesPct": [
+          0,
+          0,
+          0
+        ],
+        "priceIndexPct": [
+          0,
+          0,
+          0
+        ],
+        "domesticSharePp": [
+          0,
+          0,
+          0
+        ],
+        "crossRegionSharePp": 0,
+        "sharePp": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "diagnostics": {
+        "converged": true,
+        "maxRelativeMarketError": 9.99644811372491e-13,
+        "interpretation": "Illustrative comparative statics; not calibrated historical effects or project net benefits."
+      }
+    },
+    {
+      "theta": 8,
+      "freight": 0.1,
+      "changes": {
+        "realIncomePct": [
+          2.190161019398107,
+          2.4293171285243664,
+          0.24146387648156242
+        ],
+        "wagesPct": [
+          0.42058393715009856,
+          0.5311106869279936,
+          -0.48516375736828987
+        ],
+        "priceIndexPct": [
+          -1.7316511341166185,
+          -1.8531866606262382,
+          -0.7248773169805323
+        ],
+        "domesticSharePp": [
+          -9.634607311001442,
+          -5.14834669216522,
+          -1.1973813067171268
+        ],
+        "crossRegionSharePp": 4.769898926785531,
+        "sharePp": [
+          [
+            -9.634607311001442,
+            10.303982516602206,
+            2.946713458308245
+          ],
+          [
+            5.617517805587738,
+            -5.14834669216522,
+            -1.749332151591107
+          ],
+          [
+            4.017089505413685,
+            -5.155635824436988,
+            -1.1973813067171268
+          ]
+        ]
+      },
+      "diagnostics": {
+        "converged": true,
+        "maxRelativeMarketError": 9.743317264110374e-13,
+        "interpretation": "Illustrative comparative statics; not calibrated historical effects or project net benefits."
+      }
+    },
+    {
+      "theta": 8,
+      "freight": 0.2,
+      "changes": {
+        "realIncomePct": [
+          2.4618935083737137,
+          3.2957510659535005,
+          0.2836243048593534
+        ],
+        "wagesPct": [
+          0.4246999075163016,
+          0.808476417082038,
+          -0.5857030447282141
+        ],
+        "priceIndexPct": [
+          -1.9882451232378529,
+          -2.4079157401966866,
+          -0.8668686992652219
+        ],
+        "domesticSharePp": [
+          -13.971288885969225,
+          -9.669533374940265,
+          -1.6464471036297779
+        ],
+        "crossRegionSharePp": 7.245457899679342,
+        "sharePp": [
+          [
+            -13.971288885969225,
+            15.929817129378984,
+            3.7438034804318856
+          ],
+          [
+            8.664819597779097,
+            -9.669533374940265,
+            -2.097356376802115
+          ],
+          [
+            5.306469288190119,
+            -6.260283754438733,
+            -1.6464471036297779
+          ]
+        ]
+      },
+      "diagnostics": {
+        "converged": true,
+        "maxRelativeMarketError": 9.350298313393068e-13,
+        "interpretation": "Illustrative comparative statics; not calibrated historical effects or project net benefits."
+      }
+    },
+    {
+      "theta": 8,
+      "freight": 0.3,
+      "changes": {
+        "realIncomePct": [
+          2.132243994236682,
+          3.1721958683119666,
+          0.23270410329385705
+        ],
+        "wagesPct": [
+          0.34661338565455946,
+          0.8261569363351873,
+          -0.5360246209519248
+        ],
+        "priceIndexPct": [
+          -1.74835148896062,
+          -2.2739061742673927,
+          -0.7669440140550932
+        ],
+        "domesticSharePp": [
+          -13.84366570529515,
+          -12.003885808958492,
+          -1.4892732811578324
+        ],
+        "crossRegionSharePp": 7.527446988888309,
+        "sharePp": [
+          [
+            -13.84366570529515,
+            17.138599529479947,
+            3.1893254488406764
+          ],
+          [
+            9.25097877040965,
+            -12.003885808958492,
+            -1.7000521676828473
+          ],
+          [
+            4.592686934885501,
+            -5.134713720521461,
+            -1.4892732811578324
+          ]
+        ]
+      },
+      "diagnostics": {
+        "converged": true,
+        "maxRelativeMarketError": 9.036105197424149e-13,
+        "interpretation": "Illustrative comparative statics; not calibrated historical effects or project net benefits."
+      }
+    },
+    {
+      "theta": 8,
+      "freight": 0.4,
+      "changes": {
+        "realIncomePct": [
+          1.6949716286289052,
+          2.670497762454027,
+          0.17236099684851958
+        ],
+        "wagesPct": [
+          0.267557470591262,
+          0.7190412228664123,
+          -0.44172938643307624
+        ],
+        "priceIndexPct": [
+          -1.4036231439744196,
+          -1.9006984305293129,
+          -0.6130337521952911
+        ],
+        "domesticSharePp": [
+          -11.863123286791167,
+          -12.233185723702933,
+          -1.1748553937556139
+        ],
+        "crossRegionSharePp": 6.734625316934084,
+        "sharePp": [
+          [
+            -11.863123286791167,
+            15.798451902093442,
+            2.3443778201878116
+          ],
+          [
+            8.461564215251407,
+            -12.233185723702933,
+            -1.1695224264322097
+          ],
+          [
+            3.4015590715397637,
+            -3.565266178390525,
+            -1.1748553937556139
+          ]
+        ]
+      },
+      "diagnostics": {
+        "converged": true,
+        "maxRelativeMarketError": 8.8662410746565e-13,
+        "interpretation": "Illustrative comparative statics; not calibrated historical effects or project net benefits."
+      }
+    },
+    {
+      "theta": 8,
+      "freight": 0.5,
+      "changes": {
+        "realIncomePct": [
+          1.3015236556215726,
+          2.1173197918487263,
+          0.12381861439207942
+        ],
+        "wagesPct": [
+          0.20272456082404133,
+          0.5816582970655126,
+          -0.3471752292628749
+        ],
+        "priceIndexPct": [
+          -1.0846817058082325,
+          -1.5038207993643415,
+          -0.4704113867938786
+        ],
+        "domesticSharePp": [
+          -9.524166042303417,
+          -11.169995796400533,
+          -0.880791188651342
+        ],
+        "crossRegionSharePp": 5.605682495423192,
+        "sharePp": [
+          [
+            -9.524166042303417,
+            13.451997015074072,
+            1.6241670435218853
+          ],
+          [
+            7.158229349399167,
+            -11.169995796400533,
+            -0.7433758548705233
+          ],
+          [
+            2.36593669290427,
+            -2.282001218673546,
+            -0.880791188651342
+          ]
+        ]
+      },
+      "diagnostics": {
+        "converged": true,
+        "maxRelativeMarketError": 9.696687897076117e-13,
+        "interpretation": "Illustrative comparative statics; not calibrated historical effects or project net benefits."
+      }
+    }
+  ],
+  "matchedCase": {
+    "description": "Zero freight: canal-on and canal-off economies are identical",
+    "result": {
+      "version": "1.0.0",
+      "parameters": {
+        "theta": 4,
+        "sigma": 5,
+        "freight": 0
+      },
+      "regions": [
+        {
+          "id": "atlantic",
+          "name": "Atlantic US (New York)",
+          "labor": 2
+        },
+        {
+          "id": "pacific",
+          "name": "Pacific US (San Francisco)",
+          "labor": 1
+        },
+        {
+          "id": "asia",
+          "name": "Pacific Asia (Yokohama)",
+          "labor": 3
+        }
+      ],
+      "off": {
+        "distances": [
+          [
+            0,
+            13135,
+            13079
+          ],
+          [
+            13135,
+            0,
+            4600
+          ],
+          [
+            13079,
+            4600,
+            0
+          ]
+        ],
+        "tau": [
+          [
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "wages": [
+          1.0143664570094122,
+          1.1652010805306707,
+          0.9353553351501683
+        ],
+        "income": [
+          2.0287329140188244,
+          1.1652010805306707,
+          2.806066005450505
+        ],
+        "priceIndex": [
+          1.0179902053896333,
+          1.0179902053896333,
+          1.0179902053896333
+        ],
+        "realIncome": [
+          0.9964402915067007,
+          1.144609323706305,
+          0.9188254761175854
+        ],
+        "shares": [
+          [
+            0.33812215233649506,
+            0.33812215233649506,
+            0.33812215233649506
+          ],
+          [
+            0.19420018008863554,
+            0.19420018008863554,
+            0.19420018008863554
+          ],
+          [
+            0.46767766757486934,
+            0.46767766757486934,
+            0.46767766757486934
+          ]
+        ],
+        "tradeFlows": [
+          [
+            0.6859595394039345,
+            0.3939802972538401,
+            0.9487930773611958
+          ],
+          [
+            0.3939802972541981,
+            0.22628225967852897,
+            0.5449385235990862
+          ],
+          [
+            0.9487930773606917,
+            0.5449385235983015,
+            1.3123344044902228
+          ]
+        ],
+        "domesticShares": [
+          0.33812215233649506,
+          0.19420018008863554,
+          0.46767766757486934
+        ],
+        "crossRegionShare": 0.6292372994045523,
+        "diagnostics": {
+          "converged": true,
+          "iterations": 17,
+          "maxRelativeMarketError": 9.805489753489383e-13,
+          "maxShareSumError": 0,
+          "worldIncome": 6,
+          "targetWorldIncome": 6
+        }
+      },
+      "on": {
+        "distances": [
+          [
+            0,
+            5262,
+            9798
+          ],
+          [
+            5262,
+            0,
+            4600
+          ],
+          [
+            9798,
+            4600,
+            0
+          ]
+        ],
+        "tau": [
+          [
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "wages": [
+          1.0143664570094122,
+          1.1652010805306707,
+          0.9353553351501683
+        ],
+        "income": [
+          2.0287329140188244,
+          1.1652010805306707,
+          2.806066005450505
+        ],
+        "priceIndex": [
+          1.0179902053896333,
+          1.0179902053896333,
+          1.0179902053896333
+        ],
+        "realIncome": [
+          0.9964402915067007,
+          1.144609323706305,
+          0.9188254761175854
+        ],
+        "shares": [
+          [
+            0.33812215233649506,
+            0.33812215233649506,
+            0.33812215233649506
+          ],
+          [
+            0.19420018008863554,
+            0.19420018008863554,
+            0.19420018008863554
+          ],
+          [
+            0.46767766757486934,
+            0.46767766757486934,
+            0.46767766757486934
+          ]
+        ],
+        "tradeFlows": [
+          [
+            0.6859595394039345,
+            0.3939802972538401,
+            0.9487930773611958
+          ],
+          [
+            0.3939802972541981,
+            0.22628225967852897,
+            0.5449385235990862
+          ],
+          [
+            0.9487930773606917,
+            0.5449385235983015,
+            1.3123344044902228
+          ]
+        ],
+        "domesticShares": [
+          0.33812215233649506,
+          0.19420018008863554,
+          0.46767766757486934
+        ],
+        "crossRegionShare": 0.6292372994045523,
+        "diagnostics": {
+          "converged": true,
+          "iterations": 17,
+          "maxRelativeMarketError": 9.805489753489383e-13,
+          "maxShareSumError": 0,
+          "worldIncome": 6,
+          "targetWorldIncome": 6
+        }
+      },
+      "changes": {
+        "realIncomePct": [
+          0,
+          0,
+          0
+        ],
+        "wagesPct": [
+          0,
+          0,
+          0
+        ],
+        "priceIndexPct": [
+          0,
+          0,
+          0
+        ],
+        "domesticSharePp": [
+          0,
+          0,
+          0
+        ],
+        "crossRegionSharePp": 0,
+        "sharePp": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "diagnostics": {
+        "converged": true,
+        "maxRelativeMarketError": 9.805489753489383e-13,
+        "interpretation": "Illustrative comparative statics; not calibrated historical effects or project net benefits."
+      }
+    }
+  },
+  "validation": {
+    "status": "passed",
+    "modelVersion": "1.0.0",
+    "modelSha256": "9513915c199e6fe2db538568978846586cab3ed883e9cede3376e307a0b324da",
+    "gridCases": 1275,
+    "equilibriaCheckedOnGrid": 2550,
+    "maximumMarketError": 9.99866855977416e-13,
+    "maximumIterations": 289,
+    "checks": [
+      "Historical changed links match source CSV",
+      "Analytical symmetric two-region equilibrium",
+      "Analytical unequal-labor frictionless wages and zero-freight matched cases",
+      "Numeraire invariance and region permutation invariance",
+      "Independent Python Newton solver agrees with default equilibria",
+      "Dense UI parameter grid: 1275 parameter pairs, 2550 equilibria",
+      "Invalid inputs fail explicitly",
+      "Browser-global and CommonJS interfaces agree; default reference unchanged"
+    ],
+    "scope": "Numerical and implementation checks only; no historical calibration, replication, or causal validation."
+  }
+}
