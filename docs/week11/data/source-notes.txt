@@ -1,5 +1,78 @@
 ECON 342 Week 11 — data, exact versions, and transformations
-Prepared 2026-11-23. The two CSVs contain the numbers shown in the course charts.
+Prepared 2026-11-23. This file records the current focused lecture and archived optional material.
+
+CURRENT LECTURE: TRADE RAISES THE COST OF WAR
+
+The core lecture follows one mechanism: trade puts net welfare at risk in war,
+which can expand mutually acceptable settlements. Evidence on trade disruption
+and evidence on deterrence are assessed separately. The Panama model remains
+an optional trade/real-income experiment and supplies no conflict probability.
+
+BARGAINING EXAMPLE
+Prize = 100, A receives x, B receives 100-x. Equal chances of winning all of the
+prize, direct fighting costs 10 each. Normalize away peacetime trade welfare.
+War payoffs = 40-L_A and 40-L_B, where L_i is expected net welfare lost through
+trade disruption conditional on war. Both accept if 40-L_A <= x <= 60+L_B.
+Equal losses 0, 10, 2 yield [40,60], [30,70], [38,62]. Interval widths are payoff
+units, not peace probabilities. Web slider holds other assumptions fixed.
+Teaching adaptation: Fearon (1995), pp.386-389.
+https://doi.org/10.1017/S0020818300033324
+
+PRIVATE-INFORMATION CLASSROOM EXTENSION (INVENTED PARAMETERS)
+A makes one offer, direct cost10. B privately knows its cost: 10 with probability
+0.4, or30 with probability0.6. Indifference means acceptance. With no trade
+loss, A demands60 for certain acceptance (payoff60), or80 with acceptance only
+by the high-cost type (expected payoff0.6*80+0.4*40=64). With trade loss10 each,
+the corresponding offers70 and90 give payoffs70 and0.6*90+0.4*30=66. Trade
+losses change the optimal offer from risky to safe. These probabilities and
+payoffs illustrate a mechanism; they are not estimates from a historical case.
+
+FORMAL TRADE MODEL AND MODERN EVIDENCE
+Martin, Mayer and Thoenig (2008), theorypp.869-875, empiricalTables6-7.
+https://extranet.parisschoolofeconomics.eu/docs/koenig-pamina/martinmayerthoenig.pdf
+Bilateral dependence can reduce escalation. Alternative trade can cushion the
+bilateral loss under the paper's conditions. The multilateral sign depends on
+how conflict affects third-country trade. Disputes arrive exogenously in the model.
+Empirical sample1950-2000: MID hostilitylevels3-5 (display of force, use of force,
+and war). Threats alone are excluded. Controls/fixed effects/instruments address
+endogeneity under assumptions. GSP access can itself reflect political goals.
+
+GLICK-TAYLOR CHART: EXACT WORKING-PAPER VERSION
+February2005 NBER conference version, Table4column1; sample1870-1997.
+https://conference.nber.org/confer/2005/daes05/taylor.pdf
+The displayed index equals100*exp(coefficient):
+War -1.87 ->15.41; lag1 -1.32 ->26.71; lag5 -0.57 ->56.55; lag8 -0.24 ->78.66.
+Bars round to15,27,57,79. The no-war reference is100. Source standard errors are
+0.09,0.16,0.10,0.08 respectively; the chart does not display uncertainty intervals.
+These are lag effects of a one-year war episode. A multi-year war can combine
+lag coefficients. Pair fixed effects, year effects, gravity controls. Trade is
+the real bilateral average of exports/imports. Observational evidence. Losses
+of trade flows require further modeling to infer welfare losses.
+CSV: glick_taylor_2005_table4.csv
+
+ATLANTIC: CURRENT LECTURE VERSION
+Ahsan, Panza and Song (2025), Economic Journal135(668),1069-1107.
+https://doi.org/10.1093/ej/ueae102
+The final abstract reports trade proxied by wheat-price transmission, instruments
+from Atlantic winds/cyclones, lower European conflict onset, and wages/army sizes
+consistent with opportunity costs. Its reported standardized effect is -0.157
+outcome SD for one trade SD; this is not15.7percentagepoints. Final tables were
+not accessible for this audit, so no confidence interval or plotted estimate
+is supplied. Detailed design was examined in the accessible March2020 version:
+https://economics.yale.edu/sites/default/files/cepr-dp14206_ada-ns.pdf
+Do not combine its coefficients with the final headline. A direct storm effect
+on fleets/military capacity would threaten the trade-only exclusion restriction.
+European conflict onset does not establish a result for colonial conflict.
+
+ZHENG AND QUANTITATIVE EXTENSION
+Zheng2019pp.138-142: mediation, private costs, implementable versus secure peace.
+https://economics.uwo.ca/faculty/zheng/research/conditionsForPeace.pdf
+It is a bargaining/conflict model; the trade link is a classroom interpretation.
+Thoenig, January5,2024 working version, structural trade plus bargaining:
+https://www.wto.org/english/res_e/reser_e/gtdw_e/wkshop24_e/thoenig_e.pdf
+
+The Suez reproduction below remains in the current lecture. Colombia, Panama,
+and their earlier design notes are archived optional material.
 
 SUEZ: RECONSTRUCTION OF FEYRER'S FIGURE 1
 Primary source: Feyrer (2021), Journal of Development Economics.
