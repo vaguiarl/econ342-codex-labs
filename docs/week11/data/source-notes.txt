@@ -1,7 +1,56 @@
+ATLANTIC DEEP DIVE: CURRENT LECTURE UPDATE
+
+The main lecture now has a seven-slide case study of Atlantic trade and European
+conflict. Detailed tables use CEPR DP14206 v.2, revised March 4, 2020. This version
+is explicitly labeled throughout. Final 2025 tables were inaccessible, and are
+not represented by these older estimates. Published final article:
+https://doi.org/10.1093/ej/ueae102
+Inspected working paper:
+https://economics.yale.edu/sites/default/files/cepr-dp14206_ada-ns.pdf
+
+Treatment proxy: a European pair's average wheat-price pass-through integration
+with the Americas. Outcome: a new conflict between the European countries.
+Historical price data 1640–1896; main IV sample before 1871. The 0.2/0.8 transmission
+examples are illustrative. Their estimated measure changes over time and is
+validated against recorded trade in a later-century subsample.
+
+Instrument: annual Atlantic cyclone anomalies interacted with wind-predicted
+sailing time. Baseline uses country and year effects plus controls. It does not
+use pair fixed effects. First-stage sign is negative; reported F=33.91.
+A direct storm effect on fleets and military capacity could affect conflict
+without operating through trade, including conflicts fought on land.
+
+NEW FIGURE AND CSV
+atlantic_2020_table4_estimates.csv and week11_atlantic_iv.png;
+week11_atlantic_iv_wide.png provides the slide-sized variant.
+Table 4, columns 2–6 coefficients/SE:
+Baseline -0.944/.300; five-year shocks -.893/.295; lagged bilateral trade -.842/.286;
+rainfall controls -.896/.302; naval conflicts excluded -1.287/.247.
+Plot uses beta*0.01*100 to express percentage-point differences for an absolute
+0.01 increase in the estimated price-pass-through index. It is NOT 1% more trade.
+Approximate normal 95% intervals: (beta +/-1.96SE)*0.01*100. Baseline interval
+[-1.532,-.356]pp. Differing controls/samples prevent reading differences between
+columns as causal effects of those adjustments. This is a reconstruction from
+reported estimates, not a raw-data replication. The CSV records Ns and sources.
+
+MECHANISMS AND SCOPE
+Table 5: wages p=.026, soldiers p=.094, navy p=.092; navy first-stage F=4.71.
+Wage/army/navy regressions replace year effects with a time trend. The conflict
+interaction regressions retain baseline controls. Larger estimated reductions
+for pairs involving a hegemon or colonizer fit the opportunity-cost story, but
+these results do not uniquely identify a causal mediation chain.
+Table 7: a positive effect outside Europe/Americas has p=.058 and is suggestive;
+the high-fatality result is not statistically significant. European conflict
+onset does not measure global peace or total casualties.
+
+Glick–Taylor and modern MMT empirical estimates now remain optional background;
+Suez remains one supporting trade-disruption slide. Notes below preserve earlier
+source records and optional material, not the current core-slide inventory.
+
 ECON 342 Week 11 — data, exact versions, and transformations
 Prepared 2026-11-23. This file records the current focused lecture and archived optional material.
 
-CURRENT LECTURE: TRADE RAISES THE COST OF WAR
+EARLIER LECTURE SOURCE RECORD: TRADE RAISES THE COST OF WAR
 
 The core lecture follows one mechanism: trade puts net welfare at risk in war,
 which can expand mutually acceptable settlements. Evidence on trade disruption
